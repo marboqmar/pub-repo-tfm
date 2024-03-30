@@ -1,3 +1,65 @@
 html {
 
 }
+
+.site {
+  display: flex;
+  flex-direction: column;
+}
+
+
+// Header
+.logo {
+
+}
+
+.categoriesMenu {
+
+}
+
+.searchBar{
+
+}
+
+.myAccountMenu{
+
+}
+
+// Hero
+.hero {
+  display: flex;
+  flex-direction: row;
+}
+
+// ItemDisplay
+.item {
+  display: flex;
+  flex-direction: column;
+}
+
+.itemTitle {
+
+}
+
+.itemDisplay {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+// Filter
+.filter {
+
+}
+
+// App
+.itemDisplayAndFilter {
+  display: flex;
+  flex-direction: row;
+}
+
+// Footer
+.footer {
+  height: 100px;
+  background-color: gray;
+  color: white;
+}
