@@ -4,7 +4,7 @@ const Header = () => {
   return (
       <div>
           <img className={'logo'} src={'../../public/logo.png'} alt={'Website logo'}/>
-          <button className={'categoriesMenu'}>Categorías</button>
+          <Link to={'./categoria'}><button className={'categoriesMenu'}>Categorías</button></Link>
           <input id={'searchBar'} type={'text'} placeholder={'Buscar'} />
           <button className={'myAccountMenu'}>Mi cuenta</button>
           <Link to={'./favoritos'}>Favoritos</Link>

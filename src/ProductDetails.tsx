@@ -5,7 +5,7 @@ const Product = () => {
     return (
         <div className={'product'}>
             <div>
-                <h2>La mejor espada del mundo</h2>
+                <h1>La mejor espada del mundo</h1>
                 <img className={'productImage'} src={'../../public/product-image.png'} alt={'Imagen espada'}/>
             </div>
             <div className={'productInfo'}>
