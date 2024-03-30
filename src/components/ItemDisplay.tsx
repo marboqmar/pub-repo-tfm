@@ -1,10 +1,14 @@
+import { Link } from 'react-router-dom';
+
 const Item = () => {
     return (
-        <div className={'item'}>
-            <span className={'itemTitle'}>Item title</span>
-            <img src={'../../public/item-image.png'}/>
-            <span>160€</span>
-        </div>
+        <Link to={'/detalles-producto'}>
+            <div className={'item'}>
+                <span className={'itemTitle'}>La mejor espada del mundo</span>
+                <img src={'../../public/item-image.png'}/>
+                <span>160€</span>
+            </div>
+        </Link>
     );
 };
 
