@@ -7,7 +7,7 @@ const Header = () => {
             <Link to={'/'}><img className={'logo'} src={'/logo.png'} alt={'Website logo'}/></Link>
             <Link className={'categoriesMenu'} to={'/categoria'}>Categorías</Link>
             <input id={'searchBar'} type={'text'} placeholder={'Buscar'} />
-            <button className={'myAccountMenu'}>Mi cuenta</button>
+            <Link className={'myAccountMenu'} to={'mi-cuenta'}>Mi cuenta</Link>
             <Link to={'/favoritos'}>Favoritos</Link>
             <Link to={'/cesta'}>Cesta</Link>
         </div>

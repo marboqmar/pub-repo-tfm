@@ -7,6 +7,7 @@ import Cart from './Cart.tsx';
 import ProductDetails from "./ProductDetails.tsx";
 import Patterns from './scss/views/Patterns.tsx';
 import Payment from "./Payment.tsx";
+import MyAccount from "./MyAccount.tsx";
 
 export const router = createBrowserRouter([
     {
@@ -36,6 +37,10 @@ export const router = createBrowserRouter([
             {
                 path: '/pago',
                 element: <Payment/>
+            },
+            {
+                path: 'mi-cuenta',
+                element: <MyAccount />
             }
         ]
     },
