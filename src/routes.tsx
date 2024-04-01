@@ -3,9 +3,9 @@ import App from './App.tsx';
 import Landing from "./Landing.tsx";
 import ItemsByCategory from "./ItemsByCategory.tsx";
 import Favourites from './Favourites.tsx'
-import Cart from './Cart.tsx'
+import Cart from './Cart.tsx';
 import ProductDetails from "./ProductDetails.tsx";
-import Patterns from './scss/views/Patterns.tsx'
+import Patterns from './scss/views/Patterns.tsx';
 import Payment from "./Payment.tsx";
 
 export const router = createBrowserRouter([
@@ -35,7 +35,7 @@ export const router = createBrowserRouter([
             },
             {
                 path: '/pago',
-                element: <Payment />
+                element: <Payment/>
             }
         ]
     },

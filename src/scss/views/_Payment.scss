@@ -1,0 +1,15 @@
+.payment {
+  display: flex;
+  flex-direction: row;
+
+  &Item {
+    display: flex;
+    flex-direction: row;
+    border: 1px solid black;
+
+    &Text {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}
