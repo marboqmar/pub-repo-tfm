@@ -1,4 +1,22 @@
 import '../scss/components/TotalToPay.scss';
+import { Link } from "react-router-dom";
+
+const IsCartOrPayment = () => {
+    const currentUrl = window.location.href;
+
+    if (currentUrl.includes('pago')) {
+        return (
+            <button>Confirmar y pagar</button>
+        )
+    }
+    if (currentUrl.includes('cesta')) {
+        return (
+            <Link to={'/pago'}>Pagar</Link>
+        )
+    }
+
+}
+
 
 const TotalToPay = () => {
     return (
@@ -15,7 +33,7 @@ const TotalToPay = () => {
                 <h2>Total</h2>
                 <h2>320€</h2>
             </div>
-            <button>Pagar</button>
+            <IsCartOrPayment />
         </div>
     );
 };

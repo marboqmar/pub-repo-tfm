@@ -6,6 +6,7 @@ import Favourites from './Favourites.tsx'
 import Cart from './Cart.tsx'
 import ProductDetails from "./ProductDetails.tsx";
 import Patterns from './scss/views/Patterns.tsx'
+import Payment from "./Payment.tsx";
 
 export const router = createBrowserRouter([
     {
@@ -32,6 +33,10 @@ export const router = createBrowserRouter([
                 path: '/detalles-producto',
                 element: <ProductDetails />
             },
+            {
+                path: '/pago',
+                element: <Payment />
+            }
         ]
     },
     {
