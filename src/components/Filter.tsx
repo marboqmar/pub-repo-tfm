@@ -1,3 +1,4 @@
+import '../scss/components/Filter.scss';
 const FilterOption = () => {
     return (
         <div>

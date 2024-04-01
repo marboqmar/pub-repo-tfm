@@ -1,16 +1,18 @@
-import ItemDisplay from "./components/ItemDisplay.tsx";
+import Hero from "./components/Hero.tsx";
 import Filter from "./components/Filter.tsx";
+import ItemDisplay from "./components/ItemDisplay.tsx";
 
-const ItemsByCategory = () => {
+const Landing = () => {
     return (
         <div>
-            <h1>Espadas preciosas</h1>
+            <Hero />
+            <h2>Nuestras recomendaciones</h2>
             <div className={'itemDisplayAndFilter'}>
                 <Filter />
                 <ItemDisplay />
             </div>
         </div>
-    );
-};
+    )
+}
 
-export default ItemsByCategory;
+export default Landing;

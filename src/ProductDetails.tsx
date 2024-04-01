@@ -1,6 +1,3 @@
-import Header from "./components/Header.tsx";
-import Footer from "./components/Footer.tsx";
-
 const Product = () => {
     return (
         <div className={'product'}>
@@ -33,14 +30,12 @@ const Review = () => {
 const ProductDetails = () => {
     return (
         <div>
-            <Header />
             <h1>Product details</h1>
             <Product />
             <Review />
             <Review />
             <Review />
             <Review />
-            <Footer />
         </div>
     );
 };
