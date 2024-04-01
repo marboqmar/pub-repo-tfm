@@ -27,15 +27,33 @@ const Review = () => {
     );
 };
 
+const SimilarProduct = () => {
+    return (
+        <div className={'similarProduct'}>
+            <img className={'similarProductImg'} src={'/item-image.png'} alt={'Imagen producto similar'}/>
+            <span>Otra espada chulísima</span>
+            <span>180€</span>
+        </div>
+    )
+}
+
 const ProductDetails = () => {
     return (
         <div>
             <h1>Product details</h1>
             <Product />
-            <Review />
-            <Review />
-            <Review />
-            <Review />
+            <div>
+                <Review />
+                <Review />
+                <Review />
+            </div>
+            <h2>Productos similares</h2>
+            <div className={'similarProductDisplay'}>
+                <SimilarProduct />
+                <SimilarProduct />
+                <SimilarProduct />
+                <SimilarProduct />
+            </div>
         </div>
     );
 };

@@ -16,3 +16,18 @@
     width: 160px;
   }
 }
+
+.similarProduct {
+  display: flex;
+  flex-direction: column;
+
+  &Img {
+    height: 140px;
+    width: 140px;
+  }
+
+  &Display {
+    display: flex;
+    flex-direction: row;
+  }
+}
