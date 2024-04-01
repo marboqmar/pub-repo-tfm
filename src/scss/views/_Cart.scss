@@ -1,0 +1,17 @@
+.cartItem {
+  display: flex;
+  flex-direction: row;
+  border: 1px solid black;
+
+  &Img {
+    height: 160px;
+    width: 160px;
+  }
+}
+
+
+
+.cartDisplay {
+  display: flex;
+  flex-direction: row;
+}

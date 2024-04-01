@@ -1,0 +1,9 @@
+.total {
+  border: 1px solid black;
+  height: 200px;
+
+  &Price {
+    display: flex;
+    flex-direction: row;
+  }
+}
