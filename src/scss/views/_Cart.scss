@@ -1,0 +1,26 @@
+.cartItem {
+  display: flex;
+  flex-direction: row;
+  border: 1px solid black;
+
+  &Img {
+    height: 160px;
+    width: 160px;
+  }
+}
+
+.total {
+  border: 1px solid black;
+  height: 200px;
+
+  &Price {
+    display: flex;
+    flex-direction: row;
+  }
+}
+
+.cartDisplay {
+  display: flex;
+  flex-direction: row;
+}
+
