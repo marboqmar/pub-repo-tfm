@@ -1,7 +1,7 @@
 import '../scss/components/ItemDisplay.scss';
 import { Link } from 'react-router-dom';
 import {ItemDetailsModel} from "../models/itemDetails.ts";
-import ItemList from "./ItemList.tsx";
+import ITEM_LIST from "./ITEM_LIST.tsx";
 
 const ItemStructure = (item: ItemDetailsModel) => {
     return (
@@ -18,7 +18,7 @@ const ItemStructure = (item: ItemDetailsModel) => {
 const ItemDisplay = () => {
     return (
         <div className={'itemDisplay'}>
-            {ItemList.map((item) => (
+            {ITEM_LIST.map((item) => (
                 <ItemStructure
                     key={item.key}
                     name={item.name}

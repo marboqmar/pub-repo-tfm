@@ -1,4 +1,6 @@
-const ItemList = [
+import {ItemDetailsModel} from "../models/itemDetails.ts";
+
+const ITEM_LIST: ItemDetailsModel[] = [
     {
         key: 1,
         name: `Knight's greatsword`,
@@ -13,4 +15,4 @@ const ItemList = [
     }
 ];
 
-export default ItemList;
+export default ITEM_LIST;
