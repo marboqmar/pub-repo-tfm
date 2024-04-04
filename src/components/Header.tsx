@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const Header = () => {
     return (
         <div>
-            <Link to={'/'}><img className={'logo'} src={'/logo.png'} alt={'Website logo'}/></Link>
+            <Link to={'/'}><img className={'logo'} src={'/logo-header.png'} alt={'Website logo'}/></Link>
             <Link className={'categoriesMenu'} to={'/categoria'}>Categorías</Link>
             <input id={'searchBar'} type={'text'} placeholder={'Buscar'} />
             <Link className={'myAccountMenu'} to={'mi-cuenta'}>Mi cuenta</Link>
