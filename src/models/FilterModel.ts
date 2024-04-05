@@ -1,3 +1,8 @@
 export interface FilterModel {
-    option: string
+    key: string,
+    id: number,
+    option: string,
+    minPrice: number,
+    maxPrice: number,
+    status: boolean
 }
