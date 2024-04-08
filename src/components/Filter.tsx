@@ -3,7 +3,7 @@ import {FilterModel} from "../models/FilterModel.ts";
 import FILTER_OPTIONS from "./FILTER_OPTIONS.tsx";
 import {useState} from "react";
 // import React, {useState} from "react";
-import {ItemDetailsModel} from "../models/itemDetails.ts";
+// import {ItemDetailsModel} from "../models/itemDetails.ts";
 import ITEM_LIST from "./ITEM_LIST.tsx";
 
 const FilterOption = (item: FilterModel) => {
@@ -34,7 +34,7 @@ const FilterOption = (item: FilterModel) => {
                 break
         }
 
-        ITEM_LIST.forEach((item) => {
+        ITEM_LIST.filter((item) => {
             item.display = false;
             if (firstFilter && (FILTER_OPTIONS[0].maxPrice > item.price)) {
                 item.display = true;
@@ -59,7 +59,6 @@ const FilterOption = (item: FilterModel) => {
                 type="checkbox"
                 onClick={() => {
                     isFilterOn(id)
-                    // setFilteredItems(FilterResult)
                 }}
             />
             <span>{item.option}</span>
@@ -76,6 +75,8 @@ const Filter = () => {
                     key={item.key}
                     id={item.id}
                     option={item.option}
+                    minPrice={item.minPrice}
+                    maxPrice={item.maxPrice}
                     status={item.status}
                 />
             ))}
