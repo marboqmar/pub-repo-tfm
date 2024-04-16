@@ -1,3 +1,8 @@
+.filterAndItemDisplay {
+  display: flex;
+  flex-direction: row;
+}
+
 .item {
   display: flex;
   flex-direction: column;
