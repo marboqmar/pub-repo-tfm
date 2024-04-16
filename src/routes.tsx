@@ -8,6 +8,7 @@ import ProductDetails from "./ProductDetails.tsx";
 import Patterns from './scss/views/Patterns.tsx';
 import Payment from "./Payment.tsx";
 import MyAccount from "./MyAccount.tsx";
+import Home from "./Home.tsx";
 
 export const router = createBrowserRouter([
     {
@@ -17,6 +18,10 @@ export const router = createBrowserRouter([
             {
                 index: true,
                 element: <Landing />
+            },
+            {
+                path: '/home',
+                element: <Home/>
             },
             {
                 path: '/categoria',
