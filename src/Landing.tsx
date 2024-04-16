@@ -1,14 +1,11 @@
-import Hero from "./components/Hero.tsx";
-import ItemDisplay from "./components/ItemDisplay.tsx";
+import './scss/style.scss'
+import { Link } from 'react-router-dom';
 
 const Landing = () => {
     return (
         <div>
-            <Hero />
-            <h2>Nuestras recomendaciones</h2>
-            <div className={'itemDisplayAndFilter'}>
-                <ItemDisplay />
-            </div>
+            <h1>Landing</h1>
+            <Link to={'/home'}>Visit shop</Link>
         </div>
     )
 }
