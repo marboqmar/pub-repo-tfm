@@ -28,11 +28,8 @@ const ItemDisplay = () => {
 
     const [displayItemList, setDisplayItemList] = useState<ItemDetailsModel[]>(ITEM_LIST)
 
-    const handlePriceUnder100 = () => {
-        setFilterOptions(prevFilterOptions => ({...prevFilterOptions, priceUnder100: !filterOptions.priceUnder100}))
-    }
-
     const filteredItems = useMemo(() => {
+        // If no filters are applied, show all items
         const isAnyFilterApplied: boolean = Object.values(filterOptions).some((value) => {
             return value === true
         })
@@ -41,10 +38,28 @@ const ItemDisplay = () => {
             displayItemList.forEach((item) => {
                 item.display = true;
             })
+            return;
         }
 
+        // If filters are applied, filter items
+        const whichElementsToShow = (min: number, max: number, option: boolean) =>  {
+            displayItemList.forEach((item: ItemDetailsModel) => {
+                if (min < item.price && item.price < max && option) {
+                    setDisplayItemList((item: ItemDetailsModel[]) => ({...item, display: true}))
+                }
+            })
+        }
+
+        Object.keys(filterOptions).forEach((option) => {
+            whichElementsToShow(0, 100, !!option)
+        })
+
         return displayItemList
-    }, []);
+    }, [displayItemList, filterOptions]);
+
+    const handlePriceUnder100 = () => {
+        setFilterOptions(prevFilterOptions => ({...prevFilterOptions, priceUnder100: !filterOptions.priceUnder100}))
+    }
 
 
     return (
@@ -60,7 +75,7 @@ const ItemDisplay = () => {
                 </div>
             </div>
             <div className={'itemDisplay'}>
-                {ITEM_LIST.map((item) => (
+                {displayItemList.map((item) => (
                     <ItemStructure
                         key={item.key}
                         name={item.name}

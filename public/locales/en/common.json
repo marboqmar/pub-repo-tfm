@@ -1,0 +1,10 @@
+{
+  "header": {
+    "categories": "Categories",
+    "searchBarPlaceHolder": "Search",
+    "myAccount": "My account",
+    "favourites": "Favourites",
+    "cart": "Cart"
+  },
+  "homeTitle": "Our products"
+}
