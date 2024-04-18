@@ -28,39 +28,59 @@ const ItemDisplay = () => {
 
     const [displayItemList, setDisplayItemList] = useState<ItemDetailsModel[]>(ITEM_LIST)
 
+    const PRICES_FILTER_MAP = {
+        priceUnder100: {min: 0, max: 100},
+        price100to200: {min: 100, max: 200},
+        price200to300: {min: 200, max: 300},
+        priceOver300: {min: 300, max: 10000},
+    }
+
+    interface pricesFilterMapModel {
+        priceUnder100: {min: number, max: number},
+        price100to200: {min: number, max: number},
+        price200to300: {min: number, max: number},
+        priceOver300: {min: number, max: number},
+    }
+
+    interface priceFilterKeyModel {
+        min: number,
+        max: number
+    }
+
     const filteredItems = useMemo(() => {
         // If no filters are applied, show all items
         const isAnyFilterApplied: boolean = Object.values(filterOptions).some((value) => {
-            return value === true
+            return value
         })
 
         if (!isAnyFilterApplied) {
-            displayItemList.forEach((item) => {
-                item.display = true;
-            })
-            return;
+            return displayItemList;
         }
 
         // If filters are applied, filter items
-        const whichElementsToShow = (min: number, max: number, option: boolean) =>  {
-            displayItemList.forEach((item: ItemDetailsModel) => {
-                if (min < item.price && item.price < max && option) {
-                    setDisplayItemList((item: ItemDetailsModel[]) => ({...item, display: true}))
-                }
-            })
+        const matchesPriceFilter = (item: ItemDetailsModel, min: number, max: number) =>  {
+            return min < item.price && item.price < max;
         }
 
-        Object.keys(filterOptions).forEach((option) => {
-            whichElementsToShow(0, 100, !!option)
-        })
+        return displayItemList.filter(item => {
+            // When adding search filter use:
+            // if (search && !item.name.includes(search)){
+            //  return false;
+            // }
 
-        return displayItemList
-    }, [displayItemList, filterOptions]);
+            return Object.keys(PRICES_FILTER_MAP).some((priceFilterKey: number) => {
+                if (filterOptions[priceFilterKey]) {
+                    const filterValues: priceFilterKeyModel = PRICES_FILTER_MAP[priceFilterKey];
+                    return matchesPriceFilter(item, filterValues.min, filterValues.max)
+                }
+                return false
+            })
+        })
+    }, [displayItemList, filterOptions, PRICES_FILTER_MAP]);
 
     const handlePriceUnder100 = () => {
         setFilterOptions(prevFilterOptions => ({...prevFilterOptions, priceUnder100: !filterOptions.priceUnder100}))
     }
-
 
     return (
         <div className={'filterAndItemDisplay'}>
@@ -75,13 +95,12 @@ const ItemDisplay = () => {
                 </div>
             </div>
             <div className={'itemDisplay'}>
-                {displayItemList.map((item) => (
+                {filteredItems((item) => (
                     <ItemStructure
                         key={item.key}
                         name={item.name}
                         image={item.image}
                         price={item.price}
-                        display={item.display}
                     />
                 ))}
             </div>

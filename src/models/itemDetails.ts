@@ -3,5 +3,4 @@ export interface ItemDetailsModel {
     name: string;
     image: string;
     price: number;
-    display: boolean;
 }
