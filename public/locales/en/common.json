@@ -6,5 +6,9 @@
     "favourites": "Favourites",
     "cart": "Cart"
   },
-  "homeTitle": "Our products"
+  "homeTitle": "Our products",
+  "filter": "Filter",
+  "filterOptions": {
+    "priceUnder100": "Less than 100€"
+  }
 }

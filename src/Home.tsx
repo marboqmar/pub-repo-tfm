@@ -7,7 +7,7 @@ const Home = () => {
     return (
         <div>
             <Hero />
-            <h2>{t('common:homeHeader')}</h2>
+            <h2>{t('common:homeTitle')}</h2>
             <div className={'itemDisplayAndFilter'}>
                 <ItemDisplay />
             </div>

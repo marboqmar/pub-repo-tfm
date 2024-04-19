@@ -6,5 +6,9 @@
     "favourites": "Favoritos",
     "cart": "Cesta"
   },
-  "homeTitle": "Nuestros productos"
+  "homeTitle": "Nuestros productos",
+  "filter": "Filtro",
+  "filterOptions": {
+    "priceUnder100": "Inferior a 100€"
+  }
 }

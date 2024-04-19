@@ -5,6 +5,8 @@ import ITEM_LIST from "./ITEM_LIST.tsx";
 import {useState} from "react";
 import {FilterModel} from '../models/FilterModel.ts';
 import {useMemo} from 'react';
+import { useTranslation } from 'react-i18next';
+
 
 const ItemStructure = (item: ItemDetailsModel) => {
     return (
@@ -19,6 +21,8 @@ const ItemStructure = (item: ItemDetailsModel) => {
 };
 
 const ItemDisplay = () => {
+    const { t } = useTranslation('common')
+
     const [filterOptions, setFilterOptions] = useState<FilterModel>({
         priceUnder100: false,
         price100to200: false,
@@ -47,47 +51,47 @@ const ItemDisplay = () => {
         max: number
     }
 
-    const filteredItems = useMemo(() => {
-        // If no filters are applied, show all items
-        const isAnyFilterApplied: boolean = Object.values(filterOptions).some((value) => {
-            return value
-        })
-
-        if (!isAnyFilterApplied) {
-            return displayItemList;
-        }
-
-        // If filters are applied, filter items
-        const matchesPriceFilter = (item: ItemDetailsModel, min: number, max: number) =>  {
-            return min < item.price && item.price < max;
-        }
-
-        return displayItemList.filter(item => {
-            // When adding search filter use:
-            // if (search && !item.name.includes(search)){
-            //  return false;
-            // }
-
-            return Object.keys(PRICES_FILTER_MAP).some((priceFilterKey) => {
-                const test: object = {}
-                PRICES_FILTER_MAP[priceFilterKey as keyof typeof PRICES_FILTER_MAP] = test[priceFilterKey]
-
-                if (filterOptions[priceFilterKey]) {
-                    const filterValues: priceFilterKeyModel = PRICES_FILTER_MAP[priceFilterKey];
-                    return matchesPriceFilter(item, filterValues.min, filterValues.max)
-                }
-                return false
-            })
-
-            // return Object.keys(PRICES_FILTER_MAP).some((priceFilterKey: number) => {
-            //     if (filterOptions[priceFilterKey]) {
-            //         const filterValues: priceFilterKeyModel = PRICES_FILTER_MAP[priceFilterKey];
-            //         return matchesPriceFilter(item, filterValues.min, filterValues.max)
-            //     }
-            //     return false
-            // })
-        })
-    }, [displayItemList, filterOptions, PRICES_FILTER_MAP]);
+    // const filteredItems = useMemo(() => {
+    //     // If no filters are applied, show all items
+    //     const isAnyFilterApplied: boolean = Object.values(filterOptions).some((value) => {
+    //         return value
+    //     })
+    //
+    //     if (!isAnyFilterApplied) {
+    //         return displayItemList;
+    //     }
+    //
+    //     // If filters are applied, filter items
+    //     const matchesPriceFilter = (item: ItemDetailsModel, min: number, max: number) =>  {
+    //         return min < item.price && item.price < max;
+    //     }
+    //
+    //     return displayItemList.filter(item => {
+    //         // When adding search filter use:
+    //         // if (search && !item.name.includes(search)){
+    //         //  return false;
+    //         // }
+    //
+    //         return Object.keys(PRICES_FILTER_MAP).some((priceFilterKey) => {
+    //             const test: object = {}
+    //             PRICES_FILTER_MAP[priceFilterKey as keyof typeof PRICES_FILTER_MAP] = test[priceFilterKey]
+    //
+    //             if (filterOptions[priceFilterKey]) {
+    //                 const filterValues: priceFilterKeyModel = PRICES_FILTER_MAP[priceFilterKey];
+    //                 return matchesPriceFilter(item, filterValues.min, filterValues.max)
+    //             }
+    //             return false
+    //         })
+    //
+    //         // return Object.keys(PRICES_FILTER_MAP).some((priceFilterKey: number) => {
+    //         //     if (filterOptions[priceFilterKey]) {
+    //         //         const filterValues: priceFilterKeyModel = PRICES_FILTER_MAP[priceFilterKey];
+    //         //         return matchesPriceFilter(item, filterValues.min, filterValues.max)
+    //         //     }
+    //         //     return false
+    //         // })
+    //     })
+    // }, [displayItemList, filterOptions, PRICES_FILTER_MAP]);
 
     const handlePriceUnder100 = () => {
         setFilterOptions(prevFilterOptions => ({...prevFilterOptions, priceUnder100: !filterOptions.priceUnder100}))
@@ -96,17 +100,17 @@ const ItemDisplay = () => {
     return (
         <div className={'filterAndItemDisplay'}>
             <div className={'filter'}>
-                <h3>Filtro</h3>
+                <h3>{t('common:filter')}</h3>
                 <div>
                     <input
                         type="checkbox"
                         onChange={handlePriceUnder100}
                     />
-                    <span>Inferior a 100€</span>
+                    <span>{t('common:filterOptions.priceUnder100')}</span>
                 </div>
             </div>
             <div className={'itemDisplay'}>
-                {filteredItems((item) => (
+                {ITEM_LIST.map((item) => (
                     <ItemStructure
                         key={item.key}
                         name={item.name}
