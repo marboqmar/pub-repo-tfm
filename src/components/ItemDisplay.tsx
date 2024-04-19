@@ -68,13 +68,24 @@ const ItemDisplay = () => {
             //  return false;
             // }
 
-            return Object.keys(PRICES_FILTER_MAP).some((priceFilterKey: number) => {
+            return Object.keys(PRICES_FILTER_MAP).some((priceFilterKey) => {
+                const test: object = {}
+                PRICES_FILTER_MAP[priceFilterKey as keyof typeof PRICES_FILTER_MAP] = test[priceFilterKey]
+
                 if (filterOptions[priceFilterKey]) {
                     const filterValues: priceFilterKeyModel = PRICES_FILTER_MAP[priceFilterKey];
                     return matchesPriceFilter(item, filterValues.min, filterValues.max)
                 }
                 return false
             })
+
+            // return Object.keys(PRICES_FILTER_MAP).some((priceFilterKey: number) => {
+            //     if (filterOptions[priceFilterKey]) {
+            //         const filterValues: priceFilterKeyModel = PRICES_FILTER_MAP[priceFilterKey];
+            //         return matchesPriceFilter(item, filterValues.min, filterValues.max)
+            //     }
+            //     return false
+            // })
         })
     }, [displayItemList, filterOptions, PRICES_FILTER_MAP]);
 
