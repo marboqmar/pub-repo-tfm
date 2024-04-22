@@ -1,9 +1,8 @@
 {
   "header": {
-    "categories": "Categorías",
     "searchBarPlaceholder": "Buscar",
     "myAccount": "Mi cuenta",
-    "favourites": "Favoritos",
+    "language": "Idioma",
     "cart": "Cesta"
   },
   "homeTitle": "Nuestros productos",
