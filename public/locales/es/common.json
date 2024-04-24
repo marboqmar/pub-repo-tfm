@@ -5,8 +5,6 @@
     "language": "Idioma",
     "cart": "Cesta"
   },
-  "homeTitle": "Nuestros productos",
-  "filter": "Filtro",
   "filterOptions": {
     "priceUnder100": "Inferior a 100€"
   }

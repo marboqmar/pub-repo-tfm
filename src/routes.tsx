@@ -36,11 +36,11 @@ export const router = createBrowserRouter([
             {
                 path: 'mi-cuenta',
                 element: <MyAccount />
+            },
+            {
+                path: '/patterns',
+                element: <Patterns />
             }
         ]
     },
-    {
-        path: '/patterns',
-        element: <Patterns />
-    }
 ])

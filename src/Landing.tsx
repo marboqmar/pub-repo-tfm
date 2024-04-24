@@ -3,10 +3,12 @@ import { Link } from 'react-router-dom';
 
 const Landing = () => {
     return (
-        <div>
+        <>
             <h1>Landing</h1>
             <Link to={'/home'}>Visit shop</Link>
-        </div>
+            <h2>Patterns</h2>
+            <Link to={'/patterns'}>Patterns</Link>
+        </>
     )
 }
 
