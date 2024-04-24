@@ -10,11 +10,13 @@ import { useTranslation } from 'react-i18next';
 
 const ItemStructure = (item: ItemDetailsModel) => {
     return (
-        <Link to={'/detalles-producto'}>
+        <Link className={'item-link'} to={'/detalles-producto'}>
             <div className={'item'}>
-                <span className={'itemTitle'}>{item.name}</span>
                 <img src={item.image}/>
-                <span>{item.price}</span>
+                <div className={'item item-text'}>
+                    <span className={'itemTitle'}>{item.name}</span>
+                    <span>{item.price}€</span>
+                </div>
             </div>
         </Link>
     );
@@ -100,13 +102,17 @@ const ItemDisplay = () => {
     return (
         <div className={'filterAndItemDisplay'}>
             <div className={'filter'}>
-                <h3>{t('common:filter')}</h3>
                 <div>
-                    <input
-                        type="checkbox"
-                        onChange={handlePriceUnder100}
-                    />
-                    <span>{t('common:filterOptions.priceUnder100')}</span>
+                    <span>The Witcher</span>
+                </div>
+                <div>
+                    <span>Elden Ring</span>
+                </div>
+                <div>
+                    <span>Dungeons and Dragons</span>
+                </div>
+                <div>
+                    <span>The Lord of the Rings</span>
                 </div>
             </div>
             <div className={'itemDisplay'}>

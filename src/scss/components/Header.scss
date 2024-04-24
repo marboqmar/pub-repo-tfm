@@ -1,15 +1,57 @@
-.logo {
+@import '../base';
+@import '../utilities/positioning';
 
+.header {
+  background-color: $color-white;
+  color: $color-gray-500-darker;
+  display: flex;
+  height: 66px;
+  padding: 0 60px;
+
+  & a {
+    text-decoration: none;
+    color: $color-gray-500-darker;
+  }
 }
 
-.categoriesMenu {
-
+.logo {
+  height: 54px;
+  width: 54px;
+  margin-top: 6px
 }
 
 .searchBar{
+  height: 40px;
+  width: 660px;
+  text-indent: 24px;
+  border-radius: 30px;
+  border: 1px #D1D4D6;
 
+  &-icon {
+    background: url('/public/icons/vector-magnify.png') no-repeat left;
+    background-size: 20px;
+  }
 }
 
-.myAccountMenu{
+.language {
+  display: flex;
+  border: none;
+  background: none;
+  height: 24px;
+  align-items: center;
+  gap: 12px;
+}
 
+.myAccount{
+  display: flex;
+  height: 24px;
+  align-items: center;
+  gap: 12px;
+}
+
+.cart {
+  display: flex;
+  height: 24px;
+  align-items: center;
+  gap: 12px;
 }

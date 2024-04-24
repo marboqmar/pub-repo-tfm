@@ -7,11 +7,11 @@ type Props = {
 
 export const MainWrapper = ({children}: Props): React.ReactNode => {
     return (
-        <div>
+        <>
             <Header />
             {children}
             <Footer />
-        </div>
+        </>
     );
 };
 

@@ -1,0 +1,25 @@
+@import '../base';
+
+.button {
+  background-color: $color-primary;
+  color: $color-white-light;
+  padding: 6px 48px;
+  border: 1px $color-primary-light;
+  border-radius: 6px;
+  cursor: pointer;
+  line-height: 0.8em;
+
+  &:hover {
+    background-color: $color-primary-light;
+  }
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    background-color: $color-gray-300-dark;
+
+    &:hover {
+      background-color: $color-gray-300-dark;
+    }
+  }
+}
