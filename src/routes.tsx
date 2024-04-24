@@ -1,13 +1,12 @@
 import { createBrowserRouter } from 'react-router-dom';
 import App from './App.tsx';
 import Landing from "./Landing.tsx";
-import ItemsByCategory from "./ItemsByCategory.tsx";
-import Favourites from './Favourites.tsx'
 import Cart from './Cart.tsx';
 import ProductDetails from "./ProductDetails.tsx";
 import Patterns from './scss/views/Patterns.tsx';
 import Payment from "./Payment.tsx";
 import MyAccount from "./MyAccount.tsx";
+import Home from "./Home.tsx";
 
 export const router = createBrowserRouter([
     {
@@ -19,12 +18,8 @@ export const router = createBrowserRouter([
                 element: <Landing />
             },
             {
-                path: '/categoria',
-                element: <ItemsByCategory />
-            },
-            {
-                path: '/favoritos',
-                element: <Favourites />
+                path: '/home',
+                element: <Home/>
             },
             {
                 path: '/cesta',
@@ -41,11 +36,11 @@ export const router = createBrowserRouter([
             {
                 path: 'mi-cuenta',
                 element: <MyAccount />
+            },
+            {
+                path: '/patterns',
+                element: <Patterns />
             }
         ]
     },
-    {
-        path: '/patterns',
-        element: <Patterns />
-    }
 ])

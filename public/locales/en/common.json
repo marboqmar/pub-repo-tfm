@@ -1,0 +1,11 @@
+{
+  "header": {
+    "searchBarPlaceholder": "Search",
+    "myAccount": "My account",
+    "language": "Language",
+    "cart": "Cart"
+  },
+  "filterOptions": {
+    "priceUnder100": "Less than 100€"
+  }
+}

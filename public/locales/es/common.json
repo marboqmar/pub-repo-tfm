@@ -1,0 +1,11 @@
+{
+  "header": {
+    "searchBarPlaceholder": "Buscar",
+    "myAccount": "Mi cuenta",
+    "language": "Idioma",
+    "cart": "Cesta"
+  },
+  "filterOptions": {
+    "priceUnder100": "Inferior a 100€"
+  }
+}

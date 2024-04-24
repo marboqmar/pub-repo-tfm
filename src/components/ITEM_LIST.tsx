@@ -4,37 +4,32 @@ const ITEM_LIST: ItemDetailsModel[] = [
     {
         key: 1,
         name: `Knight's greatsword`,
-        image: '/public/swords/knights-greatsword.png',
+        image: '/swords/Frame 48.png',
         price: 205,
-        display: true,
     },
     {
         key: 2,
         name: `Godslayer's greatsword`,
-        image: '/public/swords/godslayers-greatsword.png',
+        image: '/swords/Frame 37.png',
         price: 305,
-        display: true,
     },
     {
         key: 3,
         name: `Flamberge`,
-        image: '/public/swords/flamberge.png',
+        image: '/swords/Frame 34.png',
         price: 405,
-        display: true,
     },
     {
         key: 4,
         name: `Crystal knife`,
-        image: '/public/swords/crystal-knife.png',
+        image: '/swords/Frame 41.png',
         price: 95,
-        display: true,
     },
     {
         key: 5,
         name: `Magma blade`,
-        image: '/public/swords/magma-blade.png',
+        image: '/swords/Frame 39.png',
         price: 105,
-        display: true,
     },
 ];
 

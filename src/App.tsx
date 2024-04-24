@@ -6,12 +6,13 @@ import {Outlet} from "react-router-dom";
 
 function App() {
     return (
-        <div>
+        <>
             <Header />
-            <Outlet />
+            <div className={'main'}>
+                <Outlet />
+            </div>
             <Footer />
-            {/*<Link to={'/Patterns'}>Patterns</Link>*/}
-        </div>
+        </>
     )
 }
 
