@@ -1,0 +1,93 @@
+.itemDisplayAndFilter {
+  display: flex;
+  flex-direction: row;
+}
+
+.product {
+  display: flex;
+  flex-direction: row;
+}
+
+.productImage {
+  height: 600px;
+  width: 600px;
+}
+
+.productInfo {
+  display: flex;
+  flex-direction: column;
+}
+.productInfo button {
+  width: 160px;
+}
+
+.similarProduct {
+  display: flex;
+  flex-direction: column;
+}
+.similarProductImg {
+  height: 140px;
+  width: 140px;
+}
+.similarProductDisplay {
+  display: flex;
+  flex-direction: row;
+}
+
+.cartItem {
+  display: flex;
+  flex-direction: row;
+  border: 1px solid black;
+}
+.cartItemImg {
+  height: 160px;
+  width: 160px;
+}
+
+.cartDisplay {
+  display: flex;
+  flex-direction: row;
+}
+
+.payment {
+  display: flex;
+  flex-direction: row;
+}
+.paymentItem {
+  display: flex;
+  flex-direction: row;
+  border: 1px solid black;
+}
+.paymentItemText {
+  display: flex;
+  flex-direction: column;
+}
+
+.favouritesTopBar {
+  display: flex;
+  flex-direction: row;
+}
+
+.favouritesSearchBar {
+  height: 12px;
+}
+
+.favouritesSearchButton {
+  height: 24px;
+}
+
+.myAccount {
+  display: flex;
+  flex-direction: row;
+}
+.myAccountMyImg {
+  display: flex;
+  flex-direction: column;
+  height: 200px;
+}
+.myAccountMyImgUserImg {
+  height: 120px;
+  width: 120px;
+}
+
+/*# sourceMappingURL=style.css.map */
