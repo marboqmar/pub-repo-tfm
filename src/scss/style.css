@@ -1,0 +1,322 @@
+html {
+  font-family: "Crimson Text", serif;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.5em;
+  font-size: 24px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.sticky-footer {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+}
+
+.main {
+  flex: 1;
+}
+
+.icon {
+  height: 24px;
+  width: 24px;
+}
+
+.itemDisplayAndFilter {
+  display: flex;
+  flex-direction: row;
+}
+
+.product {
+  display: flex;
+  flex-direction: row;
+}
+
+.productImage {
+  height: 600px;
+  width: 600px;
+}
+
+.productInfo {
+  display: flex;
+  flex-direction: column;
+}
+.productInfo button {
+  width: 160px;
+}
+
+.similarProduct {
+  display: flex;
+  flex-direction: column;
+}
+.similarProductImg {
+  height: 140px;
+  width: 140px;
+}
+.similarProductDisplay {
+  display: flex;
+  flex-direction: row;
+}
+
+.cartItem {
+  display: flex;
+  flex-direction: row;
+  border: 1px solid black;
+}
+.cartItemImg {
+  height: 160px;
+  width: 160px;
+}
+
+.cartDisplay {
+  display: flex;
+  flex-direction: row;
+}
+
+.payment {
+  display: flex;
+  flex-direction: row;
+}
+.paymentItem {
+  display: flex;
+  flex-direction: row;
+  border: 1px solid black;
+}
+.paymentItemText {
+  display: flex;
+  flex-direction: column;
+}
+
+.favouritesTopBar {
+  display: flex;
+  flex-direction: row;
+}
+
+.favouritesSearchBar {
+  height: 12px;
+}
+
+.favouritesSearchButton {
+  height: 24px;
+}
+
+.myAccount {
+  display: flex;
+  flex-direction: row;
+}
+.myAccountMyImg {
+  display: flex;
+  flex-direction: column;
+  height: 200px;
+}
+.myAccountMyImgUserImg {
+  height: 120px;
+  width: 120px;
+}
+
+.font {
+  font-family: "Crimson Text", serif;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.5em;
+  font-size: 24px;
+}
+.font-alt {
+  font-family: "Pontano Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.h1 {
+  margin-bottom: 1.5em;
+}
+
+.h2 {
+  margin-bottom: 1.5em;
+}
+
+.h3 {
+  margin-bottom: 1.5em;
+}
+
+.h4 {
+  margin-bottom: 1.5em;
+}
+
+.h5 {
+  margin-bottom: 1.5em;
+}
+
+.h6 {
+  margin-bottom: 1.5em;
+}
+
+.text-size-14 {
+  font-size: 14px;
+}
+
+small, .small {
+  font-size: 18px;
+}
+
+html {
+  font-family: "Crimson Text", serif;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.5em;
+  font-size: 24px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.sticky-footer {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+}
+
+.main {
+  flex: 1;
+}
+
+.icon {
+  height: 24px;
+  width: 24px;
+}
+
+.button {
+  background-color: #0066B3;
+  color: #EFF0F1;
+  padding: 6px 48px;
+  border: 1px #0083E5;
+  border-radius: 6px;
+  cursor: pointer;
+  line-height: 0.8em;
+}
+.button:hover {
+  background-color: #0083E5;
+}
+.button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  background-color: #8A8F93;
+}
+.button:disabled:hover {
+  background-color: #8A8F93;
+}
+
+html {
+  font-family: "Crimson Text", serif;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.5em;
+  font-size: 24px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.sticky-footer {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+}
+
+.main {
+  flex: 1;
+}
+
+.icon {
+  height: 24px;
+  width: 24px;
+}
+
+.color-white {
+  color: #E4E6E7;
+}
+
+.color-black {
+  color: #282C2F;
+}
+
+.bgcolor-primary {
+  background-color: #0066B3;
+}
+
+.bgcolor-secondary {
+  background-color: #883244;
+}
+
+.bgcolor-gray-100 {
+  background-color: #BDC1C3;
+}
+
+.bgcolor-gray-300 {
+  background-color: #9BA0A3;
+}
+
+.bgcolor-gray-500 {
+  background-color: #595D60;
+}
+
+.display-flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.display-flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.gap-12 {
+  gap: 12px;
+}
+
+.gap-24 {
+  gap: 24px;
+}
+
+.gap-36 {
+  gap: 36px;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.center-ver {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.center-hor {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.border-radius-6 {
+  border-radius: 6px;
+}
+
+.border-radius-12 {
+  border-radius: 12px;
+}
+
+/*# sourceMappingURL=style.css.map */
