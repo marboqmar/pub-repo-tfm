@@ -4,12 +4,10 @@
 .header {
   background-color: $color-white;
   color: $color-gray-500-darker;
-  display: flex;
   height: 66px;
   padding: 0 60px;
 
   & a {
-    text-decoration: none;
     color: $color-gray-500-darker;
   }
 }
@@ -33,25 +31,6 @@
   }
 }
 
-.language {
-  display: flex;
-  border: none;
-  background: none;
-  height: 24px;
-  align-items: center;
-  gap: 12px;
-}
-
 .myAccount{
-  display: flex;
-  height: 24px;
-  align-items: center;
-  gap: 12px;
-}
-
-.cart {
-  display: flex;
-  height: 24px;
-  align-items: center;
-  gap: 12px;
+  min-width: 120px;
 }

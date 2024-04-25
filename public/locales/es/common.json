@@ -5,6 +5,13 @@
     "language": "Idioma",
     "cart": "Cesta"
   },
+  "homeClaim": "Recrea los momentos más épicos con nuestras espadas forjadas a mano, transformando tradición en excelencia.",
+  "visitShop": "Visitar tienda",
+  "suggestions": "Nuestras recomendaciones",
+  "productDetails": "Ver detalles del producto",
+  "aboutUs": "Sobre nosotros",
+  "contact": "Contáctanos",
+  "contactText": "Cuéntanos cómo imaginas tu espada y nosotros la crearemos",
   "filterOptions": {
     "priceUnder100": "Inferior a 100€"
   }

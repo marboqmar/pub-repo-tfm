@@ -38,7 +38,7 @@ export const router = createBrowserRouter([
                 element: <MyAccount />
             },
             {
-                path: '/patterns',
+                path: '/libreria',
                 element: <Patterns />
             }
         ]

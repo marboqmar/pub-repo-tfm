@@ -1,16 +1,36 @@
 @import '../base';
 
-.button {
-  background-color: $color-primary;
-  color: $color-white-light;
+.btn {
   padding: 6px 48px;
-  border: 1px $color-primary-light;
-  border-radius: 6px;
   cursor: pointer;
   line-height: 0.8em;
+  border: 1px $color-primary-light;
+  border-radius: 6px;
+
+  &--color-primary {
+    background-color: $color-primary;
+    color: $color-white-light;
+  }
+
+  &--color-none {
+    border: none;
+    background: none;
+  }
+
+  &--withoutPadding {
+    padding: 0;
+  }
+
+  &--notOutlined {
+    border: none;
+  }
 
   &:hover {
     background-color: $color-primary-light;
+  }
+
+  &--withoutHover:hover {
+    background-color: transparent;
   }
 
   &:disabled {

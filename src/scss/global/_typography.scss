@@ -15,10 +15,12 @@
 
 .h1 {
   margin-bottom: 1.5em;
+  font-size: 48px;
 }
 
 .h2 {
   margin-bottom: 1.5em;
+  font-size: 32px;
 }
 
 .h3 {
@@ -43,5 +45,9 @@
 
 small, .small {
   font-size: 18px;
+}
+
+.crossed-text {
+  text-decoration: line-through;
 }
 

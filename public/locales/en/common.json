@@ -5,6 +5,13 @@
     "language": "Language",
     "cart": "Cart"
   },
+  "homeClaim": "Recreate the most epic moments with our handcrafted swords, transforming tradition into excellence.",
+  "visitShop": "Visit shop",
+  "suggestions": "Our suggestions",
+  "productDetails": "See product details",
+  "aboutUs": "About us",
+  "contact": "Contact us",
+  "contactText": "Tell us how you imagine you sword and we will craft it for you",
   "filterOptions": {
     "priceUnder100": "Less than 100€"
   }
