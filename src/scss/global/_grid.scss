@@ -1,0 +1,24 @@
+$columns: 16;
+$gaps: $columns - 1;
+$width: 1800;
+$gapSize: 24;
+$allGapsSize: $gaps * $gapSize;
+$columnSize: calc(($width - $allGapsSize) / $columns);
+
+.grid {
+  display: flex;
+  width: 100%;
+  max-width: #{$width}px;
+  gap: #{$gapSize}px;
+}
+
+@for $i from 1 through $columns {
+  $gapsNumber: $i - 1;
+  $totalWidth: ($columnSize * $i) + ($gapsNumber * $gapSize);
+
+  .grid__item-#{$i}-columns {
+    height: 100px;
+    flex: 0 0 #{$totalWidth}px;
+    flex-wrap: wrap;
+  }
+}
