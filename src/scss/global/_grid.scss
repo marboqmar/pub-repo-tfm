@@ -7,6 +7,7 @@ $columnSize: calc(($width - $allGapsSize) / $columns);
 
 .grid {
   display: flex;
+  flex-direction: column;
   width: 100%;
   max-width: #{$width}px;
   gap: #{$gapSize}px;
@@ -17,8 +18,7 @@ $columnSize: calc(($width - $allGapsSize) / $columns);
   $totalWidth: ($columnSize * $i) + ($gapsNumber * $gapSize);
 
   .grid__item-#{$i}-columns {
-    height: 100px;
-    flex: 0 0 #{$totalWidth}px;
+    //flex: 0 0 #{$totalWidth}px;
     flex-wrap: wrap;
   }
 }

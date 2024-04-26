@@ -34,104 +34,73 @@ a {
 
 .grid {
   display: flex;
+  flex-direction: column;
   width: 100%;
   max-width: 1800px;
   gap: 24px;
 }
 
 .grid__item-1-columns {
-  height: 100px;
-  flex: 0 0 90px;
   flex-wrap: wrap;
 }
 
 .grid__item-2-columns {
-  height: 100px;
-  flex: 0 0 204px;
   flex-wrap: wrap;
 }
 
 .grid__item-3-columns {
-  height: 100px;
-  flex: 0 0 318px;
   flex-wrap: wrap;
 }
 
 .grid__item-4-columns {
-  height: 100px;
-  flex: 0 0 432px;
   flex-wrap: wrap;
 }
 
 .grid__item-5-columns {
-  height: 100px;
-  flex: 0 0 546px;
   flex-wrap: wrap;
 }
 
 .grid__item-6-columns {
-  height: 100px;
-  flex: 0 0 660px;
   flex-wrap: wrap;
 }
 
 .grid__item-7-columns {
-  height: 100px;
-  flex: 0 0 774px;
   flex-wrap: wrap;
 }
 
 .grid__item-8-columns {
-  height: 100px;
-  flex: 0 0 888px;
   flex-wrap: wrap;
 }
 
 .grid__item-9-columns {
-  height: 100px;
-  flex: 0 0 1002px;
   flex-wrap: wrap;
 }
 
 .grid__item-10-columns {
-  height: 100px;
-  flex: 0 0 1116px;
   flex-wrap: wrap;
 }
 
 .grid__item-11-columns {
-  height: 100px;
-  flex: 0 0 1230px;
   flex-wrap: wrap;
 }
 
 .grid__item-12-columns {
-  height: 100px;
-  flex: 0 0 1344px;
   flex-wrap: wrap;
 }
 
 .grid__item-13-columns {
-  height: 100px;
-  flex: 0 0 1458px;
   flex-wrap: wrap;
 }
 
 .grid__item-14-columns {
-  height: 100px;
-  flex: 0 0 1572px;
   flex-wrap: wrap;
 }
 
 .grid__item-15-columns {
-  height: 100px;
-  flex: 0 0 1686px;
   flex-wrap: wrap;
 }
 
 .grid__item-16-columns {
-  height: 100px;
-  flex: 0 0 1800px;
   flex-wrap: wrap;
 }
 
@@ -147,27 +116,16 @@ a {
   height: 1px;
 }
 
-.landing-sword-text {
-  max-width: 640px;
-}
-
 #landing-sword-title {
   margin-bottom: 12px;
 }
 
-.slider {
-  width: calc(100% - 120px);
-  max-width: 1572px;
+.slider-img {
+  max-height: 760px;
 }
 
-.aboutUs {
-  width: calc(100% - 120px);
-  max-width: 1572px;
-}
-
-.contactUs {
-  width: calc(100% - 120px);
-  max-width: 1572px;
+.aboutUs-img {
+  max-height: 425px;
 }
 
 .product {
@@ -462,12 +420,20 @@ a {
   margin: 0 60px;
 }
 
+.margin-bottom-24 {
+  margin-bottom: 24px;
+}
+
 .margin-bottom-60 {
   margin-bottom: 60px;
 }
 
 .margin-top-0 {
   margin-top: 0;
+}
+
+.margin-top-60 {
+  margin-top: 60px;
 }
 
 .margin-top-auto {

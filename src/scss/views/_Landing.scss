@@ -7,7 +7,7 @@
 }
 
 .landing-sword-text {
-  max-width: 640px;
+  //max-width: 640px;
 }
 
 #landing-sword-title {
@@ -15,16 +15,13 @@
 }
 
 .slider {
-  width: calc(100% - 120px);
-  max-width: 1572px;
+  &-img {
+    max-height: 760px;
+  }
 }
 
 .aboutUs {
-  width: calc(100% - 120px);
-  max-width: 1572px;
-}
-
-.contactUs {
-  width: calc(100% - 120px);
-  max-width: 1572px;
+  &-img {
+    max-height: 425px;
+  }
 }

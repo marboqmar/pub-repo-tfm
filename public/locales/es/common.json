@@ -12,6 +12,11 @@
   "aboutUs": "Sobre nosotros",
   "contact": "Contáctanos",
   "contactText": "Cuéntanos cómo imaginas tu espada y nosotros la crearemos",
+  "landingForm": {
+    "name": "Nombre",
+    "message": "Mensaje",
+    "sendMessage": "Enviar mensaje"
+  },
   "filterOptions": {
     "priceUnder100": "Inferior a 100€"
   }
