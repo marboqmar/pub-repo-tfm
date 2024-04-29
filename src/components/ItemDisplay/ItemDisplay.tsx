@@ -1,11 +1,11 @@
 import './ItemDisplay.scss';
 import { Link } from 'react-router-dom';
 import {ItemDetailsModel} from "../../models/itemDetails.ts";
-import ITEM_LIST from "../ITEM_LIST.tsx";
-import {useState} from "react";
-import {FilterModel} from '../../models/FilterModel.ts';
-import {useMemo} from 'react';
-import { useTranslation } from 'react-i18next';
+import ITEM_LIST from "../../lists/ITEM_LIST.tsx";
+// import {useState} from "react";
+// import {FilterModel} from '../../models/FilterModel.ts';
+// import {useMemo} from 'react';
+// import { useTranslation } from 'react-i18next';
 
 
 const ItemStructure = (item: ItemDetailsModel) => {
@@ -23,35 +23,35 @@ const ItemStructure = (item: ItemDetailsModel) => {
 };
 
 const ItemDisplay = () => {
-    const { t } = useTranslation('common')
-
-    const [filterOptions, setFilterOptions] = useState<FilterModel>({
-        priceUnder100: false,
-        price100to200: false,
-        price200to300: false,
-        priceOver300: false,
-    })
-
-    const [displayItemList, setDisplayItemList] = useState<ItemDetailsModel[]>(ITEM_LIST)
-
-    const PRICES_FILTER_MAP = {
-        priceUnder100: {min: 0, max: 100},
-        price100to200: {min: 100, max: 200},
-        price200to300: {min: 200, max: 300},
-        priceOver300: {min: 300, max: 10000},
-    }
-
-    interface pricesFilterMapModel {
-        priceUnder100: {min: number, max: number},
-        price100to200: {min: number, max: number},
-        price200to300: {min: number, max: number},
-        priceOver300: {min: number, max: number},
-    }
-
-    interface priceFilterKeyModel {
-        min: number,
-        max: number
-    }
+    // const { t } = useTranslation('common')
+    //
+    // const [filterOptions, setFilterOptions] = useState<FilterModel>({
+    //     priceUnder100: false,
+    //     price100to200: false,
+    //     price200to300: false,
+    //     priceOver300: false,
+    // })
+    //
+    // const [displayItemList, setDisplayItemList] = useState<ItemDetailsModel[]>(ITEM_LIST)
+    //
+    // const PRICES_FILTER_MAP = {
+    //     priceUnder100: {min: 0, max: 100},
+    //     price100to200: {min: 100, max: 200},
+    //     price200to300: {min: 200, max: 300},
+    //     priceOver300: {min: 300, max: 10000},
+    // }
+    //
+    // interface pricesFilterMapModel {
+    //     priceUnder100: {min: number, max: number},
+    //     price100to200: {min: number, max: number},
+    //     price200to300: {min: number, max: number},
+    //     priceOver300: {min: number, max: number},
+    // }
+    //
+    // interface priceFilterKeyModel {
+    //     min: number,
+    //     max: number
+    // }
 
     // const filteredItems = useMemo(() => {
     //     // If no filters are applied, show all items
@@ -95,9 +95,9 @@ const ItemDisplay = () => {
     //     })
     // }, [displayItemList, filterOptions, PRICES_FILTER_MAP]);
 
-    const handlePriceUnder100 = () => {
-        setFilterOptions(prevFilterOptions => ({...prevFilterOptions, priceUnder100: !filterOptions.priceUnder100}))
-    }
+    // const handlePriceUnder100 = () => {
+    //     setFilterOptions(prevFilterOptions => ({...prevFilterOptions, priceUnder100: !filterOptions.priceUnder100}))
+    // }
 
     return (
         <div className={'filterAndItemDisplay'}>
