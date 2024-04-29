@@ -1,7 +1,7 @@
-import '../scss/components/Header.scss';
+import './Header.scss';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import {Button} from "./Button.tsx";
+import {Button} from "../Button/Button.tsx";
 
 const Header = () => {
     const { t } = useTranslation('common')

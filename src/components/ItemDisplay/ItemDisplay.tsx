@@ -1,9 +1,9 @@
-import '../scss/components/ItemDisplay.scss';
+import './ItemDisplay.scss';
 import { Link } from 'react-router-dom';
-import {ItemDetailsModel} from "../models/itemDetails.ts";
-import ITEM_LIST from "./ITEM_LIST.tsx";
+import {ItemDetailsModel} from "../../models/itemDetails.ts";
+import ITEM_LIST from "../ITEM_LIST.tsx";
 import {useState} from "react";
-import {FilterModel} from '../models/FilterModel.ts';
+import {FilterModel} from '../../models/FilterModel.ts';
 import {useMemo} from 'react';
 import { useTranslation } from 'react-i18next';
 

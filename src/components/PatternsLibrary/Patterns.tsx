@@ -1,4 +1,4 @@
-import '../components/Patterns.scss';
+import './Patterns.scss';
 import {useTranslation} from "react-i18next";
 
 const Patterns = () => {

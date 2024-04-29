@@ -1,8 +1,8 @@
 import './scss/style.scss'
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import {Button} from "./components/Button.tsx";
-import {Form} from "./components/Form.tsx";
+import {Button} from "./components/Button/Button.tsx";
+import {Form} from "./components/Form/Form.tsx";
 
 const Landing = () => {
     const { t } = useTranslation('common')

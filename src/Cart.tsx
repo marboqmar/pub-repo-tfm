@@ -1,4 +1,4 @@
-import TotalToPay from "./components/TotalToPay.tsx";
+import TotalToPay from "./components/TotalToPay/TotalToPay.tsx";
 
 const CartItem = () => {
     return (

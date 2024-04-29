@@ -1,4 +1,4 @@
-import '../scss/components/TotalToPay.scss';
+import './TotalToPay.scss';
 import { Link } from "react-router-dom";
 
 const IsCartOrPayment = () => {

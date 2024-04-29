@@ -3,7 +3,7 @@ import App from './App.tsx';
 import Landing from "./Landing.tsx";
 import Cart from './Cart.tsx';
 import ProductDetails from "./ProductDetails.tsx";
-import Patterns from './scss/views/Patterns.tsx';
+import Patterns from './components/PatternsLibrary/Patterns.tsx';
 import Payment from "./Payment.tsx";
 import MyAccount from "./MyAccount.tsx";
 import Home from "./Home.tsx";
