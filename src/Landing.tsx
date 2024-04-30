@@ -10,6 +10,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { register } from 'swiper/element/bundle';
 import 'swiper/css';
 import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 import './components/Swipper/swipper.scss'
 import {Pagination} from 'swiper/modules';
 
