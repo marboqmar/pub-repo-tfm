@@ -20,9 +20,9 @@ const Slide = (slide: SlideContentModel) => {
     const { t } = useTranslation('common')
 
     return (
-        <div className={'display-flex-row gap-60'}>
-            <img className={'slider-img'} src={slide.image} />
-            <div className={'landing-sword-text display-flex-column'}>
+        <div className={'display-flex-row'}>
+            <img id={'slider-img'} src={slide.image} />
+            <div className={'landing-sword-text display-flex-column grid__item-6-columns margin-left-auto'}>
                 <h3 id={'landing-sword-title'} className={'h2 margin-top-0'}>{slide.swordTitle}</h3>
                 <div className={'underline bgcolor-gray-100'}></div>
                 <p>{slide.swordDescription}</p>
@@ -51,22 +51,21 @@ const Landing = () => {
                     <Link to={'/home'}><Button color={'primary'}>{t('common:visitShop')}</Button></Link>
                 </div>
                 {/*Slider*/}
-                <div className={'grid__item-14-columns'}>
+                <div className={'grid__item-14-columns center-hor'}>
                     <h2 className={'font-alt margin-bottom-60'}>{t('common:suggestions')}</h2>
                         <Swiper
                             slidesPerView={1}
                             loop={true}
                             speed={1000}
-                            autoplay={
-                            {
-                                delay: 4000,
-                                disableOnInteraction: false
-                            }}
+                            // autoplay={
+                            //     {
+                            //         delay: 4000,
+                            //         disableOnInteraction: false
+                            //     }}
                             spaceBetween={60}
                             modules={[Pagination]}
                             pagination={
                             {
-                                // el: '.swiper-pagination',
                                 clickable: true
                             }}
                             className="mySwiper"
@@ -83,10 +82,10 @@ const Landing = () => {
                         </Swiper>
                 </div>
                 {/*About us*/}
-                <div className={'grid__item-14-columns'}>
+                <div className={'grid__item-14-columns center-hor'}>
                     <h2 className={'font-alt'}>{t('common:aboutUs')}</h2>
-                    <div className={'display-flex-row gap-60'}>
-                        <div>
+                    <div className={'display-flex-row gap-60 center-hor'}>
+                        <div className={'aboutUs-text'}>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras libero ipsum, ultricies
                                 sollicitudin quam ac, dapibus bibendum tellus. Nullam faucibus in nibh accumsan mattis.
                                 Quisque vel vulputate quam. Ut efficitur dignissim neque, in hendrerit magna tincidunt nec.
@@ -98,11 +97,11 @@ const Landing = () => {
                                 quis diam.
                             </p>
                         </div>
-                        <img className={'aboutUs-img'} src={'/anvil.png'} />
+                        <img className={'aboutUs-img grid__item-6-columns margin-left-auto'} src={'/anvil.png'} />
                     </div>
                 </div>
                 {/*Contact*/}
-                <div className={'grid__item-14-columns'}>
+                <div className={'grid__item-14-columns center-hor'}>
                     <h2 className={'font-alt'}>{t('common:contact')}</h2>
                     <p>{t('common:contactText')}</p>
                     <Form children={t('common:landingForm.name')} />

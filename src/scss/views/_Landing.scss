@@ -1,5 +1,5 @@
 .hero {
-  width: 100vw;
+  max-width: 100%;
 }
 
 .underline {
@@ -7,22 +7,32 @@
 }
 
 .landing-sword-text {
-  //max-width: 640px;
+  min-width: 350px;
 }
 
 #landing-sword-title {
   margin-bottom: 12px;
 }
 
-.slider {
-  &-img {
-    max-height: 760px;
-  }
+#slider-img {
+  max-width: 43%;
+  //max-width: 46.12%;
+  min-width: 450px;
+  min-height: 450px;
+  max-height: 760px;
+  border-radius: 12px;
+  overflow: hidden;
 }
 
 .aboutUs {
+  &-text{
+    min-width: 450px;
+    max-width: 43%;
+  }
+
   &-img {
-    max-height: 425px;
+    min-height: 300px;
+    max-height: 350px;
   }
 }
 
