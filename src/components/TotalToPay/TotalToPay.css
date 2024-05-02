@@ -1,0 +1,10 @@
+.total {
+  border: 1px solid black;
+  height: 200px;
+}
+.totalPrice {
+  display: flex;
+  flex-direction: row;
+}
+
+/*# sourceMappingURL=TotalToPay.css.map */
