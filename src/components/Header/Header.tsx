@@ -1,7 +1,28 @@
 import './Header.scss';
 import { Link } from 'react-router-dom';
+import { useState } from "react"
 import { useTranslation } from 'react-i18next';
 import {Button} from "../Button/Button.tsx";
+import i18n from "i18next";
+
+const ChangeLanguage = () => {
+    const [language, setLanguage] = useState<string>('es')
+    const { t } = useTranslation('common')
+
+    const handleLanguage = () => {
+        if (language === 'es') {
+            setLanguage('en')
+        } else {
+            setLanguage('es')
+        }
+
+        i18n.changeLanguage(language)
+    }
+
+    return (
+        <Button className={'language display-flex-row align-center gap-12 height-24'} withoutPadding withoutHover color={'none'} onClick={handleLanguage}><img className={'icon'} src={'/icons/vector-language.png'}/><small> {t('common:header.language')}</small></Button>
+    )
+}
 
 const Header = () => {
     const { t } = useTranslation('common')
@@ -11,7 +32,7 @@ const Header = () => {
             <input id={'searchBar'} className={'searchBar font center-ver center-hor small'} type={'text'} placeholder={t('common:header.searchBarPlaceholder')}/>
             <div className={'header-buttons display-flex-row center-ver gap-36'}>
                 {/*Once button component properly set up remove class color-black from this button*/}
-                <Button className={'language display-flex-row align-center gap-12 height-24'} withoutPadding withoutHover color={'none'}><img className={'icon'} src={'/icons/vector-language.png'}/><small> {t('common:header.language')}</small></Button>
+                <ChangeLanguage />
                 <Link className={'myAccount font display-flex-row align-center gap-12 height-24'} to={'mi-cuenta'}><img className={'icon'} src={'/icons/vector-account.png'}/><small> {t('common:header.myAccount')}</small></Link>
                 <Link className={'cart font display-flex-row align-center gap-12 height-24'} to={'/cesta'}><img className={'icon'} src={'/icons/vector-cart.png'}/><small> {t('common:header.cart')}</small></Link>
             </div>

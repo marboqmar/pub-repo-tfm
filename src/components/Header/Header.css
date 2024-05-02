@@ -156,6 +156,7 @@ a {
   height: 24px;
   align-items: center;
   gap: 12px;
+  min-width: 120px;
 }
 
 .cart {
