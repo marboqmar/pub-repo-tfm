@@ -1,17 +1,168 @@
-/* Error: Can't find stylesheet to import.
- *   ,
- * 1 | @import '../base';
- *   |         ^^^^^^^^^
- *   '
- *   Header.scss 1:9  root stylesheet */
-
-body::before {
-  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
-      "Droid Sans Mono", monospace, monospace;
-  white-space: pre;
-  display: block;
-  padding: 1em;
-  margin-bottom: 1em;
-  border-bottom: 2px solid black;
-  content: "Error: Can't find stylesheet to import.\a   \2577 \a 1 \2502  @import '../base';\a   \2502          ^^^^^^^^^\a   \2575 \a   Header.scss 1:9  root stylesheet";
+html {
+  font-family: "Crimson Text", serif;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.5em;
+  font-size: 24px;
 }
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+.main {
+  flex: 1;
+}
+
+.sticky-footer {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+}
+
+.main {
+  flex: 1;
+}
+
+.icon {
+  height: 24px;
+  width: 24px;
+}
+
+.display-flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.display-flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.gap-12 {
+  gap: 12px;
+}
+
+.gap-24 {
+  gap: 24px;
+}
+
+.gap-36 {
+  gap: 36px;
+}
+
+.gap-60 {
+  gap: 60px;
+}
+
+.margin-left-auto {
+  margin-left: auto;
+}
+
+.margin-bottom-24 {
+  margin-bottom: 24px;
+}
+
+.margin-bottom-60 {
+  margin-bottom: 60px;
+}
+
+.margin-top-0 {
+  margin-top: 0;
+}
+
+.margin-top-60 {
+  margin-top: 60px;
+}
+
+.margin-top-auto {
+  margin-top: auto;
+}
+
+.margin-bottom-0 {
+  margin-bottom: 0;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.align-text-center {
+  text-align: center;
+}
+
+.align-flex-start {
+  align-items: flex-start;
+}
+
+.center-ver {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.center-hor {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.header {
+  background-color: #E4E6E7;
+  color: #36383A;
+  display: flex;
+  height: 66px;
+  padding: 0 60px;
+}
+.header a {
+  text-decoration: none;
+  color: #36383A;
+}
+
+.logo {
+  height: 54px;
+  width: 54px;
+  margin-top: 6px;
+}
+
+.searchBar {
+  height: 40px;
+  width: 660px;
+  text-indent: 24px;
+  border-radius: 30px;
+  border: 1px #D1D4D6;
+}
+.searchBar-icon {
+  background: url("/public/icons/vector-magnify.png") no-repeat left;
+  background-size: 20px;
+}
+
+.language {
+  display: flex;
+  border: none;
+  background: none;
+  height: 24px;
+  align-items: center;
+  gap: 12px;
+}
+
+.myAccount {
+  display: flex;
+  height: 24px;
+  align-items: center;
+  gap: 12px;
+}
+
+.cart {
+  display: flex;
+  height: 24px;
+  align-items: center;
+  gap: 12px;
+}
+
+/*# sourceMappingURL=Header.css.map */
