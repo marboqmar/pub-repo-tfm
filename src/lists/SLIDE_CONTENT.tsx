@@ -1,4 +1,4 @@
-import {SlideContentModel} from "../models/SlideContentModel.ts";
+import {SlideContentModel} from "../models";
 
 export const SLIDE_CONTENT: SlideContentModel[] = [
     {

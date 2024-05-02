@@ -1,7 +1,7 @@
 import './scss/style.scss'
-// import { Link } from 'react-router-dom'
 import Header from './components/Header/Header.tsx'
 import Footer from "./components/Footer/Footer.tsx";
+import { LanguageContextProvider } from "./contexts/LanguageContextProvider.tsx";
 import {Outlet} from "react-router-dom";
 // import {Outlet, useLocation} from "react-router-dom";
 // import {useEffect} from "react";
@@ -16,11 +16,13 @@ function App() {
 
     return (
         <>
-            <Header />
-            <div className={'main'}>
-                <Outlet />
-            </div>
-            <Footer />
+            <LanguageContextProvider>
+                <Header />
+                <div className={'main'}>
+                    <Outlet />
+                </div>
+                <Footer />
+            </LanguageContextProvider>
         </>
     )
 }

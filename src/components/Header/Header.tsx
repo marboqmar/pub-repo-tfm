@@ -1,19 +1,20 @@
 import './Header.scss';
 import { Link } from 'react-router-dom';
-import { useState } from "react"
+import {useContext} from "react"
 import { useTranslation } from 'react-i18next';
-import {Button} from "../Button/Button.tsx";
+import { Button } from "../Button/Button.tsx";
 import i18n from "i18next";
+import { LanguageContext } from "../../contexts/LanguageContextProvider.tsx";
 
 const ChangeLanguage = () => {
-    const [language, setLanguage] = useState<string>('es')
     const { t } = useTranslation('common')
+    const { language, setNewLanguage } = useContext(LanguageContext)
 
     const handleLanguage = () => {
         if (language === 'es') {
-            setLanguage('en')
+            setNewLanguage('en')
         } else {
-            setLanguage('es')
+            setNewLanguage('es')
         }
 
         i18n.changeLanguage(language)

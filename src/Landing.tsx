@@ -4,7 +4,8 @@ import { useTranslation } from 'react-i18next';
 import {Button} from "./components/Button/Button.tsx";
 import {Form} from "./components/Form/Form.tsx";
 import {SLIDE_CONTENT} from "./lists/SLIDE_CONTENT.tsx";
-import {SlideContentModel} from "./models/SlideContentModel.ts";
+import {SlideContentModel} from "./models";
+import { LanguageContext } from "./contexts/LanguageContextProvider.tsx";
 // Swiper
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { register } from 'swiper/element/bundle';
@@ -13,6 +14,7 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import './components/Swipper/swipper.scss'
 import {Pagination} from 'swiper/modules';
+import {useContext} from "react";
 
 register();
 
@@ -38,12 +40,13 @@ const Slide = (slide: SlideContentModel) => {
 
 const Landing = () => {
     const { t } = useTranslation('common')
+    const { language } = useContext(LanguageContext)
     register();
 
     return (
         <>
             {/*Hero*/}
-            <img className={'hero'} src={'/hero.png'}/>
+            <img className={'hero'} src={language === 'en' ? '/hero.png' : '/hero-eng.png'}/>
             <div className={'grid center-hor margin-top-60 gap-60'}>
                 {/*Claim and call to action*/}
                 <div className={'display-flex-column align-center gap-60'}>
