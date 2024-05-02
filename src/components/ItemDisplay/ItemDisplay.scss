@@ -1,0 +1,45 @@
+@import '../../scss/base';
+
+.filter {
+  margin-top: 60px;
+  margin-bottom: 60px;
+  margin-left: 60px;
+  display: flex;
+  gap: 24px;
+
+  & span {
+    padding: 12px;
+    border: 1px solid $color-black;
+  }
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 24px;
+
+  &-text {
+    margin-left: 6px;
+  }
+
+  &-link {
+    text-decoration: none;
+    color: $color-gray-500-darker;
+  }
+
+  & img {
+    height: auto;
+    width: 100%;
+    min-width: 200px;
+  }
+}
+
+.itemTitle {
+
+}
+
+.itemDisplay {
+  display: flex;
+  max-width: 100%;
+}

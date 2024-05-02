@@ -1,4 +1,4 @@
-import ItemDisplay from "./components/ItemDisplay.tsx";
+import ItemDisplay from "./components/ItemDisplay/ItemDisplay.tsx";
 
 const Home = () => {
     return (

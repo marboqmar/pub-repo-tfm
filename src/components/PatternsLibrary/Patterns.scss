@@ -1,0 +1,41 @@
+@import '../../scss/base';
+@import '../../scss/global/typography';
+@import '../../scss/global/forms';
+
+.patterns {
+  margin: 60px 120px;
+
+  &-hero {
+    background-color: $color-secondary-lighter-50-opacity;
+    padding: 60px 120px;
+  }
+
+  &-titles {
+    padding: 32px;
+  }
+
+  &-buttons {
+    align-items: flex-start;
+  }
+
+  &-button {
+    width: 246px;
+  }
+
+  &-colors {
+    width: 500px;
+    padding: 6px 24px;
+    border-radius: 12px;
+    gap: 120px;
+    margin-bottom: 24px;
+  }
+
+  &-borders {
+    height: 36px;
+    width: 100px;
+  }
+
+  &-border {
+    margin: 24px;
+  }
+}

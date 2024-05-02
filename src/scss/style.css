@@ -12,6 +12,14 @@ body {
   box-sizing: border-box;
 }
 
+a {
+  text-decoration: none;
+}
+
+.main {
+  flex: 1;
+}
+
 .sticky-footer {
   display: flex;
   flex-direction: column;
@@ -28,9 +36,126 @@ body {
   width: 24px;
 }
 
-.itemDisplayAndFilter {
+.grid {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  width: 100%;
+  max-width: 1800px;
+  gap: 1.3333333333%;
+}
+
+.grid__item-1-columns {
+  width: 5%;
+}
+
+.grid__item-2-columns {
+  width: 11.3333333333%;
+}
+
+.grid__item-3-columns {
+  width: 17.6666666667%;
+}
+
+.grid__item-4-columns {
+  width: 24%;
+}
+
+.grid__item-5-columns {
+  width: 30.3333333333%;
+}
+
+.grid__item-6-columns {
+  width: 36.6666666667%;
+}
+
+.grid__item-7-columns {
+  width: 43%;
+}
+
+.grid__item-8-columns {
+  width: 49.3333333333%;
+}
+
+.grid__item-9-columns {
+  width: 55.6666666667%;
+}
+
+.grid__item-10-columns {
+  width: 62%;
+}
+
+.grid__item-11-columns {
+  width: 68.3333333333%;
+}
+
+.grid__item-12-columns {
+  width: 74.6666666667%;
+}
+
+.grid__item-13-columns {
+  width: 81%;
+}
+
+.grid__item-14-columns {
+  width: 87.3333333333%;
+}
+
+.grid__item-15-columns {
+  width: 93.6666666667%;
+}
+
+.grid__item-16-columns {
+  width: 100%;
+}
+
+.height-24 {
+  height: 24px;
+}
+
+.hero {
+  max-width: 100%;
+}
+
+.underline {
+  height: 1px;
+  width: 100%;
+}
+
+.landing-sword-text {
+  min-width: 350px;
+}
+
+#landing-sword-title {
+  margin-bottom: 12px;
+}
+
+#slider-img {
+  max-width: 43%;
+  min-width: 450px;
+  min-height: 450px;
+  max-height: 760px;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.slider-description {
+  text-align: left;
+}
+.slider-price {
+  max-width: 168px;
+}
+
+.aboutUs-text {
+  min-width: 450px;
+  max-width: 43%;
+}
+.aboutUs-img {
+  min-height: 300px;
+  max-height: 350px;
+}
+
+.maxWidth {
+  max-width: 90vw;
 }
 
 .product {
@@ -93,19 +218,6 @@ body {
   flex-direction: column;
 }
 
-.favouritesTopBar {
-  display: flex;
-  flex-direction: row;
-}
-
-.favouritesSearchBar {
-  height: 12px;
-}
-
-.favouritesSearchButton {
-  height: 24px;
-}
-
 .myAccount {
   display: flex;
   flex-direction: row;
@@ -136,10 +248,12 @@ body {
 
 .h1 {
   margin-bottom: 1.5em;
+  font-size: 48px;
 }
 
 .h2 {
   margin-bottom: 1.5em;
+  font-size: 32px;
 }
 
 .h3 {
@@ -166,6 +280,10 @@ small, .small {
   font-size: 18px;
 }
 
+.crossed-text {
+  text-decoration: line-through;
+}
+
 html {
   font-family: "Crimson Text", serif;
   font-weight: 400;
@@ -178,6 +296,14 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+.main {
+  flex: 1;
 }
 
 .sticky-footer {
@@ -196,24 +322,39 @@ body {
   width: 24px;
 }
 
-.button {
-  background-color: #0066B3;
-  color: #EFF0F1;
+.btn {
   padding: 6px 48px;
-  border: 1px #0083E5;
-  border-radius: 6px;
   cursor: pointer;
   line-height: 0.8em;
+  border: 1px #0083E5;
+  border-radius: 6px;
 }
-.button:hover {
+.btn--color-primary {
+  background-color: #0066B3;
+  color: #EFF0F1;
+}
+.btn--color-none {
+  border: none;
+  background: none;
+}
+.btn--withoutPadding {
+  padding: 0;
+}
+.btn--notOutlined {
+  border: none;
+}
+.btn:hover {
   background-color: #0083E5;
 }
-.button:disabled {
+.btn--withoutHover:hover {
+  background-color: transparent;
+}
+.btn:disabled {
   opacity: 0.6;
   cursor: not-allowed;
   background-color: #8A8F93;
 }
-.button:disabled:hover {
+.btn:disabled:hover {
   background-color: #8A8F93;
 }
 
@@ -229,6 +370,14 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+.main {
+  flex: 1;
 }
 
 .sticky-footer {
@@ -297,8 +446,48 @@ body {
   gap: 36px;
 }
 
+.gap-60 {
+  gap: 60px;
+}
+
+.margin-left-auto {
+  margin-left: auto;
+}
+
+.margin-bottom-24 {
+  margin-bottom: 24px;
+}
+
+.margin-bottom-60 {
+  margin-bottom: 60px;
+}
+
+.margin-top-0 {
+  margin-top: 0;
+}
+
+.margin-top-60 {
+  margin-top: 60px;
+}
+
+.margin-top-auto {
+  margin-top: auto;
+}
+
+.margin-bottom-0 {
+  margin-bottom: 0;
+}
+
 .align-center {
   align-items: center;
+}
+
+.align-text-center {
+  text-align: center;
+}
+
+.align-flex-start {
+  align-items: flex-start;
 }
 
 .center-ver {
