@@ -22,13 +22,13 @@ const Slide = (slide: SlideContentModel) => {
     return (
         <div className={'display-flex-row'}>
             <img id={'slider-img'} src={slide.image} />
-            <div className={'landing-sword-text display-flex-column grid__item-6-columns margin-left-auto'}>
+            <div className={'landing-sword-text display-flex-column grid__item-6-columns margin-left-auto align-flex-start'}>
                 <h3 id={'landing-sword-title'} className={'h2 margin-top-0'}>{slide.swordTitle}</h3>
                 <div className={'underline bgcolor-gray-100'}></div>
-                <p>{slide.swordDescription}</p>
+                <p className={'slider-description'}>{slide.swordDescription}</p>
                 <div className={'underline bgcolor-gray-100'}></div>
                 <div className={'margin-top-auto'}>
-                    <p className={'h2'}><span className={'color-gray crossed-text'}>489€</span><span> - 275€</span></p>
+                    <p className={'h2 slider-price'}><span className={'color-gray crossed-text'}>489€</span><span> - 275€</span></p>
                     <Link to={'/detalles-producto'}><Button color={'primary'}>{t('common:productDetails')}</Button></Link>
                 </div>
             </div>

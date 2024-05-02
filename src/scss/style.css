@@ -114,6 +114,7 @@ a {
 
 .underline {
   height: 1px;
+  width: 100%;
 }
 
 .landing-sword-text {
@@ -131,6 +132,13 @@ a {
   max-height: 760px;
   border-radius: 12px;
   overflow: hidden;
+}
+
+.slider-description {
+  text-align: left;
+}
+.slider-price {
+  max-width: 168px;
 }
 
 .aboutUs-text {
