@@ -9,22 +9,18 @@ const FILTER_OPTIONS_LIST = (): Filter[] => {
     return [
         {
             name: 'The Witcher',
-            filterOptionValue: 'The Witcher',
             key: 'The Witcher'
         },
         {
             name: 'Elden Ring',
-            filterOptionValue: 'Elden Ring',
             key: 'Elden Ring'
         },
         {
             name: t('home:filterOptions.D&D'),
-            filterOptionValue: 'Dungeons & Dragons',
             key: 'Dungeons & Dragons'
         },
         {
             name: t('home:filterOptions.LOTR'),
-            filterOptionValue: 'The Lord of the Rings',
             key: 'The Lord of the Rings'
         }
     ]
