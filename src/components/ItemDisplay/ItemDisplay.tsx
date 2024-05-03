@@ -1,11 +1,11 @@
 import './ItemDisplay.scss';
 import { Link } from 'react-router-dom';
-import { ItemDetailsModel } from "../../models";
+import {Filter, ItemDetailsModel} from "../../models";
 import { useState } from "react";
 import ITEM_LIST from "../../lists/ITEM_LIST.tsx";
 import FILTER_OPTIONS_LIST from "../../lists/FILTER_OPTIONS_LIST.tsx";
 
-const ItemsToShow = () => {
+const ItemsToShowAndFilters = () => {
     const [displayedItems, setDisplayedItems] = useState<ItemDetailsModel[]>(ITEM_LIST)
 
     const updateFilteredItems = (option: string) => {
@@ -16,11 +16,16 @@ const ItemsToShow = () => {
     }
 
     const FilterOptions = () => {
+        // const [checked, setChecked] = useState<boolean>(false)
+        // console.log(checked)
+
         return (
             <>
-                {FILTER_OPTIONS_LIST().map((option: string) => (
+                {FILTER_OPTIONS_LIST().map((option: Filter) => (
                     <div>
-                        <span onClick={() => updateFilteredItems(option)}>{option}</span>
+                        {/*<input type="checkbox" checked={checked} onChange={() => updateFilteredItems(option)}></input>*/}
+                        {/*<span onClick={() => setChecked(!checked)}>{option}</span>*/}
+                        <span onClick={() => updateFilteredItems(option.filterOptionValue)}>{option.name}</span>
                     </div>
                 ))}
             </>
@@ -51,4 +56,4 @@ const ItemsToShow = () => {
     )
 }
 
-export default ItemsToShow
+export default ItemsToShowAndFilters
