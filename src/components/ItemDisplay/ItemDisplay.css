@@ -46,6 +46,7 @@ a {
 .filter span {
   padding: 12px;
   border: 1px solid #282C2F;
+  cursor: pointer;
 }
 
 .item {

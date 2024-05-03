@@ -1,10 +1,10 @@
-import ItemDisplay from "./components/ItemDisplay/ItemDisplay.tsx";
+import ItemsToShow from "./components/ItemDisplay/ItemDisplay.tsx";
 
 const Home = () => {
     return (
         <>
             <div>
-                <ItemDisplay />
+                <ItemsToShow />
             </div>
         </>
     )
