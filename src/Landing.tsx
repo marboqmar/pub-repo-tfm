@@ -74,7 +74,7 @@ const Landing = () => {
                             className="mySwiper"
                         >
                             {SLIDE_CONTENT.map((slide: SlideContentModel) => (
-                                <SwiperSlide>
+                                <SwiperSlide key={`${slide.image}${slide.swordTitle}`}>
                                     <Slide
                                         image={slide.image}
                                         swordTitle={slide.swordTitle}

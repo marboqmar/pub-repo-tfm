@@ -1,4 +1,4 @@
-import './ItemDisplay.scss';
+import './ItemsToShowAndFilters.scss';
 import { Link } from 'react-router-dom';
 import {Filter, ItemDetailsModel} from "../../models";
 import { useState } from "react";
@@ -35,7 +35,7 @@ const ItemsToShowAndFilters = () => {
         return (
             <>
                 {FILTER_OPTIONS_LIST().map((option: Filter) => (
-                    <div>
+                    <div key={option.key}>
                         {/*<input type="checkbox" checked={`checked${option.key}`} onChange={() => updateFilteredItems(option.name)}></input>*/}
                         {/*<span id={option.key} onClick={() => setChecked(!checked)}>{option.name}</span>*/}
                         <span onClick={() => updateFilteredItems(option.key)}>{option.name}</span>
@@ -53,7 +53,7 @@ const ItemsToShowAndFilters = () => {
                 </div>
                 <div className={'itemDisplay'}>
                     {displayedItems.map((item) => (
-                        <Link className={'item-link'} to={'/detalles-producto'}>
+                        <Link className={'item-link'} to={'/detalles-producto'} key={`${item.image}${item.name}`}>
                             <div className={'item'}>
                                 <img src={item.image}/>
                                 <div className={'item item-text'}>

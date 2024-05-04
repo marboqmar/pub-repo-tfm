@@ -1,4 +1,4 @@
-import ItemsToShowAndFilters from "./components/ItemDisplay/ItemDisplay.tsx";
+import ItemsToShowAndFilters from "./components/ItemDisplay/ItemsToShowAndFilters.tsx";
 
 const Home = () => {
     return (
