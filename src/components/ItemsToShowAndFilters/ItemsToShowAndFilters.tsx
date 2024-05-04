@@ -11,9 +11,11 @@ const ItemsToShowAndFilters = () => {
     const [activeFilter, setActiveFilter] = useState<string>('')
 
     const updateFilteredItems = (optionKey: string) => {
+        // Record active filter
         const newFilterState = optionKey === activeFilter ? '' : optionKey
         setActiveFilter(newFilterState)
 
+        // Filter item list by active filter
         const newDisplayedItems: ItemDetailsModel[] = !newFilterState ? ITEM_LIST : ITEM_LIST.filter((item) => {
             return newFilterState === item.origin
         })
@@ -21,7 +23,6 @@ const ItemsToShowAndFilters = () => {
     }
 
     const FilterOptions = () => {
-
         return (
             <>
                 {FILTER_OPTIONS_LIST().map((option: Filter) => (
@@ -52,7 +53,7 @@ const ItemsToShowAndFilters = () => {
                     {displayedItems.map((item) => (
                         <Link className={'item-link'} to={'/detalles-producto'} key={`${item.image}${item.name}`}>
                             <div className={'item'}>
-                                <img src={item.image}/>
+                                <img src={item.image} alt={''}/>
                                 <div className={'item item-text'}>
                                     <span className={'itemTitle'}>{item.name}</span>
                                     <span>{item.price}€</span>
