@@ -34,6 +34,7 @@ const ItemsToShowAndFilters = () => {
                                 paddingSize={"small"}
                                 withoutHover
                                 squareBlackBorder
+                                className={activeFilter === option.key ? 'btn--filterClicked' : ''}
                         >
                             {option.name}
                         </Button>

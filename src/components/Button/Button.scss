@@ -29,12 +29,15 @@
   }
 
   &--squareBlackBorder {
-    border: 1px solid black;
+    box-shadow:
+            0 0 0 1px black,
+            0 0 0 2px white;
     border-radius: 0;
   }
 
   &--filterClicked {
-    background-color: red;
+    box-shadow:
+            0 0 0 2px black;
   }
 
   &:hover {

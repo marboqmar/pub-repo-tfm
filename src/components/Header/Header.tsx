@@ -32,7 +32,6 @@ const Header = () => {
             <Link to={'/'}><img className={'logo'} src={'/logo-header.png'} alt={'Website logo'}/></Link>
             <input id={'searchBar'} className={'searchBar font center-ver center-hor small'} type={'text'} placeholder={t('common:header.searchBarPlaceholder')}/>
             <div className={'header-buttons display-flex-row center-ver gap-36'}>
-                {/*Once button component properly set up remove class color-black from this button*/}
                 <ChangeLanguage />
                 <Link className={'myAccount font display-flex-row align-center gap-12 height-24'} to={'mi-cuenta'}><img className={'icon'} src={'/icons/vector-account.png'} alt={''}/><small> {t('common:header.myAccount')}</small></Link>
                 <Link className={'cart font display-flex-row align-center gap-12 height-24'} to={'/cesta'}><img className={'icon'} src={'/icons/vector-cart.png'} alt={''}/><small> {t('common:header.cart')}</small></Link>
