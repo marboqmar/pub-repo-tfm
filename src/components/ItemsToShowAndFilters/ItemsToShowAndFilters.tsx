@@ -6,19 +6,24 @@ import ITEM_LIST from "../../lists/ITEM_LIST.tsx";
 import FILTER_OPTIONS_LIST from "../../lists/FILTER_OPTIONS_LIST.tsx";
 
 const ItemsToShowAndFilters = () => {
-    // Ensure that only one filter can be true at any moment
     const [displayedItems, setDisplayedItems] = useState<ItemDetailsModel[]>(ITEM_LIST)
+
+    // Create filter options dictionary, initiating them to false
     const initialFilterState : Map<string,boolean> = new Map();
     FILTER_OPTIONS_LIST().forEach((item) => {
         initialFilterState.set(item.key, false);
     })
+
     const [checkedFilters, setCheckedFilters] = useState<Map<string,boolean>>(initialFilterState)
+
+    // Update filters and apply them over the item list
     const updateFilteredItems = (optionKey: string) => {
-        const newFilters = new Map(checkedFilters)
-        // Modify this
+        // Create dictionary with applied filters and set the other filters to false, so only one filter at a time can be true
+        const newFilters = new Map()
         newFilters.set(optionKey, !checkedFilters.get(optionKey))
         setCheckedFilters(newFilters)
 
+        // Apply active filters over item list
         const newDisplayedItems: ItemDetailsModel[] = Array.from(newFilters.values()).every((item) => {return !item}) ? ITEM_LIST : ITEM_LIST.filter((item) => {
             for (const [key, value] of newFilters) {
                 if (value) {
@@ -27,8 +32,6 @@ const ItemsToShowAndFilters = () => {
             }
         })
         setDisplayedItems(newDisplayedItems)
-        // console.log(!!initialFilterState.get('The Witcher'))
-        console.log(initialFilterState)
     }
 
     const FilterOptions = () => {
@@ -36,8 +39,6 @@ const ItemsToShowAndFilters = () => {
             <>
                 {FILTER_OPTIONS_LIST().map((option: Filter) => (
                     <div key={option.key}>
-                        {/*<input type="checkbox" checked={`checked${option.key}`} onChange={() => updateFilteredItems(option.name)}></input>*/}
-                        {/*<span id={option.key} onClick={() => setChecked(!checked)}>{option.name}</span>*/}
                         <span onClick={() => updateFilteredItems(option.key)}>{option.name}</span>
                     </div>
                 ))}

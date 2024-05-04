@@ -1,5 +1,7 @@
 import { ReactNode, createContext, useState } from 'react';
 
+// Created language context to be able to change landing's hero image upon changing language
+
 type LanguageOptions = 'es' | 'en'
 
 interface LanguageContextModel {
