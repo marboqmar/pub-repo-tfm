@@ -1,7 +1,7 @@
 {
   "header": {
     "searchBarPlaceholder": "Buscar",
-    "myAccount": "Mi cuenta",
+    "signIn": "Inicia sesión",
     "language": "Idioma",
     "cart": "Cesta"
   },

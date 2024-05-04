@@ -119,6 +119,12 @@ a {
   height: 66px;
   padding: 0 60px;
 }
+.header--btn {
+  display: flex;
+  height: 24px;
+  align-items: center;
+  gap: 12px;
+}
 .header a {
   text-decoration: none;
   color: #36383A;
@@ -140,30 +146,6 @@ a {
 .searchBar-icon {
   background: url("/public/icons/vector-magnify.png") no-repeat left;
   background-size: 20px;
-}
-
-.language {
-  display: flex;
-  border: none;
-  background: none;
-  height: 24px;
-  align-items: center;
-  gap: 12px;
-}
-
-.myAccount {
-  display: flex;
-  height: 24px;
-  align-items: center;
-  gap: 12px;
-  min-width: 120px;
-}
-
-.cart {
-  display: flex;
-  height: 24px;
-  align-items: center;
-  gap: 12px;
 }
 
 /*# sourceMappingURL=Header.css.map */

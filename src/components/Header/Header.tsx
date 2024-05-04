@@ -21,7 +21,7 @@ const ChangeLanguage = () => {
     }
 
     return (
-        <Button className={'language display-flex-row align-center gap-12 height-24'} paddingSize={"none"} withoutHover color={'none'} onClick={handleLanguage}><img className={'icon'} src={'/icons/vector-language.png'} alt={''}/><small> {t('common:header.language')}</small></Button>
+        <Button className={'header--btn'} paddingSize={"none"} withoutHover color={'none'} borderType={'none'} onClick={handleLanguage}><img className={'icon'} src={'/icons/vector-language.png'} alt={''}/><small> {t('common:header.language')}</small></Button>
     )
 }
 
@@ -33,8 +33,8 @@ const Header = () => {
             <input id={'searchBar'} className={'searchBar font center-ver center-hor small'} type={'text'} placeholder={t('common:header.searchBarPlaceholder')}/>
             <div className={'header-buttons display-flex-row center-ver gap-36'}>
                 <ChangeLanguage />
-                <Link className={'myAccount font display-flex-row align-center gap-12 height-24'} to={'mi-cuenta'}><img className={'icon'} src={'/icons/vector-account.png'} alt={''}/><small> {t('common:header.myAccount')}</small></Link>
-                <Link className={'cart font display-flex-row align-center gap-12 height-24'} to={'/cesta'}><img className={'icon'} src={'/icons/vector-cart.png'} alt={''}/><small> {t('common:header.cart')}</small></Link>
+                <Button className={'header--btn'} paddingSize={"none"} withoutHover color={'none'} borderType={'none'}><img className={'icon'} src={'/icons/vector-account.png'} alt={''}/><small> {t('common:header.signIn')}</small></Button>
+                <Link className={'header--btn'} to={'/cesta'}><img className={'icon'} src={'/icons/vector-cart.png'} alt={''}/><small> {t('common:header.cart')}</small></Link>
             </div>
         </div>
     );

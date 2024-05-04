@@ -33,7 +33,7 @@ const ItemsToShowAndFilters = () => {
                                 color={"none"}
                                 paddingSize={"small"}
                                 withoutHover
-                                squareBlackBorder
+                                borderType={'squareBlack'}
                                 className={activeFilter === option.key ? 'btn--filterClicked' : ''}
                         >
                             {option.name}

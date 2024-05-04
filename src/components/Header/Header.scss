@@ -8,6 +8,13 @@
   height: 66px;
   padding: 0 60px;
 
+  &--btn {
+    display: flex;
+    height: 24px;
+    align-items: center;
+    gap: 12px;
+  }
+
   & a {
     text-decoration: none;
     color: $color-gray-500-darker;
@@ -31,28 +38,4 @@
     background: url('/public/icons/vector-magnify.png') no-repeat left;
     background-size: 20px;
   }
-}
-
-.language {
-  display: flex;
-  border: none;
-  background: none;
-  height: 24px;
-  align-items: center;
-  gap: 12px;
-}
-
-.myAccount{
-  display: flex;
-  height: 24px;
-  align-items: center;
-  gap: 12px;
-  min-width: 120px;
-}
-
-.cart {
-  display: flex;
-  height: 24px;
-  align-items: center;
-  gap: 12px;
 }

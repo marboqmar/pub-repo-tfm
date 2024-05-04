@@ -14,7 +14,6 @@
   }
 
   &--color-none {
-    border: none;
     background: none;
   }
 
@@ -28,12 +27,20 @@
     }
   }
 
-  &--squareBlackBorder {
-    box-shadow:
-            0 0 0 1px black,
-            0 0 0 2px white;
-    border-radius: 0;
+  &--border {
+    &-squareBlack {
+      border: none;
+      box-shadow:
+              0 0 0 1px black,
+              0 0 0 2px white;
+      border-radius: 0;
+    }
+
+    &-none {
+      border: none;
+    }
   }
+
 
   &--filterClicked {
     box-shadow:

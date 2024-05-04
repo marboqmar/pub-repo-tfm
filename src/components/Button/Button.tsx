@@ -6,14 +6,16 @@ export type ButtonColor = 'primary' | 'none';
 
 export type PaddingSizes = 'none' | 'small';
 
+export type BorderType = 'none' | 'squareBlack';
+
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     color?: ButtonColor;
     withoutHover?: boolean;
     paddingSize?: PaddingSizes;
-    squareBlackBorder?: boolean;
+    borderType?: BorderType;
 }
 
-export const Button = ({ className = '', color, withoutHover, paddingSize, squareBlackBorder, disabled, children, ...rest }: ButtonProps) => {
+export const Button = ({ className = '', color, withoutHover, paddingSize, borderType, disabled, children, ...rest }: ButtonProps) => {
     const classes = classNames ({
         'btn': true,
         'font': true,
@@ -21,7 +23,7 @@ export const Button = ({ className = '', color, withoutHover, paddingSize, squar
         [`btn--color-${color}`]: color,
         'btn--withoutHover': withoutHover,
         [`btn--paddingSize-${paddingSize}`]: paddingSize,
-        'btn--squareBlackBorder': squareBlackBorder,
+        [`btn--border-${borderType}`]: borderType,
         'btn--disabled': disabled
     })
 

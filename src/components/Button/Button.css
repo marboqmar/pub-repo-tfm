@@ -48,7 +48,6 @@ a {
   color: #EFF0F1;
 }
 .btn--color-none {
-  border: none;
   background: none;
 }
 .btn--paddingSize-none {
@@ -57,9 +56,13 @@ a {
 .btn--paddingSize-small {
   padding: 12px;
 }
-.btn--squareBlackBorder {
+.btn--border-squareBlack {
+  border: none;
   box-shadow: 0 0 0 1px black, 0 0 0 2px white;
   border-radius: 0;
+}
+.btn--border-none {
+  border: none;
 }
 .btn--filterClicked {
   box-shadow: 0 0 0 2px black;
