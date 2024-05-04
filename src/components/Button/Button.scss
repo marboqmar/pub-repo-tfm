@@ -1,11 +1,12 @@
-@import '../base';
+@import '../../scss/base';
 
 .btn {
-  padding: 6px 48px;
   cursor: pointer;
   line-height: 0.8em;
-  border: 1px $color-primary-light;
+  border: 1px solid $color-primary-light;
   border-radius: 6px;
+  padding: 14px 48px;
+
 
   &--color-primary {
     background-color: $color-primary;
@@ -17,12 +18,23 @@
     background: none;
   }
 
-  &--withoutPadding {
-    padding: 0;
+  &--paddingSize {
+    &-none {
+      padding: 0;
+    }
+
+    &-small {
+      padding: 12px;
+    }
   }
 
-  &--notOutlined {
-    border: none;
+  &--squareBlackBorder {
+    border: 1px solid black;
+    border-radius: 0;
+  }
+
+  &--filterClicked {
+    background-color: red;
   }
 
   &:hover {

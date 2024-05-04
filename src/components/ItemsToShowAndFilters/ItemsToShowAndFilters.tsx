@@ -1,45 +1,41 @@
 import './ItemsToShowAndFilters.scss';
-import { Link } from 'react-router-dom';
+import {Link} from 'react-router-dom';
 import {Filter, ItemDetailsModel} from "../../models";
-import { useState } from "react";
+import {useState} from "react";
 import ITEM_LIST from "../../lists/ITEM_LIST.tsx";
 import FILTER_OPTIONS_LIST from "../../lists/FILTER_OPTIONS_LIST.tsx";
+import {Button} from "../Button/Button.tsx";
 
 const ItemsToShowAndFilters = () => {
     const [displayedItems, setDisplayedItems] = useState<ItemDetailsModel[]>(ITEM_LIST)
+    const [activeFilter, setActiveFilter] = useState<string>('')
 
-    // Create filter options dictionary, initiating them to false
-    const initialFilterState : Map<string,boolean> = new Map();
-    FILTER_OPTIONS_LIST().forEach((item) => {
-        initialFilterState.set(item.key, false);
-    })
-
-    const [checkedFilters, setCheckedFilters] = useState<Map<string,boolean>>(initialFilterState)
-
-    // Update filters and apply them over the item list
     const updateFilteredItems = (optionKey: string) => {
-        // Create dictionary with applied filters and set the other filters to false, so only one filter at a time can be true
-        const newFilters = new Map()
-        newFilters.set(optionKey, !checkedFilters.get(optionKey))
-        setCheckedFilters(newFilters)
+        const newFilterState = optionKey === activeFilter ? '' : optionKey
+        setActiveFilter(newFilterState)
 
-        // Apply active filters over item list
-        const newDisplayedItems: ItemDetailsModel[] = Array.from(newFilters.values()).every((item) => {return !item}) ? ITEM_LIST : ITEM_LIST.filter((item) => {
-            for (const [key, value] of newFilters) {
-                if (value) {
-                    return item.origin.includes(key)
-                }
-            }
+        const newDisplayedItems: ItemDetailsModel[] = !newFilterState ? ITEM_LIST : ITEM_LIST.filter((item) => {
+            return newFilterState === item.origin
         })
         setDisplayedItems(newDisplayedItems)
     }
 
     const FilterOptions = () => {
+
         return (
             <>
                 {FILTER_OPTIONS_LIST().map((option: Filter) => (
                     <div key={option.key}>
-                        <span onClick={() => updateFilteredItems(option.key)}>{option.name}</span>
+                        <Button onClick={() => {
+                            updateFilteredItems(option.key);
+                        }}
+                                color={"none"}
+                                paddingSize={"small"}
+                                withoutHover
+                                squareBlackBorder
+                        >
+                            {option.name}
+                        </Button>
                     </div>
                 ))}
             </>
@@ -50,7 +46,7 @@ const ItemsToShowAndFilters = () => {
         <>
             <div className={'filterAndItemDisplay'}>
                 <div className={'filter'}>
-                    <FilterOptions />
+                    <FilterOptions/>
                 </div>
                 <div className={'itemDisplay'}>
                     {displayedItems.map((item) => (

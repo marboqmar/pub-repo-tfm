@@ -21,7 +21,7 @@ const ChangeLanguage = () => {
     }
 
     return (
-        <Button className={'language display-flex-row align-center gap-12 height-24'} withoutPadding withoutHover color={'none'} onClick={handleLanguage}><img className={'icon'} src={'/icons/vector-language.png'}/><small> {t('common:header.language')}</small></Button>
+        <Button className={'language display-flex-row align-center gap-12 height-24'} paddingSize={"none"} withoutHover color={'none'} onClick={handleLanguage}><img className={'icon'} src={'/icons/vector-language.png'}/><small> {t('common:header.language')}</small></Button>
     )
 }
 
