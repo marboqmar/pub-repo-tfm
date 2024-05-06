@@ -1,4 +1,5 @@
 import './Patterns.scss';
+import {Button} from "../Button/Button.tsx";
 import {useTranslation} from "react-i18next";
 
 const Patterns = () => {
@@ -37,8 +38,8 @@ const Patterns = () => {
                 </ul>
                 <h2 className={'patterns-titles'}>Buttons</h2>
                 <div className={'display-flex-row gap-36'}>
-                    <button className={'button font patterns-button'}>Active button</button>
-                    <button className={'button font patterns-button'} disabled>Disabled button</button>
+                    <Button className={'btn font patterns-button'} color={'primary'}>Active button</Button>
+                    <Button className={'btn font patterns-button'} disabled>Disabled button</Button>
                 </div>
                 <h2 className={'patterns-titles'}>Forms</h2>
                 <p>Text box:</p>
