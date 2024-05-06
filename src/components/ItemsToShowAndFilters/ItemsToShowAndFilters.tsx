@@ -1,15 +1,24 @@
 import './ItemsToShowAndFilters.scss';
 import { Link } from 'react-router-dom';
 import { Filter, ItemDetailsModel } from "../../models";
-import {useState, ChangeEvent, useEffect} from "react";
+import {useState, useEffect} from "react";
 import ITEM_LIST from "../../lists/ITEM_LIST.tsx";
 import FILTER_OPTIONS_LIST from "../../lists/FILTER_OPTIONS_LIST.tsx";
 import { Button } from "../Button/Button.tsx";
+import {useContext} from "react";
+import {SearchContext} from "../../contexts/SearchContextProvider.tsx";
+
 
 const ItemsToShowAndFilters = () => {
     const [displayedItems, setDisplayedItems] = useState<ItemDetailsModel[]>(ITEM_LIST);
     const [search, setSearch] = useState<string>('');
     const [activeFilter, setActiveFilter] = useState<string>('');
+    const { search: searchValue } = useContext(SearchContext)
+
+    // Get search value from search bar on header
+    useEffect(() => {
+        setSearch(searchValue);
+    }, [searchValue])
 
     // Filter item list
     useEffect(() => {
@@ -37,9 +46,6 @@ const ItemsToShowAndFilters = () => {
         setActiveFilter(option === activeFilter ? '' : option);
     }
 
-    const handleSearchInputChange = (event: ChangeEvent<HTMLInputElement>) => {
-        setSearch(event.target.value);
-    }
 
     const FilterOptions = () => {
         return (
@@ -66,7 +72,6 @@ const ItemsToShowAndFilters = () => {
     return (
         <>
             <div className={'filterAndItemDisplay'}>
-                <input onChange={handleSearchInputChange} value={search} />
                 <div className={'filter'}>
                     <FilterOptions/>
                 </div>
