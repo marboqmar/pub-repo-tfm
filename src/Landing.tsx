@@ -6,7 +6,9 @@ import {Form} from "./components/Form/Form.tsx";
 import {SLIDE_CONTENT} from "./lists/SLIDE_CONTENT.tsx";
 import {SlideContentModel} from "./models";
 import { LanguageContext } from "./contexts/LanguageContextProvider.tsx";
-// Swiper
+import {useContext} from "react";
+
+// Swiper imports
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { register } from 'swiper/element/bundle';
 import 'swiper/css';
@@ -14,7 +16,6 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import './components/Swipper/swipper.scss'
 import {Pagination} from 'swiper/modules';
-import {useContext} from "react";
 
 register();
 
@@ -23,7 +24,7 @@ const Slide = (slide: SlideContentModel) => {
 
     return (
         <div className={'display-flex-row'}>
-            <img id={'slider-img'} src={slide.image} />
+            <img id={'slider-img'} src={slide.image} alt={''} />
             <div className={'landing-sword-text display-flex-column grid__item-6-columns margin-left-auto align-flex-start'}>
                 <h3 id={'landing-sword-title'} className={'h2 margin-top-0'}>{slide.swordTitle}</h3>
                 <div className={'underline bgcolor-gray-100'}></div>
@@ -46,7 +47,7 @@ const Landing = () => {
     return (
         <>
             {/*Hero*/}
-            <img className={'hero'} src={language === 'en' ? '/hero.png' : '/hero-eng.png'}/>
+            <img className={'hero'} src={language === 'en' ? '/hero.png' : '/hero-eng.png'} alt={''}/>
             <div className={'grid center-hor margin-top-60 gap-60'}>
                 {/*Claim and call to action*/}
                 <div className={'display-flex-column align-center gap-60'}>
@@ -100,7 +101,7 @@ const Landing = () => {
                                 quis diam.
                             </p>
                         </div>
-                        <img className={'aboutUs-img grid__item-6-columns margin-left-auto'} src={'/anvil.png'} />
+                        <img className={'aboutUs-img grid__item-6-columns margin-left-auto'} src={'/anvil.png'} alt={''}/>
                     </div>
                 </div>
                 {/*Contact*/}

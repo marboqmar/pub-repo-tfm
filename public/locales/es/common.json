@@ -17,7 +17,9 @@
     "message": "Mensaje",
     "sendMessage": "Enviar mensaje"
   },
-  "filterOptions": {
-    "priceUnder100": "Inferior a 100€"
+  "footer": {
+    "patternLibrary-1-of-3": "Mira la ",
+    "patternLibrary-2-of-3": "libraría de patrones",
+    "patternLibrary-3-of-3": " usada para crear esta página"
   }
 }
