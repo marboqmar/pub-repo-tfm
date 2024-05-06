@@ -1,25 +1,44 @@
 import './ItemsToShowAndFilters.scss';
-import {Link} from 'react-router-dom';
-import {Filter, ItemDetailsModel} from "../../models";
-import {useState} from "react";
+import { Link } from 'react-router-dom';
+import { Filter, ItemDetailsModel } from "../../models";
+import {useState, ChangeEvent, useEffect} from "react";
 import ITEM_LIST from "../../lists/ITEM_LIST.tsx";
 import FILTER_OPTIONS_LIST from "../../lists/FILTER_OPTIONS_LIST.tsx";
-import {Button} from "../Button/Button.tsx";
+import { Button } from "../Button/Button.tsx";
 
 const ItemsToShowAndFilters = () => {
-    const [displayedItems, setDisplayedItems] = useState<ItemDetailsModel[]>(ITEM_LIST)
-    const [activeFilter, setActiveFilter] = useState<string>('')
+    const [displayedItems, setDisplayedItems] = useState<ItemDetailsModel[]>(ITEM_LIST);
+    const [search, setSearch] = useState<string>('');
+    const [activeFilter, setActiveFilter] = useState<string>('');
 
-    const updateFilteredItems = (optionKey: string) => {
-        // Record active filter
-        const newFilterState = optionKey === activeFilter ? '' : optionKey
-        setActiveFilter(newFilterState)
+    // Filter item list
+    useEffect(() => {
+        const updateDisplayedItems = (newActiveFilter: string) => {
+            // Filter item list by active filter
+            const newDisplayedItems: ItemDetailsModel[] = !newActiveFilter ? ITEM_LIST : ITEM_LIST.filter((item) => {
+                return newActiveFilter === item.origin;
+            })
+            setDisplayedItems(newDisplayedItems);
 
-        // Filter item list by active filter
-        const newDisplayedItems: ItemDetailsModel[] = !newFilterState ? ITEM_LIST : ITEM_LIST.filter((item) => {
-            return newFilterState === item.origin
-        })
-        setDisplayedItems(newDisplayedItems)
+            // Filter previous list (filtered by selected filter) by name search
+            if (!search) {
+                setDisplayedItems(newDisplayedItems);
+            } else {
+                setDisplayedItems(newDisplayedItems.filter((item: ItemDetailsModel) => {
+                    return item.name.toLowerCase().includes(search.toLowerCase());
+                }))
+            }
+        }
+
+        updateDisplayedItems(activeFilter)
+    }, [search, activeFilter])
+
+    const handleFilterChange = (option: string) => {
+        setActiveFilter(option === activeFilter ? '' : option);
+    }
+
+    const handleSearchInputChange = (event: ChangeEvent<HTMLInputElement>) => {
+        setSearch(event.target.value);
     }
 
     const FilterOptions = () => {
@@ -28,7 +47,7 @@ const ItemsToShowAndFilters = () => {
                 {FILTER_OPTIONS_LIST().map((option: Filter) => (
                     <div key={option.key}>
                         <Button onClick={() => {
-                            updateFilteredItems(option.key);
+                            handleFilterChange(option.key)
                         }}
                                 color={"none"}
                                 paddingSize={"small"}
@@ -47,6 +66,7 @@ const ItemsToShowAndFilters = () => {
     return (
         <>
             <div className={'filterAndItemDisplay'}>
+                <input onChange={handleSearchInputChange} value={search} />
                 <div className={'filter'}>
                     <FilterOptions/>
                 </div>
