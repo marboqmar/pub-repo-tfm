@@ -147,8 +147,8 @@ a {
   background: url("/public/icons/vector-magnify.png") no-repeat left;
   background-size: 20px;
 }
-.searchBar:active {
-  border: 1px #D1D4D6;
+.searchBar:focus {
+  outline: none;
 }
 
 /*# sourceMappingURL=Header.css.map */

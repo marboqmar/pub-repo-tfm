@@ -1,6 +1,6 @@
 import './Header.scss';
-import { Link } from 'react-router-dom';
-import {ChangeEvent, useContext, useState} from "react"
+import { Link, useNavigate } from 'react-router-dom';
+import {ChangeEvent, FormEvent, useContext, useState} from "react"
 import { useTranslation } from 'react-i18next';
 import { Button } from "../Button/Button.tsx";
 import i18n from "i18next";
@@ -28,14 +28,22 @@ const ChangeLanguage = () => {
 const SearchBar = () => {
     const { setNewSearch } = useContext(SearchContext)
     const { t } = useTranslation('common')
+    const navigate = useNavigate()
 
 
     const handleSearchInputChange = (event: ChangeEvent<HTMLInputElement>) => {
         setNewSearch(event.target.value)
     }
 
+    const handleOnSubmit = (event: FormEvent<HTMLFormElement>) => {
+        event.preventDefault();
+        navigate('/home');
+    }
+
     return (
-        <input id={'searchBar'} className={'searchBar font center-ver center-hor small'} type={'text'} onChange={handleSearchInputChange} placeholder={t('common:header.searchBarPlaceholder')}/>
+        <form className={'center-ver center-hor'} onSubmit={handleOnSubmit}>
+            <input id={'searchBar'} className={'searchBar font small'} type={'text'} onChange={handleSearchInputChange} placeholder={t('common:header.searchBarPlaceholder')}/>
+        </form>
     )
 }
 

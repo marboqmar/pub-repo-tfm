@@ -39,7 +39,7 @@
     background-size: 20px;
   }
 
-  &:active {
-    border: 1px #D1D4D6;
+  &:focus {
+    outline: none;
   }
 }
