@@ -38,4 +38,8 @@
     background: url('/public/icons/vector-magnify.png') no-repeat left;
     background-size: 20px;
   }
+
+  &:active {
+    border: 1px #D1D4D6;
+  }
 }

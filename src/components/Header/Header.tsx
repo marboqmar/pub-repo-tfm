@@ -1,15 +1,14 @@
 import './Header.scss';
 import { Link } from 'react-router-dom';
-import {ChangeEvent, useContext} from "react"
+import {ChangeEvent, useContext, useState} from "react"
 import { useTranslation } from 'react-i18next';
 import { Button } from "../Button/Button.tsx";
 import i18n from "i18next";
-import { LanguageContext } from "../../contexts/LanguageContextProvider.tsx";
 import { SearchContext } from "../../contexts/SearchContextProvider.tsx";
 
 const ChangeLanguage = () => {
     const { t } = useTranslation('common')
-    const { language, setNewLanguage } = useContext(LanguageContext)
+    const [language, setNewLanguage] = useState<string>('es')
 
     const handleLanguage = () => {
         if (language === 'es') {
