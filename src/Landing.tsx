@@ -32,7 +32,7 @@ const Slide = (slide: SlideContentModel) => {
                 <div className={'underline bgcolor-gray-100'}></div>
                 <div className={'margin-top-auto'}>
                     <p className={'h2 slider-price'}><span className={'color-gray crossed-text'}>489€</span><span> - 275€</span></p>
-                    <Link to={'/detalles-producto'}><Button color={'primary'}>{t('common:productDetails')}</Button></Link>
+                    <Button color={'primary'} link={'/detalles-producto'} >{t('common:productDetails')}</Button>
                 </div>
             </div>
         </div>
@@ -55,7 +55,7 @@ const Landing = () => {
                     <Link to={'/home'}><Button color={'primary'}>{t('common:visitShop')}</Button></Link>
                 </div>
                 {/*Slider*/}
-                <div className={'grid__item-14-columns center-hor'}>
+                <div className={''}>
                     <h2 className={'font-alt margin-bottom-60'}>{t('common:suggestions')}</h2>
                         <Swiper
                             slidesPerView={1}
@@ -86,7 +86,7 @@ const Landing = () => {
                         </Swiper>
                 </div>
                 {/*About us*/}
-                <div className={'grid__item-14-columns center-hor'}>
+                <div className={'center-hor'}>
                     <h2 className={'font-alt'}>{t('common:aboutUs')}</h2>
                     <div className={'display-flex-row gap-60 center-hor'}>
                         <div className={'aboutUs-text'}>
@@ -105,7 +105,7 @@ const Landing = () => {
                     </div>
                 </div>
                 {/*Contact*/}
-                <div className={'grid__item-14-columns center-hor'}>
+                <div className={'center-hor'}>
                     <h2 className={'font-alt'}>{t('common:contact')}</h2>
                     <p>{t('common:contactText')}</p>
                     <Form children={t('common:landingForm.name')} />

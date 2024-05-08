@@ -46,10 +46,10 @@ const Header = () => {
         <div className={'header display-flex-row gap-12'}>
             <Link to={'/'}><img className={'logo'} src={'/logo-header.png'} alt={'Website logo'}/></Link>
             <SearchBar/>
-            <div className={'header-buttons display-flex-row center-ver gap-36'}>
+            <div className={'display-flex-row center-ver gap-36'}>
                 <ChangeLanguage />
                 <Button className={'header--btn'} paddingSize={"none"} withoutHover color={'none'} borderType={'none'}><img className={'icon'} src={'/icons/vector-account.png'} alt={''}/><small> {t('common:header.signIn')}</small></Button>
-                <Link className={'header--btn'} to={'/cesta'}><img className={'icon'} src={'/icons/vector-cart.png'} alt={''}/><small> {t('common:header.cart')}</small></Link>
+                <Button className={'header--btn'} paddingSize={"none"} withoutHover color={'none'} borderType={'none'} link={'/cesta'}><img className={'icon'} src={'/icons/vector-cart.png'} alt={''}/><small> {t('common:header.cart')}</small></Button>
             </div>
         </div>
     );

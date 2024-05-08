@@ -1,6 +1,7 @@
 import './Button.scss'
 import { ButtonHTMLAttributes } from 'react';
 import classNames from 'classnames';
+import { Link } from "react-router-dom";
 
 export type ButtonColor = 'primary' | 'none';
 
@@ -13,9 +14,10 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     withoutHover?: boolean;
     paddingSize?: PaddingSizes;
     borderType?: BorderType;
+    link?: string;
 }
 
-export const Button = ({ className = '', color, withoutHover, paddingSize, borderType, disabled, children, ...rest }: ButtonProps) => {
+export const Button = ({ className = '', color, withoutHover, paddingSize, borderType, link, disabled, children, ...rest }: ButtonProps) => {
     const classes = classNames ({
         'btn': true,
         'font': true,
@@ -27,5 +29,8 @@ export const Button = ({ className = '', color, withoutHover, paddingSize, borde
         'btn--disabled': disabled
     })
 
-    return <button className={classes} disabled={disabled} {...rest}>{children}</button>
+    if (!link) {
+        return <button className={classes} disabled={disabled} {...rest}>{children}</button>
+    }
+    return <Link to={`${link}`} className={classes}>{children}</Link>
 }
