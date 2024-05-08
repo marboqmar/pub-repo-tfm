@@ -38,74 +38,60 @@ a {
 
 .grid {
   display: flex;
-  flex-direction: column;
   width: 100%;
   max-width: 1800px;
-  gap: 1.3333333333%;
+  gap: 24px;
 }
-
+.grid--1of16 {
+  flex: 0 0 calc(6.25% - 24px);
+}
 .grid__item-1-columns {
-  width: 5%;
+  flex: 0 0 calc(6.25% + 0px);
 }
-
 .grid__item-2-columns {
-  width: 11.3333333333%;
+  flex: 0 0 calc(12.5% + 24px);
 }
-
 .grid__item-3-columns {
-  width: 17.6666666667%;
+  flex: 0 0 calc(18.75% + 48px);
 }
-
 .grid__item-4-columns {
-  width: 24%;
+  flex: 0 0 calc(25% + 72px);
 }
-
 .grid__item-5-columns {
-  width: 30.3333333333%;
+  flex: 0 0 calc(31.25% + 96px);
 }
-
 .grid__item-6-columns {
-  width: 36.6666666667%;
+  flex: 0 0 calc(37.5% + 120px);
 }
-
 .grid__item-7-columns {
-  width: 43%;
+  flex: 0 0 calc(43.75% + 144px);
 }
-
 .grid__item-8-columns {
-  width: 49.3333333333%;
+  flex: 0 0 calc(50% + 168px);
 }
-
 .grid__item-9-columns {
-  width: 55.6666666667%;
+  flex: 0 0 calc(56.25% + 192px);
 }
-
 .grid__item-10-columns {
-  width: 62%;
+  flex: 0 0 calc(62.5% + 216px);
 }
-
 .grid__item-11-columns {
-  width: 68.3333333333%;
+  flex: 0 0 calc(68.75% + 240px);
 }
-
 .grid__item-12-columns {
-  width: 74.6666666667%;
+  flex: 0 0 calc(75% + 264px);
 }
-
 .grid__item-13-columns {
-  width: 81%;
+  flex: 0 0 calc(81.25% + 288px);
 }
-
 .grid__item-14-columns {
-  width: 87.3333333333%;
+  flex: 0 0 calc(87.5% + 312px);
 }
-
 .grid__item-15-columns {
-  width: 93.6666666667%;
+  flex: 0 0 calc(93.75% + 336px);
 }
-
 .grid__item-16-columns {
-  width: 100%;
+  flex: 0 0 calc(100% + 360px);
 }
 
 .height-24 {

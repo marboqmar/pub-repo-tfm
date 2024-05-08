@@ -48,7 +48,7 @@ const Landing = () => {
         <>
             {/*Hero*/}
             <img className={'hero'} src={language === 'en' ? '/hero.png' : '/hero-eng.png'} alt={''}/>
-            <div className={'grid center-hor margin-top-60 gap-60'}>
+            <div className={'grid display-flex-column center-hor margin-top-60 gap-60'}>
                 {/*Claim and call to action*/}
                 <div className={'display-flex-column align-center gap-60'}>
                     <h1 className={'font align-text-center margin-top-0 margin-bottom-0'}>{t('common:homeClaim')}</h1>

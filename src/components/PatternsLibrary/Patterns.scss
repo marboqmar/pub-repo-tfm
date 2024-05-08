@@ -19,7 +19,7 @@
   }
 
   &-button {
-    width: 246px;
+    width: 250px;
   }
 
   &-colors {
@@ -39,3 +39,51 @@
     margin: 24px;
   }
 }
+
+.test-grid {
+  display: flex;
+  width: 100%;
+  //To be able to see the container:
+  background-color: darkolivegreen;
+  height: 100px
+}
+
+.size-1of16 {
+  flex: 0 0 calc(6.25% - 18px);
+  margin-right: 18px;
+  box-sizing: border-box;
+  //To be able to see the container:
+  height: 50px;
+  background-color: orange;
+  border: 2px solid red;
+}
+
+.last-child-1of16 {
+  flex: 0 0 6.25%;
+}
+
+.test-grid-gap24 {
+  display: flex;
+  gap: 24px;
+  width: 100%;
+  //To be able to see the container:
+  background-color: darkolivegreen;
+  height: 100px
+}
+
+.colours {
+  box-sizing: border-box;
+  height: 50px;
+  background-color: orange;
+  border: 2px solid red;
+}
+
+
+
+
+
+
+
+
+
+

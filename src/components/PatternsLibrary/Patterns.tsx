@@ -134,18 +134,42 @@ const Patterns = () => {
                 <h2 className={'patterns-titles'}>Icons</h2>
                 <div className={'display-flex-row gap-36'}>
                     <div className={'display-flex-column align-center'}>
-                        <img className={'icon'} src={'/icons/vector-language.png'}/>
+                        <img className={'icon'} src={'/icons/vector-language.png'} alt={''}/>
                         <small> {t('common:header.language')}</small>
                     </div>
                     <div className={'display-flex-column align-center'}>
-                        <img className={'icon'} src={'/icons/vector-account.png'}/>
-                        <small> {t('common:header.myAccount')}</small>
+                        <img className={'icon'} src={'/icons/vector-account.png'} alt={''}/>
+                        <small> {t('common:header.signIn')}</small>
                     </div>
                     <div className={'display-flex-column align-center'}>
-                        <img className={'icon'} src={'/icons/vector-cart.png'}/>
+                        <img className={'icon'} src={'/icons/vector-cart.png'} alt={''}/>
                         <small> {t('common:header.cart')}</small>
                     </div>
                 </div>
+            </div>
+            <h3>Testing!!!</h3>
+            <div className={'grid'}>
+                <div className={'grid__item-1-columns colours'}>1/16</div>
+                <div className={'grid__item-1-columns colours'}>1/16</div>
+                <div className={'grid__item-1-columns colours'}>1/16</div>
+                <div className={'grid__item-1-columns colours'}>1/16</div>
+                <div className={'grid__item-1-columns colours'}>1/16</div>
+                <div className={'grid__item-1-columns colours'}>1/16</div>
+                <div className={'grid__item-1-columns colours'}>1/16</div>
+                <div className={'grid__item-1-columns colours'}>1/16</div>
+                <div className={'grid__item-1-columns colours'}>1/16</div>
+                <div className={'grid__item-1-columns colours'}>1/16</div>
+                <div className={'grid__item-1-columns colours'}>1/16</div>
+                <div className={'grid__item-1-columns colours'}>1/16</div>
+                <div className={'grid__item-1-columns colours'}>1/16</div>
+                <div className={'grid__item-1-columns colours'}>1/16</div>
+                <div className={'grid__item-1-columns colours'}>1/16</div>
+                <div className={'grid__item-1-columns colours'}>1/16</div>
+            </div>
+            <div className={'grid'}>
+                <div className={'grid__item-8-columns colours'}>8/16</div>
+                <div className={'grid__item-8-columns colours'}>8/16</div>
+
             </div>
         </>
     );

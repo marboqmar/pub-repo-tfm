@@ -77,6 +77,7 @@ a {
   opacity: 0.6;
   cursor: not-allowed;
   background-color: #8A8F93;
+  border: 1px solid #595D60;
 }
 .btn:disabled:hover {
   background-color: #8A8F93;
