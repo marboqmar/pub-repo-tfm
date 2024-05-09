@@ -2,9 +2,9 @@ import TotalToPay from "./components/TotalToPay/TotalToPay.tsx";
 
 const PaymentItem = () => {
     return (
-        <div className={'paymentItem'}>
+        <div className={'payment--item'}>
             <img className={'cartItemImg'} src={'/product-image.png'} alt={'cart item image'} />
-            <div className={'paymentItemText'}>
+            <div className={'payment--item-text'}>
                 <h2>La mejor espada del mundo</h2>
                 <span>Cantidad: 1</span>
                 <span>160€</span>

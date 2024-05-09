@@ -144,35 +144,90 @@ a {
   max-width: 90vw;
 }
 
+html {
+  font-family: "Crimson Text", serif;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.5em;
+  font-size: 24px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+.main {
+  flex: 1;
+}
+
+.sticky-footer {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+}
+
+.main {
+  flex: 1;
+}
+
+.icon {
+  height: 24px;
+  width: 24px;
+}
+
+.productDetails--title {
+  font-size: 48px;
+  margin-bottom: 18px;
+  margin-top: 60px;
+}
+.productDetails--title-line {
+  height: 2px;
+  width: 100%;
+  background-color: #9BA0A3;
+  margin-bottom: 84px;
+}
+.productDetails--subtitles {
+  margin-bottom: 24px !important;
+}
+
 .product {
   display: flex;
   flex-direction: row;
 }
-
-.productImage {
+.product--image {
   height: 600px;
   width: 600px;
 }
-
-.productInfo {
+.product--info {
   display: flex;
   flex-direction: column;
 }
-.productInfo button {
+.product--info button {
   width: 160px;
 }
 
 .similarProduct {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
 }
-.similarProductImg {
-  height: 140px;
-  width: 140px;
-}
-.similarProductDisplay {
+.similarProduct--item {
   display: flex;
   flex-direction: row;
+}
+.similarProduct--img {
+  height: 400px;
+  width: 209px;
+  margin-right: 18px;
+}
+.similarProduct a:visited {
+  color: inherit;
 }
 
 html {
@@ -252,12 +307,12 @@ a {
   display: flex;
   flex-direction: row;
 }
-.paymentItem {
+.payment--item {
   display: flex;
   flex-direction: row;
   border: 1px solid black;
 }
-.paymentItemText {
+.payment--item-text {
   display: flex;
   flex-direction: column;
 }
@@ -462,6 +517,10 @@ a {
 
 .margin-bottom-0 {
   margin-bottom: 0;
+}
+
+.margin-bottom-12 {
+  margin-bottom: 12px;
 }
 
 .margin-bottom-24 {
