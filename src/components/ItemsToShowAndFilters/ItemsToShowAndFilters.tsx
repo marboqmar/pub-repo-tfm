@@ -46,6 +46,9 @@ const ItemsToShowAndFilters = () => {
         setActiveFilter(option === activeFilter ? '' : option);
     }
 
+    const setItemOnLocalStorage = () => {
+        localStorage.setItem("Item", "Item name blabla")
+    }
 
     const FilterOptions = () => {
         return (
@@ -77,9 +80,9 @@ const ItemsToShowAndFilters = () => {
                 </div>
                 <div className={'itemDisplay'}>
                     {displayedItems.map((item) => (
-                        <Link className={'item-link'} to={'/detalles-producto'} key={`${item.image}${item.name}`}>
+                        <Link onClick={setItemOnLocalStorage} className={'item-link'} to={'/detalles-producto'} key={`${item.img}${item.name}`}>
                             <div className={'item'}>
-                                <img src={item.image} alt={''}/>
+                                <img src={item.img} alt={''}/>
                                 <div className={'item item-text'}>
                                     <span className={'itemTitle'}>{item.name}</span>
                                     <span>{item.price}€</span>
