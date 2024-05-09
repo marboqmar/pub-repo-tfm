@@ -1,6 +1,9 @@
-import {Button} from "./components/Button/Button.tsx";
+import { Button } from "./components/Button/Button.tsx";
+import { useTranslation } from 'react-i18next';
 
 const Product = () => {
+    const { t } = useTranslation ('productDetails')
+
     return (
         <div className={'product'}>
             <div className={'flex-row'}>
@@ -18,7 +21,7 @@ const Product = () => {
                     <div className={'underline bgcolor-gray-100'}></div>
                     <div className={'margin-top-auto'}>
                         <p className={'h2 slider-price'}><span className={'color-gray crossed-text'}>489€</span><span> - 275€</span></p>
-                        <Button color={'primary'} link={'/detalles-producto'} >Añadir a la cesta</Button>
+                        <Button color={'primary'} link={'/detalles-producto'}>{t('productDetails:addToCart')}</Button>
                     </div>
                 </div>
             </div>
@@ -49,14 +52,16 @@ const SimilarProduct = () => {
 }
 
 const ProductDetails = () => {
+    const { t } = useTranslation('productDetails');
+
     return (
         <div className={'margin-lat-60'}>
-            <h1 className={'productDetails--title'}>Product details</h1>
+            <h1 className={'productDetails--title'}>{t('productDetails:title')}</h1>
             <div className={'productDetails--title-line'}></div>
             <div className={'flex-column gap-60'}>
                 <Product />
                 <div className={'flex-column gap-12'}>
-                    <h2 className={'h2 productDetails--subtitles'}>Reviews</h2>
+                    <h2 className={'h2 productDetails--subtitles'}>{t('productDetails:reviews')}</h2>
                     <div>
                         <Review />
                         <Review />
@@ -64,7 +69,7 @@ const ProductDetails = () => {
                     </div>
                 </div>
                 <div className={'flex-column gap-12 margin-bottom-60'}>
-                    <h2 className={'h2 productDetails--subtitles'}>Productos similares</h2>
+                    <h2 className={'h2 productDetails--subtitles'}>{t('productDetails:similarProducts')}</h2>
                     <div className={'similarProduct'}>
                         <SimilarProduct />
                         <SimilarProduct />

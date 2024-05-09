@@ -6,6 +6,7 @@ const ITEM_LIST: ItemDetailsModel[] = [
         name: `The Witcher Knight's greatsword`,
         image: '/swords/Frame 48.png',
         price: 205,
+        description: 'Esta es una espada maravillosa',
         origin: 'The Witcher'
     },
     {
@@ -13,6 +14,7 @@ const ITEM_LIST: ItemDetailsModel[] = [
         name: `Elden Ring Godslayer's greatsword`,
         image: '/swords/Frame 37.png',
         price: 305,
+        description: 'Esta es una espada maravillosa',
         origin: 'Elden Ring'
     },
     {
@@ -20,6 +22,7 @@ const ITEM_LIST: ItemDetailsModel[] = [
         name: `D&D Flamberge`,
         image: '/swords/Frame 34.png',
         price: 405,
+        description: 'Esta es una espada maravillosa',
         origin: 'Dungeons & Dragons'
     },
     {
@@ -27,6 +30,7 @@ const ITEM_LIST: ItemDetailsModel[] = [
         name: `LOTR Crystal knife`,
         image: '/swords/Frame 41.png',
         price: 95,
+        description: 'Esta es una espada maravillosa',
         origin: 'The Lord of the Rings'
     },
     {
@@ -34,6 +38,7 @@ const ITEM_LIST: ItemDetailsModel[] = [
         name: `The Witcher Magma blade`,
         image: '/swords/Frame 39.png',
         price: 105,
+        description: 'Esta es una espada maravillosa',
         origin: 'The Witcher'
     },
 ];

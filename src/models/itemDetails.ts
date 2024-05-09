@@ -3,5 +3,6 @@ export interface ItemDetailsModel {
     name: string;
     image: string;
     price: number;
+    description: string;
     origin: string;
 }
