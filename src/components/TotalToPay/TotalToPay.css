@@ -1,10 +1,10 @@
 .total {
-  border: 1px solid black;
   height: 200px;
+  margin-left: auto;
 }
-.totalPrice {
-  display: flex;
-  flex-direction: row;
+
+.text-first-column {
+  margin-right: 60px;
 }
 
 /*# sourceMappingURL=TotalToPay.css.map */

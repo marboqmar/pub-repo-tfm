@@ -1,6 +1,6 @@
 import './ItemsToShowAndFilters.scss';
 import { Link } from 'react-router-dom';
-import { Filter, ItemDetailsModel } from "../../models";
+import { FilterModel, ItemDetailsModel } from "../../models";
 import {useState, useEffect} from "react";
 import ITEM_LIST from "../../lists/ITEM_LIST.tsx";
 import FILTER_OPTIONS_LIST from "../../lists/FILTER_OPTIONS_LIST.tsx";
@@ -50,7 +50,7 @@ const ItemsToShowAndFilters = () => {
     const FilterOptions = () => {
         return (
             <>
-                {FILTER_OPTIONS_LIST().map((option: Filter) => (
+                {FILTER_OPTIONS_LIST().map((option: FilterModel) => (
                     <div key={option.key}>
                         <Button onClick={() => {
                             handleFilterChange(option.key)

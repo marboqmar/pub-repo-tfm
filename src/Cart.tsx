@@ -1,14 +1,25 @@
 import TotalToPay from "./components/TotalToPay/TotalToPay.tsx";
+import {Button} from "./components/Button/Button.tsx";
+import {useTranslation} from "react-i18next";
 
 const CartItem = () => {
+    const { t } = useTranslation('cart')
+
     return (
         <div className={'cartItem'}>
-            <img className={'cartItemImg'} src={'/product-image.png'} alt={'cart item image'} />
+            <img className={'cartItem--img'} src={'/cart-image.png'} alt={'cart item image'} />
             <div>
-                <h2>La mejor espada del mundo</h2>
-                <div>
-                    <span>Cantidad: 1</span>
-                    <button>Eliminar</button>
+                <h2 className={'h2'}>Knight’s greatsword</h2>
+                <div className={'flex-column gap-24'}>
+                    <div className={'flex-row gap-24'}>
+                        <span>{t('cart:quantity')}</span>
+                        <div className={'flex gap-12'}>
+                            <img className={'plus-and-minus-i'} src={'/icons/minus-icon.png'} alt={''} />
+                            <span> 1 </span>
+                            <img className={'plus-and-minus-i'} src={'/icons/plus-icon.png'} alt={''} />
+                        </div>
+                    </div>
+                    <Button className={'cartItem--delete'} color={'none'} withoutHover paddingSize={'none'} borderType={'none'}>{t('cart:delete')}</Button>
                     <span>160€</span>
                 </div>
             </div>
@@ -19,11 +30,16 @@ const CartItem = () => {
 
 
 const Cart = () => {
+    const { t } = useTranslation('cart')
+
     return (
-        <div>
-            <h1>Cesta</h1>
-            <div className={'cartDisplay'}>
-                <div>
+        <div className={'margin-lat-60'}>
+            <h1 className={'cartTitle'}>{t('cart:title')}</h1>
+            <div className={'cartTitle--line'}></div>
+            <div className={'cartDisplay flex'}>
+                <div className={'flex-wrap gap-60 margin-bottom-60'}>
+                    <CartItem />
+                    <CartItem />
                     <CartItem />
                     <CartItem />
                 </div>

@@ -41,7 +41,7 @@ const SearchBar = () => {
     }
 
     return (
-        <form className={'center-ver center-hor'} onSubmit={handleOnSubmit}>
+        <form className={'margin-ver-auto margin-lat-auto'} onSubmit={handleOnSubmit}>
             <input id={'searchBar'} className={'searchBar font small'} type={'text'} onChange={handleSearchInputChange} placeholder={t('common:header.searchBarPlaceholder')}/>
         </form>
     )
@@ -50,10 +50,10 @@ const SearchBar = () => {
 const Header = () => {
     const { t } = useTranslation('common')
     return (
-        <div className={'header display-flex-row gap-12'}>
+        <div className={'header flex-row gap-12'}>
             <Link to={'/'}><img className={'logo'} src={'/logo-header.png'} alt={'Website logo'}/></Link>
             <SearchBar/>
-            <div className={'display-flex-row center-ver gap-36'}>
+            <div className={'flex-row margin-ver-auto gap-36'}>
                 <ChangeLanguage />
                 <Button className={'header--btn'} paddingSize={"none"} withoutHover color={'none'} borderType={'none'}><img className={'icon'} src={'/icons/vector-account.png'} alt={''}/><small> {t('common:header.signIn')}</small></Button>
                 <Button className={'header--btn'} paddingSize={"none"} withoutHover color={'none'} borderType={'none'} link={'/cesta'}><img className={'icon'} src={'/icons/vector-cart.png'} alt={''}/><small> {t('common:header.cart')}</small></Button>

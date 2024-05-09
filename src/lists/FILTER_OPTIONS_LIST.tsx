@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next';
-import { Filter } from "../models";
+import { FilterModel } from "../models";
 
-const FILTER_OPTIONS_LIST = (): Filter[] => {
+const FILTER_OPTIONS_LIST = (): FilterModel[] => {
     const {t} = useTranslation('home')
 
     // return ['The Witcher', 'Elden Ring', t('home:filterOptions.D&D'), t('home:filterOptions.LOTR')];

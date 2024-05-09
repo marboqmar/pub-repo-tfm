@@ -1,11 +1,9 @@
 import './scss/style.scss'
-import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import {Button} from "./components/Button/Button.tsx";
 import {Form} from "./components/Form/Form.tsx";
 import {SLIDE_CONTENT} from "./lists/SLIDE_CONTENT.tsx";
 import {SlideContentModel} from "./models";
-
 // Swiper imports
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { register } from 'swiper/element/bundle';
@@ -21,9 +19,9 @@ const Slide = (slide: SlideContentModel) => {
     const { t } = useTranslation('common')
 
     return (
-        <div className={'display-flex-row'}>
+        <div className={'flex-row'}>
             <img id={'slider-img'} src={slide.image} alt={''} />
-            <div className={'landing-sword-text display-flex-column grid__item-6-columns margin-left-auto align-flex-start'}>
+            <div className={'landing-sword-text flex-column grid__item-6-columns margin-left-auto align-flex-start'}>
                 <h3 id={'landing-sword-title'} className={'h2 margin-top-0'}>{slide.swordTitle}</h3>
                 <div className={'underline bgcolor-gray-100'}></div>
                 <p className={'slider-description'}>{slide.swordDescription}</p>
@@ -46,11 +44,11 @@ const Landing = () => {
         <>
             {/*Hero*/}
             <img className={'hero'} src={i18n.language === 'es' ? '/hero.png' : '/hero-eng.png'} alt={''}/>
-            <div className={'grid display-flex-column center-hor margin-top-60 gap-60'}>
+            <div className={'grid flex-column margin-lat-auto margin-top-60 gap-60'}>
                 {/*Claim and call to action*/}
-                <div className={'display-flex-column align-center gap-60'}>
+                <div className={'flex-column align-items-center gap-60'}>
                     <h1 className={'font align-text-center margin-top-0 margin-bottom-0'}>{t('common:homeClaim')}</h1>
-                    <Link to={'/home'}><Button color={'primary'}>{t('common:visitShop')}</Button></Link>
+                    <Button color={'primary'} link={'/home'}>{t('common:visitShop')}</Button>
                 </div>
                 {/*Slider*/}
                 <div className={''}>
@@ -84,9 +82,9 @@ const Landing = () => {
                         </Swiper>
                 </div>
                 {/*About us*/}
-                <div className={'center-hor'}>
+                <div className={'margin-lat-auto'}>
                     <h2 className={'font-alt'}>{t('common:aboutUs')}</h2>
-                    <div className={'display-flex-row gap-60 center-hor'}>
+                    <div className={'flex-row gap-60 margin-lat-auto'}>
                         <div className={'aboutUs-text'}>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras libero ipsum, ultricies
                                 sollicitudin quam ac, dapibus bibendum tellus. Nullam faucibus in nibh accumsan mattis.
@@ -103,7 +101,7 @@ const Landing = () => {
                     </div>
                 </div>
                 {/*Contact*/}
-                <div className={'center-hor'}>
+                <div className={'margin-lat-auto'}>
                     <h2 className={'font-alt'}>{t('common:contact')}</h2>
                     <p>{t('common:contactText')}</p>
                     <Form children={t('common:landingForm.name')} />

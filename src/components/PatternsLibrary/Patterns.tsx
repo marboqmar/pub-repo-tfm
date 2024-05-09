@@ -37,7 +37,7 @@ const Patterns = () => {
                     <li>Third item of the list</li>
                 </ul>
                 <h2 className={'patterns-titles'}>Buttons</h2>
-                <div className={'display-flex-row gap-36'}>
+                <div className={'flex-row gap-36'}>
                     <Button className={'btn font patterns-button'} color={'primary'}>Active button</Button>
                     <Button className={'btn font patterns-button'} disabled>Disabled button</Button>
                 </div>
@@ -47,7 +47,7 @@ const Patterns = () => {
                 <h2 className={'patterns-titles'}>Colours</h2>
                 <div>
                     <h3>Brand colours</h3>
-                    <div className={'patterns-colors display-flex-row bgcolor-primary'}>
+                    <div className={'patterns-colors flex-row bgcolor-primary'}>
                         <div className={'color-white'}>
                             <p>Primary</p>
                             <p>#0066B3</p>
@@ -61,7 +61,7 @@ const Patterns = () => {
                             <p className={'color-white'}>Pass</p>
                         </div>
                     </div>
-                    <div className={'patterns-colors display-flex-row bgcolor-secondary'}>
+                    <div className={'patterns-colors flex-row bgcolor-secondary'}>
                         <div className={'color-white'}>
                             <p>Secondary</p>
                             <p>#0066B3</p>
@@ -76,7 +76,7 @@ const Patterns = () => {
                         </div>
                     </div>
                     <h3>Gray colours</h3>
-                    <div className={'patterns-colors display-flex-row bgcolor-gray-100'}>
+                    <div className={'patterns-colors flex-row bgcolor-gray-100'}>
                         <div>
                             <p>Gray 100</p>
                             <p>#BDC1C3</p>
@@ -90,7 +90,7 @@ const Patterns = () => {
                             <p className={'color-white'}>Fail</p>
                         </div>
                     </div>
-                    <div className={'patterns-colors display-flex-row bgcolor-gray-300'}>
+                    <div className={'patterns-colors flex-row bgcolor-gray-300'}>
                         <div className={'color-white'}>
                             <p><strong>Gray 300</strong></p>
                             <p><strong>#9BA0A3</strong></p>
@@ -104,7 +104,7 @@ const Patterns = () => {
                             <p className={'color-white'}><strong>Fail</strong></p>
                         </div>
                     </div>
-                    <div className={'patterns-colors display-flex-row bgcolor-gray-500'}>
+                    <div className={'patterns-colors flex-row bgcolor-gray-500'}>
                         <div className={'color-white'}>
                             <p>Gray 500</p>
                             <p>#595D60</p>
@@ -120,28 +120,28 @@ const Patterns = () => {
                     </div>
                 </div>
                 <h2 className={'patterns-titles'}>Borders</h2>
-                <div className={'display-flex-row'}>
-                    <div className={'display-flex-column'}>
+                <div className={'flex-row'}>
+                    <div className={'flex-column'}>
                         <p>6px for buttons:</p>
                         <p>12px for input boxes:</p>
                     </div>
-                    <div className={'display-flex-column'}>
+                    <div className={'flex-column'}>
                         <div className={'patterns-borders bgcolor-primary border-radius-12 patterns-border'}></div>
                         <div className={'patterns-borders bgcolor-primary border-radius-6 patterns-border'}></div>
                     </div>
                 </div>
                 <h2 className={'patterns-titles'}>Grid</h2>
                 <h2 className={'patterns-titles'}>Icons</h2>
-                <div className={'display-flex-row gap-36'}>
-                    <div className={'display-flex-column align-center'}>
+                <div className={'flex-row gap-36'}>
+                    <div className={'flex-column align-items-center'}>
                         <img className={'icon'} src={'/icons/vector-language.png'} alt={''}/>
                         <small> {t('common:header.language')}</small>
                     </div>
-                    <div className={'display-flex-column align-center'}>
+                    <div className={'flex-column align-items-center'}>
                         <img className={'icon'} src={'/icons/vector-account.png'} alt={''}/>
                         <small> {t('common:header.signIn')}</small>
                     </div>
-                    <div className={'display-flex-column align-center'}>
+                    <div className={'flex-column align-items-center'}>
                         <img className={'icon'} src={'/icons/vector-cart.png'} alt={''}/>
                         <small> {t('common:header.cart')}</small>
                     </div>

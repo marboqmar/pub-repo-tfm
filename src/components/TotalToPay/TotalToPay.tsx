@@ -1,17 +1,19 @@
 import './TotalToPay.scss';
-import { Link } from "react-router-dom";
+import {Button} from "../Button/Button.tsx";
+import { useTranslation } from 'react-i18next';
 
 const IsCartOrPayment = () => {
     const currentUrl = window.location.href;
+    const { t } = useTranslation('cart')
 
     if (currentUrl.includes('pago')) {
         return (
-            <button>Confirmar y pagar</button>
+            <Button color={'primary'}>{t('cart:confirm')}</Button>
         )
     }
     if (currentUrl.includes('cesta')) {
         return (
-            <Link to={'/pago'}>Pagar</Link>
+            <Button className={'margin-lat-auto'} link={'/pago'} color={'primary'}>{t('cart:buy')}</Button>
         )
     }
 
@@ -19,19 +21,21 @@ const IsCartOrPayment = () => {
 
 
 const TotalToPay = () => {
+    const { t } = useTranslation('cart')
+
     return (
-        <div className={'total'}>
-            <div>
-                <span>Artículos (2)</span>
-                <span>320€</span>
-            </div>
-            <div>
-                <span>Envío</span>
-                <span>Gratis</span>
-            </div>
-            <div className={'totalPrice'}>
-                <h2>Total</h2>
-                <h2>320€</h2>
+        <div className={'total flex-column'}>
+            <div className={'flex-row'}>
+                <div className={'flex-column gap-12 text-first-column'}>
+                    <span>{t('cart:items')} (4)</span>
+                    <span>{t('cart:shipping')}</span>
+                    <span className={'bold'}>Total</span>
+                </div>
+                <div className={'flex-column gap-12 margin-left-auto'}>
+                    <span>640€</span>
+                    <span>{t('cart:free')}</span>
+                    <span className={'h3-bold'}>640€</span>
+                </div>
             </div>
             <IsCartOrPayment />
         </div>
