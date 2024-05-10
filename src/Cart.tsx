@@ -1,9 +1,14 @@
 import TotalToPay from "./components/TotalToPay/TotalToPay.tsx";
 import { Button } from "./components/Button/Button.tsx";
 import { useTranslation } from "react-i18next";
+// import { useState } from "react";
+// import { ItemDetailsModel } from "./models";
 
 const CartItem = () => {
   const { t } = useTranslation("cart");
+  // const [cartItems, setCartItems] = useState<ItemDetailsModel[]>([]);
+
+  //Adds item with same item.key as the one in localStorage and saves it on a state variable
 
   return (
     <div className={"cartItem"}>
