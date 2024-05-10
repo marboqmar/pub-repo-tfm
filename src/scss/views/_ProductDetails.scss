@@ -22,19 +22,16 @@
 .product {
   display: flex;
   flex-direction: row;
+  gap: 138px;
 
-  &--image {
-    height: 600px;
-    width: 600px;
+  &--img {
+    min-width: 450px;
+    border-radius: 12px;
   }
 
-  &--info {
+  &--text {
     display: flex;
     flex-direction: column;
-
-    & button {
-      width: 160px;
-    }
   }
 }
 

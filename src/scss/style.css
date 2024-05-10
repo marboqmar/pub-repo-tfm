@@ -124,9 +124,6 @@ a {
   overflow: hidden;
 }
 
-.slider-description {
-  text-align: left;
-}
 .slider-price {
   max-width: 168px;
 }
@@ -200,17 +197,15 @@ a {
 .product {
   display: flex;
   flex-direction: row;
+  gap: 138px;
 }
-.product--image {
-  height: 600px;
-  width: 600px;
+.product--img {
+  min-width: 450px;
+  border-radius: 12px;
 }
-.product--info {
+.product--text {
   display: flex;
   flex-direction: column;
-}
-.product--info button {
-  width: 160px;
 }
 
 .similarProduct {
@@ -352,6 +347,10 @@ a {
 
 .h2 {
   margin-bottom: 1.5em;
+  font-size: 32px;
+}
+
+.h2--no-margin {
   font-size: 32px;
 }
 
@@ -559,6 +558,10 @@ a {
 
 .align-text-center {
   text-align: center;
+}
+
+.align-text-left {
+  text-align: left;
 }
 
 .align-flex-start {

@@ -30,7 +30,7 @@ const Slide = (slide: SlideContentModel) => {
           {slide.swordTitle}
         </h3>
         <div className={"underline bgcolor-gray-100"}></div>
-        <p className={"slider-description"}>{slide.swordDescription}</p>
+        <p className={"align-text-left"}>{slide.swordDescription}</p>
         <div className={"underline bgcolor-gray-100"}></div>
         <div className={"margin-top-auto"}>
           <p className={"h2 slider-price"}>
