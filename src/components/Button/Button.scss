@@ -1,4 +1,4 @@
-@import '../../scss/base';
+@import "../../scss/base";
 
 .btn {
   cursor: pointer;
@@ -6,7 +6,6 @@
   border: 1px solid $color-primary-light;
   border-radius: 6px;
   padding: 14px 48px;
-
 
   &--color-primary {
     background-color: $color-primary;
@@ -31,8 +30,8 @@
     &-squareBlack {
       border: none;
       box-shadow:
-              0 0 0 1px black,
-              0 0 0 2px white;
+        0 0 0 1px black,
+        0 0 0 2px white;
       border-radius: 0;
     }
 
@@ -41,10 +40,8 @@
     }
   }
 
-
   &--filterClicked {
-    box-shadow:
-            0 0 0 2px black;
+    box-shadow: 0 0 0 2px black;
   }
 
   &:hover {

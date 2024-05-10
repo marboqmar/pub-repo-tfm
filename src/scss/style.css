@@ -394,7 +394,8 @@ a {
   font-size: 14px;
 }
 
-small, .small {
+small,
+.small {
   font-size: 18px;
 }
 
