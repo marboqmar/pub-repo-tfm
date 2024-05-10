@@ -1,15 +1,11 @@
 import { Button } from "./components/Button/Button.tsx";
 import { useTranslation } from "react-i18next";
-// import ITEM_LIST from "./lists/ITEM_LIST.tsx";
 import selectedItem from "./utils/selectedItem.tsx";
 
 const Product = () => {
   const { t } = useTranslation("productDetails");
 
-  console.log(selectedItem());
-
   //Upon product selection on /home stores item.key on localStorage and here it obtains that product details
-  // return ITEM_LIST.map((item) => {
   if (selectedItem().key === Number(localStorage.getItem("Item"))) {
     return (
       <div className={"product"}>
@@ -35,7 +31,6 @@ const Product = () => {
       </div>
     );
   }
-  // });
 };
 
 const Review = () => {
