@@ -1,7 +1,8 @@
 export interface ItemDetailsModel {
-    key: number;
-    name: string;
-    image: string;
-    price: number;
-    origin: string;
+  key: number;
+  name: string;
+  img: string;
+  price: number;
+  description: string;
+  origin: string;
 }
