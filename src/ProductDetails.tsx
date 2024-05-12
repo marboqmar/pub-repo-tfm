@@ -1,36 +1,52 @@
 import { Button } from "./components/Button/Button.tsx";
 import { useTranslation } from "react-i18next";
-import selectedItem from "./utils/selectedItem.tsx";
+import ITEM_LIST from "./lists/ITEM_LIST.tsx";
 
 const Product = () => {
   const { t } = useTranslation("productDetails");
 
+  const addItemToCart = (key: number) => {
+    const prevItems = localStorage.getItem("Cart");
+    if (prevItems && prevItems.includes(key.toString())) {
+      return;
+    }
+    const newCart = prevItems ? `${prevItems}, ${key}` : key;
+    console.log(newCart);
+    localStorage.setItem("Cart", `${newCart}`);
+  };
+
   //Upon product selection on /home stores item.key on localStorage and here it obtains that product details
-  if (selectedItem().key === Number(localStorage.getItem("Item"))) {
-    return (
-      <div className={"product"}>
-        <img className={"product--img"} src={selectedItem().img} alt={""} />
-        <div
-          className={
-            "product--text flex-column grid__item-6-columns margin-left-auto align-flex-start"
-          }
-        >
-          <h3 className={"h2--no-margin margin-top-0"}>
-            {selectedItem().name}
-          </h3>
-          <div className={"underline bgcolor-gray-100"}></div>
-          <p className={"align-text-left"}>{selectedItem().description}</p>
-          <div className={"underline bgcolor-gray-100"}></div>
-          <p className={"h2 slider-price"}>
-            <span>{selectedItem().price} €</span>
-          </p>
-          <Button color={"primary"} link={"/cesta"}>
-            {t("productDetails:addToCart")}
-          </Button>
+  return ITEM_LIST.map((item) => {
+    if (item.key === Number(localStorage.getItem("Item"))) {
+      return (
+        <div className={"product"}>
+          <img className={"product--img"} src={item.img} alt={""} />
+          <div
+            className={
+              "product--text flex-column grid__item-6-columns margin-left-auto align-flex-start"
+            }
+          >
+            <h3 className={"h2--no-margin margin-top-0"}>{item.name}</h3>
+            <div className={"underline bgcolor-gray-100"}></div>
+            <p className={"align-text-left"}>{item.description}</p>
+            <div className={"underline bgcolor-gray-100"}></div>
+            <p className={"h2 slider-price"}>
+              <span>{item.price} €</span>
+            </p>
+            <Button
+              color={"primary"}
+              onClick={() => {
+                addItemToCart(Number(item.key));
+              }}
+              // link={"/cesta"}
+            >
+              {t("productDetails:addToCart")}
+            </Button>
+          </div>
         </div>
-      </div>
-    );
-  }
+      );
+    }
+  });
 };
 
 const Review = () => {

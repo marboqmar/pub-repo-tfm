@@ -1,9 +1,9 @@
 import "./scss/style.scss";
 import Header from "./components/Header/Header.tsx";
 import Footer from "./components/Footer/Footer.tsx";
-import { SearchContextProvider } from "./contexts/SearchContextProvider.tsx";
 import { Outlet, useLocation } from "react-router-dom";
 import { useEffect } from "react";
+import { SearchContextProvider } from "./contexts/SearchContextProvider.tsx";
 
 function App() {
   const location = useLocation();

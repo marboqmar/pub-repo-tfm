@@ -1,10 +1,11 @@
 import TotalToPay from "./components/TotalToPay/TotalToPay.tsx";
 import { Button } from "./components/Button/Button.tsx";
 import { useTranslation } from "react-i18next";
+
 // import { useState } from "react";
 // import { ItemDetailsModel } from "./models";
 
-const CartItem = () => {
+const CartItems = () => {
   const { t } = useTranslation("cart");
   // const [cartItems, setCartItems] = useState<ItemDetailsModel[]>([]);
 
@@ -61,10 +62,10 @@ const Cart = () => {
       <div className={"cartTitle--line"}></div>
       <div className={"cartDisplay flex"}>
         <div className={"flex-wrap gap-60 margin-bottom-60"}>
-          <CartItem />
-          <CartItem />
-          <CartItem />
-          <CartItem />
+          <CartItems />
+          <CartItems />
+          <CartItems />
+          <CartItems />
         </div>
         <TotalToPay />
       </div>
