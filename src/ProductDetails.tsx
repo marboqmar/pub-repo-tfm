@@ -1,52 +1,63 @@
 import { Button } from "./components/Button/Button.tsx";
 import { useTranslation } from "react-i18next";
-import ITEM_LIST from "./lists/ITEM_LIST.tsx";
+// import ITEM_LIST from "./lists/ITEM_LIST.tsx";
+// import { useState } from "react";
+// import { ItemDetailsModel } from "./models";
 
 const Product = () => {
-  const { t } = useTranslation("productDetails");
-
-  const addItemToCart = (key: number) => {
-    const prevItems = localStorage.getItem("Cart");
-    if (prevItems && prevItems.includes(key.toString())) {
-      return;
-    }
-    const newCart = prevItems ? `${prevItems}, ${key}` : key;
-    console.log(newCart);
-    localStorage.setItem("Cart", `${newCart}`);
-  };
+  // const { t } = useTranslation("productDetails");
+  // const [productToDisplay, setProductToDisplay] = useState<ItemDetailsModel>(
+  //   ITEM_LIST[0],
+  // );
+  //
+  // const addItemToCart = (key: number) => {
+  //   const prevItems = localStorage.getItem("Cart");
+  //   if (prevItems && prevItems.includes(key.toString())) {
+  //     return;
+  //   }
+  //   const newCart = prevItems ? `${prevItems}, ${key}` : key;
+  //   console.log(newCart);
+  //   localStorage.setItem("Cart", `${newCart}`);
+  // };
 
   //Upon product selection on /home stores item.key on localStorage and here it obtains that product details
-  return ITEM_LIST.map((item) => {
-    if (item.key === Number(localStorage.getItem("Item"))) {
-      return (
-        <div className={"product"}>
-          <img className={"product--img"} src={item.img} alt={""} />
-          <div
-            className={
-              "product--text flex-column grid__item-6-columns margin-left-auto align-flex-start"
-            }
-          >
-            <h3 className={"h2--no-margin margin-top-0"}>{item.name}</h3>
-            <div className={"underline bgcolor-gray-100"}></div>
-            <p className={"align-text-left"}>{item.description}</p>
-            <div className={"underline bgcolor-gray-100"}></div>
-            <p className={"h2 slider-price"}>
-              <span>{item.price} €</span>
-            </p>
-            <Button
-              color={"primary"}
-              onClick={() => {
-                addItemToCart(Number(item.key));
-              }}
-              // link={"/cesta"}
-            >
-              {t("productDetails:addToCart")}
-            </Button>
-          </div>
-        </div>
-      );
-    }
-  });
+  // const selectedItem: ItemDetailsModel = ITEM_LIST.find(
+  //   (item: ItemDetailsModel) => {
+  //     return item.key === Number(localStorage.getItem("Item"));
+  //   },
+  // );
+
+  // setProductToDisplay(selectedItem);
+
+  return (
+    <div className={"product"}>
+      {/*<img className={"product--img"} src={productToDisplay.img} alt={""} />*/}
+      {/*<div*/}
+      {/*  className={*/}
+      {/*    "product--text flex-column grid__item-6-columns margin-left-auto align-flex-start"*/}
+      {/*  }*/}
+      {/*>*/}
+      {/*  <h3 className={"h2--no-margin margin-top-0"}>*/}
+      {/*    {productToDisplay.name}*/}
+      {/*  </h3>*/}
+      {/*  <div className={"underline bgcolor-gray-100"}></div>*/}
+      {/*  <p className={"align-text-left"}>{productToDisplay.description}</p>*/}
+      {/*  <div className={"underline bgcolor-gray-100"}></div>*/}
+      {/*  <p className={"h2 slider-price"}>*/}
+      {/*    <span>{productToDisplay.price} €</span>*/}
+      {/*  </p>*/}
+      {/*  <Button*/}
+      {/*    color={"primary"}*/}
+      {/*    onClick={() => {*/}
+      {/*      addItemToCart(Number(productToDisplay.key));*/}
+      {/*    }}*/}
+      {/*    // link={"/cesta"}*/}
+      {/*  >*/}
+      {/*    {t("productDetails:addToCart")}*/}
+      {/*  </Button>*/}
+      {/*</div>*/}
+    </div>
+  );
 };
 
 const Review = () => {

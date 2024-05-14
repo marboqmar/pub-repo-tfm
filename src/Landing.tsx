@@ -59,7 +59,7 @@ const Landing = () => {
         src={i18n.language === "es" ? "/hero.png" : "/hero-eng.png"}
         alt={""}
       />
-      <div className={"grid flex-column margin-lat-auto margin-top-60 gap-60"}>
+      <div className={"flex-column margin-lat-auto margin-top-60 gap-60"}>
         {/*Claim and call to action*/}
         <div className={"flex-column align-items-center gap-60"}>
           <h1 className={"font align-text-center margin-top-0 margin-bottom-0"}>
@@ -122,7 +122,7 @@ const Landing = () => {
               </p>
             </div>
             <img
-              className={"aboutUs-img grid__item-6-columns margin-left-auto"}
+              className={"aboutUs-img margin-left-auto"}
               src={"/anvil.png"}
               alt={""}
             />

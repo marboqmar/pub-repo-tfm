@@ -192,39 +192,110 @@ a {
   margin: 24px;
 }
 
-.test-grid {
-  display: flex;
-  width: 100%;
-  background-color: darkolivegreen;
-  height: 100px;
-}
-
-.size-1of16 {
-  flex: 0 0 calc(6.25% - 18px);
-  margin-right: 18px;
-  box-sizing: border-box;
-  height: 50px;
-  background-color: orange;
-  border: 2px solid red;
-}
-
-.last-child-1of16 {
-  flex: 0 0 6.25%;
-}
-
-.test-grid-gap24 {
-  display: flex;
-  gap: 24px;
-  width: 100%;
-  background-color: darkolivegreen;
-  height: 100px;
-}
-
 .colours {
   box-sizing: border-box;
   height: 50px;
   background-color: orange;
   border: 2px solid red;
+}
+
+.grid {
+  display: flex;
+  align-items: stretch;
+  flex-wrap: wrap;
+  background-color: red;
+  margin: -12px;
+}
+
+[class^=item-],
+[class*=" item-"] {
+  background-color: pink;
+  padding: 5px;
+  min-height: 100px;
+}
+
+.item-1 {
+  flex: 0 0 calc(8.3333333333% - 24px);
+  flex-shrink: 0;
+  flex-grow: 1;
+  margin: 12px;
+}
+
+.item-2 {
+  flex: 0 0 calc(16.6666666667% - 24px);
+  flex-shrink: 0;
+  flex-grow: 1;
+  margin: 12px;
+}
+
+.item-3 {
+  flex: 0 0 calc(25% - 24px);
+  flex-shrink: 0;
+  flex-grow: 1;
+  margin: 12px;
+}
+
+.item-4 {
+  flex: 0 0 calc(33.3333333333% - 24px);
+  flex-shrink: 0;
+  flex-grow: 1;
+  margin: 12px;
+}
+
+.item-5 {
+  flex: 0 0 calc(41.6666666667% - 24px);
+  flex-shrink: 0;
+  flex-grow: 1;
+  margin: 12px;
+}
+
+.item-6 {
+  flex: 0 0 calc(50% - 24px);
+  flex-shrink: 0;
+  flex-grow: 1;
+  margin: 12px;
+}
+
+.item-7 {
+  flex: 0 0 calc(58.3333333333% - 24px);
+  flex-shrink: 0;
+  flex-grow: 1;
+  margin: 12px;
+}
+
+.item-8 {
+  flex: 0 0 calc(66.6666666667% - 24px);
+  flex-shrink: 0;
+  flex-grow: 1;
+  margin: 12px;
+}
+
+.item-9 {
+  flex: 0 0 calc(75% - 24px);
+  flex-shrink: 0;
+  flex-grow: 1;
+  margin: 12px;
+}
+
+.item-10 {
+  flex: 0 0 calc(83.3333333333% - 24px);
+  flex-shrink: 0;
+  flex-grow: 1;
+  margin: 12px;
+}
+
+.item-11 {
+  flex: 0 0 calc(91.6666666667% - 24px);
+  flex-shrink: 0;
+  flex-grow: 1;
+  margin: 12px;
+}
+
+.item-12 {
+  flex: 0 0 calc(100% - 24px);
+  flex-shrink: 0;
+  flex-grow: 1;
+  margin: 12px;
 }
 
 /*# sourceMappingURL=Patterns.css.map */

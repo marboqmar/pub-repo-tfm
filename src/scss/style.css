@@ -40,58 +40,89 @@ a {
   display: flex;
   width: 100%;
   max-width: 1800px;
-  gap: 24px;
 }
 .grid--1of16 {
   flex: 0 0 calc(6.25% - 24px);
 }
 .grid__item-1-columns {
   flex: 0 0 calc(6.25% + 0px);
+  padding-right: 24px;
+  box-sizing: border-box;
 }
 .grid__item-2-columns {
   flex: 0 0 calc(12.5% + 24px);
+  padding-right: 24px;
+  box-sizing: border-box;
 }
 .grid__item-3-columns {
   flex: 0 0 calc(18.75% + 48px);
+  padding-right: 24px;
+  box-sizing: border-box;
 }
 .grid__item-4-columns {
   flex: 0 0 calc(25% + 72px);
+  padding-right: 24px;
+  box-sizing: border-box;
 }
 .grid__item-5-columns {
   flex: 0 0 calc(31.25% + 96px);
+  padding-right: 24px;
+  box-sizing: border-box;
 }
 .grid__item-6-columns {
   flex: 0 0 calc(37.5% + 120px);
+  padding-right: 24px;
+  box-sizing: border-box;
 }
 .grid__item-7-columns {
   flex: 0 0 calc(43.75% + 144px);
+  padding-right: 24px;
+  box-sizing: border-box;
 }
 .grid__item-8-columns {
   flex: 0 0 calc(50% + 168px);
+  padding-right: 24px;
+  box-sizing: border-box;
 }
 .grid__item-9-columns {
   flex: 0 0 calc(56.25% + 192px);
+  padding-right: 24px;
+  box-sizing: border-box;
 }
 .grid__item-10-columns {
   flex: 0 0 calc(62.5% + 216px);
+  padding-right: 24px;
+  box-sizing: border-box;
 }
 .grid__item-11-columns {
   flex: 0 0 calc(68.75% + 240px);
+  padding-right: 24px;
+  box-sizing: border-box;
 }
 .grid__item-12-columns {
   flex: 0 0 calc(75% + 264px);
+  padding-right: 24px;
+  box-sizing: border-box;
 }
 .grid__item-13-columns {
   flex: 0 0 calc(81.25% + 288px);
+  padding-right: 24px;
+  box-sizing: border-box;
 }
 .grid__item-14-columns {
   flex: 0 0 calc(87.5% + 312px);
+  padding-right: 24px;
+  box-sizing: border-box;
 }
 .grid__item-15-columns {
   flex: 0 0 calc(93.75% + 336px);
+  padding-right: 24px;
+  box-sizing: border-box;
 }
 .grid__item-16-columns {
   flex: 0 0 calc(100% + 360px);
+  padding-right: 24px;
+  box-sizing: border-box;
 }
 
 .height-24 {

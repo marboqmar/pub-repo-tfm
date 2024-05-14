@@ -20,7 +20,6 @@
 //  }
 //}
 
-
 $width: 1800;
 $gapSize: 24px;
 $columns: 16;
@@ -30,10 +29,10 @@ $columnSize: 6.25%;
   display: flex;
   width: 100%;
   max-width: #{$width}px;
-  gap: #{$gapSize};
+  //gap: #{$gapSize};
 
   &--1of16 {
-    flex: 0 0 calc($columnSize - $gapSize)
+    flex: 0 0 calc($columnSize - $gapSize);
   }
 
   @for $i from 1 through $columns {
@@ -41,9 +40,11 @@ $columnSize: 6.25%;
     $totalColumnSize: $columnSize * $i;
     $totalGapSize: $gapsNumber * $gapSize;
 
-      &__item-#{$i}-columns {
-        flex: 0 0 calc($totalColumnSize + $totalGapSize)
-      }
+    &__item-#{$i}-columns {
+      flex: 0 0 calc($totalColumnSize + $totalGapSize);
+      padding-right: 24px;
+      box-sizing: border-box;
+    }
   }
 
   //&--1of2 {
