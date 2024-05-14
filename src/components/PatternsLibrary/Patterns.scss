@@ -67,35 +67,7 @@
 //  padding: 0 24px;
 //}
 
-$gap: 24px;
-$grid-size: 12;
 
-.grid {
-  display: flex;
-  align-items: stretch;
-  flex-wrap: wrap;
-  background-color: red;
-  // To remove the left and right margin of the first and last columns:
-  margin: 0 - $gap / 2;
-}
-
-[class^="item-"],
-[class*=" item-"] {
-  background-color: pink;
-  padding: 5px;
-  min-height: 100px; // remove, it's only for presentation purposes.
-}
-
-@for $i from 1 to ($grid-size + 1) {
-  $width: 100 / $grid-size * $i * 1%;
-
-  .item-#{$i} {
-    flex: 0 0 calc(#{$width} - #{$gap});
-    flex-shrink: 0;
-    flex-grow: 1;
-    margin: $gap / 2;
-  }
-}
 
 //.first-item {
 //  margin-left: 0;

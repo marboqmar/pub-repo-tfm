@@ -1,62 +1,61 @@
 import { Button } from "./components/Button/Button.tsx";
 import { useTranslation } from "react-i18next";
-// import ITEM_LIST from "./lists/ITEM_LIST.tsx";
-// import { useState } from "react";
-// import { ItemDetailsModel } from "./models";
+import ITEM_LIST from "./lists/ITEM_LIST.tsx";
+import { ItemDetailsModel } from "./models";
+import { useSearchParams } from "react-router-dom";
 
 const Product = () => {
-  // const { t } = useTranslation("productDetails");
-  // const [productToDisplay, setProductToDisplay] = useState<ItemDetailsModel>(
-  //   ITEM_LIST[0],
-  // );
-  //
-  // const addItemToCart = (key: number) => {
-  //   const prevItems = localStorage.getItem("Cart");
-  //   if (prevItems && prevItems.includes(key.toString())) {
-  //     return;
-  //   }
-  //   const newCart = prevItems ? `${prevItems}, ${key}` : key;
-  //   console.log(newCart);
-  //   localStorage.setItem("Cart", `${newCart}`);
-  // };
+  const { t } = useTranslation("productDetails");
+  const [param] = useSearchParams();
+  const productIdParam = param.get("ref");
 
-  //Upon product selection on /home stores item.key on localStorage and here it obtains that product details
-  // const selectedItem: ItemDetailsModel = ITEM_LIST.find(
-  //   (item: ItemDetailsModel) => {
-  //     return item.key === Number(localStorage.getItem("Item"));
-  //   },
-  // );
+  const selectedItem = ITEM_LIST.find((item: ItemDetailsModel) => {
+    return item.key === Number(productIdParam);
+  });
 
-  // setProductToDisplay(selectedItem);
+  const addItemToCart = (key: number) => {
+    const prevItems = localStorage.getItem("Cart");
+    if (prevItems && prevItems.includes(key.toString())) {
+      return;
+    }
+    const newCart = prevItems ? `${prevItems}, ${key}` : key;
+    localStorage.setItem("Cart", `${newCart}`);
+  };
 
   return (
-    <div className={"product"}>
-      {/*<img className={"product--img"} src={productToDisplay.img} alt={""} />*/}
-      {/*<div*/}
-      {/*  className={*/}
-      {/*    "product--text flex-column grid__item-6-columns margin-left-auto align-flex-start"*/}
-      {/*  }*/}
-      {/*>*/}
-      {/*  <h3 className={"h2--no-margin margin-top-0"}>*/}
-      {/*    {productToDisplay.name}*/}
-      {/*  </h3>*/}
-      {/*  <div className={"underline bgcolor-gray-100"}></div>*/}
-      {/*  <p className={"align-text-left"}>{productToDisplay.description}</p>*/}
-      {/*  <div className={"underline bgcolor-gray-100"}></div>*/}
-      {/*  <p className={"h2 slider-price"}>*/}
-      {/*    <span>{productToDisplay.price} €</span>*/}
-      {/*  </p>*/}
-      {/*  <Button*/}
-      {/*    color={"primary"}*/}
-      {/*    onClick={() => {*/}
-      {/*      addItemToCart(Number(productToDisplay.key));*/}
-      {/*    }}*/}
-      {/*    // link={"/cesta"}*/}
-      {/*  >*/}
-      {/*    {t("productDetails:addToCart")}*/}
-      {/*  </Button>*/}
-      {/*</div>*/}
-    </div>
+    <>
+      {selectedItem ? (
+        <div className={"product"}>
+          <img className={"product--img"} src={selectedItem.img} alt={""} />
+          <div
+            className={
+              "product--text flex-column grid__item-6-columns margin-left-auto align-flex-start"
+            }
+          >
+            <h3 className={"h2--no-margin margin-top-0"}>
+              {selectedItem.name}
+            </h3>
+            <div className={"underline bgcolor-gray-100"}></div>
+            <p className={"align-text-left"}>{selectedItem.description}</p>
+            <div className={"underline bgcolor-gray-100"}></div>
+            <p className={"h2 slider-price"}>
+              <span>{selectedItem.price} €</span>
+            </p>
+            <Button
+              color={"primary"}
+              onClick={() => {
+                addItemToCart(selectedItem.key);
+              }}
+              // link={"/cesta"}
+            >
+              {t("productDetails:addToCart")}
+            </Button>
+          </div>
+        </div>
+      ) : (
+        console.log("test")
+      )}
+    </>
   );
 };
 
@@ -140,3 +139,26 @@ const ProductDetails = () => {
 };
 
 export default ProductDetails;
+
+// const [productToDisplay, setProductToDisplay] = useState<ItemDetailsModel>(
+//   ITEM_LIST[0],
+// );
+//
+// const addItemToCart = (key: number) => {
+//   const prevItems = localStorage.getItem("Cart");
+//   if (prevItems && prevItems.includes(key.toString())) {
+//     return;
+//   }
+//   const newCart = prevItems ? `${prevItems}, ${key}` : key;
+//   console.log(newCart);
+//   localStorage.setItem("Cart", `${newCart}`);
+// };
+//
+// // Upon product selection on /home stores item.key on localStorage and here it obtains that product details
+// const selectedItem: ItemDetailsModel = ITEM_LIST.find(
+//   (item: ItemDetailsModel) => {
+//     return item.key === Number(localStorage.getItem("Item"));
+//   },
+// );
+//
+// setProductToDisplay(selectedItem);
