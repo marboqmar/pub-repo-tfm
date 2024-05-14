@@ -50,11 +50,6 @@ const ItemsToShowAndFilters = () => {
     setActiveFilter(option === activeFilter ? "" : option);
   };
 
-  // Set item on local storage to know which product has been selected
-  const setItemOnLocalStorage = (key: number) => {
-    localStorage.setItem("Item", key.toString());
-  };
-
   const FilterOptions = () => {
     return (
       <>
@@ -89,9 +84,8 @@ const ItemsToShowAndFilters = () => {
         <div className={"itemDisplay"}>
           {displayedItems.map((item) => (
             <Link
-              onClick={() => setItemOnLocalStorage(item.key)}
               className={"item-link"}
-              to={"/detalles-producto"}
+              to={`/detalles-producto/?ref=${item.key}`}
               key={`${item.img}${item.name}`}
             >
               <div className={"item"}>

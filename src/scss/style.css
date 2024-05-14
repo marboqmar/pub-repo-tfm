@@ -38,60 +38,94 @@ a {
 
 .grid {
   display: flex;
-  width: 100%;
-  max-width: 1800px;
-  gap: 24px;
+  align-items: stretch;
+  flex-wrap: wrap;
+  max-width: 1800;
+  margin: 0 12px;
 }
-.grid--1of16 {
-  flex: 0 0 calc(6.25% - 24px);
+
+.item-1 {
+  flex: 0 0 calc(8.3333333333% - 24px);
+  flex-shrink: 0;
+  flex-grow: 1;
+  margin: 12px;
 }
-.grid__item-1-columns {
-  flex: 0 0 calc(6.25% + 0px);
+
+.item-2 {
+  flex: 0 0 calc(16.6666666667% - 24px);
+  flex-shrink: 0;
+  flex-grow: 1;
+  margin: 12px;
 }
-.grid__item-2-columns {
-  flex: 0 0 calc(12.5% + 24px);
+
+.item-3 {
+  flex: 0 0 calc(25% - 24px);
+  flex-shrink: 0;
+  flex-grow: 1;
+  margin: 12px;
 }
-.grid__item-3-columns {
-  flex: 0 0 calc(18.75% + 48px);
+
+.item-4 {
+  flex: 0 0 calc(33.3333333333% - 24px);
+  flex-shrink: 0;
+  flex-grow: 1;
+  margin: 12px;
 }
-.grid__item-4-columns {
-  flex: 0 0 calc(25% + 72px);
+
+.item-5 {
+  flex: 0 0 calc(41.6666666667% - 24px);
+  flex-shrink: 0;
+  flex-grow: 1;
+  margin: 12px;
 }
-.grid__item-5-columns {
-  flex: 0 0 calc(31.25% + 96px);
+
+.item-6 {
+  flex: 0 0 calc(50% - 24px);
+  flex-shrink: 0;
+  flex-grow: 1;
+  margin: 12px;
 }
-.grid__item-6-columns {
-  flex: 0 0 calc(37.5% + 120px);
+
+.item-7 {
+  flex: 0 0 calc(58.3333333333% - 24px);
+  flex-shrink: 0;
+  flex-grow: 1;
+  margin: 12px;
 }
-.grid__item-7-columns {
-  flex: 0 0 calc(43.75% + 144px);
+
+.item-8 {
+  flex: 0 0 calc(66.6666666667% - 24px);
+  flex-shrink: 0;
+  flex-grow: 1;
+  margin: 12px;
 }
-.grid__item-8-columns {
-  flex: 0 0 calc(50% + 168px);
+
+.item-9 {
+  flex: 0 0 calc(75% - 24px);
+  flex-shrink: 0;
+  flex-grow: 1;
+  margin: 12px;
 }
-.grid__item-9-columns {
-  flex: 0 0 calc(56.25% + 192px);
+
+.item-10 {
+  flex: 0 0 calc(83.3333333333% - 24px);
+  flex-shrink: 0;
+  flex-grow: 1;
+  margin: 12px;
 }
-.grid__item-10-columns {
-  flex: 0 0 calc(62.5% + 216px);
+
+.item-11 {
+  flex: 0 0 calc(91.6666666667% - 24px);
+  flex-shrink: 0;
+  flex-grow: 1;
+  margin: 12px;
 }
-.grid__item-11-columns {
-  flex: 0 0 calc(68.75% + 240px);
-}
-.grid__item-12-columns {
-  flex: 0 0 calc(75% + 264px);
-}
-.grid__item-13-columns {
-  flex: 0 0 calc(81.25% + 288px);
-}
-.grid__item-14-columns {
-  flex: 0 0 calc(87.5% + 312px);
-}
-.grid__item-15-columns {
-  flex: 0 0 calc(93.75% + 336px);
-}
-.grid__item-16-columns {
-  flex: 0 0 calc(100% + 360px);
+
+.item-12 {
+  flex: 0 0 calc(100% - 24px);
+  flex-shrink: 0;
+  flex-grow: 1;
+  margin: 12px;
 }
 
 .height-24 {
