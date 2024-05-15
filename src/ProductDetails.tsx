@@ -2,15 +2,15 @@ import { Button } from "./components/Button/Button.tsx";
 import { useTranslation } from "react-i18next";
 import ITEM_LIST from "./lists/ITEM_LIST.tsx";
 import { ItemDetailsModel } from "./models";
-import { useSearchParams } from "react-router-dom";
+import {Link, useSearchParams} from "react-router-dom";
 
 const Product = () => {
   const { t } = useTranslation("productDetails");
   const [param] = useSearchParams();
-  const productIdParam = param.get("ref");
+  const productIdParam = Number(param.get("ref"));
 
   const selectedItem = ITEM_LIST.find((item: ItemDetailsModel) => {
-    return item.key === Number(productIdParam);
+    return item.key === productIdParam;
   });
 
   const addItemToCart = (key: number) => {
@@ -59,6 +59,8 @@ const Product = () => {
   );
 };
 
+
+
 const Review = () => {
   return (
     <div>
@@ -79,12 +81,13 @@ const Review = () => {
 const SimilarProduct = () => {
   return (
     <Button
+      component={Link}
       className={"similarProduct--item flex-column"}
       color={"none"}
       paddingSize={"none"}
       withoutHover
       borderType={"none"}
-      link={"/detalles-producto"}
+      to={"/detalles-producto"}
     >
       <img
         className={"similarProduct--img"}
@@ -139,26 +142,3 @@ const ProductDetails = () => {
 };
 
 export default ProductDetails;
-
-// const [productToDisplay, setProductToDisplay] = useState<ItemDetailsModel>(
-//   ITEM_LIST[0],
-// );
-//
-// const addItemToCart = (key: number) => {
-//   const prevItems = localStorage.getItem("Cart");
-//   if (prevItems && prevItems.includes(key.toString())) {
-//     return;
-//   }
-//   const newCart = prevItems ? `${prevItems}, ${key}` : key;
-//   console.log(newCart);
-//   localStorage.setItem("Cart", `${newCart}`);
-// };
-//
-// // Upon product selection on /home stores item.key on localStorage and here it obtains that product details
-// const selectedItem: ItemDetailsModel = ITEM_LIST.find(
-//   (item: ItemDetailsModel) => {
-//     return item.key === Number(localStorage.getItem("Item"));
-//   },
-// );
-//
-// setProductToDisplay(selectedItem);

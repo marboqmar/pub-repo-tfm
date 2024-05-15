@@ -12,6 +12,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "./components/Swipper/swipper.scss";
 import { Pagination } from "swiper/modules";
+import {Link} from "react-router-dom";
 
 register();
 
@@ -37,7 +38,7 @@ const Slide = (slide: SlideContentModel) => {
             <span className={"color-gray crossed-text"}>489€</span>
             <span> - 275€</span>
           </p>
-          <Button color={"primary"} link={"/detalles-producto"}>
+          <Button component={Link} color={"primary"} to={"/detalles-producto"}>
             {t("common:productDetails")}
           </Button>
         </div>
@@ -65,7 +66,7 @@ const Landing = () => {
           <h1 className={"font align-text-center margin-top-0 margin-bottom-0"}>
             {t("common:homeClaim")}
           </h1>
-          <Button color={"primary"} link={"/home"}>
+          <Button component={Link} color={"primary"} to={"/home"}>
             {t("common:visitShop")}
           </Button>
         </div>

@@ -1,7 +1,6 @@
 import "./Button.scss";
-import { ButtonHTMLAttributes } from "react";
+import {ButtonHTMLAttributes, ComponentType, ReactHTML} from "react";
 import classNames from "classnames";
-import { Link } from "react-router-dom";
 
 export type ButtonColor = "primary" | "none";
 
@@ -14,7 +13,9 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   withoutHover?: boolean;
   paddingSize?: PaddingSizes;
   borderType?: BorderType;
-  link?: string;
+  component?: ComponentType<any> | keyof ReactHTML;
+  to?: string;
+  href?: string;
 }
 
 export const Button = ({
@@ -23,7 +24,7 @@ export const Button = ({
   withoutHover,
   paddingSize,
   borderType,
-  link,
+  component = 'button',
   disabled,
   children,
   ...rest
@@ -36,19 +37,14 @@ export const Button = ({
     "btn--withoutHover": withoutHover,
     [`btn--paddingSize-${paddingSize}`]: paddingSize,
     [`btn--border-${borderType}`]: borderType,
+    component: "button",
     "btn--disabled": disabled,
   });
+  const Component = component
 
-  if (!link) {
-    return (
-      <button className={classes} disabled={disabled} {...rest}>
-        {children}
-      </button>
-    );
-  }
   return (
-    <Link to={`${link}`} className={classes}>
+    <Component className={classes} disabled={disabled} {...rest}>
       {children}
-    </Link>
+    </Component>
   );
 };
