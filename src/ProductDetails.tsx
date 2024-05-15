@@ -13,6 +13,7 @@ const Product = () => {
     return item.key === productIdParam;
   });
 
+  //Adds list of item.key to localStorage
   const addItemToCart = (key: number) => {
     const prevItems = localStorage.getItem("Cart");
     if (prevItems && prevItems.includes(key.toString())) {
@@ -42,11 +43,12 @@ const Product = () => {
               <span>{selectedItem.price} €</span>
             </p>
             <Button
+              component={Link}
               color={"primary"}
               onClick={() => {
                 addItemToCart(selectedItem.key);
               }}
-              // link={"/cesta"}
+              to={"/cesta"}
             >
               {t("productDetails:addToCart")}
             </Button>

@@ -82,7 +82,7 @@ const ItemsToShowAndFilters = () => {
           <FilterOptions />
         </div>
         <div className={"itemDisplay"}>
-          {displayedItems.map((item) => (
+          {displayedItems.map((item: ItemDetailsModel) => (
             <Link
               className={"item-link"}
               to={`/detalles-producto/?ref=${item.key}`}

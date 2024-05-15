@@ -1,6 +1,7 @@
 import "./TotalToPay.scss";
 import { Button } from "../Button/Button.tsx";
 import { useTranslation } from "react-i18next";
+import { Link } from "react-router-dom";
 
 const IsCartOrPayment = () => {
   const currentUrl = window.location.href;
@@ -11,7 +12,12 @@ const IsCartOrPayment = () => {
   }
   if (currentUrl.includes("cesta")) {
     return (
-      <Button className={"margin-lat-auto"} link={"/pago"} color={"primary"}>
+      <Button
+        component={Link}
+        className={"margin-lat-auto"}
+        to={"/pago"}
+        color={"primary"}
+      >
         {t("cart:buy")}
       </Button>
     );
