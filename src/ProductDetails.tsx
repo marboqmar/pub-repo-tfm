@@ -2,7 +2,7 @@ import { Button } from "./components/Button/Button.tsx";
 import { useTranslation } from "react-i18next";
 import ITEM_LIST from "./lists/ITEM_LIST.tsx";
 import { ItemDetailsModel } from "./models";
-import {Link, useSearchParams} from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 
 const Product = () => {
   const { t } = useTranslation("productDetails");
@@ -15,12 +15,28 @@ const Product = () => {
 
   //Adds list of item.key to localStorage
   const addItemToCart = (key: number) => {
-    const prevItems = localStorage.getItem("Cart");
-    if (prevItems && prevItems.includes(key.toString())) {
-      return;
+    // if (prevItems && prevItems.includes(key.toString())) {
+    //   return;
+    // }
+    // localStorage.setItem("Cart", `${newCart}`);
+    interface JSONCartModel {
+      itemId: number;
+      quantity: number;
     }
-    const newCart = prevItems ? `${prevItems}, ${key}` : key;
-    localStorage.setItem("Cart", `${newCart}`);
+    const JSONCart: JSONCartModel = {
+      itemId: key,
+      quantity: 1,
+    };
+
+    const prevItems = localStorage.getItem("Cart");
+
+    const newCart = prevItems
+      ? `${prevItems}, ${JSON.stringify(JSONCart)}`
+      : JSONCart;
+
+    localStorage.setItem("Cart", newCart.toString());
+
+    console.log(Object.values(JSONCart));
   };
 
   return (
@@ -60,8 +76,6 @@ const Product = () => {
     </>
   );
 };
-
-
 
 const Review = () => {
   return (
