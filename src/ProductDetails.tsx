@@ -32,7 +32,7 @@ const Product = () => {
 
     const newCart = prevItems
       ? `${prevItems}, ${JSON.stringify(JSONCart)}`
-      : JSONCart;
+      : JSON.stringify(JSONCart);
 
     localStorage.setItem("Cart", newCart.toString());
 
