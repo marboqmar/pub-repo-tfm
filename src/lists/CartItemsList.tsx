@@ -1,16 +1,21 @@
 import { ItemDetailsModel } from "../models";
 import ITEM_LIST from "./ITEM_LIST.tsx";
+import { getCartFromLocalStorage } from "../utils/cartOnLocalStorage.tsx";
+import { JSONCartModel } from "../models/cartModel.ts";
 
 export const cartItemsList = () => {
-  const cartString: string | null = localStorage.getItem("Cart");
-  let cartItemsList: ItemDetailsModel[] = [];
+  const cartItemsIdList: number[] = [];
+  let cartItems: ItemDetailsModel[] = [];
 
-  if (cartString) {
-    const cartItemsIds: string[] = cartString.split(", ");
+  getCartFromLocalStorage().forEach(
+    (cartItemFromLocalStorage: JSONCartModel) => {
+      cartItemsIdList.push(cartItemFromLocalStorage.itemId);
 
-    cartItemsList = ITEM_LIST.filter((item: ItemDetailsModel) => {
-      return cartItemsIds.includes(item.key.toString());
-    });
-  }
-  return cartItemsList;
+      cartItems = ITEM_LIST.filter((item: ItemDetailsModel) => {
+        return cartItemsIdList.includes(item.key);
+      });
+    },
+  );
+
+  return cartItems;
 };

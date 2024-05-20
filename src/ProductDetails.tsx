@@ -31,12 +31,6 @@ const Product = () => {
     cart.push(JSONCart);
 
     saveCartOnLocalStorage(cart);
-
-    // const newCart = cart
-    //   ? `${cart}, ${JSON.stringify(JSONCart)}`
-    //   : JSON.stringify(JSONCart);
-    //
-    // localStorage.setItem("Cart", newCart.toString());
   };
 
   return (
