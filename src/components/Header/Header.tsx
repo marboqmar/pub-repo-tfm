@@ -86,12 +86,13 @@ const Header = () => {
           <small> {t("common:header.signIn")}</small>
         </Button>
         <Button
+          component={Link}
           className={"header--btn"}
           paddingSize={"none"}
           withoutHover
           color={"none"}
           borderType={"none"}
-          link={"/cesta"}
+          to={"/cesta"}
         >
           <img className={"icon"} src={"/icons/vector-cart.png"} alt={""} />
           <small> {t("common:header.cart")}</small>

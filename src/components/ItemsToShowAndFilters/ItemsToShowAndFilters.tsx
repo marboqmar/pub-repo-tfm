@@ -2,8 +2,8 @@ import "./ItemsToShowAndFilters.scss";
 import { Link } from "react-router-dom";
 import { FilterModel, ItemDetailsModel } from "../../models";
 import { useState, useEffect } from "react";
-import ITEM_LIST from "../../lists/ITEM_LIST.tsx";
-import FILTER_OPTIONS_LIST from "../../lists/FILTER_OPTIONS_LIST.tsx";
+import ITEM_LIST from "../../lists/ITEM_LIST.ts";
+import FILTER_OPTIONS_LIST from "../../lists/FILTER_OPTIONS_LIST.ts";
 import { Button } from "../Button/Button.tsx";
 import { useContext } from "react";
 import { SearchContext } from "../../contexts/SearchContextProvider.tsx";
@@ -82,7 +82,7 @@ const ItemsToShowAndFilters = () => {
           <FilterOptions />
         </div>
         <div className={"itemDisplay"}>
-          {displayedItems.map((item) => (
+          {displayedItems.map((item: ItemDetailsModel) => (
             <Link
               className={"item-link"}
               to={`/detalles-producto/?ref=${item.key}`}

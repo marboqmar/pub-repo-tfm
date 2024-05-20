@@ -2,7 +2,7 @@ import "./scss/style.scss";
 import { useTranslation } from "react-i18next";
 import { Button } from "./components/Button/Button.tsx";
 import { Form } from "./components/Form/Form.tsx";
-import { SLIDE_CONTENT } from "./lists/SLIDE_CONTENT.tsx";
+import { SLIDE_CONTENT } from "./lists/SLIDE_CONTENT.ts";
 import { SlideContentModel } from "./models";
 // Swiper imports
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -12,7 +12,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "./components/Swipper/swipper.scss";
 import { Pagination } from "swiper/modules";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 
 register();
 

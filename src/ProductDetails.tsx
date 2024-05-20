@@ -1,8 +1,11 @@
 import { Button } from "./components/Button/Button.tsx";
 import { useTranslation } from "react-i18next";
-import ITEM_LIST from "./lists/ITEM_LIST.tsx";
+import ITEM_LIST from "./lists/ITEM_LIST.ts";
 import { ItemDetailsModel } from "./models";
-import {Link, useSearchParams} from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
+import { JSONCartModel } from "./models/cartModel.ts";
+import { saveCartOnLocalStorage } from "./utils/saveCartOnLocalStorage.tsx";
+import { getCartFromLocalStorage } from "./utils/getCartFromLocalStorage.tsx";
 
 const Product = () => {
   const { t } = useTranslation("productDetails");
@@ -14,12 +17,18 @@ const Product = () => {
   });
 
   const addItemToCart = (key: number) => {
-    const prevItems = localStorage.getItem("Cart");
-    if (prevItems && prevItems.includes(key.toString())) {
-      return;
-    }
-    const newCart = prevItems ? `${prevItems}, ${key}` : key;
-    localStorage.setItem("Cart", `${newCart}`);
+    // Adds a default quantity of one as quantities will be dealt with in the cart site
+    const JSONCart: JSONCartModel = {
+      itemId: key,
+      quantity: 1,
+    };
+
+    // Gets previous cart, pushes new element to cart (JSONCart), and saves new cart on local storage
+    const cart: JSONCartModel[] = getCartFromLocalStorage();
+
+    cart.push(JSONCart);
+
+    saveCartOnLocalStorage(cart);
   };
 
   return (
@@ -46,7 +55,6 @@ const Product = () => {
               onClick={() => {
                 addItemToCart(selectedItem.key);
               }}
-              // link={"/cesta"}
             >
               {t("productDetails:addToCart")}
             </Button>
@@ -58,8 +66,6 @@ const Product = () => {
     </>
   );
 };
-
-
 
 const Review = () => {
   return (
