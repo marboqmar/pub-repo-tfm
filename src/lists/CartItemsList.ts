@@ -1,6 +1,6 @@
 import { ItemDetailsModel } from "../models";
-import ITEM_LIST from "./ITEM_LIST.tsx";
-import { getCartFromLocalStorage } from "../utils/cartOnLocalStorage.tsx";
+import ITEM_LIST from "./ITEM_LIST.ts";
+import { getCartFromLocalStorage } from "../utils/getCartFromLocalStorage.tsx";
 import { JSONCartModel } from "../models/cartModel.ts";
 
 export const cartItemsList = () => {

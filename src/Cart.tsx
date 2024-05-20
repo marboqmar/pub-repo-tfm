@@ -1,7 +1,7 @@
 import { Button } from "./components/Button/Button.tsx";
 import { useTranslation } from "react-i18next";
 import { ItemDetailsModel } from "./models";
-import { cartItemsList } from "./lists/CartItemsList.tsx";
+import { cartItemsList } from "./lists/CartItemsList.ts";
 import TotalToPay from "./components/TotalToPay/TotalToPay.tsx";
 
 const CartList = () => {

@@ -2,7 +2,7 @@ import "./TotalToPay.scss";
 import { Button } from "../Button/Button.tsx";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
-import { cartItemsList } from "../../lists/CartItemsList.tsx";
+import { cartItemsList } from "../../lists/CartItemsList.ts";
 import { ItemDetailsModel } from "../../models";
 
 const IsCartOrPayment = () => {

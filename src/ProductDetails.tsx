@@ -1,13 +1,11 @@
 import { Button } from "./components/Button/Button.tsx";
 import { useTranslation } from "react-i18next";
-import ITEM_LIST from "./lists/ITEM_LIST.tsx";
+import ITEM_LIST from "./lists/ITEM_LIST.ts";
 import { ItemDetailsModel } from "./models";
 import { Link, useSearchParams } from "react-router-dom";
 import { JSONCartModel } from "./models/cartModel.ts";
-import {
-  getCartFromLocalStorage,
-  saveCartOnLocalStorage,
-} from "./utils/cartOnLocalStorage.tsx";
+import { saveCartOnLocalStorage } from "./utils/saveCartOnLocalStorage.tsx";
+import { getCartFromLocalStorage } from "./utils/getCartFromLocalStorage.tsx";
 
 const Product = () => {
   const { t } = useTranslation("productDetails");
