@@ -2,7 +2,7 @@ import "./TotalToPay.scss";
 import { Button } from "../Button/Button.tsx";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
-import { CART_ITEMS_LIST } from "../../lists/CART_ITEMS_LIST.tsx";
+import { cartItemsList } from "../../lists/CartItemsList.tsx";
 import { ItemDetailsModel } from "../../models";
 
 const IsCartOrPayment = () => {
@@ -30,7 +30,7 @@ const TotalToPay = () => {
   const { t } = useTranslation("cart");
   let totalPrice: number = 0;
 
-  CART_ITEMS_LIST().forEach((item: ItemDetailsModel) => {
+  cartItemsList().forEach((item: ItemDetailsModel) => {
     totalPrice = totalPrice + item.price;
   });
 
@@ -56,7 +56,7 @@ const TotalToPay = () => {
       <div className={"flex-row"}>
         <div className={"flex-column gap-12 text-first-column"}>
           <span>
-            {t("cart:items")} ({CART_ITEMS_LIST().length})
+            {t("cart:items")} ({cartItemsList().length})
           </span>
           <span>{t("cart:shipping")}</span>
           <span className={"bold"}>Total</span>

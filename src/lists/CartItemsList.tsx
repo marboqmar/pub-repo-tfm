@@ -1,7 +1,7 @@
 import { ItemDetailsModel } from "../models";
 import ITEM_LIST from "./ITEM_LIST.tsx";
 
-export const CART_ITEMS_LIST = () => {
+export const cartItemsList = () => {
   const cartString: string | null = localStorage.getItem("Cart");
   let cartItemsList: ItemDetailsModel[] = [];
 

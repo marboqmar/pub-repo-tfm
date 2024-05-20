@@ -3,6 +3,11 @@ import { useTranslation } from "react-i18next";
 import ITEM_LIST from "./lists/ITEM_LIST.tsx";
 import { ItemDetailsModel } from "./models";
 import { Link, useSearchParams } from "react-router-dom";
+import { JSONCartModel } from "./models/cartModel.ts";
+import {
+  getCartFromLocalStorage,
+  saveCartOnLocalStorage,
+} from "./utils/cartOnLocalStorage.tsx";
 
 const Product = () => {
   const { t } = useTranslation("productDetails");
@@ -13,30 +18,25 @@ const Product = () => {
     return item.key === productIdParam;
   });
 
-  //Adds list of item.key to localStorage
   const addItemToCart = (key: number) => {
-    // if (prevItems && prevItems.includes(key.toString())) {
-    //   return;
-    // }
-    // localStorage.setItem("Cart", `${newCart}`);
-    interface JSONCartModel {
-      itemId: number;
-      quantity: number;
-    }
+    // Adds a default quantity of one as quantities will be dealt with in the cart site
     const JSONCart: JSONCartModel = {
       itemId: key,
       quantity: 1,
     };
 
-    const prevItems = localStorage.getItem("Cart");
+    // Gets previous cart, pushes new element to cart (JSONCart), and saves new cart on local storage
+    const cart: JSONCartModel[] = getCartFromLocalStorage();
 
-    const newCart = prevItems
-      ? `${prevItems}, ${JSON.stringify(JSONCart)}`
-      : JSON.stringify(JSONCart);
+    cart.push(JSONCart);
 
-    localStorage.setItem("Cart", newCart.toString());
+    saveCartOnLocalStorage(cart);
 
-    console.log(Object.values(JSONCart));
+    // const newCart = cart
+    //   ? `${cart}, ${JSON.stringify(JSONCart)}`
+    //   : JSON.stringify(JSONCart);
+    //
+    // localStorage.setItem("Cart", newCart.toString());
   };
 
   return (
@@ -59,12 +59,10 @@ const Product = () => {
               <span>{selectedItem.price} €</span>
             </p>
             <Button
-              component={Link}
               color={"primary"}
               onClick={() => {
                 addItemToCart(selectedItem.key);
               }}
-              to={"/cesta"}
             >
               {t("productDetails:addToCart")}
             </Button>
