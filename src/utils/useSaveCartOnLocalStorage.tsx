@@ -2,7 +2,7 @@ import { JSONCartModel } from "../models/cartModel.ts";
 const LOCAL_STORAGE_CART_KEY = "Cart";
 import useLocalStorage from "use-local-storage";
 
-export const saveCartOnLocalStorage = (cart: JSONCartModel[]) => {
+export const useSaveCartOnLocalStorage = (cart: JSONCartModel[]) => {
   // localStorage.setItem(LOCAL_STORAGE_CART_KEY, JSON.stringify(cart));
 
   const options = {

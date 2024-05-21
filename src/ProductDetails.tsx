@@ -4,7 +4,7 @@ import ITEM_LIST from "./lists/ITEM_LIST.ts";
 import { ItemDetailsModel } from "./models";
 import { Link, useSearchParams } from "react-router-dom";
 import { JSONCartModel } from "./models/cartModel.ts";
-import { saveCartOnLocalStorage } from "./utils/saveCartOnLocalStorage.tsx";
+import { useSaveCartOnLocalStorage } from "./utils/useSaveCartOnLocalStorage.tsx";
 import { getCartFromLocalStorage } from "./utils/getCartFromLocalStorage.tsx";
 
 const Product = () => {
@@ -28,7 +28,7 @@ const Product = () => {
 
     cart.push(JSONCart);
 
-    saveCartOnLocalStorage(cart);
+    useSaveCartOnLocalStorage(cart);
   };
 
   return (
