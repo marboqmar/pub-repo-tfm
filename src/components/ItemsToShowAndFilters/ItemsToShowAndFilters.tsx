@@ -7,13 +7,26 @@ import FILTER_OPTIONS_LIST from "../../lists/FILTER_OPTIONS_LIST.tsx";
 import { Button } from "../Button/Button.tsx";
 import { useContext } from "react";
 import { SearchContext } from "../../contexts/SearchContextProvider.tsx";
+import axios from "axios";
 
 const ItemsToShowAndFilters = () => {
+  const [shopItemsList, setShopItemsList] = useState<ItemDetailsModel[]>([]);
   const [displayedItems, setDisplayedItems] =
     useState<ItemDetailsModel[]>(ITEM_LIST);
   const [search, setSearch] = useState<string>("");
   const [activeFilter, setActiveFilter] = useState<string>("");
   const { search: searchValue } = useContext(SearchContext);
+
+  useEffect(() => {
+    const fetchShopItemsList = async () => {
+      const response = await axios.get(import.meta.env.VITE_API_URL);
+      setShopItemsList(response.data.results);
+    };
+
+    fetchShopItemsList();
+  }, []);
+
+  console.log(shopItemsList);
 
   // Get search value from search bar on header
   useEffect(() => {
