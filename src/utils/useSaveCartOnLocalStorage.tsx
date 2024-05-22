@@ -1,29 +1,30 @@
 import { JSONCartModel } from "../models/cartModel.ts";
 const LOCAL_STORAGE_CART_KEY = "Cart";
 import useLocalStorage from "use-local-storage";
+import { getCartFromLocalStorage } from "./getCartFromLocalStorage.tsx";
 
-export const useSaveCartOnLocalStorage = (cart: JSONCartModel[]) => {
-  // localStorage.setItem(LOCAL_STORAGE_CART_KEY, JSON.stringify(cart));
+export const useSaveCartOnLocalStorage = () => {
+  const [cartItems, setCartItems] = useLocalStorage<
+    JSONCartModel[] | undefined
+  >(LOCAL_STORAGE_CART_KEY, []);
 
-  const options = {
-    serializer: (object) => {
-      return JSON.stringify(object);
-    },
+  const addNewItemToCart = (key: number) => {
+    // Adds a default quantity of one as quantities will be dealt with in the cart site
+    const JSONCart: JSONCartModel = {
+      itemId: key,
+      quantity: 1,
+    };
+
+    // Gets previous cart, pushes new element to cart (JSONCart), and saves new cart on local storage
+    const cart: JSONCartModel[] = getCartFromLocalStorage();
+
+    cart.push(JSONCart);
+
+    setCartItems(cart);
   };
-
-  const [cartItems, setCartItems] = useLocalStorage<string>(
-    LOCAL_STORAGE_CART_KEY,
-    "",
-    options,
-  );
-
-  console.log(options.serializer(cart));
-
-  setCartItems(options.serializer(cart));
 
   return {
     cartItems,
-    setCartItems,
-    options,
+    saveItemToCart: (key: number) => addNewItemToCart(key),
   };
 };
