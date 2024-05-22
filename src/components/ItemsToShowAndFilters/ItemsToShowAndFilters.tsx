@@ -1,8 +1,8 @@
 import "./ItemsToShowAndFilters.scss";
 import { Link } from "react-router-dom";
-import { FilterModel, ItemDetailsModel } from "../../models";
+import { FilterModel, ItemDetailsModel, ItemsFromAPIModel } from "../../models";
 import { useState, useEffect } from "react";
-import ITEM_LIST from "../../lists/ITEM_LIST.tsx";
+// import ITEM_LIST from "../../lists/ITEM_LIST.ts";
 import FILTER_OPTIONS_LIST from "../../lists/FILTER_OPTIONS_LIST.tsx";
 import { Button } from "../Button/Button.tsx";
 import { useContext } from "react";
@@ -11,22 +11,35 @@ import axios from "axios";
 
 const ItemsToShowAndFilters = () => {
   const [shopItemsList, setShopItemsList] = useState<ItemDetailsModel[]>([]);
-  const [displayedItems, setDisplayedItems] =
-    useState<ItemDetailsModel[]>(ITEM_LIST);
+  const [displayedItems, setDisplayedItems] = useState<ItemDetailsModel[]>([]);
   const [search, setSearch] = useState<string>("");
   const [activeFilter, setActiveFilter] = useState<string>("");
   const { search: searchValue } = useContext(SearchContext);
 
+  // Fetch items from API and map them
+  const mapItemsFromAPIToItemDetails = (
+    items: ItemsFromAPIModel[],
+  ): ItemDetailsModel[] => {
+    return items.map((individualItem: ItemDetailsModel) => {
+      return {
+        key: individualItem.key,
+        name: individualItem.name,
+        img: individualItem.img,
+        price: individualItem.price,
+        description: individualItem.description,
+        origin: individualItem.origin,
+      };
+    });
+  };
+
   useEffect(() => {
     const fetchShopItemsList = async () => {
       const response = await axios.get(import.meta.env.VITE_API_URL);
-      setShopItemsList(response.data);
+      setShopItemsList(mapItemsFromAPIToItemDetails(response.data));
     };
 
     fetchShopItemsList();
   }, []);
-
-  console.log(shopItemsList);
 
   // Get search value from search bar on header
   useEffect(() => {
@@ -38,10 +51,11 @@ const ItemsToShowAndFilters = () => {
     const updateDisplayedItems = (newActiveFilter: string) => {
       // Filter item list by active filter
       const newDisplayedItems: ItemDetailsModel[] = !newActiveFilter
-        ? ITEM_LIST
-        : ITEM_LIST.filter((item) => {
+        ? shopItemsList
+        : shopItemsList.filter((item) => {
             return newActiveFilter === item.origin;
           });
+
       setDisplayedItems(newDisplayedItems);
 
       // Filter previous list (filtered by selected filter) by name search
@@ -57,7 +71,7 @@ const ItemsToShowAndFilters = () => {
     };
 
     updateDisplayedItems(activeFilter);
-  }, [search, activeFilter]);
+  }, [search, activeFilter, shopItemsList]);
 
   const handleFilterChange = (option: string) => {
     setActiveFilter(option === activeFilter ? "" : option);
@@ -95,7 +109,7 @@ const ItemsToShowAndFilters = () => {
           <FilterOptions />
         </div>
         <div className={"itemDisplay"}>
-          {displayedItems.map((item) => (
+          {displayedItems.map((item: ItemDetailsModel) => (
             <Link
               className={"item-link"}
               to={`/detalles-producto/?ref=${item.key}`}
