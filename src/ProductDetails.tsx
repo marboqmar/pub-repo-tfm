@@ -3,33 +3,19 @@ import { useTranslation } from "react-i18next";
 import ITEM_LIST from "./lists/ITEM_LIST.ts";
 import { ItemDetailsModel } from "./models";
 import { Link, useSearchParams } from "react-router-dom";
-import { JSONCartModel } from "./models/cartModel.ts";
-import { saveCartOnLocalStorage } from "./utils/saveCartOnLocalStorage.tsx";
-import { getCartFromLocalStorage } from "./utils/getCartFromLocalStorage.tsx";
+// import { JSONCartModel } from "./models/cartModel.ts";
+import { useSaveCartOnLocalStorage } from "./utils/useSaveCartOnLocalStorage.tsx";
+// import { getCartFromLocalStorage } from "./utils/getCartFromLocalStorage.tsx";
 
 const Product = () => {
   const { t } = useTranslation("productDetails");
   const [param] = useSearchParams();
   const productIdParam = Number(param.get("ref"));
+  const { saveItemToCart } = useSaveCartOnLocalStorage();
 
   const selectedItem = ITEM_LIST.find((item: ItemDetailsModel) => {
     return item.key === productIdParam;
   });
-
-  const addItemToCart = (key: number) => {
-    // Adds a default quantity of one as quantities will be dealt with in the cart site
-    const JSONCart: JSONCartModel = {
-      itemId: key,
-      quantity: 1,
-    };
-
-    // Gets previous cart, pushes new element to cart (JSONCart), and saves new cart on local storage
-    const cart: JSONCartModel[] = getCartFromLocalStorage();
-
-    cart.push(JSONCart);
-
-    saveCartOnLocalStorage(cart);
-  };
 
   return (
     <>
@@ -53,7 +39,7 @@ const Product = () => {
             <Button
               color={"primary"}
               onClick={() => {
-                addItemToCart(selectedItem.key);
+                saveItemToCart(selectedItem.key);
               }}
             >
               {t("productDetails:addToCart")}
