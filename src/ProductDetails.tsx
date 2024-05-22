@@ -17,21 +17,6 @@ const Product = () => {
     return item.key === productIdParam;
   });
 
-  const addItemToCart = (key: number) => {
-    // // Adds a default quantity of one as quantities will be dealt with in the cart site
-    // const JSONCart: JSONCartModel = {
-    //   itemId: key,
-    //   quantity: 1,
-    // };
-    //
-    // // Gets previous cart, pushes new element to cart (JSONCart), and saves new cart on local storage
-    // const cart: JSONCartModel[] = getCartFromLocalStorage();
-    //
-    // cart.push(JSONCart);
-    //
-    saveItemToCart(key);
-  };
-
   return (
     <>
       {selectedItem ? (
@@ -54,7 +39,7 @@ const Product = () => {
             <Button
               color={"primary"}
               onClick={() => {
-                addItemToCart(selectedItem.key);
+                saveItemToCart(selectedItem.key);
               }}
             >
               {t("productDetails:addToCart")}
