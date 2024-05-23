@@ -1,45 +1,19 @@
 import "./ItemsToShowAndFilters.scss";
 import { Link } from "react-router-dom";
-import { FilterModel, ItemDetailsModel, ItemsFromAPIModel } from "../../models";
+import { FilterModel, ItemDetailsModel } from "../../models";
 import { useState, useEffect } from "react";
-// import ITEM_LIST from "../../lists/ITEM_LIST.ts";
-import FILTER_OPTIONS_LIST from "../../lists/FILTER_OPTIONS_LIST.tsx";
+import FILTER_OPTIONS_LIST from "../../lists/FILTER_OPTIONS_LIST.ts";
 import { Button } from "../Button/Button.tsx";
 import { useContext } from "react";
 import { SearchContext } from "../../contexts/SearchContextProvider.tsx";
-import axios from "axios";
+import { useShopItemsList } from "../../utils/useShopItemsList.tsx";
 
 const ItemsToShowAndFilters = () => {
-  const [shopItemsList, setShopItemsList] = useState<ItemDetailsModel[]>([]);
+  const shopItems = useShopItemsList();
   const [displayedItems, setDisplayedItems] = useState<ItemDetailsModel[]>([]);
   const [search, setSearch] = useState<string>("");
   const [activeFilter, setActiveFilter] = useState<string>("");
   const { search: searchValue } = useContext(SearchContext);
-
-  // Fetch items from API and map them
-  const mapItemsFromAPIToItemDetails = (
-    items: ItemsFromAPIModel[],
-  ): ItemDetailsModel[] => {
-    return items.map((individualItem: ItemDetailsModel) => {
-      return {
-        key: individualItem.key,
-        name: individualItem.name,
-        img: individualItem.img,
-        price: individualItem.price,
-        description: individualItem.description,
-        origin: individualItem.origin,
-      };
-    });
-  };
-
-  useEffect(() => {
-    const fetchShopItemsList = async () => {
-      const response = await axios.get(import.meta.env.VITE_API_URL);
-      setShopItemsList(mapItemsFromAPIToItemDetails(response.data));
-    };
-
-    fetchShopItemsList();
-  }, []);
 
   // Get search value from search bar on header
   useEffect(() => {
@@ -51,11 +25,10 @@ const ItemsToShowAndFilters = () => {
     const updateDisplayedItems = (newActiveFilter: string) => {
       // Filter item list by active filter
       const newDisplayedItems: ItemDetailsModel[] = !newActiveFilter
-        ? shopItemsList
-        : shopItemsList.filter((item) => {
+        ? shopItems
+        : shopItems.filter((item) => {
             return newActiveFilter === item.origin;
           });
-
       setDisplayedItems(newDisplayedItems);
 
       // Filter previous list (filtered by selected filter) by name search
@@ -71,7 +44,7 @@ const ItemsToShowAndFilters = () => {
     };
 
     updateDisplayedItems(activeFilter);
-  }, [search, activeFilter, shopItemsList]);
+  }, [search, activeFilter, shopItems]);
 
   const handleFilterChange = (option: string) => {
     setActiveFilter(option === activeFilter ? "" : option);

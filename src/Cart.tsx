@@ -1,7 +1,7 @@
 import { Button } from "./components/Button/Button.tsx";
 import { useTranslation } from "react-i18next";
 import { ItemDetailsModel } from "./models";
-import { cartItemsList } from "./lists/CartItemsList.ts";
+import { useCartItemsList } from "./lists/CartItemsList.ts";
 import TotalToPay from "./components/TotalToPay/TotalToPay.tsx";
 
 const CartList = () => {
@@ -9,7 +9,7 @@ const CartList = () => {
 
   return (
     <>
-      {cartItemsList().map((item: ItemDetailsModel) => (
+      {useCartItemsList().map((item: ItemDetailsModel) => (
         <div className={"cartItem"} key={`${item.img}${item.name}`}>
           <img
             className={"cartItem--img"}
