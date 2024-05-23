@@ -2,31 +2,18 @@ import "./ItemsToShowAndFilters.scss";
 import { Link } from "react-router-dom";
 import { FilterModel, ItemDetailsModel } from "../../models";
 import { useState, useEffect } from "react";
-import ITEM_LIST from "../../lists/ITEM_LIST.ts";
 import FILTER_OPTIONS_LIST from "../../lists/FILTER_OPTIONS_LIST.ts";
 import { Button } from "../Button/Button.tsx";
 import { useContext } from "react";
 import { SearchContext } from "../../contexts/SearchContextProvider.tsx";
-import axios from "axios";
+import { useShopItemsList } from "../../utils/useShopItemsList.tsx";
 
 const ItemsToShowAndFilters = () => {
-  const [shopItemsList, setShopItemsList] = useState<ItemDetailsModel[]>([]);
-  const [displayedItems, setDisplayedItems] =
-    useState<ItemDetailsModel[]>(ITEM_LIST);
+  const shopItems = useShopItemsList();
+  const [displayedItems, setDisplayedItems] = useState<ItemDetailsModel[]>([]);
   const [search, setSearch] = useState<string>("");
   const [activeFilter, setActiveFilter] = useState<string>("");
   const { search: searchValue } = useContext(SearchContext);
-
-  useEffect(() => {
-    const fetchShopItemsList = async () => {
-      const response = await axios.get(import.meta.env.VITE_API_URL);
-      setShopItemsList(response.data);
-    };
-
-    fetchShopItemsList();
-  }, []);
-
-  console.log(shopItemsList);
 
   // Get search value from search bar on header
   useEffect(() => {
@@ -38,8 +25,8 @@ const ItemsToShowAndFilters = () => {
     const updateDisplayedItems = (newActiveFilter: string) => {
       // Filter item list by active filter
       const newDisplayedItems: ItemDetailsModel[] = !newActiveFilter
-        ? ITEM_LIST
-        : ITEM_LIST.filter((item) => {
+        ? shopItems
+        : shopItems.filter((item) => {
             return newActiveFilter === item.origin;
           });
       setDisplayedItems(newDisplayedItems);
@@ -57,7 +44,7 @@ const ItemsToShowAndFilters = () => {
     };
 
     updateDisplayedItems(activeFilter);
-  }, [search, activeFilter]);
+  }, [search, activeFilter, shopItems]);
 
   const handleFilterChange = (option: string) => {
     setActiveFilter(option === activeFilter ? "" : option);
