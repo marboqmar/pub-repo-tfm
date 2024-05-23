@@ -1,11 +1,10 @@
 import { JSONCartModel } from "../models/cartModel.ts";
 const LOCAL_STORAGE_CART_KEY = "Cart";
 import useLocalStorage from "use-local-storage";
-import { getCartFromLocalStorage } from "./getCartFromLocalStorage.tsx";
 
-export const useSaveCartOnLocalStorage = () => {
-  const [cartItems, setCartItems] = useLocalStorage<
-    JSONCartModel[] | undefined
+export const useCartOnLocalStorage = () => {
+  const [cartItemsIdAndQuantity, setCartItems] = useLocalStorage<
+    JSONCartModel[]
   >(LOCAL_STORAGE_CART_KEY, []);
 
   const addNewItemToCart = (key: number) => {
@@ -15,16 +14,14 @@ export const useSaveCartOnLocalStorage = () => {
       quantity: 1,
     };
 
-    // Gets previous cart, pushes new element to cart (JSONCart), and saves new cart on local storage
-    const cart: JSONCartModel[] = getCartFromLocalStorage();
+    // Pushes new element to cart (JSONCart) and saves new cart on local storage
+    cartItemsIdAndQuantity.push(JSONCart);
 
-    cart.push(JSONCart);
-
-    setCartItems(cart);
+    setCartItems([...cartItemsIdAndQuantity]);
   };
 
   return {
-    cartItems,
+    cartItemsIdAndQuantity: cartItemsIdAndQuantity,
     saveItemToCart: (key: number) => addNewItemToCart(key),
   };
 };
