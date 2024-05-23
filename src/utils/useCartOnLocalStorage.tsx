@@ -3,7 +3,7 @@ const LOCAL_STORAGE_CART_KEY = "Cart";
 import useLocalStorage from "use-local-storage";
 
 export const useCartOnLocalStorage = () => {
-  const [cartItemsIdAndQuantity, setCartItems] = useLocalStorage<
+  const [cartItemsIdAndQuantity, setCartItemsAndQuantity] = useLocalStorage<
     JSONCartModel[]
   >(LOCAL_STORAGE_CART_KEY, []);
 
@@ -14,10 +14,10 @@ export const useCartOnLocalStorage = () => {
       quantity: 1,
     };
 
-    // Pushes new element to cart (JSONCart) and saves new cart on local storage
-    cartItemsIdAndQuantity.push(JSONCart);
+    const newCart = cartItemsIdAndQuantity.slice();
+    newCart.push(JSONCart);
 
-    setCartItems([...cartItemsIdAndQuantity]);
+    setCartItemsAndQuantity(newCart);
   };
 
   return {
