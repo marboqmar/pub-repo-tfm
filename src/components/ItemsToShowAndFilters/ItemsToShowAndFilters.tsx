@@ -6,7 +6,7 @@ import FILTER_OPTIONS_LIST from "../../lists/FILTER_OPTIONS_LIST.ts";
 import { Button } from "../Button/Button.tsx";
 import { useContext } from "react";
 import { SearchContext } from "../../contexts/SearchContextProvider.tsx";
-import { useShopItemsList } from "../../utils/useShopItemsList.tsx";
+import { useShopItemsList } from "../../services/useShopItemsList.ts";
 
 const ItemsToShowAndFilters = () => {
   const shopItems = useShopItemsList();

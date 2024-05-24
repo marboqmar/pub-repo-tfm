@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 import ITEM_LIST from "./lists/ITEM_LIST.ts";
 import { ItemDetailsModel } from "./models";
 import { Link, useSearchParams } from "react-router-dom";
-import { useCartOnLocalStorage } from "./utils/useCartOnLocalStorage.tsx";
+import { useCartOnLocalStorage } from "./services/useCartOnLocalStorage.ts";
 
 const Product = () => {
   const { t } = useTranslation("productDetails");

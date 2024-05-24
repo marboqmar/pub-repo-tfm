@@ -1,20 +1,30 @@
 import { ItemDetailsModel } from "../models";
-import ITEM_LIST from "./ITEM_LIST.ts";
+import { useShopItemsList } from "../services/useShopItemsList.ts";
+import { useMemo } from "react";
 import { JSONCartModel } from "../models/cartModel.ts";
-import { useCartOnLocalStorage } from "../utils/useCartOnLocalStorage.tsx";
+import { useCartOnLocalStorage } from "../services/useCartOnLocalStorage.ts";
 
 export const useCartItemsList = () => {
   const { cartItemsIdAndQuantity } = useCartOnLocalStorage();
-  const cartItemsIdList: number[] = [];
-  let cartItems: ItemDetailsModel[] = [];
+  const shopItemsList: ItemDetailsModel[] = useShopItemsList();
 
-  cartItemsIdAndQuantity.forEach((cartItemFromLocalStorage: JSONCartModel) => {
-    cartItemsIdList.push(cartItemFromLocalStorage.itemId);
+  // Create cart items list from IDs in local storage cart
+  return useMemo(() => {
+    let cartItems: ItemDetailsModel[] = [];
+    const cartItemsIdList: number[] = [];
 
-    cartItems = ITEM_LIST.filter((item: ItemDetailsModel) => {
-      return cartItemsIdList.includes(item.key);
-    });
-  });
+    cartItemsIdAndQuantity.forEach(
+      (cartItemFromLocalStorage: JSONCartModel) => {
+        // Creates a list with the IDs in the local storage cart
+        cartItemsIdList.push(cartItemFromLocalStorage.itemId);
 
-  return cartItems;
+        // Creates a list of the shop items that match the previous ID list
+        cartItems = shopItemsList.filter((item: ItemDetailsModel) => {
+          return cartItemsIdList.includes(item.key);
+        });
+      },
+    );
+
+    return cartItems;
+  }, [cartItemsIdAndQuantity, shopItemsList]);
 };
