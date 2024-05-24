@@ -25,7 +25,6 @@ export const useShopItemsList = () => {
     const fetchShopItemsList = async () => {
       const response = await axios.get(import.meta.env.VITE_API_URL);
       setShopItemsList(mapItemsFromAPIToItemDetails(response.data));
-      console.log(response.data);
     };
 
     fetchShopItemsList();
