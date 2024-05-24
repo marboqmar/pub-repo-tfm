@@ -1,4 +1,4 @@
-import "./ItemsToShowAndFilters.scss";
+import "./ItemsToDisplay.scss";
 import { Link } from "react-router-dom";
 import { ItemDetailsModel } from "../../models";
 import { useState, useEffect, useMemo } from "react";

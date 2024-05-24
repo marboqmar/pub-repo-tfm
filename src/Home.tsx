@@ -1,11 +1,11 @@
-import ItemsToDisplay from "./components/ItemsToShowAndFilters/ItemsToDisplay.tsx";
+import ItemsToDisplay from "./components/ItemsToDisplay/ItemsToDisplay.tsx";
 import { Filters } from "./components/Filters/Filters.tsx";
 
 const Home = () => {
   return (
     <>
       <div>
-        <div className={"filter"}>
+        <div className={"filters"}>
           <Filters />
         </div>
         <ItemsToDisplay />

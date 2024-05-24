@@ -10,7 +10,6 @@ export const Filters = () => {
 
   const handleFilterChange = (option: string) => {
     setNewActiveFilter(option === activeFilter ? "" : option);
-    console.log("test");
   };
 
   return (
