@@ -1,7 +1,7 @@
 import "./ItemsToShowAndFilters.scss";
 import { Link } from "react-router-dom";
 import { FilterModel, ItemDetailsModel } from "../../models";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import FILTER_OPTIONS_LIST from "../../lists/FILTER_OPTIONS_LIST.ts";
 import { Button } from "../Button/Button.tsx";
 import { useContext } from "react";
@@ -10,7 +10,6 @@ import { useShopItemsList } from "../../utils/useShopItemsList.tsx";
 
 const ItemsToShowAndFilters = () => {
   const shopItems = useShopItemsList();
-  const [displayedItems, setDisplayedItems] = useState<ItemDetailsModel[]>([]);
   const [search, setSearch] = useState<string>("");
   const [activeFilter, setActiveFilter] = useState<string>("");
   const { search: searchValue } = useContext(SearchContext);
@@ -20,30 +19,23 @@ const ItemsToShowAndFilters = () => {
     setSearch(searchValue);
   }, [searchValue]);
 
-  // Filter item list
-  useEffect(() => {
-    const updateDisplayedItems = (newActiveFilter: string) => {
-      // Filter item list by active filter
-      const newDisplayedItems: ItemDetailsModel[] = !newActiveFilter
-        ? shopItems
-        : shopItems.filter((item) => {
-            return newActiveFilter === item.origin;
-          });
-      setDisplayedItems(newDisplayedItems);
-
-      // Filter previous list (filtered by selected filter) by name search
-      if (!search) {
-        setDisplayedItems(newDisplayedItems);
-      } else {
-        setDisplayedItems(
-          newDisplayedItems.filter((item: ItemDetailsModel) => {
-            return item.name.toLowerCase().includes(search.toLowerCase());
-          }),
-        );
+  const displayedItems = useMemo(() => {
+    if (!search && !activeFilter) {
+      return shopItems;
+    }
+    return shopItems.filter((item: ItemDetailsModel) => {
+      // If there is an active filter and the item does not match with this active filter, return false
+      if (activeFilter && activeFilter !== item.origin) {
+        return false;
       }
-    };
 
-    updateDisplayedItems(activeFilter);
+      if (!search) {
+        return true;
+      }
+
+      // Return true for items that include in its name the search value
+      return item.name.toLowerCase().includes(search.toLowerCase());
+    });
   }, [search, activeFilter, shopItems]);
 
   const handleFilterChange = (option: string) => {
