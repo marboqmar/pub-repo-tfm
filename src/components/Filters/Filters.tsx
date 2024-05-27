@@ -1,4 +1,3 @@
-import "./Filters.scss";
 import FILTER_OPTIONS_LIST from "../../lists/FILTER_OPTIONS_LIST.ts";
 import { FilterModel } from "../../models";
 import { Button } from "../Button/Button.tsx";

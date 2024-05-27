@@ -35,10 +35,5 @@ export const useShopItemsList = () => {
     fetchShopItemsList();
   }, []);
 
-  if (error) {
-    return error.toString();
-  }
-
-  console.log("test");
-  return shopItemsList;
+  return { error, shopItemsList };
 };

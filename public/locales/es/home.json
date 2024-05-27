@@ -2,5 +2,6 @@
   "filterOptions": {
     "D&D": "Dragones y Mazmorras",
     "LOTR": "El Señor de los Anillos"
-  }
+  },
+  "error": "No se han podido cargar los productos de la tienda en este momento, por favor, inténtalo de nuevo más tarde."
 }

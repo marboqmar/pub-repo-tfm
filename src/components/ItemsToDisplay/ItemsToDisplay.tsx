@@ -8,7 +8,7 @@ import { useShopItemsList } from "../../services/useShopItemsList.ts";
 import { ActiveFilterContext } from "../../contexts/ActiveFilterContextProvider.tsx";
 
 const ItemsToDisplay = () => {
-  const shopItems = useShopItemsList();
+  const { shopItemsList } = useShopItemsList();
   const [search, setSearch] = useState<string>("");
   const { search: searchValue } = useContext(SearchContext);
   const { activeFilter } = useContext(ActiveFilterContext);
@@ -20,10 +20,10 @@ const ItemsToDisplay = () => {
 
   const displayedItems = useMemo(() => {
     if (!search && !activeFilter) {
-      return shopItems;
+      return shopItemsList;
     }
 
-    return shopItems.filter((item: ItemDetailsModel) => {
+    return shopItemsList.filter((item: ItemDetailsModel) => {
       // If there is an active filter and the item does not match with this active filter, return false
       if (activeFilter && activeFilter !== item.origin) {
         return false;
@@ -36,7 +36,7 @@ const ItemsToDisplay = () => {
       // Return true for items that include in its name the search value
       return item.name.toLowerCase().includes(search.toLowerCase());
     });
-  }, [search, activeFilter, shopItems]);
+  }, [search, activeFilter, shopItemsList]);
 
   return (
     <>
