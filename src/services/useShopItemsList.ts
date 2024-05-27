@@ -4,6 +4,8 @@ import axios from "axios";
 
 export const useShopItemsList = () => {
   const [shopItemsList, setShopItemsList] = useState<ItemDetailsModel[]>([]);
+  const [error, setError] = useState<string>("");
+  const [loading, setLoading] = useState<boolean>(false);
 
   // Fetch items from API and map them
   const mapItemsFromAPIToItemDetails = (
@@ -23,12 +25,18 @@ export const useShopItemsList = () => {
 
   useEffect(() => {
     const fetchShopItemsList = async () => {
-      const response = await axios.get(import.meta.env.VITE_API_URL);
-      setShopItemsList(mapItemsFromAPIToItemDetails(response.data));
+      try {
+        setLoading(true);
+        const response = await axios.get(import.meta.env.VITE_API_URL);
+        setShopItemsList(mapItemsFromAPIToItemDetails(response.data));
+        setLoading(false);
+      } catch (error) {
+        setError("API did not provide any items");
+      }
     };
 
     fetchShopItemsList();
   }, []);
 
-  return shopItemsList;
+  return { error, loading, shopItemsList };
 };
