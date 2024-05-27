@@ -1,5 +1,6 @@
 import ItemsToDisplay from "./components/ItemsToDisplay/ItemsToDisplay.tsx";
 import { Filters } from "./components/Filters/Filters.tsx";
+import { useShopItemsList } from "./services/useShopItemsList.ts";
 
 const Home = () => {
   return (
@@ -8,7 +9,11 @@ const Home = () => {
         <div className={"filters"}>
           <Filters />
         </div>
-        <ItemsToDisplay />
+        {typeof useShopItemsList() === "string" ? (
+          <p>Error</p>
+        ) : (
+          <ItemsToDisplay />
+        )}
       </div>
     </>
   );

@@ -22,6 +22,7 @@ const ItemsToDisplay = () => {
     if (!search && !activeFilter) {
       return shopItems;
     }
+
     return shopItems.filter((item: ItemDetailsModel) => {
       // If there is an active filter and the item does not match with this active filter, return false
       if (activeFilter && activeFilter !== item.origin) {
