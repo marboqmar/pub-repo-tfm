@@ -1,18 +1,5 @@
 @import "../../scss/base";
 
-.filter {
-  margin-top: 60px;
-  margin-bottom: 60px;
-  margin-left: 60px;
-  display: flex;
-  gap: 24px;
-
-  & span {
-    border: 1px solid $color-black;
-    cursor: pointer;
-  }
-}
-
 .item {
   display: flex;
   flex-direction: column;

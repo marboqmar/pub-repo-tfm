@@ -45,6 +45,7 @@ const Product = () => {
           </div>
         </div>
       ) : (
+        // SUBSTITUTE THIS BY ERROR HANDLING
         console.log("test")
       )}
     </>

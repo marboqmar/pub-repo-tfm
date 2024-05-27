@@ -4,6 +4,7 @@ import Footer from "./components/Footer/Footer.tsx";
 import { Outlet, useLocation } from "react-router-dom";
 import { useEffect } from "react";
 import { SearchContextProvider } from "./contexts/SearchContextProvider.tsx";
+import { ActiveFilterContextProvider } from "./contexts/ActiveFilterContextProvider.tsx";
 
 function App() {
   const location = useLocation();
@@ -14,13 +15,15 @@ function App() {
 
   return (
     <>
-      <SearchContextProvider>
-        <Header />
-        <div className={"main"}>
-          <Outlet />
-        </div>
-        <Footer />
-      </SearchContextProvider>
+      <ActiveFilterContextProvider>
+        <SearchContextProvider>
+          <Header />
+          <div className={"main"}>
+            <Outlet />
+          </div>
+          <Footer />
+        </SearchContextProvider>
+      </ActiveFilterContextProvider>
     </>
   );
 }
