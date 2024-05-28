@@ -4,12 +4,26 @@ import ITEM_LIST from "./lists/ITEM_LIST.ts";
 import { ItemDetailsModel } from "./models";
 import { Link, useSearchParams } from "react-router-dom";
 import { useCartOnLocalStorage } from "./services/useCartOnLocalStorage.ts";
+import { useEffect, useState } from "react";
+
+const useItemAddedToCart = () => {
+  const [isFirstRender, setIsFirstRender] = useState<boolean>(true);
+  const modalNode = document.querySelector(".itemAddedToCartModal");
+
+  useEffect(() => {
+    if (modalNode && !isFirstRender) {
+      modalNode.classList.add("itemAddedToCartModal--show");
+    }
+    setIsFirstRender(false);
+  }, [isFirstRender, modalNode]);
+};
 
 const Product = () => {
   const { t } = useTranslation("productDetails");
   const [param] = useSearchParams();
   const productIdParam = Number(param.get("ref"));
   const { saveItemToCart } = useCartOnLocalStorage();
+  const itemAddedToCart = useItemAddedToCart();
 
   const selectedItem = ITEM_LIST.find((item: ItemDetailsModel) => {
     return item.key === productIdParam;
@@ -38,10 +52,12 @@ const Product = () => {
               color={"primary"}
               onClick={() => {
                 saveItemToCart(selectedItem.key);
+                itemAddedToCart;
               }}
             >
               {t("productDetails:addToCart")}
             </Button>
+            <p className={"itemAddedToCartModal"}>Item added to cart</p>
           </div>
         </div>
       ) : (

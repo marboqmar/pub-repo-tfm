@@ -54,3 +54,11 @@
     color: inherit;
   }
 }
+
+.itemAddedToCartModal {
+  &--show {
+    color: red;
+    font-weight: 800;
+  }
+
+}
