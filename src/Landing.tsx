@@ -71,7 +71,7 @@ const Landing = () => {
           </Button>
         </div>
         {/*Slider*/}
-        <div className={""}>
+        <div className={"slider"}>
           <h2 className={"font-alt margin-bottom-60"}>
             {t("common:suggestions")}
           </h2>
@@ -79,11 +79,10 @@ const Landing = () => {
             slidesPerView={1}
             loop={true}
             speed={1000}
-            // autoplay={
-            //     {
-            //         delay: 4000,
-            //         disableOnInteraction: false
-            //     }}
+            autoplay={{
+              delay: 4000,
+              disableOnInteraction: false,
+            }}
             spaceBetween={60}
             modules={[Pagination]}
             pagination={{
