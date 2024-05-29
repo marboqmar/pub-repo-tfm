@@ -6,7 +6,7 @@ import { useCartOnLocalStorage } from "../services/useCartOnLocalStorage.ts";
 
 export const useCartItemsList = () => {
   const { cartItemsIdAndQuantity } = useCartOnLocalStorage();
-  const shopItemsList: ItemDetailsModel[] = useShopItemsList();
+  const { shopItemsList } = useShopItemsList();
 
   // Create cart items list from IDs in local storage cart
   return useMemo(() => {
