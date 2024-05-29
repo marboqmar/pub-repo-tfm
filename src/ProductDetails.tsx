@@ -4,12 +4,26 @@ import ITEM_LIST from "./lists/ITEM_LIST.ts";
 import { ItemDetailsModel } from "./models";
 import { Link, useSearchParams } from "react-router-dom";
 import { useCartOnLocalStorage } from "./services/useCartOnLocalStorage.ts";
+import { ToastContainer, toast, Bounce } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Product = () => {
   const { t } = useTranslation("productDetails");
   const [param] = useSearchParams();
   const productIdParam = Number(param.get("ref"));
   const { saveItemToCart } = useCartOnLocalStorage();
+  const notify = () =>
+    toast(t("productDetails:itemAddedToCart"), {
+      position: "top-right",
+      autoClose: 4000,
+      hideProgressBar: true,
+      closeOnClick: true,
+      pauseOnHover: false,
+      draggable: false,
+      progress: undefined,
+      theme: "light",
+      transition: Bounce,
+    });
 
   const selectedItem = ITEM_LIST.find((item: ItemDetailsModel) => {
     return item.key === productIdParam;
@@ -38,10 +52,25 @@ const Product = () => {
               color={"primary"}
               onClick={() => {
                 saveItemToCart(selectedItem.key);
+                notify();
               }}
             >
               {t("productDetails:addToCart")}
             </Button>
+            <ToastContainer
+              bodyClassName="toast-message"
+              toastClassName="toast-color"
+              position="top-right"
+              autoClose={4000}
+              limit={1}
+              hideProgressBar
+              newestOnTop={false}
+              closeOnClick
+              rtl={false}
+              pauseOnHover={false}
+              theme="light"
+              transition={Bounce}
+            />
           </div>
         </div>
       ) : (
