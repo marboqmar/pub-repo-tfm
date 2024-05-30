@@ -16,6 +16,7 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   component?: ComponentType<any> | keyof ReactHTML;
   to?: string;
   href?: string;
+  role?: string;
 }
 
 export const Button = ({
@@ -25,6 +26,7 @@ export const Button = ({
   paddingSize,
   borderType,
   component = 'button',
+    role,
   disabled,
   children,
   ...rest
@@ -43,7 +45,7 @@ export const Button = ({
   const Component = component
 
   return (
-    <Component className={classes} disabled={disabled} {...rest}>
+    <Component className={classes} disabled={disabled} role={role} {...rest}>
       {children}
     </Component>
   );
