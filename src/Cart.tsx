@@ -7,13 +7,9 @@ import { useCartOnLocalStorage } from "./services/useCartOnLocalStorage.ts";
 
 const CartList = () => {
   const { t } = useTranslation("cart");
-  const { localStorageCartInfo } = useCartOnLocalStorage();
+  const { saveItemToCart } = useCartOnLocalStorage();
 
-  const decreaseQuantity = () => {
-    console.log(localStorageCartInfo);
-  };
-
-  const increaseQuantity = () => {};
+  const decreaseQuantity = () => {};
 
   return (
     <>
@@ -49,7 +45,9 @@ const CartList = () => {
                     withoutHover
                     borderType={"none"}
                     paddingSize={"none"}
-                    onClick={increaseQuantity}
+                    onClick={() => {
+                      saveItemToCart(item.key);
+                    }}
                   >
                     <img
                       className={"plus-and-minus-i"}
