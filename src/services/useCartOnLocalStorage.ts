@@ -1,27 +1,26 @@
-import { JSONCartModel } from "../models/cartModel.ts";
 const LOCAL_STORAGE_CART_KEY = "Cart";
 import useLocalStorage from "use-local-storage";
+import { cartModel } from "../models/cartModel.ts";
 
 export const useCartOnLocalStorage = () => {
-  const [cartItemsIdAndQuantity, setCartItemsAndQuantity] = useLocalStorage<
-    JSONCartModel[]
+  // Dictionary itemKey: quantity
+  const [localStorageCartInfo, setLocalStorageCartInfo] = useLocalStorage<
+    Record<number, number>
   >(LOCAL_STORAGE_CART_KEY, []);
 
-  const addNewItemToCart = (key: number) => {
-    // Adds a default quantity of one as quantities will be dealt with in the cart site
-    const JSONCart: JSONCartModel = {
-      itemId: key,
-      quantity: 1,
-    };
+  const addItemToCart = (key: number) => {
+    const currentItem: number =
+      // If the item exists on the cart it gets its quantity, otherwise sets it as 0
+      key in localStorageCartInfo ? localStorageCartInfo[key] : 0;
 
-    const newCart = cartItemsIdAndQuantity.slice();
-    newCart.push(JSONCart);
-
-    setCartItemsAndQuantity(newCart);
+    // Pushes the new item adding 1 to its quantity
+    const newCart: cartModel = { ...localStorageCartInfo };
+    newCart[key] = currentItem + 1;
+    setLocalStorageCartInfo(newCart);
   };
 
   return {
-    cartItemsIdAndQuantity: cartItemsIdAndQuantity,
-    saveItemToCart: (key: number) => addNewItemToCart(key),
+    localStorageCartInfo: localStorageCartInfo,
+    saveItemToCart: (key: number) => addItemToCart(key),
   };
 };
