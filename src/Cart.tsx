@@ -9,11 +9,11 @@ const CartList = () => {
   const { t } = useTranslation("cart");
   const { localStorageCartInfo } = useCartOnLocalStorage();
 
-  const decreaseQuantity = () => {};
-
-  const increaseQuantity = () => {
+  const decreaseQuantity = () => {
     console.log(localStorageCartInfo);
   };
+
+  const increaseQuantity = () => {};
 
   return (
     <>
