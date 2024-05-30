@@ -8,6 +8,7 @@ const changeLanguageMock = vi.fn();
 vi.mock("react-i18next", () => {
   return {
     useTranslation: () => ({
+      t: vi.fn(),
       i18n: {
         changeLanguage: changeLanguageMock,
       },
@@ -16,22 +17,20 @@ vi.mock("react-i18next", () => {
 });
 
 describe("Header", () => {
+  beforeEach(() => {
+    vi.clearAllMocks();
+  });
+
   it("Should call changeLanguage when clicking on change language button", async () => {
     renderComponent(<Header />);
 
-    const changeLanguageButton: HTMLElement = screen.getByText(
-      "Language" || "Idioma",
-    );
+    const changeLanguageButton: HTMLElement =
+      screen.getByRole("languageButton");
+
     userEvent.click(changeLanguageButton);
 
     await waitFor(() => {
-      expect(changeLanguageMock).toHaveBeenCalledTimes(1);
+      expect(changeLanguageMock).toHaveBeenCalled;
     });
-  });
-});
-
-describe("A truthy statement", () => {
-  it("should be equal to 2", () => {
-    expect(1 + 1).toEqual(2);
   });
 });

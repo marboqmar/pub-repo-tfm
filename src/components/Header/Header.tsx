@@ -28,6 +28,7 @@ const ChangeLanguage = () => {
       color={"none"}
       borderType={"none"}
       onClick={handleLanguage}
+      role={"languageButton"}
     >
       <img className={"icon"} src={"/icons/vector-language.png"} alt={""} />
       <small> {t("common:header.language")}</small>
