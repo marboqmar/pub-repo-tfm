@@ -1,4 +1,3 @@
-export interface JSONCartModel {
-  itemId: number;
-  quantity: number;
+export interface cartModel {
+  [itemKey: number]: number;
 }

@@ -2,10 +2,18 @@ import { Button } from "./components/Button/Button.tsx";
 import { useTranslation } from "react-i18next";
 import { ItemDetailsModel } from "./models";
 import { useCartItemsList } from "./lists/CartItemsList.ts";
-import TotalToPay from "./components/TotalToPay/TotalToPay.tsx";
+import { TotalToPay } from "./components/TotalToPay/TotalToPay.tsx";
+import { useCartOnLocalStorage } from "./services/useCartOnLocalStorage.ts";
 
 const CartList = () => {
   const { t } = useTranslation("cart");
+  const { localStorageCartInfo } = useCartOnLocalStorage();
+
+  const decreaseQuantity = () => {
+    console.log(localStorageCartInfo);
+  };
+
+  const increaseQuantity = () => {};
 
   return (
     <>
@@ -22,19 +30,36 @@ const CartList = () => {
               <div className={"flex-row gap-24"}>
                 <span>{t("cart:quantity")}</span>
                 <div className={"flex gap-12"}>
-                  <img
-                    className={"plus-and-minus-i"}
-                    src={"/icons/minus-icon.png"}
-                    alt={""}
-                  />
+                  <Button
+                    color={"none"}
+                    withoutHover
+                    borderType={"none"}
+                    paddingSize={"none"}
+                    onClick={decreaseQuantity}
+                  >
+                    <img
+                      className={"plus-and-minus-i"}
+                      src={"/icons/minus-icon.png"}
+                      alt={""}
+                    />
+                  </Button>
                   <span> 1 </span>
-                  <img
-                    className={"plus-and-minus-i"}
-                    src={"/icons/plus-icon.png"}
-                    alt={""}
-                  />
+                  <Button
+                    color={"none"}
+                    withoutHover
+                    borderType={"none"}
+                    paddingSize={"none"}
+                    onClick={increaseQuantity}
+                  >
+                    <img
+                      className={"plus-and-minus-i"}
+                      src={"/icons/plus-icon.png"}
+                      alt={""}
+                    />
+                  </Button>
                 </div>
               </div>
+
               <Button
                 className={"cartItem--delete"}
                 color={"none"}

@@ -26,7 +26,7 @@ const IsCartOrPayment = () => {
   }
 };
 
-const TotalToPay = () => {
+export const TotalToPay = () => {
   const { t } = useTranslation("cart");
   let totalPrice: number = 0;
 
@@ -71,5 +71,3 @@ const TotalToPay = () => {
     </div>
   );
 };
-
-export default TotalToPay;
