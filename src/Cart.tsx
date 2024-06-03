@@ -1,15 +1,14 @@
 import { Button } from "./components/Button/Button.tsx";
 import { useTranslation } from "react-i18next";
 import { ItemDetailsModel } from "./models";
-import { useCartItemsList } from "./lists/CartItemsList.ts";
+import { useCartItemsList } from "./services/useCartItemsList.ts";
 import { TotalToPay } from "./components/TotalToPay/TotalToPay.tsx";
 import { useCartOnLocalStorage } from "./services/useCartOnLocalStorage.ts";
 
 const CartList = () => {
   const { t } = useTranslation("cart");
-  const { saveItemToCart, localStorageCartInfo } = useCartOnLocalStorage();
-
-  const decreaseQuantity = () => {};
+  const { localStorageCartInfo, addItemToCart, removeItemFromCart } =
+    useCartOnLocalStorage();
 
   return useCartItemsList().map((item: ItemDetailsModel) => (
     <div className={"cartItem"} key={`${item.img}${item.name}`}>
@@ -25,7 +24,7 @@ const CartList = () => {
                 withoutHover
                 borderType={"none"}
                 paddingSize={"none"}
-                onClick={decreaseQuantity}
+                onClick={() => removeItemFromCart(item.key, false)}
               >
                 <img
                   className={"plus-and-minus-i"}
@@ -40,7 +39,7 @@ const CartList = () => {
                 borderType={"none"}
                 paddingSize={"none"}
                 onClick={() => {
-                  saveItemToCart(item.key);
+                  addItemToCart(item.key);
                 }}
               >
                 <img
@@ -58,6 +57,7 @@ const CartList = () => {
             withoutHover
             paddingSize={"none"}
             borderType={"none"}
+            onClick={() => removeItemFromCart(item.key, true)}
           >
             {t("cart:delete")}
           </Button>

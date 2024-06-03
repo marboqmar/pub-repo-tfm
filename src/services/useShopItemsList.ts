@@ -39,5 +39,5 @@ export const useShopItemsList = () => {
     fetchShopItemsList();
   }, []);
 
-  return { error, loading: isLoading, shopItemsList };
+  return { error, isLoading, shopItemsList };
 };

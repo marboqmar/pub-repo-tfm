@@ -1,17 +1,18 @@
 import { Button } from "./components/Button/Button.tsx";
 import { useTranslation } from "react-i18next";
-import ITEM_LIST from "./lists/ITEM_LIST.ts";
 import { ItemDetailsModel } from "./models";
 import { Link, useSearchParams } from "react-router-dom";
 import { useCartOnLocalStorage } from "./services/useCartOnLocalStorage.ts";
 import { ToastContainer, toast, Bounce } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { useShopItemsList } from "./services/useShopItemsList.ts";
 
 const Product = () => {
   const { t } = useTranslation("productDetails");
+  const { shopItemsList } = useShopItemsList();
   const [param] = useSearchParams();
   const productIdParam = Number(param.get("ref"));
-  const { saveItemToCart } = useCartOnLocalStorage();
+  const { addItemToCart } = useCartOnLocalStorage();
   const notify = () =>
     toast(t("productDetails:itemAddedToCart"), {
       position: "top-right",
@@ -25,7 +26,7 @@ const Product = () => {
       transition: Bounce,
     });
 
-  const selectedItem = ITEM_LIST.find((item: ItemDetailsModel) => {
+  const selectedItem = shopItemsList.find((item: ItemDetailsModel) => {
     return item.key === productIdParam;
   });
 
@@ -51,7 +52,7 @@ const Product = () => {
             <Button
               color={"primary"}
               onClick={() => {
-                saveItemToCart(selectedItem.key);
+                addItemToCart(selectedItem.key);
                 notify();
               }}
             >
