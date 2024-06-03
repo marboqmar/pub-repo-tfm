@@ -6,5 +6,6 @@
   "shipping": "Envío",
   "free": "Gratis",
   "buy": "Pagar",
-  "confirm": "Confirmar y pagar"
+  "confirm": "Confirmar y pagar",
+  "cartEmpty": "Aún no hay productos en tu cesta"
 }

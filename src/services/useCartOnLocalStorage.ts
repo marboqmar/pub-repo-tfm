@@ -21,11 +21,11 @@ export const useCartOnLocalStorage = () => {
 
   const removeItemFromCart = (key: number, isDelete: boolean) => {
     const newCart: cartModel = { ...localStorageCartInfo };
-    if (newCart[key] !== 1) {
+    if (newCart[key] !== 0) {
       newCart[key] -= 1;
       setLocalStorageCartInfo(newCart);
     }
-    if (newCart[key] === 1 || isDelete) {
+    if (newCart[key] === 0 || isDelete) {
       delete newCart[key];
       setLocalStorageCartInfo(newCart);
     }

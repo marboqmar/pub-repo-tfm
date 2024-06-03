@@ -4,6 +4,7 @@ import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 import { useCartItemsList } from "../../services/useCartItemsList.ts";
 import { ItemDetailsModel } from "../../models";
+import { useCartOnLocalStorage } from "../../services/useCartOnLocalStorage.ts";
 
 const IsCartOrPayment = () => {
   const currentUrl = window.location.href;
@@ -28,35 +29,28 @@ const IsCartOrPayment = () => {
 
 export const TotalToPay = () => {
   const { t } = useTranslation("cart");
+  const { localStorageCartInfo } = useCartOnLocalStorage();
   let totalPrice: number = 0;
+  let totalNumberItems: number = 0;
 
-  useCartItemsList().forEach((item: ItemDetailsModel) => {
-    totalPrice = totalPrice + item.price;
+  // Get number of items
+  const quantitiesFromCart = Object.values(localStorageCartInfo);
+
+  quantitiesFromCart.forEach((quantity) => {
+    totalNumberItems += quantity;
   });
 
-  // const localStorageTest = [
-  //   { itemId: 5, quantity: 1 },
-  //   { itemId: 2, quantity: 1 },
-  //   { itemId: 1, quantity: 1 },
-  //   { itemId: 3, quantity: 1 },
-  //   { itemId: 1, quantity: 1 },
-  //   { itemId: 2, quantity: 1 },
-  // ];
-  // const pricesList = CART_ITEMS_LIST().map(item => {
-  //   return {item.key: item.price}
-  // })
-  // const finalPrice = localStorageTest.reduce(
-  //   (aggregator: number, item: {itemId: number, quantity: number}) => {
-  //     return aggregator + item.quantity * pricesList[item.itemId]
-  //   },
-  // );
+  // Get total price
+  useCartItemsList().forEach((item: ItemDetailsModel) => {
+    totalPrice = totalPrice + item.price * localStorageCartInfo[item.key];
+  });
 
   return (
     <div className={"total flex-column"}>
       <div className={"flex-row"}>
         <div className={"flex-column gap-12 text-first-column"}>
           <span>
-            {t("cart:items")} ({useCartItemsList().length})
+            {t("cart:items")} ({totalNumberItems})
           </span>
           <span>{t("cart:shipping")}</span>
           <span className={"bold"}>Total</span>
