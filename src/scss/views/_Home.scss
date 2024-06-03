@@ -1,0 +1,13 @@
+@import "../../scss/base";
+
+.filters {
+  margin-top: 60px;
+  margin-bottom: 60px;
+  margin-left: 60px;
+  display: flex;
+  gap: 24px;
+}
+
+.errorAndLoadingMsg {
+  margin-left: 60px;
+}

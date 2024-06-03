@@ -1,0 +1,105 @@
+@import "../../scss/base";
+@import "../../scss/global/typography";
+@import "../Form/Form";
+
+.patterns {
+  margin: 60px 120px;
+
+  &-hero {
+    background-color: $color-secondary-lighter-50-opacity;
+    padding: 60px 120px;
+  }
+
+  &-titles {
+    padding: 32px;
+  }
+
+  &-buttons {
+    align-items: flex-start;
+  }
+
+  &-button {
+    width: 250px;
+  }
+
+  &-colors {
+    width: 500px;
+    padding: 6px 24px;
+    border-radius: 12px;
+    gap: 120px;
+    margin-bottom: 24px;
+  }
+
+  &-borders {
+    height: 36px;
+    width: 100px;
+  }
+
+  &-border {
+    margin: 24px;
+  }
+}
+
+//Testing ----------
+
+.colours {
+  box-sizing: border-box;
+  height: 50px;
+  background-color: orange;
+  border: 2px solid red;
+}
+
+//.size-1of16 {
+//  flex: 0 0 calc(6.25% - 18px);
+//  margin-right: 18px;
+//  box-sizing: border-box;
+//  //To be able to see the container:
+//  height: 50px;
+//  background-color: orange;
+//  border: 2px solid red;
+//}
+//
+//.last-child-1of16 {
+//  flex: 0 0 6.25%;
+//}
+
+//.test-body {
+//  padding: 0 24px;
+//}
+
+
+
+//.first-item {
+//  margin-left: 0;
+//}
+
+//@for $i from 1 to ($grid-size + 1) {
+//  // Total size (We would need to subtract the margin to avoid wrapping);
+//  $width: 100 / $grid-size * $i * 1%;
+//
+//  .item-#{$i} {
+//    flex: 0 0 calc(#{$width} - #{$gap});
+//    flex-shrink: 0;
+//    flex-grow: 1;
+//    margin-left: $gap;
+//  }
+//}
+//
+//.test-grid {
+//  display: flex;
+//  align-items: stretch;
+//  flex-wrap: wrap;
+//  //To be able to see the container:
+//  background-color: darkolivegreen;
+//  height: 100px;
+//
+//  &--item {
+//    flex-shrink: 0;
+//    flex-grow: 1;
+//    margin-left: $gap;
+//  }
+//
+//  &--first-item {
+//    margin-left: 0;
+//  }
+//}

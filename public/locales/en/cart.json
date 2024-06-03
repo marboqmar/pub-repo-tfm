@@ -1,0 +1,11 @@
+{
+  "title": "Cart",
+  "quantity": "Quantity",
+  "delete": "Delete",
+  "items": "Items",
+  "shipping": "Shipping",
+  "free": "Free",
+  "buy": "Buy",
+  "confirm": "Confirm and pay",
+  "cartEmpty": "There are no items in your cart yet"
+}

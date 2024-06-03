@@ -1,0 +1,11 @@
+{
+  "title": "Cesta",
+  "quantity": "Cantidad",
+  "delete": "Eliminar",
+  "items": "Artículos",
+  "shipping": "Envío",
+  "free": "Gratis",
+  "buy": "Pagar",
+  "confirm": "Confirmar y pagar",
+  "cartEmpty": "Aún no hay productos en tu cesta"
+}

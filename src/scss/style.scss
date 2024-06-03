@@ -1,3 +1,13 @@
-html {
-
-}
+@use "global/site";
+@use "global/grid";
+@use "utilities/measures";
+@use "views/Landing";
+@use "views/Home";
+@use "views/ProductDetails";
+@use "views/Cart";
+@use "views/Payment";
+@use "views/MyAccount";
+@use "global/typography";
+@use "global/colors";
+@use "utilities/positioning";
+@use "utilities/border";

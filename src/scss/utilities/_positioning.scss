@@ -1,0 +1,113 @@
+.flex {
+  display: flex;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.flex-wrap {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.gap-12 {
+  gap: 12px;
+}
+
+.gap-18 {
+  gap: 18px;
+}
+
+.gap-24 {
+  gap: 24px;
+}
+
+.gap-36 {
+  gap: 36px;
+}
+
+.gap-60 {
+  gap: 60px;
+}
+
+.margin-left-auto {
+  margin-left: auto;
+}
+
+.margin-bottom-0 {
+  margin-bottom: 0;
+}
+
+.margin-bottom-12 {
+  margin-bottom: 12px;
+}
+
+.margin-bottom-24 {
+  margin-bottom: 24px;
+}
+
+.margin-bottom-60 {
+  margin-bottom: 60px;
+}
+
+.margin-top-0 {
+  margin-top: 0;
+}
+
+.margin-top-60 {
+  margin-top: 60px;
+}
+
+.margin-top-auto {
+  margin-top: auto;
+}
+
+.margin-lat-60 {
+  margin-left: 60px;
+  margin-right: 60px;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+.justify-content-center {
+  justify-content: center;
+}
+
+.align-text-center {
+  text-align: center;
+}
+
+.align-text-left {
+  text-align: left;
+}
+
+.align-flex-start {
+  align-items: flex-start;
+}
+
+.margin-ver-auto {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.margin-lat-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.position-abs {
+position: absolute;
+}
+
+.position-rel {
+  position: relative;
+}

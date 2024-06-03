@@ -1,0 +1,202 @@
+html {
+  font-family: "Crimson Text", serif;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.5em;
+  font-size: 24px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+.main {
+  flex: 1;
+}
+
+.sticky-footer {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+}
+
+.main {
+  flex: 1;
+}
+
+.icon {
+  height: 24px;
+  width: 24px;
+}
+
+.font {
+  font-family: "Crimson Text", serif;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.5em;
+  font-size: 24px;
+}
+.font-alt {
+  font-family: "Pontano Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.h1 {
+  margin-bottom: 1.5em;
+  font-size: 48px;
+}
+
+.h2 {
+  margin-bottom: 1.5em;
+  font-size: 32px;
+}
+
+.h2--no-margin {
+  font-size: 32px;
+}
+
+.h3 {
+  margin-bottom: 1.5em;
+  font-size: 28px;
+}
+
+.h1-bold {
+  margin-bottom: 1.5em;
+  font-size: 48px;
+  font-weight: 600;
+}
+
+.h2-bold {
+  margin-bottom: 1.5em;
+  font-size: 32px;
+  font-weight: 600;
+}
+
+.h3-bold {
+  margin-bottom: 1.5em;
+  font-size: 28px;
+  font-weight: 600;
+}
+
+.h4 {
+  margin-bottom: 1.5em;
+}
+
+.h5 {
+  margin-bottom: 1.5em;
+}
+
+.h6 {
+  margin-bottom: 1.5em;
+}
+
+.text-size-14 {
+  font-size: 14px;
+}
+
+small,
+.small {
+  font-size: 18px;
+}
+
+.bold {
+  font-weight: 600;
+}
+
+.crossed-text {
+  text-decoration: line-through;
+}
+
+html {
+  font-family: "Crimson Text", serif;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.5em;
+  font-size: 24px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+.main {
+  flex: 1;
+}
+
+.sticky-footer {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+}
+
+.main {
+  flex: 1;
+}
+
+.icon {
+  height: 24px;
+  width: 24px;
+}
+
+.input-text {
+  height: 40px;
+  width: 800px;
+  border-radius: 12px;
+  border: 1px solid #979CA1;
+}
+
+.patterns {
+  margin: 60px 120px;
+}
+.patterns-hero {
+  background-color: rgba(200, 106, 126, 0.5);
+  padding: 60px 120px;
+}
+.patterns-titles {
+  padding: 32px;
+}
+.patterns-buttons {
+  align-items: flex-start;
+}
+.patterns-button {
+  width: 250px;
+}
+.patterns-colors {
+  width: 500px;
+  padding: 6px 24px;
+  border-radius: 12px;
+  gap: 120px;
+  margin-bottom: 24px;
+}
+.patterns-borders {
+  height: 36px;
+  width: 100px;
+}
+.patterns-border {
+  margin: 24px;
+}
+
+.colours {
+  box-sizing: border-box;
+  height: 50px;
+  background-color: orange;
+  border: 2px solid red;
+}
+
+/*# sourceMappingURL=Patterns.css.map */

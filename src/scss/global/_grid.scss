@@ -1,0 +1,23 @@
+$max-width: 1800;
+$gap: 24px;
+$grid-size: 12;
+
+.grid {
+  display: flex;
+  align-items: stretch;
+  flex-wrap: wrap;
+  max-width: $max-width;
+  // To remove the left and right margin of the first and last columns:
+  margin: 0 calc($gap / 2);
+}
+
+@for $i from 1 to ($grid-size + 1) {
+  $width: calc(100 / $grid-size * $i * 1%);
+
+  .item-#{$i} {
+    flex: 0 0 calc($width - $gap);
+    flex-shrink: 0;
+    flex-grow: 1;
+    margin: calc($gap / 2);
+  }
+}

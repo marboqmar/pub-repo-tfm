@@ -1,0 +1,15 @@
+.myAccount {
+  display: flex;
+  flex-direction: row;
+
+  &MyImg {
+    display: flex;
+    flex-direction: column;
+    height: 200px;
+
+    &UserImg {
+      height: 120px;
+      width: 120px;
+    }
+  }
+}

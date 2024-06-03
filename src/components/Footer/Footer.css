@@ -1,0 +1,63 @@
+html {
+  font-family: "Crimson Text", serif;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.5em;
+  font-size: 24px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+.main {
+  flex: 1;
+}
+
+.sticky-footer {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+}
+
+.main {
+  flex: 1;
+}
+
+.icon {
+  height: 24px;
+  width: 24px;
+}
+
+.footer {
+  background: -webkit-linear-gradient(-90deg, rgba(93, 34, 47, 0.7) 20%, rgba(93, 34, 47, 0.8) 60%, rgba(56, 21, 28, 0.9) 100%);
+  color: #E4E6E7;
+  margin-top: 60px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  position: relative;
+}
+.footer--logo {
+  height: 78px;
+  width: 78px;
+  margin: 18px;
+}
+.footer--central-text {
+  position: absolute;
+  left: calc(50% - 101px);
+}
+.footer--pattern-library-text {
+  color: #E4E6E7;
+  margin-left: auto;
+  margin-right: 18px;
+}
+
+/*# sourceMappingURL=Footer.css.map */
