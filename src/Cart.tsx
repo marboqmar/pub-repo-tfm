@@ -1,81 +1,71 @@
 import { Button } from "./components/Button/Button.tsx";
 import { useTranslation } from "react-i18next";
 import { ItemDetailsModel } from "./models";
-import { useCartItemsList } from "./lists/CartItemsList.ts";
+import { useCartItemsList } from "./services/useCartItemsList.ts";
 import { TotalToPay } from "./components/TotalToPay/TotalToPay.tsx";
 import { useCartOnLocalStorage } from "./services/useCartOnLocalStorage.ts";
 
 const CartList = () => {
   const { t } = useTranslation("cart");
-  const { localStorageCartInfo } = useCartOnLocalStorage();
+  const { localStorageCartInfo, addItemToCart, removeItemFromCart } =
+    useCartOnLocalStorage();
 
-  const decreaseQuantity = () => {
-    console.log(localStorageCartInfo);
-  };
-
-  const increaseQuantity = () => {};
-
-  return (
-    <>
-      {useCartItemsList().map((item: ItemDetailsModel) => (
-        <div className={"cartItem"} key={`${item.img}${item.name}`}>
-          <img
-            className={"cartItem--img"}
-            src={item.img}
-            alt={"cart item image"}
-          />
-          <div>
-            <h2 className={"h2"}>{item.name}</h2>
-            <div className={"flex-column gap-24"}>
-              <div className={"flex-row gap-24"}>
-                <span>{t("cart:quantity")}</span>
-                <div className={"flex gap-12"}>
-                  <Button
-                    color={"none"}
-                    withoutHover
-                    borderType={"none"}
-                    paddingSize={"none"}
-                    onClick={decreaseQuantity}
-                  >
-                    <img
-                      className={"plus-and-minus-i"}
-                      src={"/icons/minus-icon.png"}
-                      alt={""}
-                    />
-                  </Button>
-                  <span> 1 </span>
-                  <Button
-                    color={"none"}
-                    withoutHover
-                    borderType={"none"}
-                    paddingSize={"none"}
-                    onClick={increaseQuantity}
-                  >
-                    <img
-                      className={"plus-and-minus-i"}
-                      src={"/icons/plus-icon.png"}
-                      alt={""}
-                    />
-                  </Button>
-                </div>
-              </div>
-
+  return useCartItemsList().map((item: ItemDetailsModel) => (
+    <div className={"cartItem"} key={`${item.img}${item.name}`}>
+      <img className={"cartItem--img"} src={item.img} alt={"cart item image"} />
+      <div>
+        <h2 className={"h2"}>{item.name}</h2>
+        <div className={"flex-column gap-24"}>
+          <div className={"flex-row gap-24"}>
+            <span>{t("cart:quantity")}</span>
+            <div className={"flex gap-12"}>
               <Button
-                className={"cartItem--delete"}
                 color={"none"}
                 withoutHover
-                paddingSize={"none"}
                 borderType={"none"}
+                paddingSize={"none"}
+                onClick={() => removeItemFromCart(item.key, false)}
               >
-                {t("cart:delete")}
+                <img
+                  className={"plus-and-minus-i"}
+                  src={"/icons/minus-icon.png"}
+                  alt={""}
+                />
               </Button>
-              <span>{item.price}€</span>
+              <span>{localStorageCartInfo[item.key]}</span>
+              <Button
+                color={"none"}
+                withoutHover
+                borderType={"none"}
+                paddingSize={"none"}
+                onClick={() => {
+                  addItemToCart(item.key);
+                }}
+              >
+                <img
+                  className={"plus-and-minus-i"}
+                  src={"/icons/plus-icon.png"}
+                  alt={""}
+                />
+              </Button>
             </div>
           </div>
+
+          <Button
+            className={"cartItem--delete"}
+            color={"none"}
+            withoutHover
+            paddingSize={"none"}
+            borderType={"none"}
+            onClick={() => removeItemFromCart(item.key, true)}
+          >
+            {t("cart:delete")}
+          </Button>
+          <span>{item.price}€</span>
         </div>
-      ))}
-    </>
-  );
+      </div>
+    </div>
+  ));
 };
 
 const Cart = () => {

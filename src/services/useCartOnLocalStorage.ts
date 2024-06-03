@@ -19,8 +19,22 @@ export const useCartOnLocalStorage = () => {
     setLocalStorageCartInfo(newCart);
   };
 
+  const removeItemFromCart = (key: number, isDelete: boolean) => {
+    const newCart: cartModel = { ...localStorageCartInfo };
+    if (newCart[key] !== 1) {
+      newCart[key] -= 1;
+      setLocalStorageCartInfo(newCart);
+    }
+    if (newCart[key] === 1 || isDelete) {
+      delete newCart[key];
+      setLocalStorageCartInfo(newCart);
+    }
+  };
+
   return {
-    localStorageCartInfo: localStorageCartInfo,
-    saveItemToCart: (key: number) => addItemToCart(key),
+    localStorageCartInfo,
+    addItemToCart: (key: number) => addItemToCart(key),
+    removeItemFromCart: (key: number, isDelete: boolean) =>
+      removeItemFromCart(key, isDelete),
   };
 };

@@ -4,7 +4,7 @@ import { useShopItemsList } from "./services/useShopItemsList.ts";
 import { useTranslation } from "react-i18next";
 
 const Home = () => {
-  const { shopItemsList, loading } = useShopItemsList();
+  const { shopItemsList, isLoading } = useShopItemsList();
   const { t } = useTranslation("home");
 
   return (
@@ -13,9 +13,9 @@ const Home = () => {
         <div className={"filters"}>
           <Filters />
         </div>
-        {shopItemsList.length === 0 && !loading ? (
+        {shopItemsList.length === 0 && !isLoading ? (
           <p className={"errorAndLoadingMsg"}>{t("home:error")}</p>
-        ) : loading ? (
+        ) : isLoading ? (
           <p className={"errorAndLoadingMsg"}>{t("home:loading")}</p>
         ) : (
           <ItemsToDisplay />

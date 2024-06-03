@@ -1,21 +1,18 @@
 import { useMemo } from "react";
-import { useCartOnLocalStorage } from "../services/useCartOnLocalStorage.ts";
+import { useCartOnLocalStorage } from "./useCartOnLocalStorage.ts";
 import { ItemDetailsModel } from "../models";
-import { useShopItemsList } from "../services/useShopItemsList.ts";
+import { useShopItemsList } from "./useShopItemsList.ts";
 
+// Maps ID-quantity dictionary from local storage into list of items as per ItemDetailsModel
 export const useCartItemsList = () => {
   const { localStorageCartInfo } = useCartOnLocalStorage();
   const { shopItemsList } = useShopItemsList();
 
-  // Create cart items list from IDs in local storage cart
+  // Creates a list of the shop items that match the previous ID list
   return useMemo(() => {
     const cartItemsIdList: string[] = Object.keys(localStorageCartInfo);
-    let cartItems: ItemDetailsModel[] = [];
-
-    // Creates a list of the shop items that match the previous ID list
-    cartItems = shopItemsList.filter((item: ItemDetailsModel) => {
+    return shopItemsList.filter((item: ItemDetailsModel) => {
       return cartItemsIdList.includes(item.key.toString());
     });
-    return cartItems;
   }, [localStorageCartInfo, shopItemsList]);
 };
