@@ -70,16 +70,22 @@ const CartList = () => {
 
 const Cart = () => {
   const { t } = useTranslation("cart");
+  const { localStorageCartInfo } = useCartOnLocalStorage();
+
   return (
     <div className={"margin-lat-60"}>
       <h1 className={"cartTitle"}>{t("cart:title")}</h1>
       <div className={"cartTitle--line"}></div>
-      <div className={"cartDisplay flex"}>
-        <div className={"flex-wrap gap-60 margin-bottom-60"}>
-          <CartList />
+      {Object.keys(localStorageCartInfo).length === 0 ? (
+        <p>{t("cart:cartEmpty")}</p>
+      ) : (
+        <div className={"cartDisplay flex"}>
+          <div className={"flex-wrap gap-60 margin-bottom-60"}>
+            <CartList />
+          </div>
+          <TotalToPay />
         </div>
-        <TotalToPay />
-      </div>
+      )}
     </div>
   );
 };
