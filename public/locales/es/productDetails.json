@@ -3,5 +3,7 @@
   "addToCart": "Añadir a la cesta",
   "reviews": "Opiniones",
   "similarProducts": "Productos similares",
-  "itemAddedToCart": "Producto añadido al carrito"
+  "itemAddedToCart": "Producto añadido al carrito",
+  "noResults": "No se ha encontrado el producto",
+  "findMore": "Descubre otros productos"
 }
