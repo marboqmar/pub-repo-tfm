@@ -3,5 +3,7 @@
   "addToCart": "Add to cart",
   "reviews": "Reviews",
   "similarProducts": "Similar products",
-  "itemAddedToCart": "Item added to cart"
+  "itemAddedToCart": "Item added to cart",
+  "noResults": "No results found for this product",
+  "findMore": "Find other products"
 }

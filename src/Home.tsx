@@ -11,7 +11,7 @@ export const Home = () => {
   const { isLoading, error } = useShopItemsList();
   const { t } = useTranslation("home");
   const { search } = useContext(SearchContext);
-  const itemsList: ItemDetailsModel[] = useApplyFilters();
+  const itemList: ItemDetailsModel[] = useApplyFilters();
 
   return (
     <>
@@ -28,7 +28,7 @@ export const Home = () => {
           </p>
         )}
         {/*If the search did not provide any results, say so*/}
-        {search && itemsList.length === 0 ? (
+        {search && itemList.length === 0 ? (
           <p className={"margin-left-60 margin-bottom-60"}>
             {t("home:noSearchResults")}
           </p>
@@ -41,7 +41,7 @@ export const Home = () => {
         ) : isLoading ? (
           <p className={"errorAndLoadingMsg"}>{t("home:loading")}</p>
         ) : (
-          <ItemsToDisplay itemsList={itemsList} />
+          <ItemsToDisplay itemList={itemList} />
         )}
       </div>
     </>
