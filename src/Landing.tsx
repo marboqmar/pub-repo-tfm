@@ -4,6 +4,7 @@ import { Button } from "./components/Button/Button.tsx";
 import { Form } from "./components/Form/Form.tsx";
 import { SLIDE_CONTENT } from "./lists/SLIDE_CONTENT.ts";
 import { SlideContentModel } from "./models";
+import { Slide } from "./components/Swipper/Slide.tsx";
 // Swiper imports
 import { Swiper, SwiperSlide } from "swiper/react";
 import { register } from "swiper/element/bundle";
@@ -14,40 +15,7 @@ import "./components/Swipper/swipper.scss";
 import { Pagination } from "swiper/modules";
 import { Link } from "react-router-dom";
 
-register();
-
-const Slide = (slide: SlideContentModel) => {
-  const { t } = useTranslation("common");
-
-  return (
-    <div className={"flex-row"}>
-      <img id={"slider-img"} src={slide.image} alt={""} />
-      <div
-        className={
-          "landing-sword-text flex-column grid__item-6-columns margin-left-auto align-flex-start"
-        }
-      >
-        <h3 id={"landing-sword-title"} className={"h2 margin-top-0"}>
-          {slide.swordTitle}
-        </h3>
-        <div className={"underline bgcolor-gray-100"}></div>
-        <p className={"align-text-left"}>{slide.swordDescription}</p>
-        <div className={"underline bgcolor-gray-100"}></div>
-        <div className={"margin-top-auto"}>
-          <p className={"h2 slider-price"}>
-            <span className={"color-gray crossed-text"}>489€</span>
-            <span> - 275€</span>
-          </p>
-          <Button component={Link} color={"primary"} to={"/detalles-producto"}>
-            {t("common:productDetails")}
-          </Button>
-        </div>
-      </div>
-    </div>
-  );
-};
-
-const Landing = () => {
+export const Landing = () => {
   const { t } = useTranslation("common");
   const { i18n } = useTranslation();
   register();
@@ -143,5 +111,3 @@ const Landing = () => {
     </>
   );
 };
-
-export default Landing;

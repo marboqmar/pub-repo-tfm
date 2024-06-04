@@ -2,7 +2,7 @@ import "./Footer.scss";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
-const Footer = () => {
+export const Footer = () => {
   const { t } = useTranslation("common");
 
   return (
@@ -25,5 +25,3 @@ const Footer = () => {
     </div>
   );
 };
-
-export default Footer;

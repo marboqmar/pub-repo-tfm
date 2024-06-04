@@ -1,11 +1,11 @@
 import { createBrowserRouter } from "react-router-dom";
-import App from "./App.tsx";
-import Landing from "./Landing.tsx";
-import Cart from "./Cart.tsx";
-import ProductDetails from "./ProductDetails.tsx";
-import Patterns from "./components/PatternsLibrary/Patterns.tsx";
-import Payment from "./Payment.tsx";
-import Home from "./Home.tsx";
+import { App } from "./App.tsx";
+import { Landing } from "./Landing.tsx";
+import { Cart } from "./Cart.tsx";
+import { ProductDetails } from "./ProductDetails.tsx";
+import { Patterns } from "./components/PatternsLibrary/Patterns.tsx";
+import { Payment } from "./Payment.tsx";
+import { Home } from "./Home.tsx";
 
 export const router = createBrowserRouter([
   {

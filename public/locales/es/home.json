@@ -4,5 +4,6 @@
     "LOTR": "El Señor de los Anillos"
   },
   "error": "No se han podido cargar los productos de la tienda en este momento, por favor, inténtalo de nuevo más tarde.",
-  "loading": "Cargando los productos"
+  "loading": "Cargando los productos",
+  "searchResult": "Resultados para la búsqueda"
 }
