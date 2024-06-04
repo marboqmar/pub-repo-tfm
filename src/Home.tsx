@@ -24,13 +24,13 @@ export const Home = () => {
           ""
         ) : (
           <p className={"margin-left-60 margin-bottom-60"}>
-            {t("home:searchResult")} "{search}"
+            {t("home:searchingBy")} "{search}"
           </p>
         )}
         {/*If the search did not provide any results, say so*/}
         {search && itemsList.length === 0 ? (
           <p className={"margin-left-60 margin-bottom-60"}>
-            Your search did not provide any results
+            {t("home:noSearchResults")}
           </p>
         ) : (
           ""

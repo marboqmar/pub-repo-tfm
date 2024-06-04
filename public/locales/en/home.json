@@ -5,5 +5,6 @@
   },
   "error": "The shop items could not be loaded, please, try again later.",
   "loading": "Loading products",
-  "searchResult": "Search results for term"
+  "searchingBy": "Search results for term",
+  "noSearchResults": "Your search did not provide any results"
 }
