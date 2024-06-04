@@ -1,72 +1,11 @@
 import "./Header.scss";
-import { Link, useNavigate } from "react-router-dom";
-import { ChangeEvent, FormEvent, useContext, useState } from "react";
+import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { Button } from "../Button/Button.tsx";
-import i18n from "i18next";
-import { SearchContext } from "../../contexts/SearchContextProvider.tsx";
+import { ChangeLanguage } from "./ChangeLanguage.tsx";
+import { SearchBar } from "./SearchBar.tsx";
 
-const ChangeLanguage = () => {
-  const { t } = useTranslation("common");
-  const [language, setNewLanguage] = useState<string>("es");
-
-  const handleLanguage = () => {
-    if (language === "es") {
-      setNewLanguage("en");
-    } else {
-      setNewLanguage("es");
-    }
-
-    i18n.changeLanguage(language);
-  };
-
-  return (
-    <Button
-      className={"header--btn"}
-      paddingSize={"none"}
-      withoutHover
-      color={"none"}
-      borderType={"none"}
-      onClick={handleLanguage}
-      role={"languageButton"}
-    >
-      <img className={"icon"} src={"/icons/vector-language.png"} alt={""} />
-      <small> {t("common:header.language")}</small>
-    </Button>
-  );
-};
-
-const SearchBar = () => {
-  const { setNewSearch } = useContext(SearchContext);
-  const { t } = useTranslation("common");
-  const navigate = useNavigate();
-
-  const handleSearchInputChange = (event: ChangeEvent<HTMLInputElement>) => {
-    setNewSearch(event.target.value);
-  };
-
-  const handleOnSubmit = (event: FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    navigate("/home");
-  };
-
-  return (
-    <form
-      className={"margin-ver-auto margin-lat-auto"}
-      onSubmit={handleOnSubmit}
-    >
-      <input
-        id={"searchBar"}
-        className={"searchBar font small"}
-        type={"text"}
-        onChange={handleSearchInputChange}
-        placeholder={t("common:header.searchBarPlaceholder")}
-      />
-    </form>
-  );
-};
-
-const Header = () => {
+export const Header = () => {
   const { t } = useTranslation("common");
   return (
     <div className={"header flex-row gap-12"}>
@@ -102,5 +41,3 @@ const Header = () => {
     </div>
   );
 };
-
-export default Header;

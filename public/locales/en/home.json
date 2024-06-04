@@ -4,5 +4,6 @@
     "LOTR": "The Lord of the Rings"
   },
   "error": "The shop items could not be loaded, please, try again later.",
-  "loading": "Loading products"
+  "loading": "Loading products",
+  "searchResult": "Search results for term"
 }

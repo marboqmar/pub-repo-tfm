@@ -1,6 +1,6 @@
 import { renderComponent } from "../../tests/utils/component-renderer.tsx";
 import { screen, waitFor } from "@testing-library/react";
-import Header from "./Header.tsx";
+import { Header } from "./Header.tsx";
 import { userEvent } from "@testing-library/user-event";
 
 const changeLanguageMock = vi.fn();

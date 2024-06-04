@@ -17,7 +17,7 @@ const PaymentItem = () => {
   );
 };
 
-const Payment = () => {
+export const Payment = () => {
   return (
     <div>
       <h1>Revisar artículos y pago</h1>
@@ -31,5 +31,3 @@ const Payment = () => {
     </div>
   );
 };
-
-export default Payment;
