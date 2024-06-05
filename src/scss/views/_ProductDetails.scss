@@ -19,42 +19,6 @@
   }
 }
 
-.product {
-  display: flex;
-  flex-direction: row;
-  gap: 138px;
-
-  &--img {
-    min-width: 450px;
-    border-radius: 12px;
-  }
-
-  &--text {
-    display: flex;
-    flex-direction: column;
-  }
-}
-
-.similarProduct {
-  display: flex;
-  flex-direction: row;
-
-  &--item {
-    display: flex;
-    flex-direction: row;
-  }
-
-  &--img {
-    height: 400px;
-    width: 209px;
-    margin-right: 18px;
-  }
-
-  & a:visited {
-    color: inherit;
-  }
-}
-
 .toast-message {
   font-family: "Crimson Text", serif;
   font-weight: 400;

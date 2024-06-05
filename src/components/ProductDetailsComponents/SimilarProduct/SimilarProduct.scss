@@ -1,0 +1,19 @@
+.similarProduct {
+  display: flex;
+  flex-direction: row;
+
+  &--item {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &--img {
+    height: 400px;
+    width: 209px;
+    margin-right: 18px;
+  }
+
+  & a:visited {
+    color: inherit;
+  }
+}
