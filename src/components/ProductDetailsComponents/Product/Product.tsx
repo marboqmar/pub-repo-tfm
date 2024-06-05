@@ -1,8 +1,9 @@
+import "./Product.scss";
 import { useTranslation } from "react-i18next";
-import { useCartOnLocalStorage } from "../../services/useCartOnLocalStorage.ts";
+import { useCartOnLocalStorage } from "../../../services/useCartOnLocalStorage.ts";
 import { Bounce, toast, ToastContainer } from "react-toastify";
-import { ItemDetailsModel } from "../../models";
-import { Button } from "../Button/Button.tsx";
+import { ItemDetailsModel } from "../../../models";
+import { Button } from "../../Button/Button.tsx";
 
 interface ProductProps {
   selectedItem: ItemDetailsModel;

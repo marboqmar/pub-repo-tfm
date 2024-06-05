@@ -1,17 +1,14 @@
 import { ItemsToDisplay } from "./components/ItemsToDisplay/ItemsToDisplay.tsx";
 import { Filters } from "./components/Filters/Filters.tsx";
-import { useShopItemsList } from "./services/useShopItemsList.ts";
 import { useTranslation } from "react-i18next";
 import { SearchContext } from "./contexts/SearchContextProvider.tsx";
 import { useContext } from "react";
-import { useApplyFilters } from "./services/useApplyFilters.tsx";
-import { ItemDetailsModel } from "./models";
+import { useApiResultsAndFilteredItems } from "./services/useApiResultsAndFilteredItems.tsx";
 
 export const Home = () => {
-  const { isLoading, error } = useShopItemsList();
   const { t } = useTranslation("home");
   const { search } = useContext(SearchContext);
-  const itemList: ItemDetailsModel[] = useApplyFilters();
+  const { filteredItems, isLoading, error } = useApiResultsAndFilteredItems();
 
   return (
     <>
@@ -28,7 +25,7 @@ export const Home = () => {
           </p>
         )}
         {/*If the search did not provide any results, say so*/}
-        {search && itemList.length === 0 ? (
+        {search && filteredItems.length === 0 ? (
           <p className={"margin-left-60 margin-bottom-60"}>
             {t("home:noSearchResults")}
           </p>
@@ -41,7 +38,7 @@ export const Home = () => {
         ) : isLoading ? (
           <p className={"errorAndLoadingMsg"}>{t("home:loading")}</p>
         ) : (
-          <ItemsToDisplay itemList={itemList} />
+          <ItemsToDisplay itemList={filteredItems} />
         )}
       </div>
     </>

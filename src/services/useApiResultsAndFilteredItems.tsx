@@ -1,21 +1,15 @@
-import { useShopItemsList } from "./useShopItemsList.ts";
-import { useContext, useEffect, useMemo, useState } from "react";
+import { useContext, useMemo } from "react";
 import { SearchContext } from "../contexts/SearchContextProvider.tsx";
 import { ActiveFilterContext } from "../contexts/ActiveFilterContextProvider.tsx";
 import { ItemDetailsModel } from "../models";
+import { useCallApi } from "./useCallApi.ts";
 
-export const useApplyFilters = () => {
-  const { shopItemsList } = useShopItemsList();
-  const [search, setSearch] = useState<string>("");
-  const { search: searchValue } = useContext(SearchContext);
+export const useApiResultsAndFilteredItems = () => {
+  const { shopItemsList, isLoading, error } = useCallApi();
+  const { search } = useContext(SearchContext);
   const { activeFilter } = useContext(ActiveFilterContext);
 
-  // Get search value from search bar on header
-  useEffect(() => {
-    setSearch(searchValue);
-  }, [searchValue]);
-
-  return useMemo(() => {
+  const filteredItems = useMemo(() => {
     if (!search && !activeFilter) {
       return shopItemsList;
     }
@@ -34,4 +28,11 @@ export const useApplyFilters = () => {
       return item.name.toLowerCase().includes(search.toLowerCase());
     });
   }, [search, activeFilter, shopItemsList]);
+
+  return {
+    filteredItems,
+    shopItemsList,
+    isLoading,
+    error,
+  };
 };

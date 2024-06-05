@@ -1,17 +1,50 @@
 import { useTranslation } from "react-i18next";
 import "react-toastify/dist/ReactToastify.css";
-import { Product } from "./components/ProductDetailsComponents/Product.tsx";
+import { Product } from "./components/ProductDetailsComponents/Product/Product.tsx";
 import { Review } from "./components/ProductDetailsComponents/Review.tsx";
-import { SimilarProduct } from "./components/ProductDetailsComponents/SimilarProduct.tsx";
+import { SimilarProduct } from "./components/ProductDetailsComponents/SimilarProduct/SimilarProduct.tsx";
 import { useSearchParams } from "react-router-dom";
-import { useShopItemsList } from "./services/useShopItemsList.ts";
+import { useApiResultsAndFilteredItems } from "./services/useApiResultsAndFilteredItems.tsx";
 import { ItemDetailsModel } from "./models";
+
+// Total number of items
+// Random numbers in the interval from 1 to total number of items. - How many? 5
+// Retrieve information from items that have that key
+// Display those items
+
+const useRandomizeProduct = () => {
+  const { shopItemsList } = useApiResultsAndFilteredItems();
+
+  console.log(shopItemsList.length);
+
+  const totalNumberOfItems: number = shopItemsList.length;
+
+  const randomIntFromInterval = (min: number, max: number) => {
+    return Math.floor(Math.random() * (max - min + 1) + min);
+  };
+
+  const randomItemIdList: number[] = [];
+
+  for (let i = 1; i < 6; i++) {
+    const idToAdd = randomIntFromInterval(1, totalNumberOfItems);
+    randomItemIdList.push(idToAdd);
+  }
+
+  return shopItemsList.filter((item: ItemDetailsModel) => {
+    randomItemIdList.forEach((id: number) => {
+      return id === item.key;
+    });
+  });
+};
 
 export const ProductDetails = () => {
   const { t } = useTranslation("productDetails");
-  const { shopItemsList } = useShopItemsList();
+  const { shopItemsList } = useApiResultsAndFilteredItems();
   const [param] = useSearchParams();
   const productIdParam = Number(param.get("ref"));
+  const testList = useRandomizeProduct();
+
+  console.log(testList);
 
   const selectedItem = shopItemsList.find((item: ItemDetailsModel) => {
     return item.key === productIdParam;

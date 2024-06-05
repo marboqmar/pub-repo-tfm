@@ -2,7 +2,9 @@ import { useEffect, useState } from "react";
 import { ItemDetailsModel, ItemsFromAPIModel } from "../models";
 import axios from "axios";
 
-export const useShopItemsList = () => {
+// To avoid doing more than one call to API, the return of this hook is returned as well by useApiResultsAndFilteredItems
+// and are used throughout the project from the latter
+export const useCallApi = () => {
   const [shopItemsList, setShopItemsList] = useState<ItemDetailsModel[]>([]);
   const [error, setError] = useState<string>("");
   const [isLoading, setIsLoading] = useState<boolean>(false);
