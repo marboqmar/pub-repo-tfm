@@ -30,7 +30,9 @@ export const useCallApi = () => {
       try {
         setError("");
         setIsLoading(true);
-        const response = await axios.get(import.meta.env.VITE_API_URL);
+        const response = await axios.get(
+          "https://fantasy-forge-back.netlify.app/.netlify/functions/api",
+        );
         setShopItemsList(mapItemsFromAPIToItemDetails(response.data));
       } catch (error) {
         setError("API did not provide any items");
