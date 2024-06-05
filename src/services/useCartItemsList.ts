@@ -1,12 +1,12 @@
 import { useMemo } from "react";
 import { useCartOnLocalStorage } from "./useCartOnLocalStorage.ts";
 import { ItemDetailsModel } from "../models";
-import { useShopItemsList } from "./useShopItemsList.ts";
+import { useApiResultsAndFilteredItems } from "./useApiResultsAndFilteredItems.tsx";
 
 // Maps ID-quantity dictionary from local storage into list of items as per ItemDetailsModel
 export const useCartItemsList = () => {
   const { localStorageCartInfo } = useCartOnLocalStorage();
-  const { shopItemsList } = useShopItemsList();
+  const { shopItemsList } = useApiResultsAndFilteredItems();
 
   // Creates a list of the shop items that match the previous ID list
   return useMemo(() => {

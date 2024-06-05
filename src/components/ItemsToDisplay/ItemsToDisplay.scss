@@ -6,26 +6,25 @@
   gap: 12px;
   margin-bottom: 24px;
 
-  &-text {
+  &--text {
     margin-left: 6px;
   }
 
-  &-link {
+  &--link {
     text-decoration: none;
     color: $color-gray-500-darker;
   }
 
-  & img {
+  &--img {
     height: auto;
     width: 100%;
     min-width: 200px;
+    max-height: 80vh;
   }
-}
-
-.itemTitle {
 }
 
 .itemDisplay {
   display: flex;
+  gap: 1px;
   max-width: 100%;
 }

@@ -1,0 +1,16 @@
+.product {
+  display: flex;
+  flex-direction: row;
+  gap: 138px;
+
+  &--img {
+    min-width: 450px;
+    border-radius: 12px;
+    max-height: 80vh;
+  }
+
+  &--text {
+    display: flex;
+    flex-direction: column;
+  }
+}

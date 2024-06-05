@@ -2,7 +2,7 @@ import "./Patterns.scss";
 import { Button } from "../Button/Button.tsx";
 import { useTranslation } from "react-i18next";
 
-const Patterns = () => {
+export const Patterns = () => {
   const { t } = useTranslation("common");
 
   return (
@@ -214,5 +214,3 @@ const Patterns = () => {
     </>
   );
 };
-
-export default Patterns;

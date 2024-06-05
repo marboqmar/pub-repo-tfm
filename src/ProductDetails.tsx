@@ -1,152 +1,88 @@
-import { Button } from "./components/Button/Button.tsx";
 import { useTranslation } from "react-i18next";
-import { ItemDetailsModel } from "./models";
-import { Link, useSearchParams } from "react-router-dom";
-import { useCartOnLocalStorage } from "./services/useCartOnLocalStorage.ts";
-import { ToastContainer, toast, Bounce } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { useShopItemsList } from "./services/useShopItemsList.ts";
+import { Product } from "./components/ProductDetailsComponents/Product/Product.tsx";
+import { Review } from "./components/ProductDetailsComponents/Review.tsx";
+import { SimilarProduct } from "./components/ProductDetailsComponents/SimilarProduct/SimilarProduct.tsx";
+import { useSearchParams } from "react-router-dom";
+import { useApiResultsAndFilteredItems } from "./services/useApiResultsAndFilteredItems.tsx";
+import { ItemDetailsModel } from "./models";
 
-const Product = () => {
+// Total number of items
+// Random numbers in the interval from 1 to total number of items. - How many? 5
+// Retrieve information from items that have that key
+// Display those items
+
+const useRandomizeProduct = () => {
+  const { shopItemsList } = useApiResultsAndFilteredItems();
+
+  console.log(shopItemsList.length);
+
+  const totalNumberOfItems: number = shopItemsList.length;
+
+  const randomIntFromInterval = (min: number, max: number) => {
+    return Math.floor(Math.random() * (max - min + 1) + min);
+  };
+
+  const randomItemIdList: number[] = [];
+
+  for (let i = 1; i < 6; i++) {
+    const idToAdd = randomIntFromInterval(1, totalNumberOfItems);
+    randomItemIdList.push(idToAdd);
+  }
+
+  return shopItemsList.filter((item: ItemDetailsModel) => {
+    randomItemIdList.forEach((id: number) => {
+      return id === item.key;
+    });
+  });
+};
+
+export const ProductDetails = () => {
   const { t } = useTranslation("productDetails");
-  const { shopItemsList } = useShopItemsList();
+  const { shopItemsList } = useApiResultsAndFilteredItems();
   const [param] = useSearchParams();
   const productIdParam = Number(param.get("ref"));
-  const { addItemToCart } = useCartOnLocalStorage();
-  const notify = () =>
-    toast(t("productDetails:itemAddedToCart"), {
-      position: "top-right",
-      autoClose: 4000,
-      hideProgressBar: true,
-      closeOnClick: true,
-      pauseOnHover: false,
-      draggable: false,
-      progress: undefined,
-      theme: "light",
-      transition: Bounce,
-    });
+  const testList = useRandomizeProduct();
+
+  console.log(testList);
 
   const selectedItem = shopItemsList.find((item: ItemDetailsModel) => {
     return item.key === productIdParam;
   });
 
   return (
-    <>
-      {selectedItem ? (
-        <div className={"product"}>
-          <img className={"product--img"} src={selectedItem.img} alt={""} />
-          <div
-            className={
-              "product--text flex-column grid__item-6-columns margin-left-auto align-flex-start"
-            }
-          >
-            <h3 className={"h2--no-margin margin-top-0"}>
-              {selectedItem.name}
-            </h3>
-            <div className={"underline bgcolor-gray-100"}></div>
-            <p className={"align-text-left"}>{selectedItem.description}</p>
-            <div className={"underline bgcolor-gray-100"}></div>
-            <p className={"h2 slider-price"}>
-              <span>{selectedItem.price} €</span>
-            </p>
-            <Button
-              color={"primary"}
-              onClick={() => {
-                addItemToCart(selectedItem.key);
-                notify();
-              }}
-            >
-              {t("productDetails:addToCart")}
-            </Button>
-            <ToastContainer
-              bodyClassName="toast-message"
-              toastClassName="toast-color"
-              position="top-right"
-              autoClose={4000}
-              limit={1}
-              hideProgressBar
-              newestOnTop={false}
-              closeOnClick
-              rtl={false}
-              pauseOnHover={false}
-              theme="light"
-              transition={Bounce}
-            />
-          </div>
-        </div>
-      ) : (
-        // SUBSTITUTE THIS BY ERROR HANDLING
-        console.log("2")
-      )}
-    </>
-  );
-};
-
-const Review = () => {
-  return (
-    <div>
-      <div>
-        <img src={"../public/user.png"} alt={""} />
-        <span>Pepito</span>
-      </div>
-      <p>
-        Review: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-        eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-        minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-        ex ea commodo consequat.
-      </p>
-    </div>
-  );
-};
-
-const SimilarProduct = () => {
-  return (
-    <Button
-      component={Link}
-      className={"similarProduct--item flex-column"}
-      color={"none"}
-      paddingSize={"none"}
-      withoutHover
-      borderType={"none"}
-      to={"/detalles-producto"}
-    >
-      <img
-        className={"similarProduct--img"}
-        src={"/cart-image.png"}
-        alt={"cart item image"}
-      />
-      <span className={"bold"}>Knight’s greatsword</span>
-      <span>160€</span>
-    </Button>
-  );
-};
-
-const ProductDetails = () => {
-  const { t } = useTranslation("productDetails");
-
-  return (
     <div className={"margin-lat-60"}>
       <h1 className={"productDetails--title"}>{t("productDetails:title")}</h1>
       <div className={"productDetails--title-line"}></div>
       <div className={"flex-column gap-60"}>
-        <div className={"product"}>
-          <div className={"flex-row"}>
-            <Product />
-          </div>
-        </div>
-        <div className={"flex-column gap-12"}>
-          <h2 className={"h2 productDetails--subtitles"}>
-            {t("productDetails:reviews")}
-          </h2>
-          <div>
-            <Review />
-            <Review />
-            <Review />
-          </div>
-        </div>
+        {/*If item selected returns details of that item, otherwise return no results found*/}
+        {selectedItem ? (
+          <>
+            <div className={"product"}>
+              <div className={"flex-row"}>
+                <Product selectedItem={selectedItem} />
+              </div>
+            </div>
+            <div className={"flex-column gap-12"}>
+              <h2 className={"h2 productDetails--subtitles"}>
+                {t("productDetails:reviews")}
+              </h2>
+              <div>
+                <Review />
+                <Review />
+                <Review />
+              </div>
+            </div>
+          </>
+        ) : (
+          <p>{t("productDetails:noResults")}</p>
+        )}
         <div className={"flex-column gap-12 margin-bottom-60"}>
           <h2 className={"h2 productDetails--subtitles"}>
-            {t("productDetails:similarProducts")}
+            {/*If no item was selected, rather than "similar products" state "find other products"*/}
+            {selectedItem
+              ? t("productDetails:similarProducts")
+              : t("productDetails:findMore")}
           </h2>
           <div className={"similarProduct"}>
             <SimilarProduct />
@@ -161,5 +97,3 @@ const ProductDetails = () => {
     </div>
   );
 };
-
-export default ProductDetails;
