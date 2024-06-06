@@ -1,6 +1,7 @@
 import "./ItemsToDisplay.scss";
-import { Link } from "react-router-dom";
+import { Button } from "../Button/Button.tsx";
 import { ItemDetailsModel } from "../../models";
+import { Link } from "react-router-dom";
 
 interface ItemsToDisplayProps {
   itemList: ItemDetailsModel[];
@@ -11,8 +12,13 @@ export const ItemsToDisplay = ({ itemList }: ItemsToDisplayProps) => {
     <>
       <div className={"itemDisplay"}>
         {itemList.map((item: ItemDetailsModel) => (
-          <Link
-            className={"item--link"}
+          <Button
+            color={"none"}
+            withoutHover
+            component={Link}
+            isLink
+            paddingSize={"none"}
+            borderType={"none"}
             to={`/detalles-producto/?ref=${item.key}`}
             key={`${item.img}${item.name}`}
           >
@@ -23,7 +29,7 @@ export const ItemsToDisplay = ({ itemList }: ItemsToDisplayProps) => {
                 <span>{item.price}€</span>
               </div>
             </div>
-          </Link>
+          </Button>
         ))}
       </div>
     </>
