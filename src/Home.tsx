@@ -3,7 +3,7 @@ import { Filters } from "./components/Filters/Filters.tsx";
 import { useTranslation } from "react-i18next";
 import { SearchContext } from "./contexts/SearchContextProvider.tsx";
 import { useContext } from "react";
-import { useApiResultsAndFilteredItems } from "./services/useApiResultsAndFilteredItems.tsx";
+import { useApiResultsAndFilteredItems } from "./services/useApiResultsAndFilteredItems.ts";
 
 export const Home = () => {
   const { t } = useTranslation("home");

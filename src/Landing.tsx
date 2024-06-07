@@ -5,6 +5,7 @@ import { Form } from "./components/Form/Form.tsx";
 import { SLIDE_CONTENT } from "./lists/SLIDE_CONTENT.ts";
 import { SlideContentModel } from "./models";
 import { Slide } from "./components/Swipper/Slide.tsx";
+import { Link } from "react-router-dom";
 // Swiper imports
 import { Swiper, SwiperSlide } from "swiper/react";
 import { register } from "swiper/element/bundle";
@@ -13,7 +14,6 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "./components/Swipper/swipper.scss";
 import { Pagination } from "swiper/modules";
-import { Link } from "react-router-dom";
 
 export const Landing = () => {
   const { t } = useTranslation("common");

@@ -4,7 +4,7 @@ import { Product } from "./components/ProductDetailsComponents/Product/Product.t
 import { Review } from "./components/ProductDetailsComponents/Review.tsx";
 import { SimilarProduct } from "./components/ProductDetailsComponents/SimilarProduct/SimilarProduct.tsx";
 import { useSearchParams } from "react-router-dom";
-import { useApiResultsAndFilteredItems } from "./services/useApiResultsAndFilteredItems.tsx";
+import { useApiResultsAndFilteredItems } from "./services/useApiResultsAndFilteredItems.ts";
 import { ItemDetailsModel } from "./models";
 
 // Total number of items
@@ -15,24 +15,20 @@ import { ItemDetailsModel } from "./models";
 const useRandomizeProduct = () => {
   const { shopItemsList } = useApiResultsAndFilteredItems();
 
-  console.log(shopItemsList.length);
+  const randomElement =
+    shopItemsList[Math.floor(Math.random() * shopItemsList.length)];
 
-  const totalNumberOfItems: number = shopItemsList.length;
+  console.log(randomElement);
 
-  const randomIntFromInterval = (min: number, max: number) => {
-    return Math.floor(Math.random() * (max - min + 1) + min);
-  };
-
-  const randomItemIdList: number[] = [];
+  const randomItemList: ItemDetailsModel[] = [];
 
   for (let i = 1; i < 6; i++) {
-    const idToAdd = randomIntFromInterval(1, totalNumberOfItems);
-    randomItemIdList.push(idToAdd);
+    randomItemList.push(randomElement);
   }
 
   return shopItemsList.filter((item: ItemDetailsModel) => {
-    randomItemIdList.forEach((id: number) => {
-      return id === item.key;
+    randomItemList.forEach((randomItem) => {
+      return randomItem.key === item.key;
     });
   });
 };
