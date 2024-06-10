@@ -21,6 +21,8 @@ import { Pagination } from "swiper/modules";
 export const Landing = () => {
   const { t } = useTranslation("common");
   const { itemsFromApi } = useContext(ItemsFromApiContext);
+
+  // TO FIX
   const callApi = () => {
     useCallApi();
   };
