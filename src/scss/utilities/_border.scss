@@ -1,7 +1,29 @@
+@import "../global/color-variables";
+
 .border-radius-6 {
   border-radius: 6px;
 }
 
 .border-radius-12 {
   border-radius: 12px;
+}
+
+.border-gray {
+  border: 1px solid $color-white;
+}
+
+.border-top-gray {
+  border-top: 1px solid $color-white;
+}
+
+.border-bottom-gray {
+  border-bottom: 1px solid $color-white;
+}
+
+.border-left-gray {
+  border-left: 1px solid $color-white;
+}
+
+.border-right-gray {
+  border-right: 1px solid $color-white;
 }

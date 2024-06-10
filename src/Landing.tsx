@@ -47,10 +47,10 @@ export const Landing = () => {
             slidesPerView={1}
             loop={true}
             speed={1000}
-            autoplay={{
-              delay: 4000,
-              disableOnInteraction: false,
-            }}
+            // autoplay={{
+            //   delay: 4000,
+            //   disableOnInteraction: false,
+            // }}
             spaceBetween={60}
             modules={[Pagination]}
             pagination={{

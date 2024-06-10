@@ -1,14 +1,12 @@
 import "./Header.scss";
 import { Link } from "react-router-dom";
-import { useTranslation } from "react-i18next";
 import { Button } from "../Button/Button.tsx";
 import { ChangeLanguage } from "./ChangeLanguage.tsx";
 import { SearchBar } from "./SearchBar.tsx";
 
 export const Header = () => {
-  const { t } = useTranslation("common");
   return (
-    <div className={"header flex-row gap-12"}>
+    <div className={"header"}>
       <Button
         color={"none"}
         withoutHover
@@ -18,10 +16,14 @@ export const Header = () => {
         borderType={"none"}
         to={"/"}
       >
-        <img className={"logo"} src={"/logo-header.png"} alt={"Website logo"} />
+        <img className={"logo"} src={"/logotipo.png"} alt={"Website logo"} />
       </Button>
-      <SearchBar />
-      <div className={"flex-row margin-ver-auto gap-36"}>
+      <div
+        className={
+          "flex-row align-items-center margin-ver-auto margin-left-auto gap-24"
+        }
+      >
+        <SearchBar />
         <ChangeLanguage />
         <Button
           className={"header--btn"}
@@ -30,8 +32,7 @@ export const Header = () => {
           color={"none"}
           borderType={"none"}
         >
-          <img className={"icon"} src={"/icons/vector-account.png"} alt={""} />
-          <small> {t("common:header.signIn")}</small>
+          <img className={"icon"} src={"/icons/my-account.png"} alt={""} />
         </Button>
         <Button
           component={Link}
@@ -42,8 +43,7 @@ export const Header = () => {
           borderType={"none"}
           to={"/cesta"}
         >
-          <img className={"icon"} src={"/icons/vector-cart.png"} alt={""} />
-          <small> {t("common:header.cart")}</small>
+          <img className={"icon"} src={"/icons/basket.png"} alt={""} />
         </Button>
       </div>
     </div>

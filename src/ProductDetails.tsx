@@ -4,19 +4,15 @@ import { Product } from "./components/ProductDetailsComponents/Product/Product.t
 import { Review } from "./components/ProductDetailsComponents/Review.tsx";
 import { SimilarProduct } from "./components/ProductDetailsComponents/SimilarProduct/SimilarProduct.tsx";
 import { useSearchParams } from "react-router-dom";
-import { useApiResultsAndFilteredItems } from "./services/useApiResultsAndFilteredItems.ts";
 import { ItemDetailsModel } from "./models";
+import { ItemsFromApiContext } from "./contexts/ItemsFromApiContextProvider.tsx";
+import { useContext } from "react";
 
-// Total number of items
-// Random numbers in the interval from 1 to total number of items. - How many? 5
-// Retrieve information from items that have that key
-// Display those items
-
-const useRandomizeProduct = () => {
-  const { shopItemsList } = useApiResultsAndFilteredItems();
+const useRandomSimilarProducts = () => {
+  const { itemsFromApi } = useContext(ItemsFromApiContext);
 
   const randomElement =
-    shopItemsList[Math.floor(Math.random() * shopItemsList.length)];
+    itemsFromApi[Math.floor(Math.random() * itemsFromApi.length)];
 
   console.log(randomElement);
 
@@ -26,7 +22,7 @@ const useRandomizeProduct = () => {
     randomItemList.push(randomElement);
   }
 
-  return shopItemsList.filter((item: ItemDetailsModel) => {
+  return itemsFromApi.filter((item: ItemDetailsModel) => {
     randomItemList.forEach((randomItem) => {
       return randomItem.key === item.key;
     });
@@ -35,14 +31,14 @@ const useRandomizeProduct = () => {
 
 export const ProductDetails = () => {
   const { t } = useTranslation("productDetails");
-  const { shopItemsList } = useApiResultsAndFilteredItems();
+  const { itemsFromApi } = useContext(ItemsFromApiContext);
   const [param] = useSearchParams();
   const productIdParam = Number(param.get("ref"));
-  const testList = useRandomizeProduct();
+  const testList = useRandomSimilarProducts();
 
   console.log(testList);
 
-  const selectedItem = shopItemsList.find((item: ItemDetailsModel) => {
+  const selectedItem = itemsFromApi.find((item: ItemDetailsModel) => {
     return item.key === productIdParam;
   });
 
