@@ -4,11 +4,13 @@ import { useTranslation } from "react-i18next";
 import { SearchContext } from "./contexts/SearchContextProvider.tsx";
 import { useContext } from "react";
 import { useApiResultsAndFilteredItems } from "./services/useApiResultsAndFilteredItems.ts";
+import { ItemsFromApiContext } from "./contexts/ItemsFromApiContextProvider.tsx";
 
 export const Home = () => {
   const { t } = useTranslation("home");
   const { search } = useContext(SearchContext);
-  const { filteredItems, isLoading, error } = useApiResultsAndFilteredItems();
+  const { filteredItems } = useApiResultsAndFilteredItems();
+  const { error, isLoading } = useContext(ItemsFromApiContext);
 
   return (
     <>
