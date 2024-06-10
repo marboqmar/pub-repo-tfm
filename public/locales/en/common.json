@@ -1,9 +1,6 @@
 {
   "header": {
-    "searchBarPlaceholder": "Search",
-    "signIn": "Sign in",
-    "language": "Language",
-    "cart": "Cart"
+    "searchBarPlaceholder": "Search"
   },
   "homeClaim": "Recreate the most epic moments with our handcrafted swords, transforming tradition into excellence.",
   "visitShop": "Visit shop",
@@ -18,8 +15,6 @@
     "sendMessage": "Send message"
   },
   "footer": {
-    "patternLibrary-1-of-3": "See the ",
-    "patternLibrary-2-of-3": "pattern library",
-    "patternLibrary-3-of-3": " used to create this site"
+    "patterns": "OUR PATTERNS"
   }
 }

@@ -6,9 +6,6 @@ import { SLIDE_CONTENT } from "./lists/SLIDE_CONTENT.ts";
 import { SlideContentModel } from "./models";
 import { Slide } from "./components/Swipper/Slide.tsx";
 import { Link } from "react-router-dom";
-import { ItemsFromApiContext } from "./contexts/ItemsFromApiContextProvider.tsx";
-import { useCallApi } from "./services/useCallApi.ts";
-import { useContext } from "react";
 // Swiper imports
 import { Swiper, SwiperSlide } from "swiper/react";
 import { register } from "swiper/element/bundle";
@@ -20,18 +17,8 @@ import { Pagination } from "swiper/modules";
 
 export const Landing = () => {
   const { t } = useTranslation("common");
-  const { itemsFromApi } = useContext(ItemsFromApiContext);
-
-  // TO FIX
-  const callApi = () => {
-    useCallApi();
-  };
   const { i18n } = useTranslation();
   register();
-
-  if (!itemsFromApi) {
-    callApi;
-  }
 
   return (
     <>
@@ -60,10 +47,10 @@ export const Landing = () => {
             slidesPerView={1}
             loop={true}
             speed={1000}
-            autoplay={{
-              delay: 4000,
-              disableOnInteraction: false,
-            }}
+            // autoplay={{
+            //   delay: 4000,
+            //   disableOnInteraction: false,
+            // }}
             spaceBetween={60}
             modules={[Pagination]}
             pagination={{

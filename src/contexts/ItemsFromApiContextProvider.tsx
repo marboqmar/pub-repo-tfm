@@ -1,5 +1,7 @@
-import { createContext, ReactNode, useState } from "react";
+import { createContext, ReactNode, useEffect, useState } from "react";
 import { ItemDetailsModel } from "../models";
+import { mapItemsFromAPIToItemDetails } from "../services/items.mapper.ts";
+import axios from "axios";
 
 interface ItemsFromApiContextModel {
   itemsFromApi: ItemDetailsModel[];
@@ -46,6 +48,25 @@ export const ItemsFromApiContextProvider = ({
     error,
     setNewError: setError,
   };
+
+  // Fetch items from API and map them
+  useEffect(() => {
+    const fetchShopItemsList = async () => {
+      try {
+        setError("");
+        setIsLoading(true);
+        const response = await axios.get(
+          "https://fantasy-forge-back.netlify.app/.netlify/functions/api",
+        );
+        setItemsFromApi(mapItemsFromAPIToItemDetails(response.data));
+      } catch (error) {
+        setError("API did not provide any items");
+      }
+      setIsLoading(false);
+    };
+
+    fetchShopItemsList();
+  }, []);
 
   return (
     <ItemsFromApiContext.Provider value={contextValue}>

@@ -174,23 +174,15 @@ export const Patterns = () => {
         <h2 className={"patterns-titles"}>Icons</h2>
         <div className={"flex-row gap-36"}>
           <div className={"flex-column align-items-center"}>
-            <img
-              className={"icon"}
-              src={"/icons/vector-language.png"}
-              alt={""}
-            />
+            <img className={"icon"} src={"/icons/language.png"} alt={""} />
             <small> {t("common:header.language")}</small>
           </div>
           <div className={"flex-column align-items-center"}>
-            <img
-              className={"icon"}
-              src={"/icons/vector-account.png"}
-              alt={""}
-            />
+            <img className={"icon"} src={"/icons/my-account.png"} alt={""} />
             <small> {t("common:header.signIn")}</small>
           </div>
           <div className={"flex-column align-items-center"}>
-            <img className={"icon"} src={"/icons/vector-cart.png"} alt={""} />
+            <img className={"icon"} src={"/icons/basket.png"} alt={""} />
             <small> {t("common:header.cart")}</small>
           </div>
         </div>

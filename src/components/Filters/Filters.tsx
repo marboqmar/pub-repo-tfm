@@ -14,20 +14,23 @@ export const Filters = () => {
   return (
     <>
       {FILTER_OPTIONS_LIST().map((option: FilterModel) => (
-        <div key={option.key}>
-          <Button
-            onClick={() => {
-              handleFilterChange(option.key);
-            }}
-            color={"none"}
-            paddingSize={"small"}
-            withoutHover
-            borderType={"squareBlack"}
-            className={activeFilter === option.key ? "btn--filterClicked" : ""}
-          >
-            {option.name}
-          </Button>
-        </div>
+        <Button
+          key={option.key}
+          onClick={() => {
+            handleFilterChange(option.key);
+          }}
+          color={"none"}
+          paddingSize={"small"}
+          withoutHover
+          borderType={"none"}
+          className={
+            activeFilter === option.key
+              ? "filterItem filterItem--clicked"
+              : "filterItem"
+          }
+        >
+          {option.name}
+        </Button>
       ))}
     </>
   );

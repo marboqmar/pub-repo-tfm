@@ -1,9 +1,6 @@
 {
   "header": {
-    "searchBarPlaceholder": "Buscar",
-    "signIn": "Inicia sesión",
-    "language": "Idioma",
-    "cart": "Cesta"
+    "searchBarPlaceholder": "Buscar"
   },
   "homeClaim": "Recrea los momentos más épicos con nuestras espadas forjadas a mano, transformando tradición en excelencia.",
   "visitShop": "Visitar tienda",
@@ -18,8 +15,6 @@
     "sendMessage": "Enviar mensaje"
   },
   "footer": {
-    "patternLibrary-1-of-3": "Mira la ",
-    "patternLibrary-2-of-3": "libraría de patrones",
-    "patternLibrary-3-of-3": " usada para crear esta página"
+    "patterns": "NUESTROS PATRONES"
   }
 }
