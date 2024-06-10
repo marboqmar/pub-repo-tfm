@@ -1,0 +1,13 @@
+{
+  "title": "Check products and payment",
+  "quantity": "Quantity",
+  "deliveryDetails": "Delivery address",
+  "address": "Address",
+  "country": "Country",
+  "postCode": "Post code",
+  "cardDetails": "Card details",
+  "cardName": "Cardholder name",
+  "cardNumber": "Card number",
+  "expiryDate": "Expiry date",
+  "CVV": "CVV"
+}

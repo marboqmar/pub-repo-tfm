@@ -25,7 +25,9 @@ export const ItemsToDisplay = ({ itemList }: ItemsToDisplayProps) => {
             <div className={"item"}>
               <img className={"item--img"} src={item.img} alt={""} />
               <div className={"item item--text"}>
-                <span>{item.name}</span>
+                <span>
+                  <strong>{item.name}</strong>
+                </span>
                 <span>{item.price}€</span>
               </div>
             </div>

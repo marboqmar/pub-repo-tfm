@@ -4,16 +4,18 @@ import { useCartItemsList } from "../../services/useCartItemsList.ts";
 import { ItemDetailsModel } from "../../models";
 import { Button } from "../Button/Button.tsx";
 
-export const CartList = () => {
+export const CartItemList = () => {
   const { t } = useTranslation("cart");
   const { localStorageCartInfo, addItemToCart, removeItemFromCart } =
     useCartOnLocalStorage();
 
   return useCartItemsList().map((item: ItemDetailsModel) => (
-    <div className={"cartItem"} key={`${item.img}${item.name}`}>
+    <div className={"flex-row"} key={`${item.img}${item.name}`}>
       <img className={"cartItem--img"} src={item.img} alt={"cart item image"} />
       <div>
-        <h2 className={"h2"}>{item.name}</h2>
+        <h2 className={"font"}>
+          <strong>{item.name}</strong>
+        </h2>
         <div className={"flex-column gap-24"}>
           <div className={"flex-row gap-24"}>
             <span>{t("cart:quantity")}</span>
