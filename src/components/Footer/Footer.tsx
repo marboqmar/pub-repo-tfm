@@ -7,7 +7,7 @@ export const Footer = () => {
   const { t } = useTranslation("common");
 
   return (
-    <footer className={"flex-column align-items-center border-top-gray"}>
+    <footer className={"footer flex-column align-items-center border-top-gray"}>
       <div className={"flex-row width-100"}>
         <div className={"footer--section-logo border-right-gray"}>
           <Button
