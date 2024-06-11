@@ -1,0 +1,13 @@
+{
+  "title": "Revisar artículos y pago",
+  "quantity": "Cantidad",
+  "deliveryDetails": "Dirección de envío",
+  "address": "Dirección",
+  "country": "País",
+  "postCode": "Código postal",
+  "cardDetails": "Datos de la tarjeta",
+  "cardName": "Nombre en la tarjeta",
+  "cardNumber": "Número de tarjeta",
+  "expiryDate": "Fecha de caducidad",
+  "CVV": "Código de seguridad"
+}

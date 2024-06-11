@@ -1,5 +1,5 @@
 import "./Button.scss";
-import {ButtonHTMLAttributes, ComponentType, ReactHTML} from "react";
+import { ButtonHTMLAttributes, ComponentType, ReactHTML } from "react";
 import classNames from "classnames";
 
 export type ButtonColor = "primary" | "none";
@@ -14,6 +14,7 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   paddingSize?: PaddingSizes;
   borderType?: BorderType;
   component?: ComponentType<any> | keyof ReactHTML;
+  isLink?: boolean;
   to?: string;
   href?: string;
   role?: string;
@@ -25,8 +26,9 @@ export const Button = ({
   withoutHover,
   paddingSize,
   borderType,
-  component = 'button',
-    role,
+  component = "button",
+  isLink,
+  role,
   disabled,
   children,
   ...rest
@@ -40,9 +42,10 @@ export const Button = ({
     [`btn--paddingSize-${paddingSize}`]: paddingSize,
     [`btn--border-${borderType}`]: borderType,
     component: "button",
+    "btn--link": isLink,
     "btn--disabled": disabled,
   });
-  const Component = component
+  const Component = component;
 
   return (
     <Component className={classes} disabled={disabled} role={role} {...rest}>

@@ -1,10 +1,8 @@
-import { useTranslation } from "react-i18next";
 import { useState } from "react";
 import i18n from "i18next";
 import { Button } from "../Button/Button.tsx";
 
 export const ChangeLanguage = () => {
-  const { t } = useTranslation("common");
   const [language, setNewLanguage] = useState<string>("es");
 
   const handleLanguage = () => {
@@ -27,8 +25,7 @@ export const ChangeLanguage = () => {
       onClick={handleLanguage}
       role={"languageButton"}
     >
-      <img className={"icon"} src={"/icons/vector-language.png"} alt={""} />
-      <small> {t("common:header.language")}</small>
+      <img className={"icon"} src={"/icons/language.png"} alt={""} />
     </Button>
   );
 };

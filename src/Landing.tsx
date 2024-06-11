@@ -5,6 +5,7 @@ import { Form } from "./components/Form/Form.tsx";
 import { SLIDE_CONTENT } from "./lists/SLIDE_CONTENT.ts";
 import { SlideContentModel } from "./models";
 import { Slide } from "./components/Swipper/Slide.tsx";
+import { Link } from "react-router-dom";
 // Swiper imports
 import { Swiper, SwiperSlide } from "swiper/react";
 import { register } from "swiper/element/bundle";
@@ -13,7 +14,6 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "./components/Swipper/swipper.scss";
 import { Pagination } from "swiper/modules";
-import { Link } from "react-router-dom";
 
 export const Landing = () => {
   const { t } = useTranslation("common");
@@ -23,15 +23,26 @@ export const Landing = () => {
   return (
     <>
       {/*Hero*/}
-      <img
-        className={"hero"}
-        src={i18n.language === "es" ? "/hero.png" : "/hero-eng.png"}
-        alt={""}
-      />
-      <div className={"flex-column margin-lat-auto margin-top-60 gap-60"}>
+      <div className={"position-rel"}>
+        <img className={"hero--bg-img"} src={"/hero-bg.png"} alt={""} />
+        <img
+          className={"hero--img"}
+          src={i18n.language === "es" ? "/hero-es.png" : "/hero-en.png"}
+          alt={""}
+        />
+      </div>
+      <div
+        className={
+          "landing-content flex-column margin-lat-auto margin-top-60 margin-bottom-60 gap-60"
+        }
+      >
         {/*Claim and call to action*/}
         <div className={"flex-column align-items-center gap-60"}>
-          <h1 className={"font align-text-center margin-top-0 margin-bottom-0"}>
+          <h1
+            className={
+              "landing-claim h3 align-text-center margin-top-0 margin-bottom-0 margin-lat-60"
+            }
+          >
             {t("common:homeClaim")}
           </h1>
           <Button component={Link} color={"primary"} to={"/home"}>
@@ -39,8 +50,8 @@ export const Landing = () => {
           </Button>
         </div>
         {/*Slider*/}
-        <div className={"slider"}>
-          <h2 className={"font-alt margin-bottom-60"}>
+        <div className={"slider border-gray-300"}>
+          <h2 className={"slider--title font-alt border-bottom-gray-300"}>
             {t("common:suggestions")}
           </h2>
           <Swiper
@@ -70,10 +81,12 @@ export const Landing = () => {
           </Swiper>
         </div>
         {/*About us*/}
-        <div className={"margin-lat-auto"}>
-          <h2 className={"font-alt"}>{t("common:aboutUs")}</h2>
-          <div className={"flex-row gap-60 margin-lat-auto"}>
-            <div className={"aboutUs-text"}>
+        <div className={"about-us border-gray-300 flex-row"}>
+          <div className={"flex-column gap-60"}>
+            <h2 className={"font-alt about-us--title"}>
+              {t("common:aboutUs")}
+            </h2>
+            <div className={"about-us--text"}>
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras
                 libero ipsum, ultricies sollicitudin quam ac, dapibus bibendum
@@ -89,12 +102,12 @@ export const Landing = () => {
                 nibh venenatis fermentum quis quis diam.
               </p>
             </div>
-            <img
-              className={"aboutUs-img margin-left-auto"}
-              src={"/anvil.png"}
-              alt={""}
-            />
           </div>
+          <img
+            className={"about-us--img margin-left-auto"}
+            src={"/anvil.png"}
+            alt={""}
+          />
         </div>
         {/*Contact*/}
         <div className={"margin-lat-auto"}>

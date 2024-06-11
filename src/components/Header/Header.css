@@ -182,7 +182,7 @@ a {
   border: 1px #d1d4d6;
 }
 .searchBar-icon {
-  background: url("/public/icons/vector-magnify.png") no-repeat left;
+  background: url("/public/icons/magnify.png") no-repeat left;
   background-size: 20px;
 }
 .searchBar:focus {

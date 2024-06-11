@@ -41,8 +41,9 @@
     }
   }
 
-  &--filterClicked {
-    box-shadow: 0 0 0 2px black;
+  &--link {
+    text-decoration: none;
+    color: $color-gray-500-darker;
   }
 
   &:hover {

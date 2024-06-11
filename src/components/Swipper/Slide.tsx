@@ -7,29 +7,55 @@ export const Slide = (slide: SlideContentModel) => {
   const { t } = useTranslation("common");
 
   return (
-    <div className={"flex-row"}>
-      <img id={"slider-img"} src={slide.image} alt={""} />
-      <div
-        className={
-          "landing-sword-text flex-column grid__item-6-columns margin-left-auto align-flex-start"
-        }
-      >
-        <h3 id={"landing-sword-title"} className={"h2 margin-top-0"}>
-          {slide.swordTitle}
-        </h3>
-        <div className={"underline bgcolor-gray-100"}></div>
-        <p className={"align-text-left"}>{slide.swordDescription}</p>
-        <div className={"underline bgcolor-gray-100"}></div>
-        <div className={"margin-top-auto"}>
-          <p className={"h2 slider-price"}>
+    <div className={"flex-column"}>
+      <div className={"flex-row"}>
+        <div
+          className={"slider--images-section flex-row border-right-gray-300"}
+        >
+          <img className={"slider--img"} src={"/swords/anduril.png"} alt={""} />
+          <div
+            className={
+              "slider--img-container margin-lat-24 margin-bottom-24 margin-top-24"
+            }
+          >
+            <img
+              className={"slider--img-small"}
+              src={"/swords/anduril.png"}
+              alt={""}
+            />
+            <img
+              className={"slider--img-small"}
+              src={"/swords/anduril.png"}
+              alt={""}
+            />
+          </div>
+        </div>
+        <div className={"slider--text-section flex-column"}>
+          <h3 className={"h2--no-margin slider--sword-title"}>
+            {slide.swordTitle}
+          </h3>
+          <p
+            className={
+              "h2--no-margin slider--sword-price border-bottom-gray-300"
+            }
+          >
             <span className={"color-gray crossed-text"}>489€</span>
             <span> - 275€</span>
           </p>
-          <Button component={Link} color={"primary"} to={"/detalles-producto"}>
+          <p className={"slider--sword-description"}>
+            {slide.swordDescription}
+          </p>
+          <Button
+            className={"slider--btn"}
+            component={Link}
+            color={"primary"}
+            to={"/detalles-producto"}
+          >
             {t("common:productDetails")}
           </Button>
         </div>
       </div>
+      <div className={"slider--bullets-container border-top-gray-300"}></div>
     </div>
   );
 };

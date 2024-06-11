@@ -5,6 +5,7 @@ import { Outlet, useLocation } from "react-router-dom";
 import { useEffect } from "react";
 import { SearchContextProvider } from "./contexts/SearchContextProvider.tsx";
 import { ActiveFilterContextProvider } from "./contexts/ActiveFilterContextProvider.tsx";
+import { ItemsFromApiContextProvider } from "./contexts/ItemsFromApiContextProvider.tsx";
 
 export const App = () => {
   const location = useLocation();
@@ -15,15 +16,17 @@ export const App = () => {
 
   return (
     <>
-      <ActiveFilterContextProvider>
-        <SearchContextProvider>
-          <Header />
-          <div className={"main"}>
-            <Outlet />
-          </div>
-          <Footer />
-        </SearchContextProvider>
-      </ActiveFilterContextProvider>
+      <ItemsFromApiContextProvider>
+        <ActiveFilterContextProvider>
+          <SearchContextProvider>
+            <Header />
+            <div className={"main"}>
+              <Outlet />
+            </div>
+            <Footer />
+          </SearchContextProvider>
+        </ActiveFilterContextProvider>
+      </ItemsFromApiContextProvider>
     </>
   );
 };

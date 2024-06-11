@@ -4,49 +4,41 @@ import { Product } from "./components/ProductDetailsComponents/Product/Product.t
 import { Review } from "./components/ProductDetailsComponents/Review.tsx";
 import { SimilarProduct } from "./components/ProductDetailsComponents/SimilarProduct/SimilarProduct.tsx";
 import { useSearchParams } from "react-router-dom";
-import { useApiResultsAndFilteredItems } from "./services/useApiResultsAndFilteredItems.tsx";
 import { ItemDetailsModel } from "./models";
+import { ItemsFromApiContext } from "./contexts/ItemsFromApiContextProvider.tsx";
+import { useContext } from "react";
 
-// Total number of items
-// Random numbers in the interval from 1 to total number of items. - How many? 5
-// Retrieve information from items that have that key
-// Display those items
+const useRandomSimilarProducts = () => {
+  const { itemsFromApi } = useContext(ItemsFromApiContext);
 
-const useRandomizeProduct = () => {
-  const { shopItemsList } = useApiResultsAndFilteredItems();
+  const randomElement =
+    itemsFromApi[Math.floor(Math.random() * itemsFromApi.length)];
 
-  console.log(shopItemsList.length);
+  console.log(randomElement);
 
-  const totalNumberOfItems: number = shopItemsList.length;
-
-  const randomIntFromInterval = (min: number, max: number) => {
-    return Math.floor(Math.random() * (max - min + 1) + min);
-  };
-
-  const randomItemIdList: number[] = [];
+  const randomItemList: ItemDetailsModel[] = [];
 
   for (let i = 1; i < 6; i++) {
-    const idToAdd = randomIntFromInterval(1, totalNumberOfItems);
-    randomItemIdList.push(idToAdd);
+    randomItemList.push(randomElement);
   }
 
-  return shopItemsList.filter((item: ItemDetailsModel) => {
-    randomItemIdList.forEach((id: number) => {
-      return id === item.key;
+  return itemsFromApi.filter((item: ItemDetailsModel) => {
+    randomItemList.forEach((randomItem) => {
+      return randomItem.key === item.key;
     });
   });
 };
 
 export const ProductDetails = () => {
   const { t } = useTranslation("productDetails");
-  const { shopItemsList } = useApiResultsAndFilteredItems();
+  const { itemsFromApi } = useContext(ItemsFromApiContext);
   const [param] = useSearchParams();
   const productIdParam = Number(param.get("ref"));
-  const testList = useRandomizeProduct();
+  const testList = useRandomSimilarProducts();
 
   console.log(testList);
 
-  const selectedItem = shopItemsList.find((item: ItemDetailsModel) => {
+  const selectedItem = itemsFromApi.find((item: ItemDetailsModel) => {
     return item.key === productIdParam;
   });
 

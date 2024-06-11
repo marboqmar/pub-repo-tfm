@@ -1,7 +1,49 @@
+@import "../global/color-variables";
+
 .border-radius-6 {
   border-radius: 6px;
 }
 
 .border-radius-12 {
   border-radius: 12px;
+}
+
+.border-gray-light {
+  border: 1px solid $color-white;
+}
+
+.border-top-gray-light {
+  border-top: 1px solid $color-white;
+}
+
+.border-bottom-gray-light {
+  border-bottom: 1px solid $color-white;
+}
+
+.border-left-gray-light {
+  border-left: 1px solid $color-white;
+}
+
+.border-right-gray-light {
+  border-right: 1px solid $color-white;
+}
+
+.border-gray-300 {
+  border: 1px solid $color-gray-300;
+}
+
+.border-top-gray-300 {
+  border-top: 1px solid $color-gray-300;
+}
+
+.border-bottom-gray-300 {
+  border-bottom: 1px solid $color-gray-300;
+}
+
+.border-left-gray-300 {
+  border-left: 1px solid $color-gray-300;
+}
+
+.border-right-gray-300 {
+  border-right: 1px solid $color-gray-300;
 }

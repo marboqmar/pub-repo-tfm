@@ -1,7 +1,7 @@
 import { useTranslation } from "react-i18next";
 import { TotalToPay } from "./components/TotalToPay/TotalToPay.tsx";
 import { useCartOnLocalStorage } from "./services/useCartOnLocalStorage.ts";
-import { CartList } from "./components/CartList/CartList.tsx";
+import { CartItemList } from "./components/CartList/CartItemList.tsx";
 
 export const Cart = () => {
   const { t } = useTranslation("cart");
@@ -16,7 +16,7 @@ export const Cart = () => {
       ) : (
         <div className={"cartDisplay flex"}>
           <div className={"flex-wrap gap-60 margin-bottom-60"}>
-            <CartList />
+            <CartItemList />
           </div>
           <TotalToPay />
         </div>

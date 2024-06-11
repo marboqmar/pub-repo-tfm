@@ -6,6 +6,7 @@ export const SimilarProduct = () => {
   return (
     <Button
       component={Link}
+      isLink
       className={"similarProduct--item"}
       color={"none"}
       paddingSize={"none"}
