@@ -107,6 +107,7 @@ export const Payment = () => {
           </div>
         </div>
 
+        {/* TODO hide submit button and click it programmatically*/}
         {/* Submit */}
         <input type="submit" ref={myRefname}></input>
       </form>
