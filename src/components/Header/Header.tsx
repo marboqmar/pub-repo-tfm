@@ -6,45 +6,47 @@ import { SearchBar } from "./SearchBar.tsx";
 
 export const Header = () => {
   return (
-    <div className={"header"}>
-      <Button
-        color={"none"}
-        withoutHover
-        component={Link}
-        isLink
-        paddingSize={"none"}
-        borderType={"none"}
-        to={"/"}
-      >
-        <img className={"logo"} src={"/logotipo.png"} alt={"Website logo"} />
-      </Button>
-      <div
-        className={
-          "flex-row align-items-center margin-ver-auto margin-left-auto gap-24"
-        }
-      >
-        <SearchBar />
-        <ChangeLanguage />
+    <div className={"test"}>
+      <div className={"header"}>
         <Button
-          className={"header--btn"}
-          paddingSize={"none"}
-          withoutHover
           color={"none"}
-          borderType={"none"}
-        >
-          <img className={"icon"} src={"/icons/my-account.png"} alt={""} />
-        </Button>
-        <Button
+          withoutHover
           component={Link}
-          className={"header--btn"}
+          isLink
           paddingSize={"none"}
-          withoutHover
-          color={"none"}
           borderType={"none"}
-          to={"/cesta"}
+          to={"/"}
         >
-          <img className={"icon"} src={"/icons/basket.png"} alt={""} />
+          <img className={"logo"} src={"/logotipo.png"} alt={"Website logo"} />
         </Button>
+        <div
+          className={
+            "flex-row align-items-center margin-ver-auto margin-left-auto gap-24"
+          }
+        >
+          <SearchBar />
+          <ChangeLanguage />
+          <Button
+            className={"header--btn"}
+            paddingSize={"none"}
+            withoutHover
+            color={"none"}
+            borderType={"none"}
+          >
+            <img className={"icon"} src={"/icons/my-account.png"} alt={""} />
+          </Button>
+          <Button
+            component={Link}
+            className={"header--btn"}
+            paddingSize={"none"}
+            withoutHover
+            color={"none"}
+            borderType={"none"}
+            to={"/cesta"}
+          >
+            <img className={"icon"} src={"/icons/basket.png"} alt={""} />
+          </Button>
+        </div>
       </div>
     </div>
   );

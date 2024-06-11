@@ -13,8 +13,8 @@ export const Home = () => {
   const { error, isLoading } = useContext(ItemsFromApiContext);
 
   return (
-    <div className={"home border-top-gray"}>
-      <div className={"filters border-bottom-gray"}>
+    <div className={"home border-top-gray-light"}>
+      <div className={"filters border-bottom-gray-light"}>
         <Filters />
       </div>
       {/*If there is a search, state that it is searching by the indicated term*/}

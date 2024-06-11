@@ -7,9 +7,11 @@ export const Footer = () => {
   const { t } = useTranslation("common");
 
   return (
-    <footer className={"footer flex-column align-items-center border-top-gray"}>
+    <footer
+      className={"footer flex-column align-items-center border-top-gray-light"}
+    >
       <div className={"flex-row width-100"}>
-        <div className={"footer--section-logo border-right-gray"}>
+        <div className={"footer--section-logo border-right-gray-light"}>
           <Button
             color={"none"}
             withoutHover
@@ -38,7 +40,7 @@ export const Footer = () => {
         <div className={"flex-row"}>
           <div
             className={
-              "footer--section-company border-left-gray margin-left-auto"
+              "footer--section-company border-left-gray-light margin-left-auto"
             }
           >
             <p>
@@ -59,7 +61,7 @@ export const Footer = () => {
               {t("common:footer.patterns")}
             </Button>
           </div>
-          <div className={"footer--section-social border-left-gray"}>
+          <div className={"footer--section-social border-left-gray-light"}>
             <p>
               <strong>SOCIAL</strong>
             </p>
@@ -69,7 +71,7 @@ export const Footer = () => {
             <p>TIKTOK</p>
             <p>NEWSLETTER</p>
           </div>
-          <div className={"footer--section-policies border-left-gray"}>
+          <div className={"footer--section-policies border-left-gray-light"}>
             <p>
               <strong>POLICIES</strong>
             </p>
@@ -80,7 +82,7 @@ export const Footer = () => {
           </div>
         </div>
       </div>
-      <p className={"footer--bottom border-top-gray"}>
+      <p className={"footer--bottom border-top-gray-light"}>
         <small>© 2024 FANTASY FORGE</small>
       </p>
     </footer>
