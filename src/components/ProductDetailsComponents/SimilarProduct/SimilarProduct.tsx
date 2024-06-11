@@ -1,8 +1,9 @@
 import "./SimilarProduct.scss";
 import { Button } from "../../Button/Button.tsx";
 import { Link } from "react-router-dom";
+import { ItemDetailsModel } from "../../../models";
 
-export const SimilarProduct = () => {
+export const SimilarProduct = ({ product }: { product: ItemDetailsModel }) => {
   return (
     <Button
       component={Link}
@@ -16,11 +17,11 @@ export const SimilarProduct = () => {
     >
       <img
         className={"similarProduct--img"}
-        src={"/cart-image.png"}
+        src={product.img}
         alt={"cart item image"}
       />
-      <span className={"bold"}>Knight’s greatsword</span>
-      <span>160€</span>
+      <span className={"bold"}>{product.name}</span>
+      <span>{product.price}€</span>
     </Button>
   );
 };

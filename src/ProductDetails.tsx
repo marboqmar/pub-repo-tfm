@@ -7,36 +7,16 @@ import { useSearchParams } from "react-router-dom";
 import { ItemDetailsModel } from "./models";
 import { ItemsFromApiContext } from "./contexts/ItemsFromApiContextProvider.tsx";
 import { useContext } from "react";
-
-const useRandomSimilarProducts = () => {
-  const { itemsFromApi } = useContext(ItemsFromApiContext);
-
-  const randomElement =
-    itemsFromApi[Math.floor(Math.random() * itemsFromApi.length)];
-
-  console.log(randomElement);
-
-  const randomItemList: ItemDetailsModel[] = [];
-
-  for (let i = 1; i < 6; i++) {
-    randomItemList.push(randomElement);
-  }
-
-  return itemsFromApi.filter((item: ItemDetailsModel) => {
-    randomItemList.forEach((randomItem) => {
-      return randomItem.key === item.key;
-    });
-  });
-};
+import { useRandomSimilarProducts } from "./services/useRandomSimilarProducts.ts";
 
 export const ProductDetails = () => {
   const { t } = useTranslation("productDetails");
   const { itemsFromApi } = useContext(ItemsFromApiContext);
   const [param] = useSearchParams();
   const productIdParam = Number(param.get("ref"));
-  const testList = useRandomSimilarProducts();
+  const randomProductsList = useRandomSimilarProducts();
 
-  console.log(testList);
+  console.log(randomProductsList);
 
   const selectedItem = itemsFromApi.find((item: ItemDetailsModel) => {
     return item.key === productIdParam;
@@ -77,12 +57,9 @@ export const ProductDetails = () => {
               : t("productDetails:findMore")}
           </h2>
           <div className={"similarProduct"}>
-            <SimilarProduct />
-            <SimilarProduct />
-            <SimilarProduct />
-            <SimilarProduct />
-            <SimilarProduct />
-            <SimilarProduct />
+            {randomProductsList.map((product) => (
+              <SimilarProduct product={product} />
+            ))}
           </div>
         </div>
       </div>
