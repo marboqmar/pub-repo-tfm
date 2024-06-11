@@ -10,8 +10,7 @@ type Inputs = {
   postCode: string;
   cardName: string;
   cardNumber: number;
-  expiryDateMonth: number;
-  expiryDateYear: number;
+  expiryDate: number;
   CVV: number;
 };
 
@@ -84,27 +83,19 @@ export const Payment = () => {
           {...register("cardNumber", { required: true, maxLength: 100 })}
         />
         {errors.cardNumber && <span>This field is required</span>}
-        <div className={"flex-row gap-18 payment--form"}>
+
+        <div className={"flex-row gap-18"}>
           <div className={"flex-column flex-grow-1"}>
             <label>{t("payment:expiryDate")}</label>
             <input
-              type={"number"}
-              aria-label={"expiryDateMonth"}
-              {...register("expiryDateMonth", {
+              aria-label={"expiryDate"}
+              {...register("expiryDate", {
                 required: true,
-                maxLength: 2,
+                maxLength: 5,
                 valueAsNumber: true,
               })}
             />
-            {errors.expiryDateMonth && <span>This field is required</span>}
-          </div>
-          <div className={"flex-column flex-grow-1"}>
-            <label className={"payment--form-filler"}>a</label>
-            <input
-              aria-label={"expiryDateYear"}
-              {...register("expiryDateYear", { required: true, maxLength: 4 })}
-            />
-            {errors.expiryDateYear && <span>This field is required</span>}
+            {errors.expiryDate && <span>This field is required</span>}
           </div>
           <div className={"flex-column flex-grow-1"}>
             <label>{t("payment:CVV")}</label>
