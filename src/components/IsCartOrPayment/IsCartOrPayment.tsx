@@ -7,15 +7,27 @@ export const IsCartOrPayment = () => {
   const { t } = useTranslation("cart");
 
   if (currentUrl.includes("pago")) {
-    return <Button color={"primary"}>{t("cart:confirm")}</Button>;
+    return (
+      <Button
+        className={"totalToPay--payment-btn"}
+        color={"primary"}
+        type={"submit"}
+        withoutBorderRadius
+      >
+        {t("cart:confirm")}
+      </Button>
+    );
   }
   if (currentUrl.includes("cesta")) {
     return (
       <Button
         component={Link}
-        className={"margin-lat-auto"}
+        className={"totalToPay--cart-btn"}
         to={"/pago"}
         color={"primary"}
+        type={"button"}
+        borderType={"none"}
+        withoutBorderRadius
       >
         {t("cart:buy")}
       </Button>

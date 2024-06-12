@@ -45,7 +45,12 @@ export const Landing = () => {
           >
             {t("common:homeClaim")}
           </h1>
-          <Button component={Link} color={"primary"} to={"/home"}>
+          <Button
+            component={Link}
+            color={"primary"}
+            to={"/home"}
+            type={"button"}
+          >
             {t("common:visitShop")}
           </Button>
         </div>
@@ -116,7 +121,7 @@ export const Landing = () => {
           <Form children={t("common:landingForm.name")} />
           <Form children={"E-mail"} />
           <Form children={t("common:landingForm.message")} />
-          <Button className={"margin-top-60"} color={"primary"}>
+          <Button className={"margin-top-60"} color={"primary"} type={"button"}>
             {t("common:landingForm.sendMessage")}
           </Button>
         </div>

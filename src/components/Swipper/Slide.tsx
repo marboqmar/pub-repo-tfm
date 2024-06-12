@@ -49,7 +49,9 @@ export const Slide = (slide: SlideContentModel) => {
             className={"slider--btn"}
             component={Link}
             color={"primary"}
+            withoutBorderRadius
             to={"/detalles-producto"}
+            type={"button"}
           >
             {t("common:productDetails")}
           </Button>

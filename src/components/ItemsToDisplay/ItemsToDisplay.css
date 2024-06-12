@@ -67,7 +67,7 @@ a {
   min-width: 200px;
 }
 
-.itemDisplay {
+.itemDisplay--home-and-payment {
   display: flex;
   max-width: 100%;
 }

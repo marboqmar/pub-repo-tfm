@@ -6,7 +6,7 @@ export const useCartOnLocalStorage = () => {
   // Dictionary itemKey: quantity
   const [localStorageCartInfo, setLocalStorageCartInfo] = useLocalStorage<
     Record<number, number>
-  >(LOCAL_STORAGE_CART_KEY, []);
+  >(LOCAL_STORAGE_CART_KEY, {});
 
   const addItemToCart = (key: number) => {
     const currentItem: number =

@@ -10,7 +10,7 @@ interface ItemsToDisplayProps {
 export const ItemsToDisplay = ({ itemList }: ItemsToDisplayProps) => {
   return (
     <>
-      <div className={"itemDisplay"}>
+      <div className={"itemDisplay--home-and-payment"}>
         {itemList.map((item: ItemDetailsModel) => (
           <Button
             color={"none"}
@@ -19,6 +19,7 @@ export const ItemsToDisplay = ({ itemList }: ItemsToDisplayProps) => {
             isLink
             paddingSize={"none"}
             borderType={"none"}
+            type={"button"}
             to={`/detalles-producto/?ref=${item.key}`}
             key={`${item.img}${item.name}`}
           >

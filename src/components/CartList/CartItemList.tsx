@@ -10,7 +10,7 @@ export const CartItemList = () => {
     useCartOnLocalStorage();
 
   return useCartItemsList().map((item: ItemDetailsModel) => (
-    <div className={"flex-row"} key={`${item.img}${item.name}`}>
+    <div className={"cartItem flex-row"} key={`${item.img}${item.name}`}>
       <img className={"cartItem--img"} src={item.img} alt={"cart item image"} />
       <div>
         <h2 className={"font"}>
@@ -25,6 +25,7 @@ export const CartItemList = () => {
                 withoutHover
                 borderType={"none"}
                 paddingSize={"none"}
+                type={"button"}
                 onClick={() => removeItemFromCart(item.key, false)}
               >
                 <img
@@ -39,6 +40,7 @@ export const CartItemList = () => {
                 withoutHover
                 borderType={"none"}
                 paddingSize={"none"}
+                type={"button"}
                 onClick={() => {
                   addItemToCart(item.key);
                 }}
@@ -58,6 +60,7 @@ export const CartItemList = () => {
             withoutHover
             paddingSize={"none"}
             borderType={"none"}
+            type={"button"}
             onClick={() => removeItemFromCart(item.key, true)}
           >
             {t("cart:delete")}

@@ -13,8 +13,10 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   withoutHover?: boolean;
   paddingSize?: PaddingSizes;
   borderType?: BorderType;
+  withoutBorderRadius?: boolean;
   component?: ComponentType<any> | keyof ReactHTML;
   isLink?: boolean;
+  type: "submit" | "reset" | "button" | undefined;
   to?: string;
   href?: string;
   role?: string;
@@ -24,10 +26,12 @@ export const Button = ({
   className = "",
   color,
   withoutHover,
+  withoutBorderRadius,
   paddingSize,
   borderType,
   component = "button",
   isLink,
+  type = "button",
   role,
   disabled,
   children,
@@ -39,6 +43,7 @@ export const Button = ({
     [className]: className,
     [`btn--color-${color}`]: color,
     "btn--withoutHover": withoutHover,
+    "btn--withoutBorderRadius": withoutBorderRadius,
     [`btn--paddingSize-${paddingSize}`]: paddingSize,
     [`btn--border-${borderType}`]: borderType,
     component: "button",
@@ -48,7 +53,13 @@ export const Button = ({
   const Component = component;
 
   return (
-    <Component className={classes} disabled={disabled} role={role} {...rest}>
+    <Component
+      className={classes}
+      disabled={disabled}
+      role={role}
+      type={type}
+      {...rest}
+    >
       {children}
     </Component>
   );

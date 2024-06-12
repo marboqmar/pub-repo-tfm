@@ -18,7 +18,8 @@
 }
 
 .itemDisplay {
-  display: flex;
-  gap: 1px;
-  max-width: 100%;
+  &--home-and-payment {
+    display: flex;
+    gap: 1px;
+  }
 }
