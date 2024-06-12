@@ -8,6 +8,8 @@ export type PaddingSizes = "none" | "small";
 
 export type BorderType = "none" | "squareBlack";
 
+export type ButtonType = "submit" | "reset" | "button" | undefined;
+
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   color?: ButtonColor;
   withoutHover?: boolean;
@@ -16,7 +18,7 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   withoutBorderRadius?: boolean;
   component?: ComponentType<any> | keyof ReactHTML;
   isLink?: boolean;
-  type: "submit" | "reset" | "button" | undefined;
+  type?: ButtonType;
   to?: string;
   href?: string;
   role?: string;
@@ -47,6 +49,7 @@ export const Button = ({
     [`btn--paddingSize-${paddingSize}`]: paddingSize,
     [`btn--border-${borderType}`]: borderType,
     component: "button",
+    type: "button",
     "btn--link": isLink,
     "btn--disabled": disabled,
   });

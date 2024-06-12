@@ -32,9 +32,7 @@ export const Landing = () => {
         />
       </div>
       <div
-        className={
-          "landing-content flex-column margin-lat-auto margin-top-60 margin-bottom-60 gap-60"
-        }
+        className={"max-width-1500-centered flex-column margin-ver-60 gap-60"}
       >
         {/*Claim and call to action*/}
         <div className={"flex-column align-items-center gap-60"}>
@@ -45,12 +43,7 @@ export const Landing = () => {
           >
             {t("common:homeClaim")}
           </h1>
-          <Button
-            component={Link}
-            color={"primary"}
-            to={"/home"}
-            type={"button"}
-          >
+          <Button component={Link} color={"primary"} to={"/home"}>
             {t("common:visitShop")}
           </Button>
         </div>
@@ -121,7 +114,7 @@ export const Landing = () => {
           <Form children={t("common:landingForm.name")} />
           <Form children={"E-mail"} />
           <Form children={t("common:landingForm.message")} />
-          <Button className={"margin-top-60"} color={"primary"} type={"button"}>
+          <Button className={"margin-top-60"} color={"primary"}>
             {t("common:landingForm.sendMessage")}
           </Button>
         </div>

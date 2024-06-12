@@ -8,14 +8,14 @@ export const Cart = () => {
   const { localStorageCartInfo } = useCartOnLocalStorage();
 
   return (
-    <div className={"margin-lat-60"}>
+    <div className={"max-width-1500-centered"}>
       <h1 className={"cartTitle"}>{t("cart:title")}</h1>
       <div className={"cartTitle--line"}></div>
       {Object.keys(localStorageCartInfo).length === 0 ? (
         <p>{t("cart:cartEmpty")}</p>
       ) : (
         <div className={"flex-row"}>
-          <div className={"gap-60 margin-bottom-60 margin-right-60 flex-wrap"}>
+          <div className={"gap-60 margin-bottom-120 margin-right-60 flex-wrap"}>
             <CartItemList />
           </div>
           <TotalToPay />

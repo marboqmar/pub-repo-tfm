@@ -25,7 +25,6 @@ export const IsCartOrPayment = () => {
         className={"totalToPay--cart-btn"}
         to={"/pago"}
         color={"primary"}
-        type={"button"}
         borderType={"none"}
         withoutBorderRadius
       >

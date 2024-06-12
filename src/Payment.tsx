@@ -23,7 +23,7 @@ export const Payment = () => {
   const onSubmit: SubmitHandler<Inputs> = () => {};
 
   return (
-    <div className={"margin-lat-60"}>
+    <div className={"max-width-1500-centered"}>
       <div>
         <h1 className={"cartTitle"}>{t("payment:title")}</h1>
         <div className={"cartTitle--line"}></div>
@@ -32,7 +32,7 @@ export const Payment = () => {
         <div className={"flex-column"}>
           <PaymentItemList />
           {/*Form*/}
-          <div className={"flex-column gap-12 payment--form margin-bottom-60"}>
+          <div className={"flex-column gap-12 payment--form margin-bottom-120"}>
             {/* Delivery address */}
             <p className={"h2"}>{t("payment:deliveryDetails")}</p>
             <label>{t("payment:address")}</label>

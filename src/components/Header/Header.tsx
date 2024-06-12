@@ -6,13 +6,14 @@ import { SearchBar } from "./SearchBar.tsx";
 
 export const Header = () => {
   return (
-    <div className={"test"}>
+    <div className={"max-width-1800-centered"}>
       <div className={"header"}>
         <Button
           color={"none"}
           withoutHover
           component={Link}
           isLink
+          type={undefined}
           paddingSize={"none"}
           borderType={"none"}
           to={"/"}
@@ -42,6 +43,7 @@ export const Header = () => {
             withoutHover
             color={"none"}
             borderType={"none"}
+            type={undefined}
             to={"/cesta"}
           >
             <img className={"icon"} src={"/icons/basket.png"} alt={""} />

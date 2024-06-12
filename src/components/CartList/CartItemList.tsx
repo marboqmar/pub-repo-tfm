@@ -25,7 +25,6 @@ export const CartItemList = () => {
                 withoutHover
                 borderType={"none"}
                 paddingSize={"none"}
-                type={"button"}
                 onClick={() => removeItemFromCart(item.key, false)}
               >
                 <img
@@ -40,7 +39,6 @@ export const CartItemList = () => {
                 withoutHover
                 borderType={"none"}
                 paddingSize={"none"}
-                type={"button"}
                 onClick={() => {
                   addItemToCart(item.key);
                 }}
@@ -60,7 +58,6 @@ export const CartItemList = () => {
             withoutHover
             paddingSize={"none"}
             borderType={"none"}
-            type={"button"}
             onClick={() => removeItemFromCart(item.key, true)}
           >
             {t("cart:delete")}

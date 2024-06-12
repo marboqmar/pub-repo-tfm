@@ -51,7 +51,6 @@ export const Slide = (slide: SlideContentModel) => {
             color={"primary"}
             withoutBorderRadius
             to={"/detalles-producto"}
-            type={"button"}
           >
             {t("common:productDetails")}
           </Button>

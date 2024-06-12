@@ -19,7 +19,6 @@ export const ItemsToDisplay = ({ itemList }: ItemsToDisplayProps) => {
             isLink
             paddingSize={"none"}
             borderType={"none"}
-            type={"button"}
             to={`/detalles-producto/?ref=${item.key}`}
             key={`${item.img}${item.name}`}
           >
