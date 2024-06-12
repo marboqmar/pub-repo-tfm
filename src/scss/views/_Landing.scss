@@ -1,3 +1,5 @@
+@import "../global/color-variables";
+
 .hero {
   &--bg-img {
     width: 100%;
@@ -21,8 +23,6 @@
 }
 
 .about-us {
-  margin: 0 60px;
-
   &--title {
     margin: 0;
     padding: 48px;
@@ -39,6 +39,32 @@
   }
 }
 
-.maxWidth {
-  max-width: 90vw;
+.contact {
+  &--title {
+    margin: 0;
+    padding: 48px 48px 0 48px;
+  }
+
+  &--form input, &--form textarea {
+    border: none;
+    background-color: $color-gray-100-light;
+    padding: 24px 12px;
+    resize: none;
+  }
+
+  &--form label {
+    padding: 12px;
+  }
+
+  &--form-message {
+    height: 100%
+  }
+
+  &--form-termsAndConditions {
+    padding: 0 12px;
+  }
+
+  &--form-checkbox {
+    border: 1px solid red;
+  }
 }

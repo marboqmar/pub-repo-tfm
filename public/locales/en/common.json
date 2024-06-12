@@ -11,8 +11,12 @@
   "contactText": "Tell us how you imagine you sword and we will craft it for you",
   "landingForm": {
     "name": "Name",
+    "namePlaceholder": "Enter your name",
     "message": "Message",
-    "sendMessage": "Send message"
+    "emailPlaceholder": "Enter your email",
+    "messagePlaceholder": "Tell us how we can help you",
+    "sendMessage": "Send message",
+    "termsAndConditions": "I have read and accept the terms and conditions"
   },
   "footer": {
     "patterns": "OUR PATTERNS"

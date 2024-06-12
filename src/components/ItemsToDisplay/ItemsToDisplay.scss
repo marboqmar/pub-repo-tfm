@@ -12,7 +12,8 @@
 
   &--img {
     width: 100%;
-    min-width: 200px;
+    min-width: 250px;
+    //max-width: 565px;
     max-height: 80vh;
   }
 }
@@ -20,6 +21,7 @@
 .itemDisplay {
   &--home-and-payment {
     display: flex;
+    //flex-wrap: wrap;
     gap: 1px;
   }
 }

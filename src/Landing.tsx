@@ -1,11 +1,11 @@
 import "./scss/style.scss";
 import { useTranslation } from "react-i18next";
 import { Button } from "./components/Button/Button.tsx";
-import { Form } from "./components/Form/Form.tsx";
 import { SLIDE_CONTENT } from "./lists/SLIDE_CONTENT.ts";
 import { SlideContentModel } from "./models";
 import { Slide } from "./components/Swipper/Slide.tsx";
 import { Link } from "react-router-dom";
+import { LandingContact } from "./components/LandingContact/LandingContact.tsx";
 // Swiper imports
 import { Swiper, SwiperSlide } from "swiper/react";
 import { register } from "swiper/element/bundle";
@@ -18,6 +18,7 @@ import { Pagination } from "swiper/modules";
 export const Landing = () => {
   const { t } = useTranslation("common");
   const { i18n } = useTranslation();
+
   register();
 
   return (
@@ -108,16 +109,7 @@ export const Landing = () => {
           />
         </div>
         {/*Contact*/}
-        <div className={"margin-lat-auto"}>
-          <h2 className={"font-alt"}>{t("common:contact")}</h2>
-          <p>{t("common:contactText")}</p>
-          <Form children={t("common:landingForm.name")} />
-          <Form children={"E-mail"} />
-          <Form children={t("common:landingForm.message")} />
-          <Button className={"margin-top-60"} color={"primary"}>
-            {t("common:landingForm.sendMessage")}
-          </Button>
-        </div>
+        <LandingContact />
       </div>
     </>
   );
