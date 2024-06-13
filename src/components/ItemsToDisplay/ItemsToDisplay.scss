@@ -13,15 +13,20 @@
   &--img {
     width: 100%;
     min-width: 250px;
-    //max-width: 565px;
     max-height: 80vh;
   }
 }
 
 .itemDisplay {
-  &--home-and-payment {
-    display: flex;
-    //flex-wrap: wrap;
-    gap: 1px;
+  display: flex;
+  gap: 1px;
+
+  &--item {
+    border-right: 1px solid $color-white ;
+    border-radius: 0;
+  }
+
+  &--item:last-child {
+    border: none;
   }
 }

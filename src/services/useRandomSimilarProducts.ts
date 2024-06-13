@@ -1,7 +1,7 @@
 import { useContext, useMemo } from "react";
 import { ItemsFromApiContext } from "../contexts/ItemsFromApiContextProvider.tsx";
 
-export const useRandomSimilarProducts = () => {
+export const useRandomSimilarProducts = (productsNumber: number) => {
   const { itemsFromApi } = useContext(ItemsFromApiContext);
 
   // Randomize items returned from API (adds value prop and gives it a random number, orders elements by the value prop,
@@ -11,6 +11,6 @@ export const useRandomSimilarProducts = () => {
       .map((value) => ({ value, sort: Math.random() }))
       .sort((a, b) => a.sort - b.sort)
       .map(({ value }) => value)
-      .slice(0, 5);
-  }, [itemsFromApi]);
+      .slice(0, productsNumber);
+  }, [itemsFromApi, productsNumber]);
 };

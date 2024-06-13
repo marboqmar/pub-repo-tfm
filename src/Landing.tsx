@@ -1,25 +1,16 @@
 import "./scss/style.scss";
 import { useTranslation } from "react-i18next";
 import { Button } from "./components/Button/Button.tsx";
-import { SLIDE_CONTENT } from "./lists/SLIDE_CONTENT.ts";
-import { SlideContentModel } from "./models";
-import { Slide } from "./components/Swipper/Slide.tsx";
 import { Link } from "react-router-dom";
 import { LandingContact } from "./components/LandingContact/LandingContact.tsx";
-// Swiper imports
-import { Swiper, SwiperSlide } from "swiper/react";
-import { register } from "swiper/element/bundle";
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
-import "./components/Swipper/swipper.scss";
-import { Pagination } from "swiper/modules";
+import { useRandomSimilarProducts } from "./services/useRandomSimilarProducts.ts";
+import { ThisIsMySlider } from "./components/Swipper/ThisIsMySlider.tsx";
+import { ItemDetailsModel } from "./models";
 
 export const Landing = () => {
   const { t } = useTranslation("common");
   const { i18n } = useTranslation();
-
-  register();
+  const randomProductsList: ItemDetailsModel[] = useRandomSimilarProducts(3);
 
   return (
     <>
@@ -49,36 +40,7 @@ export const Landing = () => {
           </Button>
         </div>
         {/*Slider*/}
-        <div className={"slider border-gray-300"}>
-          <h2 className={"slider--title font-alt border-bottom-gray-300"}>
-            {t("common:suggestions")}
-          </h2>
-          <Swiper
-            slidesPerView={1}
-            loop={true}
-            speed={1000}
-            autoplay={{
-              delay: 4000,
-              disableOnInteraction: false,
-            }}
-            spaceBetween={60}
-            modules={[Pagination]}
-            pagination={{
-              clickable: true,
-            }}
-            className="mySwiper"
-          >
-            {SLIDE_CONTENT.map((slide: SlideContentModel) => (
-              <SwiperSlide key={`${slide.image}${slide.swordTitle}`}>
-                <Slide
-                  image={slide.image}
-                  swordTitle={slide.swordTitle}
-                  swordDescription={slide.swordDescription}
-                />
-              </SwiperSlide>
-            ))}
-          </Swiper>
-        </div>
+        <ThisIsMySlider randomProductsList={randomProductsList} />
         {/*About us*/}
         <div className={"about-us border-gray-300 flex-row"}>
           <div className={"flex-column gap-60"}>

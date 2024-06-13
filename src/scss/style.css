@@ -40,7 +40,7 @@ a {
   display: flex;
   align-items: stretch;
   flex-wrap: wrap;
-  max-width: 1800;
+  max-width: 1800px;
   margin: 0 12px;
 }
 
@@ -310,7 +310,7 @@ a {
   margin-right: auto;
 }
 
-.cartTitle {
+.siteTitle {
   font-size: 48px;
   margin-bottom: 18px;
   margin-top: 60px;
