@@ -1,6 +1,8 @@
 @import "../base";
 
 .cartItem {
+  width: 400px;
+
   &--img {
     height: 400px;
     width: 209px;
@@ -10,24 +12,6 @@
   &--delete {
     margin-right: auto;
   }
-}
-
-.cartTitle {
-  font-size: 48px;
-  margin-bottom: 18px;
-  margin-top: 60px;
-
-  &--line {
-    height: 2px;
-    width: 100%;
-    background-color: $color-gray-300;
-    margin-bottom: 84px;
-  }
-}
-
-.cartDisplay {
-  display: flex;
-  flex-direction: row;
 }
 
 .plus-and-minus-i {

@@ -1,6 +1,6 @@
-.slider {
-  margin: 0 60px;
+@import "../../scss/global/color-variables";
 
+.itemDetails {
   &--title {
     padding: 0 0 24px 36px;
     margin-bottom: 0;
@@ -26,8 +26,8 @@
   }
 
   &--text-section {
-    max-width: 924px;
-    height: 675px
+    height: 675px;
+    width: 100%;
   }
 
   &--sword {
@@ -47,17 +47,12 @@
   }
 
   &--btn {
-    border-radius: 0;
     text-align: center;
     margin-top: auto;
+    color: $color-white;
   }
 
   &--bullets-container {
     height: 78px;
   }
 }
-
-.swiper-pagination-bullets {
-  padding-bottom: 18px;
-}
-

@@ -1,3 +1,5 @@
+@import "../global/color-variables";
+
 .hero {
   &--bg-img {
     width: 100%;
@@ -16,18 +18,11 @@
   }
 }
 
-.landing-content {
-  // 1500px + 60px lat margin
-  max-width: 1620px;
-}
-
 .landing-claim {
   max-width: 1025px;
 }
 
 .about-us {
-  margin: 0 60px;
-
   &--title {
     margin: 0;
     padding: 48px;
@@ -44,6 +39,49 @@
   }
 }
 
-.maxWidth {
-  max-width: 90vw;
+.contact {
+  &--title {
+    margin: 0;
+    padding: 48px 48px 0 48px;
+  }
+
+  &--form {
+    & input, & textarea {
+      border: none;
+      background-color: $color-gray-100-light;
+      padding: 24px 12px;
+      resize: none;
+    }
+
+    & label {
+      padding: 12px;
+    }
+
+    & span {
+      color: $color-error;
+      padding: 12px;
+    }
+
+    &-message {
+      height: 100%
+    }
+
+    &-termsAndConditions {
+      padding: 0 12px;
+    }
+
+    &-checkbox {
+      border: 1px solid red;
+    }
+  }
+}
+
+.swiper-pagination-bullets {
+  padding-bottom: 18px;
+}
+
+
+.Toastify__toast:has(div.contact--form-toast) {
+  width: 500px;
+  right: 200px;
 }

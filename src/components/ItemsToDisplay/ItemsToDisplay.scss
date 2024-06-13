@@ -12,7 +12,7 @@
 
   &--img {
     width: 100%;
-    min-width: 200px;
+    min-width: 250px;
     max-height: 80vh;
   }
 }
@@ -20,5 +20,13 @@
 .itemDisplay {
   display: flex;
   gap: 1px;
-  max-width: 100%;
+
+  &--item {
+    border-right: 1px solid $color-white ;
+    border-radius: 0;
+  }
+
+  &--item:last-child {
+    border: none;
+  }
 }

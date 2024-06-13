@@ -8,7 +8,7 @@ export const PaymentItemList = () => {
   const { localStorageCartInfo } = useCartOnLocalStorage();
 
   return (
-    <div className={"itemDisplay"}>
+    <div className={"itemDisplay--home-and-payment flex-wrap margin-right-60"}>
       {useCartItemsList().map((item: ItemDetailsModel) => (
         <div key={`${item.img}${item.name}`}>
           <div className={"payment--item"}>

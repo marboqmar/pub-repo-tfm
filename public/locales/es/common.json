@@ -5,14 +5,20 @@
   "homeClaim": "Recrea los momentos más épicos con nuestras espadas forjadas a mano, transformando tradición en excelencia.",
   "visitShop": "Visitar tienda",
   "suggestions": "Nuestras recomendaciones",
-  "productDetails": "Ver detalles del producto",
+  "addToCart": "Añadir a la cesta",
+  "seeProductDetails": "Ver detalles del producto",
   "aboutUs": "Sobre nosotros",
   "contact": "Contáctanos",
   "contactText": "Cuéntanos cómo imaginas tu espada y nosotros la crearemos",
   "landingForm": {
     "name": "Nombre",
+    "namePlaceholder": "Introduce tu nombre",
     "message": "Mensaje",
-    "sendMessage": "Enviar mensaje"
+    "emailPlaceholder": "Introduce tu email",
+    "messagePlaceholder": "Cuéntanos como podemos ayudarte",
+    "sendMessage": "Enviar mensaje",
+    "termsAndConditions": "He leído y acepto los términos y condiciones",
+    "messageSent": "Tu mensaje ha sido enviado, pronto nos pondremos en contacto contigo"
   },
   "footer": {
     "patterns": "NUESTROS PATRONES"
