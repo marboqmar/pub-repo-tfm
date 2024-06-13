@@ -25,8 +25,8 @@ export const Payment = () => {
   return (
     <div className={"max-width-1500-centered"}>
       <div>
-        <h1 className={"cartTitle"}>{t("payment:title")}</h1>
-        <div className={"cartTitle--line"}></div>
+        <h1 className={"siteTitle"}>{t("payment:title")}</h1>
+        <div className={"siteTitle--line"}></div>
       </div>
       <form className={"payment flex-row"} onSubmit={handleSubmit(onSubmit)}>
         <div className={"flex-column"}>

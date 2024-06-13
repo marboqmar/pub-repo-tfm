@@ -1,38 +1,27 @@
 @import "../base";
 
 .productDetails {
-  &--title {
-    font-size: 48px;
-    margin-bottom: 18px;
-    margin-top: 60px;
+  &--reviews-title {
+      margin: 0;
+      padding: 36px 24px;
+  }
 
-    &-line {
-      height: 2px;
-      width: 100%;
-      background-color: $color-gray-300;
-      margin-bottom: 84px;
+  &--review {
+    padding: 24px;
+
+    &-stars {
+      height: 24px;
+      width: 152px;
     }
   }
 
-  &--subtitles {
-    margin-bottom: 24px !important;
+  &--review:last-child {
+    border: none;
   }
 }
 
-.toast-message {
-  font-family: "Crimson Text", serif;
-  font-weight: 400;
-  font-style: normal;
-  line-height: 1.5em;
-  font-size: 24px;
-  color: black;
-  padding: 12px 24px !important;
-}
 
-.toast-color {
-  background-color: $color-white-light !important;
-}
-
-.Toastify__toast-container {
-  margin-top: 2.5rem !important;
+.Toastify__toast:has(div.itemAddedToCart) {
+  width: 350px;
+  right: 60px;
 }

@@ -1,0 +1,14 @@
+@import "./color-variables";
+
+.siteTitle {
+  font-size: 48px;
+  margin-bottom: 18px;
+  margin-top: 60px;
+
+  &--line {
+    height: 2px;
+    width: 100%;
+    background-color: $color-gray-300;
+    margin-bottom: 84px;
+  }
+}

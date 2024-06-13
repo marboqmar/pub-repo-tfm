@@ -73,14 +73,15 @@
     &-checkbox {
       border: 1px solid red;
     }
-
-    //&-toast {
-    //  width: 300px;
-    //}
   }
 }
 
-.Toastify__toast {
-  width: 400px;
-  right: 100px;
+.swiper-pagination-bullets {
+  padding-bottom: 18px;
+}
+
+
+.Toastify__toast:has(div.contact--form-toast) {
+  width: 500px;
+  right: 200px;
 }

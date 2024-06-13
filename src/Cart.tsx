@@ -9,8 +9,8 @@ export const Cart = () => {
 
   return (
     <div className={"max-width-1500-centered"}>
-      <h1 className={"cartTitle"}>{t("cart:title")}</h1>
-      <div className={"cartTitle--line"}></div>
+      <h1 className={"siteTitle"}>{t("cart:title")}</h1>
+      <div className={"siteTitle--line"}></div>
       {Object.keys(localStorageCartInfo).length === 0 ? (
         <p>{t("cart:cartEmpty")}</p>
       ) : (

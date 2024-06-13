@@ -10,9 +10,10 @@ interface ItemsToDisplayProps {
 export const ItemsToDisplay = ({ itemList }: ItemsToDisplayProps) => {
   return (
     <>
-      <div className={"itemDisplay--home-and-payment"}>
+      <div className={"itemDisplay margin-bottom-60 border-gray-light"}>
         {itemList.map((item: ItemDetailsModel) => (
           <Button
+            className={"itemDisplay--item"}
             color={"none"}
             withoutHover
             component={Link}
