@@ -1,27 +1,8 @@
 import "./ItemDetails.scss";
-import { Button } from "../Button/Button.tsx";
-import { useTranslation } from "react-i18next";
 import { ItemDetailsModel } from "../../models";
-import { useCartOnLocalStorage } from "../../services/useCartOnLocalStorage.ts";
-import { Bounce, toast, ToastContainer } from "react-toastify";
+import { IsLandingOrProductDetails } from "../IsLandingOrProductDetails/IsLandingOrProductDetails.tsx";
 
 export const ItemDetails = ({ item }: { item: ItemDetailsModel }) => {
-  const { t } = useTranslation("common");
-  const { addItemToCart } = useCartOnLocalStorage();
-
-  const notify = () =>
-    toast(t("productDetails:itemAddedToCart"), {
-      position: "top-right",
-      autoClose: 4000,
-      hideProgressBar: true,
-      closeOnClick: true,
-      pauseOnHover: false,
-      draggable: false,
-      progress: undefined,
-      theme: "light",
-      transition: Bounce,
-    });
-
   return (
     <div className={"flex-row"}>
       <div
@@ -49,31 +30,7 @@ export const ItemDetails = ({ item }: { item: ItemDetailsModel }) => {
           <span>{item.price}€</span>
         </p>
         <p className={"itemDetails--sword-description"}>{item.description}</p>
-        <Button
-          className={"itemDetails--btn"}
-          color={"primary"}
-          withoutBorderRadius
-          onClick={() => {
-            addItemToCart(item.key);
-            notify();
-          }}
-        >
-          {t("common:addToCart")}
-        </Button>
-        <ToastContainer
-          bodyClassName="toast-message"
-          toastClassName="toast-color"
-          position="top-right"
-          autoClose={4000}
-          limit={1}
-          hideProgressBar
-          newestOnTop={false}
-          closeOnClick
-          rtl={false}
-          pauseOnHover={false}
-          theme="light"
-          transition={Bounce}
-        />
+        <IsLandingOrProductDetails itemKey={item.key} />
       </div>
     </div>
   );
