@@ -10,7 +10,7 @@ interface ItemsToDisplayProps {
 export const ItemsToDisplay = ({ itemList }: ItemsToDisplayProps) => {
   return (
     <>
-      <div className={"itemDisplay"}>
+      <div className={"itemDisplay--home-and-payment"}>
         {itemList.map((item: ItemDetailsModel) => (
           <Button
             color={"none"}

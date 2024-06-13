@@ -12,13 +12,16 @@
 
   &--img {
     width: 100%;
-    min-width: 200px;
+    min-width: 250px;
+    //max-width: 565px;
     max-height: 80vh;
   }
 }
 
 .itemDisplay {
-  display: flex;
-  gap: 1px;
-  max-width: 100%;
+  &--home-and-payment {
+    display: flex;
+    //flex-wrap: wrap;
+    gap: 1px;
+  }
 }

@@ -10,7 +10,6 @@
   &--color-primary {
     background-color: $color-primary;
     color: $color-white-light;
-    cursor: default;
   }
 
   &--color-none {
@@ -44,6 +43,10 @@
   &--link {
     text-decoration: none;
     color: $color-gray-500-darker;
+  }
+
+  &--withoutBorderRadius {
+    border-radius: 0;
   }
 
   &:hover {

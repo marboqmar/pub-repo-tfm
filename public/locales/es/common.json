@@ -11,8 +11,12 @@
   "contactText": "Cuéntanos cómo imaginas tu espada y nosotros la crearemos",
   "landingForm": {
     "name": "Nombre",
+    "namePlaceholder": "Introduce tu nombre",
     "message": "Mensaje",
-    "sendMessage": "Enviar mensaje"
+    "emailPlaceholder": "Introduce tu email",
+    "messagePlaceholder": "Cuéntanos como podemos ayudarte",
+    "sendMessage": "Enviar mensaje",
+    "termsAndConditions": "He leído y acepto los términos y condiciones"
   },
   "footer": {
     "patterns": "NUESTROS PATRONES"

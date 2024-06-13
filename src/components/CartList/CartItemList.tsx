@@ -10,7 +10,7 @@ export const CartItemList = () => {
     useCartOnLocalStorage();
 
   return useCartItemsList().map((item: ItemDetailsModel) => (
-    <div className={"flex-row"} key={`${item.img}${item.name}`}>
+    <div className={"cartItem flex-row"} key={`${item.img}${item.name}`}>
       <img className={"cartItem--img"} src={item.img} alt={"cart item image"} />
       <div>
         <h2 className={"font"}>

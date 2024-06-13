@@ -1,6 +1,8 @@
 @import "../base";
 
 .cartItem {
+  width: 400px;
+
   &--img {
     height: 400px;
     width: 209px;
@@ -23,11 +25,6 @@
     background-color: $color-gray-300;
     margin-bottom: 84px;
   }
-}
-
-.cartDisplay {
-  display: flex;
-  flex-direction: row;
 }
 
 .plus-and-minus-i {

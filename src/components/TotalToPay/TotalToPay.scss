@@ -1,9 +1,18 @@
-.total {
-  height: 200px;
-  max-width: 300px;
-  margin-left: auto;
-}
+.totalToPay {
+  min-width: 260px;
+  position: sticky;
+  top: 30px;
 
-.text-first-column {
-  margin-right: 60px;
+  &--text {
+    padding: 24px 24px 0 24px;
+  }
+
+  &--cart-btn {
+    width: 164px;
+    text-align: center;
+  }
+
+  &--payment-btn {
+    height: 58px;
+  }
 }
