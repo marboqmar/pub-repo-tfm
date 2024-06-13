@@ -11,8 +11,8 @@ interface ProductProps {
 
 export const Product = ({ selectedItem }: ProductProps) => {
   const { t } = useTranslation("productDetails");
-
   const { addItemToCart } = useCartOnLocalStorage();
+
   const notify = () =>
     toast(t("productDetails:itemAddedToCart"), {
       position: "top-right",
