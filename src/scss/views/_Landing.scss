@@ -45,26 +45,42 @@
     padding: 48px 48px 0 48px;
   }
 
-  &--form input, &--form textarea {
-    border: none;
-    background-color: $color-gray-100-light;
-    padding: 24px 12px;
-    resize: none;
-  }
+  &--form {
+    & input, & textarea {
+      border: none;
+      background-color: $color-gray-100-light;
+      padding: 24px 12px;
+      resize: none;
+    }
 
-  &--form label {
-    padding: 12px;
-  }
+    & label {
+      padding: 12px;
+    }
 
-  &--form-message {
-    height: 100%
-  }
+    & span {
+      color: $color-error;
+      padding: 12px;
+    }
 
-  &--form-termsAndConditions {
-    padding: 0 12px;
-  }
+    &-message {
+      height: 100%
+    }
 
-  &--form-checkbox {
-    border: 1px solid red;
+    &-termsAndConditions {
+      padding: 0 12px;
+    }
+
+    &-checkbox {
+      border: 1px solid red;
+    }
+
+    //&-toast {
+    //  width: 300px;
+    //}
   }
+}
+
+.Toastify__toast {
+  width: 400px;
+  right: 100px;
 }

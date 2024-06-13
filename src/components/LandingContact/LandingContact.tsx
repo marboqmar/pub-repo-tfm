@@ -1,6 +1,7 @@
 import { SubmitHandler, useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 import { Button } from "../Button/Button.tsx";
+import { Bounce, toast, ToastContainer } from "react-toastify";
 
 type Inputs = {
   name: string;
@@ -16,7 +17,23 @@ export const LandingContact = () => {
     handleSubmit,
     formState: { errors },
   } = useForm<Inputs>();
-  const onSubmit: SubmitHandler<Inputs> = () => {};
+
+  const notify = () =>
+    toast(t("common:landingForm.messageSent"), {
+      position: "bottom-right",
+      autoClose: 4000,
+      hideProgressBar: true,
+      closeOnClick: true,
+      pauseOnHover: false,
+      draggable: false,
+      progress: undefined,
+      theme: "light",
+      transition: Bounce,
+    });
+
+  const onSubmit: SubmitHandler<Inputs> = () => {
+    notify();
+  };
 
   return (
     <div className={"flex"}>
@@ -82,6 +99,20 @@ export const LandingContact = () => {
             {t("common:landingForm.sendMessage")}
           </Button>
         </form>
+        <ToastContainer
+          bodyClassName="toast-message contact--form-toast"
+          toastClassName="toast-color"
+          position="bottom-right"
+          autoClose={4000}
+          limit={1}
+          hideProgressBar
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnHover={false}
+          theme="light"
+          transition={Bounce}
+        />
       </div>
     </div>
   );
