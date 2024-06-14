@@ -32,10 +32,16 @@ export const useCartOnLocalStorage = () => {
     }
   };
 
+  const deleteCart = () => {
+    setLocalStorageCartInfo({});
+    console.log("me he ejecutado");
+  };
+
   return {
     localStorageCartInfo: localStorageMap_itemKey_quantity,
     addItemToCart: (key: number) => addItemToCart(key),
     removeItemFromCart: (key: number, isDelete: boolean) =>
       removeItemFromCart(key, isDelete),
+    deleteCart,
   };
 };

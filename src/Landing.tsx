@@ -4,7 +4,7 @@ import { Button } from "./components/Button/Button.tsx";
 import { Link } from "react-router-dom";
 import { LandingContact } from "./components/LandingContact/LandingContact.tsx";
 import { useRandomSimilarProducts } from "./services/useRandomSimilarProducts.ts";
-import { ThisIsMySlider } from "./components/Swipper/ThisIsMySlider.tsx";
+import { SuggestionsSlider } from "./components/Swipper/SuggestionsSlider.tsx";
 import { ItemDetailsModel } from "./models";
 
 export const Landing = () => {
@@ -40,7 +40,9 @@ export const Landing = () => {
           </Button>
         </div>
         {/*Slider*/}
-        <ThisIsMySlider randomProductsList={randomProductsList} />
+        {randomProductsList.length > 0 && (
+          <SuggestionsSlider randomProductsList={randomProductsList} />
+        )}
         {/*About us*/}
         <div className={"about-us border-gray-300 flex-row"}>
           <div className={"flex-column gap-60"}>

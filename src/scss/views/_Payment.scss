@@ -1,3 +1,5 @@
+@import "../global/color-variables";
+
 .payment {
 
   &--item {
@@ -17,20 +19,52 @@
     &-filler {
       color: transparent;
     }
-  }
 
-  &--form input {
-    font-family: "Crimson Text", serif;
-    font-weight: 400;
-    font-style: normal;
-    line-height: 1.5em;
-    font-size: 24px;
-    min-height: 40px;
+    & input {
+      font-family: "Crimson Text", serif;
+      font-weight: 400;
+      font-style: normal;
+      line-height: 1.5em;
+      font-size: 24px;
+      min-height: 40px;
+    }
+
+    & span {
+      color: red;
+    }
   }
 }
 
 input {
   min-width: 20px;
+}
+
+.Toastify__toast:has(div.toast-thanks-for-purchase) {
+  height: 80vh !important;
+}
+
+.toast-message-thanks-for-purchase {
+  background-color: $color-white-lighter;
+  width: 450px;
+  padding: 24px 0 44px 0;
+
+  &--img {
+    height: 300px;
+  }
+}
+
+.toast-thanks-for-purchase {
+  //background-image: url("/public/fire.jpg");
+  //background-repeat: no-repeat;
+  //background-size: cover;
+  //border: 1px solid black;
+  //height: 100%;
+  //width: 80vw !important;
+  //max-width: 1200px !important;
+}
+
+.toast-color {
+  //background-color: transparent !important;
 }
 
 

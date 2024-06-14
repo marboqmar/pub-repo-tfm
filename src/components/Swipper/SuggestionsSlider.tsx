@@ -8,7 +8,7 @@ import "swiper/css/pagination";
 import { register } from "swiper/element/bundle";
 import { useTranslation } from "react-i18next";
 
-export const ThisIsMySlider = ({
+export const SuggestionsSlider = ({
   randomProductsList,
 }: {
   randomProductsList: ItemDetailsModel[];

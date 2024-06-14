@@ -5,15 +5,28 @@
   font-weight: 400;
   font-style: normal;
   line-height: 1.5em;
-  font-size: 24px;
+  font-size: 20px;
   color: black;
   padding: 12px 24px !important;
 }
 
-.toast-color {
-  background-color: $color-white-light !important;
+.toast-border {
+  border: 1.5px solid $color-gray-300;
+  border-radius: 0 !important;
 }
 
-.Toastify__toast-container {
+.Toastify__toast-container--top-right {
   margin-top: 54px !important;
+}
+
+.Toastify__toast-container--top-center {
+  width: 80vw !important;
+  max-width: 1200px !important;
+  left: 50% !important;
+  top: 50% !important;
+  transform: translateX(-50%) translateY(-50%) !important;
+}
+
+.Toastify__close-button {
+  display: none;
 }
