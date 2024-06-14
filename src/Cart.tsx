@@ -12,7 +12,7 @@ export const Cart = () => {
       <h1 className={"siteTitle"}>{t("cart:title")}</h1>
       <div className={"siteTitle--line"}></div>
       {Object.keys(localStorageCartInfo).length === 0 ? (
-        <p>{t("cart:cartEmpty")}</p>
+        <p className={"margin-bottom-120"}>{t("cart:cartEmpty")}</p>
       ) : (
         <div className={"flex-row"}>
           <div className={"gap-60 margin-bottom-120 margin-right-60 flex-wrap"}>

@@ -8,9 +8,19 @@ interface ItemsToDisplayProps {
 }
 
 export const ItemsToDisplay = ({ itemList }: ItemsToDisplayProps) => {
+  const scrollUp = () => {
+    window.scrollTo(0, 0);
+  };
+
   return (
     <>
-      <div className={"itemDisplay margin-bottom-60 border-gray-light"}>
+      <div
+        className={
+          itemList.length > 0
+            ? "itemDisplay margin-bottom-60 border-gray-light"
+            : "itemDisplay margin-bottom-60"
+        }
+      >
         {itemList.map((item: ItemDetailsModel) => (
           <Button
             className={"itemDisplay--item"}
@@ -22,6 +32,7 @@ export const ItemsToDisplay = ({ itemList }: ItemsToDisplayProps) => {
             borderType={"none"}
             to={`/detalles-producto/?ref=${item.key}`}
             key={`${item.img}${item.name}`}
+            onClick={scrollUp}
           >
             <div className={"item"}>
               <img className={"item--img"} src={item.img} alt={""} />
