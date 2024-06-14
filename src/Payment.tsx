@@ -2,6 +2,10 @@ import { TotalToPay } from "./components/TotalToPay/TotalToPay.tsx";
 import { useTranslation } from "react-i18next";
 import { PaymentItemList } from "./components/PaymentItemList/PaymentItemList.tsx";
 import { useForm, SubmitHandler } from "react-hook-form";
+import { Bounce, toast, ToastContainer } from "react-toastify";
+import { ThanksForPurchase } from "./components/ThanksForPurchase/ThanksForPurchase.tsx";
+import { useNavigate } from "react-router-dom";
+import { useCartOnLocalStorage } from "./services/useCartOnLocalStorage.ts";
 
 type Inputs = {
   address: string;
@@ -20,7 +24,30 @@ export const Payment = () => {
     handleSubmit,
     formState: { errors },
   } = useForm<Inputs>();
-  const onSubmit: SubmitHandler<Inputs> = () => {};
+  const toastContent = ThanksForPurchase();
+  const navigate = useNavigate();
+  const { deleteCart } = useCartOnLocalStorage();
+
+  const notify = () =>
+    toast(toastContent, {
+      position: "top-center",
+      autoClose: 4000,
+      hideProgressBar: true,
+      closeOnClick: true,
+      pauseOnHover: false,
+      draggable: false,
+      progress: undefined,
+      theme: "light",
+      transition: Bounce,
+    });
+
+  const onSubmit: SubmitHandler<Inputs> = () => {
+    notify();
+    setTimeout(() => {
+      navigate("/home");
+      deleteCart();
+    }, 4000);
+  };
 
   return (
     <div className={"max-width-1500-centered"}>
@@ -74,7 +101,6 @@ export const Payment = () => {
               {...register("cardNumber", { required: true, maxLength: 100 })}
             />
             {errors.cardNumber && <span>This field is required</span>}
-
             <div className={"flex-row gap-18"}>
               <div className={"flex-column flex-grow-1"}>
                 <label>{t("payment:expiryDate")}</label>
@@ -92,7 +118,11 @@ export const Payment = () => {
                 <label>{t("payment:CVV")}</label>
                 <input
                   aria-label={"CVV"}
-                  {...register("CVV", { required: true, maxLength: 3 })}
+                  {...register("CVV", {
+                    required: true,
+                    maxLength: 3,
+                    valueAsNumber: true,
+                  })}
                 />
                 {errors.CVV && <span>This field is required</span>}
               </div>
@@ -101,6 +131,20 @@ export const Payment = () => {
         </div>
         <TotalToPay />
       </form>
+      <ToastContainer
+        bodyClassName="toast-message toast-thanks-for-purchase"
+        toastClassName="toast-border"
+        position="top-center"
+        autoClose={4000}
+        limit={1}
+        hideProgressBar
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnHover={false}
+        theme="light"
+        transition={Bounce}
+      />
     </div>
   );
 };

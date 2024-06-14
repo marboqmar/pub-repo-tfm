@@ -1,3 +1,4 @@
+import "./IsLandingOrProductDetails.scss";
 import { Button } from "../Button/Button.tsx";
 import { Bounce, toast, ToastContainer } from "react-toastify";
 import { useCartOnLocalStorage } from "../../services/useCartOnLocalStorage.ts";
@@ -36,20 +37,32 @@ export const IsLandingOrProductDetails = ({ itemKey }: { itemKey: number }) => {
         >
           {t("common:addToCart")}
         </Button>
-        <ToastContainer
-          bodyClassName="toast-message"
-          toastClassName="toast-color"
-          position="top-right"
-          autoClose={4000}
-          limit={1}
-          hideProgressBar
-          newestOnTop={false}
-          closeOnClick
-          rtl={false}
-          pauseOnHover={false}
-          theme="light"
-          transition={Bounce}
-        />
+        <Button
+          color={"none"}
+          withoutHover
+          paddingSize={"none"}
+          borderType={"none"}
+          withoutBorderRadius
+          component={Link}
+          isLink
+          type={undefined}
+          to={"/cesta"}
+        >
+          <ToastContainer
+            bodyClassName="toast-message addToCart-toast"
+            toastClassName="toast-border"
+            position="top-right"
+            autoClose={4000}
+            limit={1}
+            hideProgressBar
+            newestOnTop={false}
+            closeOnClick
+            rtl={false}
+            pauseOnHover={false}
+            theme="light"
+            transition={Bounce}
+          />
+        </Button>
       </>
     );
   }

@@ -9,5 +9,10 @@
   "cardName": "Cardholder name",
   "cardNumber": "Card number",
   "expiryDate": "Expiry date",
-  "CVV": "CVV"
+  "CVV": "CVV",
+  "thanksPurchase": {
+    "1/3": "Thank your for your purchase!",
+    "2/3": "We will carefully craft your sword now",
+    "3/3": "and in no time you will be forging your fantasies."
+  }
 }

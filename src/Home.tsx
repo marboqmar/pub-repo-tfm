@@ -8,8 +8,8 @@ import { ItemsFromApiContext } from "./contexts/ItemsFromApiContextProvider.tsx"
 
 export const Home = () => {
   const { t } = useTranslation("home");
-  const { search } = useContext(SearchContext);
   const { filteredItems } = useApiResultsAndFilteredItems();
+  const { search } = useContext(SearchContext);
   const { error, isLoading } = useContext(ItemsFromApiContext);
 
   return (
@@ -21,13 +21,13 @@ export const Home = () => {
       {!search ? (
         ""
       ) : (
-        <p className={"margin-left-60 margin-bottom-60"}>
+        <p className={"margin-60"}>
           {t("home:searchingBy")} "{search}"
         </p>
       )}
       {/*If the search did not provide any results, say so*/}
       {search && filteredItems.length === 0 ? (
-        <p className={"margin-left-60 margin-bottom-60"}>
+        <p className={"margin-60 margin-bottom-120"}>
           {t("home:noSearchResults")}
         </p>
       ) : (
@@ -35,12 +35,13 @@ export const Home = () => {
       )}
       {/*If the API did not provide any results, say so*/}
       {error && !isLoading ? (
-        <p className={"errorAndLoadingMsg"}>{t("home:error")}</p>
+        <p className={"margin-60 margin-bottom-120"}>{t("home:error")}</p>
       ) : isLoading ? (
-        <p className={"errorAndLoadingMsg"}>{t("home:loading")}</p>
+        <p className={"margin-60 margin-bottom-120"}>{t("home:loading")}</p>
       ) : (
-        <ItemsToDisplay itemList={filteredItems} />
+        ""
       )}
+      <ItemsToDisplay itemList={filteredItems} />
     </div>
   );
 };
