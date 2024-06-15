@@ -3,6 +3,7 @@ import { useCartOnLocalStorage } from "../../services/useCartOnLocalStorage.ts";
 import { useCartItemsList } from "../../services/useCartItemsList.ts";
 import { ItemDetailsModel } from "../../models";
 import { Button } from "../Button/Button.tsx";
+import { Link } from "react-router-dom";
 
 export const CartItemList = () => {
   const { t } = useTranslation("cart");
@@ -11,7 +12,22 @@ export const CartItemList = () => {
 
   return useCartItemsList().map((item: ItemDetailsModel) => (
     <div className={"cartItem flex-row"} key={`${item.img}${item.name}`}>
-      <img className={"cartItem--img"} src={item.img} alt={"cart item image"} />
+      <Button
+        color={"none"}
+        withoutHover
+        component={Link}
+        isLink
+        paddingSize={"none"}
+        borderType={"none"}
+        to={`/detalles-producto/?ref=${item.key}`}
+        key={`${item.img}${item.name}`}
+      >
+        <img
+          className={"cartItem--img"}
+          src={item.img}
+          alt={"cart item image"}
+        />
+      </Button>
       <div>
         <h2 className={"font"}>
           <strong>{item.name}</strong>

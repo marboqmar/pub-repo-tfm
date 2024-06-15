@@ -2,6 +2,8 @@ import { useTranslation } from "react-i18next";
 import { useCartItemsList } from "../../services/useCartItemsList.ts";
 import { ItemDetailsModel } from "../../models";
 import { useCartOnLocalStorage } from "../../services/useCartOnLocalStorage.ts";
+import { Link } from "react-router-dom";
+import { Button } from "../Button/Button.tsx";
 
 export const PaymentItemList = () => {
   const { t } = useTranslation("payment");
@@ -12,7 +14,18 @@ export const PaymentItemList = () => {
       {useCartItemsList().map((item: ItemDetailsModel) => (
         <div key={`${item.img}${item.name}`}>
           <div className={"payment--item"}>
-            <img className={"payment--img"} src={item.img} alt={""} />
+            <Button
+              color={"none"}
+              withoutHover
+              component={Link}
+              isLink
+              paddingSize={"none"}
+              borderType={"none"}
+              to={`/detalles-producto/?ref=${item.key}`}
+              key={`${item.img}${item.name}`}
+            >
+              <img className={"payment--img"} src={item.img} alt={""} />
+            </Button>
             <div className={"item item--text"}>
               <span>
                 <strong>{item.name}</strong>

@@ -9,7 +9,7 @@ import { useRandomSimilarProducts } from "./services/useRandomSimilarProducts.ts
 import { ItemDetails } from "./components/ItemDetails/ItemDetails.tsx";
 import { ItemsToDisplay } from "./components/ItemsToDisplay/ItemsToDisplay.tsx";
 import { REVIEWS_LIST } from "./lists/REVIEWS_LIST.ts";
-import { reviewModel } from "./models/reviewModel.ts";
+import { reviewModel } from "./models";
 
 export const ProductDetails = () => {
   const { t } = useTranslation("productDetails");
