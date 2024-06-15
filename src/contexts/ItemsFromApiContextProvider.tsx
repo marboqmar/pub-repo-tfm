@@ -56,8 +56,7 @@ export const ItemsFromApiContextProvider = ({
         setError("");
         setIsLoading(true);
         const response = await axios.get(
-          // "https://fantasy-forge-back.netlify.app/.netlify/functions/api",
-          import.meta.env.VITE_API_URL,
+          "https://fantasy-forge-back.netlify.app/.netlify/functions/api",
         );
         setItemsFromApi(mapItemsFromAPIToItemDetails(response.data));
       } catch (error) {
