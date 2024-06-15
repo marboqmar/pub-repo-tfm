@@ -8,6 +8,7 @@ export const mapItemsFromAPIToItemDetails = (
       key: individualItem.key,
       name: individualItem.name,
       img: individualItem.img,
+      img2: individualItem.img2,
       price: individualItem.price,
       description: individualItem.description,
       origin: individualItem.origin,

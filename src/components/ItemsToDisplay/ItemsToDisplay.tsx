@@ -8,7 +8,7 @@ interface ItemsToDisplayProps {
 }
 
 export const ItemsToDisplay = ({ itemList }: ItemsToDisplayProps) => {
-  const scrollUp = () => {
+  const handleOnClick = () => {
     window.scrollTo(0, 0);
   };
 
@@ -32,7 +32,7 @@ export const ItemsToDisplay = ({ itemList }: ItemsToDisplayProps) => {
             borderType={"none"}
             to={`/detalles-producto/?ref=${item.key}`}
             key={`${item.img}${item.name}`}
-            onClick={scrollUp}
+            onClick={handleOnClick}
           >
             <div className={"item"}>
               <img className={"item--img"} src={item.img} alt={""} />

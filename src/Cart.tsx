@@ -1,7 +1,7 @@
 import { useTranslation } from "react-i18next";
 import { TotalToPay } from "./components/TotalToPay/TotalToPay.tsx";
 import { useCartOnLocalStorage } from "./services/useCartOnLocalStorage.ts";
-import { CartItemList } from "./components/CartList/CartItemList.tsx";
+import { CartItemList } from "./components/CartItemList/CartItemList.tsx";
 
 export const Cart = () => {
   const { t } = useTranslation("cart");
