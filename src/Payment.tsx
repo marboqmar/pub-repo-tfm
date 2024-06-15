@@ -45,8 +45,8 @@ export const Payment = () => {
     notify();
     setTimeout(() => {
       navigate("/home");
-      deleteCart();
     }, 4000);
+    deleteCart();
   };
 
   return (
@@ -97,14 +97,20 @@ export const Payment = () => {
             {errors.cardName && <span>This field is required</span>}
             <label>{t("payment:cardNumber")}</label>
             <input
+              type={"number"}
               aria-label={"cardNumber"}
-              {...register("cardNumber", { required: true, maxLength: 100 })}
+              {...register("cardNumber", {
+                required: true,
+                maxLength: 100,
+                valueAsNumber: true,
+              })}
             />
             {errors.cardNumber && <span>This field is required</span>}
             <div className={"flex-row gap-18"}>
               <div className={"flex-column flex-grow-1"}>
                 <label>{t("payment:expiryDate")}</label>
                 <input
+                  type={"number"}
                   aria-label={"expiryDate"}
                   {...register("expiryDate", {
                     required: true,
@@ -117,6 +123,7 @@ export const Payment = () => {
               <div className={"flex-column flex-grow-1"}>
                 <label>{t("payment:CVV")}</label>
                 <input
+                  type={"number"}
                   aria-label={"CVV"}
                   {...register("CVV", {
                     required: true,
