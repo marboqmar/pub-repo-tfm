@@ -52,7 +52,7 @@ export const LandingContact = () => {
               <input
                 className={"font"}
                 aria-label={"name"}
-                {...register("name", { required: true, maxLength: 200 })}
+                {...register("name", { required: true, maxLength: 100 })}
                 placeholder={t("common:landingForm.namePlaceholder")}
               />
               {errors.name && <span>This field is required</span>}
@@ -62,7 +62,7 @@ export const LandingContact = () => {
               <input
                 className={"font"}
                 aria-label={"email"}
-                {...register("email", { required: true, maxLength: 200 })}
+                {...register("email", { required: true, maxLength: 100 })}
                 placeholder={t("common:landingForm.emailPlaceholder")}
               />
               {errors.email && <span>This field is required</span>}
@@ -80,15 +80,17 @@ export const LandingContact = () => {
               {errors.message && <span>This field is required</span>}
             </div>
           </div>
-          <div className={"flex-row contact--form-termsAndConditions gap-12"}>
-            <input
-              type="checkbox"
-              className={"contact--form-checkbox"}
-              aria-label={"checkbox"}
-              {...register("checkbox", { required: true })}
-              {...(errors.checkbox && <span>This field is required</span>)}
-            />
-            <p>{t("common:landingForm.termsAndConditions")}</p>
+          <div className={"flex-column"}>
+            <div className={"flex-row contact--form-termsAndConditions gap-12"}>
+              <input
+                type="checkbox"
+                className={"contact--form-checkbox"}
+                aria-label={"checkbox"}
+                {...register("checkbox", { required: true })}
+              />
+              <p>{t("common:landingForm.termsAndConditions")}</p>
+            </div>
+            {errors.checkbox && <span>This field is required</span>}
           </div>
           <Button
             withoutBorderRadius

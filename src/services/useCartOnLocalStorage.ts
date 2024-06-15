@@ -1,6 +1,6 @@
 const LOCAL_STORAGE_CART_KEY = "Cart";
 import useLocalStorage from "use-local-storage";
-import { cartModel } from "../models/cartModel.ts";
+import { cartModel } from "../models";
 
 export const useCartOnLocalStorage = () => {
   // Dictionary itemKey: quantity

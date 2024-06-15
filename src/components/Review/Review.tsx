@@ -1,4 +1,4 @@
-import { reviewModel } from "../../models/reviewModel.ts";
+import { reviewModel } from "../../models";
 
 export const Review = ({ review }: { review: reviewModel }) => {
   return (
