@@ -4,6 +4,7 @@ import { IsLandingOrProductDetails } from "../IsLandingOrProductDetails/IsLandin
 import { useEffect, useState } from "react";
 import { Button } from "../Button/Button.tsx";
 import { useSearchParams } from "react-router-dom";
+import { MainImage } from "../MainImage/MainImage.tsx";
 
 export const ItemDetails = ({ item }: { item: ItemDetailsModel }) => {
   const [selectedImage, setSelectedImage] = useState<string>(item.img);
@@ -24,7 +25,8 @@ export const ItemDetails = ({ item }: { item: ItemDetailsModel }) => {
       <div
         className={"itemDetails--images-section flex-row border-right-gray-300"}
       >
-        <img className={"itemDetails--img"} src={selectedImage} alt={""} />
+        <MainImage image={selectedImage} />
+        {/*<img className={"itemDetails--img"} src={selectedImage} alt={""} />*/}
         <div
           className={
             "itemDetails--img-container margin-lat-24 margin-bottom-24 margin-top-24"
