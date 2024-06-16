@@ -53,7 +53,7 @@ export const Payment = () => {
   return (
     <div className={"max-width-1500-centered"}>
       <div>
-        <h1 className={"siteTitle"}>{t("payment:title")}</h1>
+        <h1 className={"siteTitle font-alt"}>{t("payment:title")}</h1>
         <div className={"siteTitle--line"}></div>
       </div>
       <form

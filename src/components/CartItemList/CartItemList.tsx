@@ -11,7 +11,10 @@ export const CartItemList = () => {
     useCartOnLocalStorage();
 
   return useCartItemsList().map((item: ItemDetailsModel) => (
-    <div className={"cartItem flex-row"} key={`${item.img}${item.name}`}>
+    <div
+      className={"padding-bottom-24 flex-column border-gray-300"}
+      key={`${item.img}${item.name}`}
+    >
       <Button
         color={"none"}
         withoutHover
@@ -28,11 +31,11 @@ export const CartItemList = () => {
           alt={"cart item image"}
         />
       </Button>
-      <div>
+      <div className={"margin-left-12"}>
         <h2 className={"font"}>
           <strong>{item.name}</strong>
         </h2>
-        <div className={"flex-column gap-24"}>
+        <div className={"flex-column gap-18"}>
           <div className={"flex-row gap-24"}>
             <span>{t("cart:quantity")}</span>
             <div className={"flex gap-12"}>
@@ -78,7 +81,9 @@ export const CartItemList = () => {
           >
             {t("cart:delete")}
           </Button>
-          <span>{item.price}€</span>
+          <span>
+            {item.price}€/{t("cart:unit")}
+          </span>
         </div>
       </div>
     </div>

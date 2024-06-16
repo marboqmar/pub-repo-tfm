@@ -1,6 +1,7 @@
 {
   "title": "Check products and payment",
   "quantity": "Quantity",
+  "unit": "unit",
   "deliveryDetails": "Delivery address",
   "address": "Address",
   "addressPlaceholder": "Enter your delivery address",

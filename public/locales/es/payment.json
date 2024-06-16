@@ -1,6 +1,7 @@
 {
   "title": "Revisar artículos y pago",
   "quantity": "Cantidad",
+  "unit": "unidad",
   "deliveryDetails": "Dirección de envío",
   "address": "Dirección",
   "addressPlaceholder": "Introduce la dirección de envío",

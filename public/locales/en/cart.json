@@ -2,6 +2,7 @@
   "title": "Cart",
   "quantity": "Quantity",
   "delete": "Delete",
+  "unit": "unit",
   "items": "Items",
   "shipping": "Shipping",
   "free": "Free",
