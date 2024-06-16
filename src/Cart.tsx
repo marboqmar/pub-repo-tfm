@@ -14,8 +14,8 @@ export const Cart = () => {
       {Object.keys(localStorageCartInfo).length === 0 ? (
         <p className={"margin-bottom-120"}>{t("cart:cartEmpty")}</p>
       ) : (
-        <div className={"flex-row"}>
-          <div className={"gap-60 margin-bottom-120 margin-right-60 flex-wrap"}>
+        <div className={"flex-row margin-bottom-120"}>
+          <div className={"gap-60 margin-right-60 flex-wrap"}>
             <CartItemList />
           </div>
           <TotalToPay />

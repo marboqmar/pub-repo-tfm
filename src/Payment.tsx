@@ -10,6 +10,7 @@ import { useCartOnLocalStorage } from "./services/useCartOnLocalStorage.ts";
 type Inputs = {
   address: string;
   country: string;
+  city: string;
   postCode: string;
   cardName: string;
   cardNumber: number;
@@ -55,103 +56,241 @@ export const Payment = () => {
         <h1 className={"siteTitle"}>{t("payment:title")}</h1>
         <div className={"siteTitle--line"}></div>
       </div>
-      <form className={"payment flex-row"} onSubmit={handleSubmit(onSubmit)}>
-        <div className={"flex-column"}>
+      <form
+        className={"flex-row form font margin-bottom-120"}
+        onSubmit={handleSubmit(onSubmit)}
+      >
+        <div className={"flex-column payment--form"}>
           <PaymentItemList />
-          {/*Form*/}
-          <div className={"flex-column gap-12 payment--form margin-bottom-120"}>
-            {/* Delivery address */}
-            <p className={"h2"}>{t("payment:deliveryDetails")}</p>
-            <label>{t("payment:address")}</label>
-            <input
-              aria-label={"address"}
-              {...register("address", { required: true, maxLength: 200 })}
-            />
-            {errors.address && <span>This field is required</span>}
-            <div className={"flex-row gap-18"}>
-              <div className={"flex-column flex-grow-1"}>
-                <label>{t("payment:country")}</label>
-                <input
-                  aria-label={"country"}
-                  {...register("country", { required: true, maxLength: 80 })}
-                />
-                {errors.country && <span>This field is required</span>}
-              </div>
-              <div className={"flex-column flex-grow-1"}>
-                <label>{t("payment:postCode")}</label>
-                <input
-                  aria-label={"postCode"}
-                  {...register("postCode", { required: true, maxLength: 80 })}
-                />
-                {errors.postCode && <span>This field is required</span>}
-              </div>
-            </div>
+          {/* Delivery address */}
+          <div className={"flex margin-top-60"}>
+            <div className={"border-gray-300 flex-grow-1"}>
+              <h2
+                className={
+                  "font-alt margin-0 padding-32 border-bottom-gray-300"
+                }
+              >
+                {t("payment:deliveryDetails")}
+              </h2>
 
-            {/* Card details */}
-            <p className={"h2 margin-top-60"}>{t("payment:cardDetails")}</p>
-            <label>{t("payment:cardName")}</label>
-            <input
-              aria-label={"cardName"}
-              {...register("cardName", { required: true, maxLength: 200 })}
-            />
-            {errors.cardName && <span>This field is required</span>}
-            <label>{t("payment:cardNumber")}</label>
-            <input
-              type={"number"}
-              aria-label={"cardNumber"}
-              {...register("cardNumber", {
-                required: true,
-                maxLength: 100,
-                valueAsNumber: true,
-              })}
-            />
-            {errors.cardNumber && <span>This field is required</span>}
-            <div className={"flex-row gap-18"}>
-              <div className={"flex-column flex-grow-1"}>
-                <label>{t("payment:expiryDate")}</label>
-                <input
-                  type={"number"}
-                  aria-label={"expiryDate"}
-                  {...register("expiryDate", {
-                    required: true,
-                    maxLength: 5,
-                    valueAsNumber: true,
-                  })}
-                />
-                {errors.expiryDate && <span>This field is required</span>}
+              <div className={"flex-row"}>
+                <div className={"flex-column flex-grow-1"}>
+                  {/*Address*/}
+                  <label className={"border-bottom-gray-300"}>
+                    {t("payment:address")}
+                  </label>
+                  <input
+                    className={"font"}
+                    aria-label={"address"}
+                    {...register("address", {
+                      required: true,
+                      maxLength: 100,
+                    })}
+                    placeholder={t("payment:addressPlaceholder")}
+                  />
+                  {errors.address && (
+                    <span className={"form--error"}>
+                      This field is required
+                    </span>
+                  )}
+                  {/*Country*/}
+                  <label
+                    className={"border-bottom-gray-300 border-top-gray-300"}
+                  >
+                    {t("payment:country")}
+                  </label>
+                  <input
+                    className={"font"}
+                    aria-label={"country"}
+                    {...register("country", {
+                      required: true,
+                      maxLength: 100,
+                    })}
+                    placeholder={t("payment:countryPlaceholder")}
+                  />
+                  {errors.country && (
+                    <span className={"form--error"}>
+                      This field is required
+                    </span>
+                  )}
+                </div>
+                <div className={"flex-column flex-grow-1 border-left-gray-300"}>
+                  {/*City*/}
+                  <label className={"border-bottom-gray-300"}>
+                    {t("payment:city")}
+                  </label>
+                  <input
+                    className={"font border-bottom-gray-300"}
+                    aria-label={"postCode"}
+                    placeholder={t("payment:cityPlaceholder")}
+                    {...register("postCode", {
+                      required: true,
+                      maxLength: 500,
+                    })}
+                  />
+                  {errors.postCode && (
+                    <span className={"form--error"}>
+                      This field is required
+                    </span>
+                  )}
+                  {/*Post code*/}
+                  <label
+                    className={"border-bottom-gray-300 border-top-gray-300"}
+                  >
+                    {t("payment:postCode")}
+                  </label>
+                  <input
+                    className={"font"}
+                    aria-label={"city"}
+                    placeholder={t("payment:postCodePlaceholder")}
+                    {...register("city", {
+                      required: true,
+                      maxLength: 500,
+                    })}
+                  />
+                  {errors.city && (
+                    <span className={"form--error"}>
+                      This field is required
+                    </span>
+                  )}
+                </div>
               </div>
-              <div className={"flex-column flex-grow-1"}>
-                <label>{t("payment:CVV")}</label>
-                <input
-                  type={"number"}
-                  aria-label={"CVV"}
-                  {...register("CVV", {
-                    required: true,
-                    maxLength: 3,
-                    valueAsNumber: true,
-                  })}
-                />
-                {errors.CVV && <span>This field is required</span>}
+
+              <ToastContainer
+                bodyClassName="toast-message contact--form-toast"
+                toastClassName="toast-border"
+                position="bottom-right"
+                autoClose={4000}
+                limit={1}
+                hideProgressBar
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnHover={false}
+                theme="light"
+                transition={Bounce}
+              />
+            </div>
+          </div>
+
+          {/* Card details */}
+          <div className={"flex margin-top-60"}>
+            <div className={"border-gray-300 flex-grow-1"}>
+              <h2
+                className={
+                  "font-alt margin-0 padding-32 border-bottom-gray-300"
+                }
+              >
+                {t("payment:cardDetails")}
+              </h2>
+
+              <div className={"flex-row"}>
+                <div className={"flex-column flex-grow-1"}>
+                  {/*Card name*/}
+                  <label className={"border-bottom-gray-300"}>
+                    {t("payment:cardName")}
+                  </label>
+                  <input
+                    className={"font"}
+                    aria-label={"cardName"}
+                    {...register("cardName", {
+                      required: true,
+                      maxLength: 100,
+                    })}
+                    placeholder={t("payment:cardNamePlaceholder")}
+                  />
+                  {errors.cardName && (
+                    <span className={"form--error"}>
+                      This field is required
+                    </span>
+                  )}
+                  {/*Expiry date*/}
+                  <label
+                    className={"border-bottom-gray-300 border-top-gray-300"}
+                  >
+                    {t("payment:expiryDate")}
+                  </label>
+                  <input
+                    className={"font"}
+                    aria-label={"expiryDate"}
+                    type="number"
+                    {...register("expiryDate", {
+                      required: true,
+                      maxLength: 5,
+                      valueAsNumber: true,
+                    })}
+                    placeholder={"00/00"}
+                  />
+                  {errors.expiryDate && (
+                    <span className={"form--error"}>
+                      This field is required
+                    </span>
+                  )}
+                </div>
+                <div className={"flex-column flex-grow-1 border-left-gray-300"}>
+                  {/*Card number*/}
+                  <label className={"border-bottom-gray-300"}>
+                    {t("payment:cardNumber")}
+                  </label>
+                  <input
+                    className={"font border-bottom-gray-300"}
+                    aria-label={"cardNumber"}
+                    type="number"
+                    placeholder={"0000 0000 0000 0000"}
+                    {...register("cardNumber", {
+                      required: true,
+                      maxLength: 32,
+                      valueAsNumber: true,
+                    })}
+                  />
+                  {errors.cardNumber && (
+                    <span className={"form--error"}>
+                      This field is required
+                    </span>
+                  )}
+                  {/*CVV*/}
+                  <label
+                    className={"border-bottom-gray-300 border-top-gray-300"}
+                  >
+                    {t("payment:CVV")}
+                  </label>
+                  <input
+                    className={"font"}
+                    aria-label={"CVV"}
+                    type="number"
+                    placeholder={t("000")}
+                    {...register("CVV", {
+                      required: true,
+                      maxLength: 3,
+                      valueAsNumber: true,
+                    })}
+                  />
+                  {errors.CVV && (
+                    <span className={"form--error"}>
+                      This field is required
+                    </span>
+                  )}
+                </div>
               </div>
             </div>
           </div>
         </div>
         <TotalToPay />
+        <ToastContainer
+          bodyClassName="toast-message toast-thanks-for-purchase"
+          toastClassName="toast-border"
+          position="top-center"
+          autoClose={4000}
+          limit={1}
+          hideProgressBar
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnHover={false}
+          theme="light"
+          transition={Bounce}
+        />
       </form>
-      <ToastContainer
-        bodyClassName="toast-message toast-thanks-for-purchase"
-        toastClassName="toast-border"
-        position="top-center"
-        autoClose={4000}
-        limit={1}
-        hideProgressBar
-        newestOnTop={false}
-        closeOnClick
-        rtl={false}
-        pauseOnHover={false}
-        theme="light"
-        transition={Bounce}
-      />
     </div>
   );
 };

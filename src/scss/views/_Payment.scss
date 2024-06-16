@@ -14,29 +14,14 @@
   }
 
   &--form {
-    max-width: 800px;
+    width: 100%;
+    margin-right: 60px;
 
-    &-filler {
-      color: transparent;
-    }
-
-    & input {
-      font-family: "Crimson Text", serif;
-      font-weight: 400;
-      font-style: normal;
-      line-height: 1.5em;
-      font-size: 24px;
-      min-height: 40px;
-    }
-
-    & span {
-      color: red;
+    &-title {
+      margin: 0;
+      padding: 32px;
     }
   }
-}
-
-input {
-  min-width: 20px;
 }
 
 .Toastify__toast:has(div.toast-thanks-for-purchase) {
