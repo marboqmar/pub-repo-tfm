@@ -9,13 +9,13 @@ export const Cart = () => {
 
   return (
     <div className={"max-width-1500-centered"}>
-      <h1 className={"siteTitle"}>{t("cart:title")}</h1>
+      <h1 className={"siteTitle font-alt"}>{t("cart:title")}</h1>
       <div className={"siteTitle--line"}></div>
       {Object.keys(localStorageCartInfo).length === 0 ? (
         <p className={"margin-bottom-120"}>{t("cart:cartEmpty")}</p>
       ) : (
-        <div className={"flex-row"}>
-          <div className={"gap-60 margin-bottom-120 margin-right-60 flex-wrap"}>
+        <div className={"flex-row margin-bottom-120"}>
+          <div className={"flex-wrap margin-right-60"}>
             <CartItemList />
           </div>
           <TotalToPay />

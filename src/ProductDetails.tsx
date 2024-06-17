@@ -25,9 +25,7 @@ export const ProductDetails = () => {
   return (
     <>
       <div className={"max-width-1500-centered"}>
-        <h1 className={"siteTitle"}>{t("productDetails:title")}</h1>
-        <div className={"siteTitle--line"}></div>
-        <div className={"flex-column gap-60"}>
+        <div className={"flex-column gap-60 margin-top-60"}>
           {/*If item selected returns details of that item, otherwise return no results found*/}
           {selectedItem ? (
             <>

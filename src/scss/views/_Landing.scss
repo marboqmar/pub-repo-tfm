@@ -46,32 +46,8 @@
   }
 
   &--form {
-    & input, & textarea {
-      border: none;
-      background-color: $color-gray-100-light;
-      padding: 24px 12px;
-      resize: none;
-    }
-
-    & label {
-      padding: 12px;
-    }
-
-    & span {
-      color: $color-error;
-      padding: 12px;
-    }
-
-    &-message {
-      height: 100%
-    }
-
     &-termsAndConditions {
       padding: 0 12px;
-    }
-
-    &-checkbox {
-      border: 1px solid red;
     }
   }
 }
