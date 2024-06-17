@@ -32,7 +32,7 @@ export const Payment = () => {
   const notify = () =>
     toast(toastContent, {
       position: "top-center",
-      autoClose: 400000,
+      autoClose: 4000,
       hideProgressBar: true,
       closeOnClick: false,
       pauseOnHover: false,
@@ -265,7 +265,7 @@ export const Payment = () => {
           bodyClassName="toast-message toast-thanks-for-purchase"
           toastClassName="toast-border"
           position="top-center"
-          autoClose={400000}
+          autoClose={4000}
           limit={1}
           hideProgressBar
           newestOnTop={false}
