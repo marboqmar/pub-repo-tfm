@@ -63,7 +63,7 @@ export const ItemDetails = ({ item }: { item: ItemDetailsModel }) => {
         </div>
       </div>
       <div className={"itemDetails--text-section flex-column"}>
-        <h3 className={"h2--no-margin itemDetails--sword-title"}>
+        <h3 className={"h2--no-margin font-alt itemDetails--sword-title"}>
           {item.name}
         </h3>
         <p

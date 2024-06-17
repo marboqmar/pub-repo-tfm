@@ -35,7 +35,7 @@ export const ProductDetails = () => {
               <div className={"flex-column gap-12 border-gray-300"}>
                 <h2
                   className={
-                    "h2--no-margin productDetails--reviews-title border-bottom-gray-300"
+                    "h2--no-margin font-alt productDetails--reviews-title border-bottom-gray-300"
                   }
                 >
                   {t("productDetails:reviews")}
@@ -49,7 +49,7 @@ export const ProductDetails = () => {
             <p>{t("productDetails:noResults")}</p>
           )}
           <div className={"flex-column gap-12"}>
-            <h2 className={"h2--no-margin"}>
+            <h2 className={"h2--no-margin font-alt"}>
               {/*If no item was selected, rather than "similar products" state "find other products"*/}
               {selectedItem
                 ? t("productDetails:similarProducts")
