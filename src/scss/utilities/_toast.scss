@@ -6,8 +6,11 @@
   font-style: normal;
   line-height: 1.5em;
   font-size: 20px;
-  color: black;
-  padding: 12px 24px !important;
+  color: $color-neutral;
+
+  &--padding {
+    padding: 12px 24px !important;
+  }
 }
 
 .toast-border {
@@ -20,8 +23,7 @@
 }
 
 .Toastify__toast-container--top-center {
-  width: 80vw !important;
-  max-width: 1200px !important;
+  width: 600px !important;
   left: 50% !important;
   top: 50% !important;
   transform: translateX(-50%) translateY(-50%) !important;

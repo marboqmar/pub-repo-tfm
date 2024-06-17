@@ -28,11 +28,13 @@ export const MainImage = ({ image }: { image: string }) => {
         >
           <img className={"itemDetails--img"} src={image} alt={""} />
         </Button>
-        <Dialog
-          show={isDialogOpen}
-          onOverlayClick={handleOverlayClick}
-          image={image}
-        />
+        <Dialog show={isDialogOpen} onOverlayClick={handleOverlayClick}>
+          <img
+            className={"itemDetails--mainImage margin-lat-auto"}
+            src={image}
+            alt={""}
+          />
+        </Dialog>
       </>
     );
   }

@@ -32,9 +32,9 @@ export const Payment = () => {
   const notify = () =>
     toast(toastContent, {
       position: "top-center",
-      autoClose: 4000,
+      autoClose: 400000,
       hideProgressBar: true,
-      closeOnClick: true,
+      closeOnClick: false,
       pauseOnHover: false,
       draggable: false,
       progress: undefined,
@@ -155,21 +155,6 @@ export const Payment = () => {
                   )}
                 </div>
               </div>
-
-              <ToastContainer
-                bodyClassName="toast-message contact--form-toast"
-                toastClassName="toast-border"
-                position="bottom-right"
-                autoClose={4000}
-                limit={1}
-                hideProgressBar
-                newestOnTop={false}
-                closeOnClick
-                rtl={false}
-                pauseOnHover={false}
-                theme="light"
-                transition={Bounce}
-              />
             </div>
           </div>
 
@@ -280,11 +265,10 @@ export const Payment = () => {
           bodyClassName="toast-message toast-thanks-for-purchase"
           toastClassName="toast-border"
           position="top-center"
-          autoClose={4000}
+          autoClose={400000}
           limit={1}
           hideProgressBar
           newestOnTop={false}
-          closeOnClick
           rtl={false}
           pauseOnHover={false}
           theme="light"

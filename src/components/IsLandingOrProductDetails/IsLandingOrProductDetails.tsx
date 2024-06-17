@@ -49,7 +49,7 @@ export const IsLandingOrProductDetails = ({ itemKey }: { itemKey: number }) => {
           to={"/cesta"}
         >
           <ToastContainer
-            bodyClassName="toast-message addToCart-toast"
+            bodyClassName="toast-message toast-message--padding addToCart-toast"
             toastClassName="toast-border"
             position="top-right"
             autoClose={4000}

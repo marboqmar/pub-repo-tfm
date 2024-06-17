@@ -17,27 +17,23 @@
 }
 
 .Toastify__toast:has(div.toast-thanks-for-purchase) {
-  height: 80vh !important;
+  margin: 0;
+  padding: 0;
 }
 
 .toast-message-thanks-for-purchase {
   background-color: $color-white-lighter;
-  width: 450px;
-  padding: 24px 0 44px 0;
+  padding: 0 0 44px 0;
 
   &--img {
     height: 300px;
+    left: 0;
+    right: 0;
   }
 }
 
-.toast-thanks-for-purchase {
-  //background-image: url("/public/fire.jpg");
-  //background-repeat: no-repeat;
-  //background-size: cover;
-  //border: 1px solid black;
-  //height: 100%;
-  //width: 80vw !important;
-  //max-width: 1200px !important;
+.toast-thanks-for-purchase[role="alert"] {
+  padding: 0;
 }
 
 .toast-color {

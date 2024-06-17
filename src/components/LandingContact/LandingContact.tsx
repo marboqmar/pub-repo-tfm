@@ -114,7 +114,7 @@ export const LandingContact = () => {
           </Button>
         </form>
         <ToastContainer
-          bodyClassName="toast-message contact--form-toast"
+          bodyClassName="toast-message toast-message--padding contact--form-toast"
           toastClassName="toast-border"
           position="bottom-right"
           autoClose={4000}
