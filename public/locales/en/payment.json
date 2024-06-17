@@ -1,18 +1,24 @@
 {
   "title": "Check products and payment",
   "quantity": "Quantity",
+  "unit": "unit",
   "deliveryDetails": "Delivery address",
   "address": "Address",
+  "addressPlaceholder": "Enter your delivery address",
   "country": "Country",
+  "countryPlaceholder": "Enter your ccountry",
+  "city": "City",
+  "cityPlaceholder": "Enter your city",
   "postCode": "Post code",
+  "postCodePlaceholder": "Enter your post code",
   "cardDetails": "Card details",
   "cardName": "Cardholder name",
+  "cardNamePlaceholder": "Geralt of Rivia",
   "cardNumber": "Card number",
   "expiryDate": "Expiry date",
   "CVV": "CVV",
   "thanksPurchase": {
-    "1/3": "Thank your for your purchase!",
-    "2/3": "We will carefully craft your sword now",
-    "3/3": "and in no time you will be forging your fantasies."
+    "1/2": "Thank your for your purchase!",
+    "2/2": "We will carefully craft your sword now and in no time you will be forging your fantasies."
   }
 }

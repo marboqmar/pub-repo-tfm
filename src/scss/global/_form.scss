@@ -1,0 +1,40 @@
+@import "./color-variables";
+
+.form {
+  & input, & textarea {
+    border: none;
+    background-color: $color-gray-100-light;
+    padding: 24px 12px;
+    resize: none;
+  }
+
+  & label {
+    padding: 12px;
+  }
+
+  &--error {
+    color: $color-error;
+    padding: 12px;
+  }
+
+  &--checkbox {
+    border: 1px solid red;
+  }
+
+  &--message {
+    height: 100%
+  }
+}
+
+/* ----Remove arrows from number inputs---- */
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}

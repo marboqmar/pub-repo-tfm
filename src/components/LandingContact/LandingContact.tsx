@@ -41,11 +41,12 @@ export const LandingContact = () => {
         <h2 className={"font-alt contact--title"}>{t("common:contact")}</h2>
         <p className={"margin-left-48 "}>{t("common:contactText")}</p>
         <form
-          className={"border-top-gray-300 form  contact--form "}
+          className={"border-top-gray-300 form font"}
           onSubmit={handleSubmit(onSubmit)}
         >
           <div className={"flex-row border-bottom-gray-300"}>
             <div className={"flex-column flex-grow-1"}>
+              {/*Name*/}
               <label className={"border-bottom-gray-300"}>
                 {t("common:landingForm.name")}
               </label>
@@ -55,7 +56,10 @@ export const LandingContact = () => {
                 {...register("name", { required: true, maxLength: 100 })}
                 placeholder={t("common:landingForm.namePlaceholder")}
               />
-              {errors.name && <span>This field is required</span>}
+              {errors.name && (
+                <span className={"form--error"}>This field is required</span>
+              )}
+              {/*Email*/}
               <label className={"border-bottom-gray-300 border-top-gray-300"}>
                 Email
               </label>
@@ -65,32 +69,40 @@ export const LandingContact = () => {
                 {...register("email", { required: true, maxLength: 100 })}
                 placeholder={t("common:landingForm.emailPlaceholder")}
               />
-              {errors.email && <span>This field is required</span>}
+              {errors.email && (
+                <span className={"form--error"}>This field is required</span>
+              )}
             </div>
             <div className={"flex-column flex-grow-1 border-left-gray-300"}>
+              {/*Message*/}
               <label className={"border-bottom-gray-300"}>
                 {t("common:landingForm.message")}
               </label>
               <textarea
-                className={"font contact--form-message"}
+                className={"font form--message"}
                 aria-label={"message"}
                 placeholder={t("common:landingForm.messagePlaceholder")}
                 {...register("message", { required: true, maxLength: 500 })}
               />
-              {errors.message && <span>This field is required</span>}
+              {errors.message && (
+                <span className={"form--error"}>This field is required</span>
+              )}
             </div>
           </div>
           <div className={"flex-column"}>
             <div className={"flex-row contact--form-termsAndConditions gap-12"}>
+              {/*Terms and conditions*/}
               <input
                 type="checkbox"
-                className={"contact--form-checkbox"}
+                className={"form--checkbox"}
                 aria-label={"checkbox"}
                 {...register("checkbox", { required: true })}
               />
               <p>{t("common:landingForm.termsAndConditions")}</p>
             </div>
-            {errors.checkbox && <span>This field is required</span>}
+            {errors.checkbox && (
+              <span className={"form--error"}>This field is required</span>
+            )}
           </div>
           <Button
             withoutBorderRadius
@@ -102,7 +114,7 @@ export const LandingContact = () => {
           </Button>
         </form>
         <ToastContainer
-          bodyClassName="toast-message contact--form-toast"
+          bodyClassName="toast-message toast-message--padding contact--form-toast"
           toastClassName="toast-border"
           position="bottom-right"
           autoClose={4000}
