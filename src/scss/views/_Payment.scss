@@ -1,6 +1,14 @@
 @import "../global/color-variables";
 
 .payment {
+  &--item {
+    max-width: 266px;
+
+    &-title {
+      font-weight: 700 !important;
+    }
+  }
+
   &--img {
     height: 400px;
   }

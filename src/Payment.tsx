@@ -89,9 +89,7 @@ export const Payment = () => {
                     placeholder={t("payment:addressPlaceholder")}
                   />
                   {errors.address && (
-                    <span className={"form--error"}>
-                      This field is required
-                    </span>
+                    <p className={"form--error"}>This field is required</p>
                   )}
                   {/*Country*/}
                   <label
@@ -109,9 +107,7 @@ export const Payment = () => {
                     placeholder={t("payment:countryPlaceholder")}
                   />
                   {errors.country && (
-                    <span className={"form--error"}>
-                      This field is required
-                    </span>
+                    <p className={"form--error"}>This field is required</p>
                   )}
                 </div>
                 <div className={"flex-column flex-grow-1 border-left-gray-300"}>
@@ -129,9 +125,7 @@ export const Payment = () => {
                     })}
                   />
                   {errors.postCode && (
-                    <span className={"form--error"}>
-                      This field is required
-                    </span>
+                    <p className={"form--error"}>This field is required</p>
                   )}
                   {/*Post code*/}
                   <label
@@ -149,9 +143,7 @@ export const Payment = () => {
                     })}
                   />
                   {errors.city && (
-                    <span className={"form--error"}>
-                      This field is required
-                    </span>
+                    <p className={"form--error"}>This field is required</p>
                   )}
                 </div>
               </div>
@@ -185,9 +177,7 @@ export const Payment = () => {
                     placeholder={t("payment:cardNamePlaceholder")}
                   />
                   {errors.cardName && (
-                    <span className={"form--error"}>
-                      This field is required
-                    </span>
+                    <p className={"form--error"}>This field is required</p>
                   )}
                   {/*Expiry date*/}
                   <label
@@ -207,9 +197,7 @@ export const Payment = () => {
                     placeholder={"00/00"}
                   />
                   {errors.expiryDate && (
-                    <span className={"form--error"}>
-                      This field is required
-                    </span>
+                    <p className={"form--error"}>This field is required</p>
                   )}
                 </div>
                 <div className={"flex-column flex-grow-1 border-left-gray-300"}>
@@ -229,9 +217,7 @@ export const Payment = () => {
                     })}
                   />
                   {errors.cardNumber && (
-                    <span className={"form--error"}>
-                      This field is required
-                    </span>
+                    <p className={"form--error"}>This field is required</p>
                   )}
                   {/*CVV*/}
                   <label
@@ -251,9 +237,7 @@ export const Payment = () => {
                     })}
                   />
                   {errors.CVV && (
-                    <span className={"form--error"}>
-                      This field is required
-                    </span>
+                    <p className={"form--error"}>This field is required</p>
                   )}
                 </div>
               </div>

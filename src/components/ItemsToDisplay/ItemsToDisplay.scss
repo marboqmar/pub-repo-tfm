@@ -1,11 +1,6 @@
 @import "../../scss/base";
 
 .item {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  margin-bottom: 24px;
-
   &--text {
     margin-left: 6px;
   }
@@ -22,8 +17,14 @@
   grid-template-columns: repeat(5, 1fr);
 
   &--item {
-    border-right: 1px solid $color-white ;
+    border-right: 1px solid $color-white;
     border-radius: 0;
+  }
+
+  &--btn:after {
+    content:"";
+    position: absolute;
+    inset: 0;
   }
 
   &--item:last-child {

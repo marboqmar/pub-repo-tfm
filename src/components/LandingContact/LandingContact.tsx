@@ -39,7 +39,9 @@ export const LandingContact = () => {
     <div className={"flex"}>
       <div className={"border-gray-300 flex-grow-1"}>
         <h2 className={"font-alt contact--title"}>{t("common:contact")}</h2>
-        <p className={"margin-left-48 "}>{t("common:contactText")}</p>
+        <p className={"margin-left-48 margin-ver-24"}>
+          {t("common:contactText")}
+        </p>
         <form
           className={"border-top-gray-300 form font"}
           onSubmit={handleSubmit(onSubmit)}
@@ -57,7 +59,7 @@ export const LandingContact = () => {
                 placeholder={t("common:landingForm.namePlaceholder")}
               />
               {errors.name && (
-                <span className={"form--error"}>This field is required</span>
+                <p className={"form--error"}>This field is required</p>
               )}
               {/*Email*/}
               <label className={"border-bottom-gray-300 border-top-gray-300"}>
@@ -70,7 +72,7 @@ export const LandingContact = () => {
                 placeholder={t("common:landingForm.emailPlaceholder")}
               />
               {errors.email && (
-                <span className={"form--error"}>This field is required</span>
+                <p className={"form--error"}>This field is required</p>
               )}
             </div>
             <div className={"flex-column flex-grow-1 border-left-gray-300"}>
@@ -85,7 +87,7 @@ export const LandingContact = () => {
                 {...register("message", { required: true, maxLength: 500 })}
               />
               {errors.message && (
-                <span className={"form--error"}>This field is required</span>
+                <p className={"form--error"}>This field is required</p>
               )}
             </div>
           </div>
@@ -98,10 +100,12 @@ export const LandingContact = () => {
                 aria-label={"checkbox"}
                 {...register("checkbox", { required: true })}
               />
-              <p>{t("common:landingForm.termsAndConditions")}</p>
+              <p className={"margin-ver-12"}>
+                {t("common:landingForm.termsAndConditions")}
+              </p>
             </div>
             {errors.checkbox && (
-              <span className={"form--error"}>This field is required</span>
+              <p className={"form--error"}>This field is required</p>
             )}
           </div>
           <Button

@@ -7,12 +7,18 @@ import { Button } from "../Button/Button.tsx";
 
 export const PaymentItemList = () => {
   const { t } = useTranslation("payment");
+  const { i18n } = useTranslation();
   const { localStorageCartInfo } = useCartOnLocalStorage();
 
   return (
     <div className={"itemDisplay--home-and-payment flex-wrap margin-right-60"}>
       {useCartItemsList().map((item: ItemDetailsModel) => (
-        <div className={"border-gray-300"} key={`${item.img}${item.name}`}>
+        <div
+          className={
+            "border-gray-300 payment--item padding-bottom-24 flex-column"
+          }
+          key={`${item.img}${item.name}`}
+        >
           <Button
             color={"none"}
             withoutHover
@@ -25,16 +31,22 @@ export const PaymentItemList = () => {
           >
             <img className={"payment--img"} src={item.img} alt={""} />
           </Button>
-          <div className={"item margin-left-12"}>
-            <span>
-              <strong>{item.name}</strong>
-            </span>
-            <span>
+          <div
+            className={
+              "flex-column flex-1 gap-24 margin-top-18 margin-bottom-24 margin-left-12"
+            }
+          >
+            <p className={"font font-alt flex-1"}>
+              <strong>
+                {i18n.language === "es" ? item.name : item.nameEn}
+              </strong>
+            </p>
+            <p>
               {t("payment:quantity")}: {localStorageCartInfo[item.key]}
-            </span>
-            <span>
+            </p>
+            <p>
               {item.price}€/{t("payment:unit")}
-            </span>
+            </p>
           </div>
         </div>
       ))}

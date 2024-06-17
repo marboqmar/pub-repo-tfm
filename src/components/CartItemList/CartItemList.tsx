@@ -7,12 +7,13 @@ import { Link } from "react-router-dom";
 
 export const CartItemList = () => {
   const { t } = useTranslation("cart");
+  const { i18n } = useTranslation();
   const { localStorageCartInfo, addItemToCart, removeItemFromCart } =
     useCartOnLocalStorage();
 
   return useCartItemsList().map((item: ItemDetailsModel) => (
     <div
-      className={"padding-bottom-24 flex-column border-gray-300"}
+      className={"padding-bottom-24 flex-column border-gray-300 cartItem"}
       key={`${item.img}${item.name}`}
     >
       <Button
@@ -31,59 +32,60 @@ export const CartItemList = () => {
           alt={"cart item image"}
         />
       </Button>
-      <div className={"margin-left-12"}>
-        <h2 className={"font"}>
-          <strong>{item.name}</strong>
+      <div className={"margin-left-12 margin-right-24 flex-column flex-1"}>
+        <h2 className={"font font-alt margin-bottom-24 flex-1"}>
+          <strong>{i18n.language === "es" ? item.name : item.nameEn}</strong>
         </h2>
-        <div className={"flex-column gap-18"}>
+        <div className={"flex-column gap-24 margin-bottom-24"}>
           <div className={"flex-row gap-24"}>
-            <span>{t("cart:quantity")}</span>
-            <div className={"flex gap-12"}>
+            <p className={"flex"}>{t("cart:quantity")}</p>
+            <div className={"flex width-100"}>
+              <div className={"flex gap-12"}>
+                <Button
+                  color={"none"}
+                  withoutHover
+                  borderType={"none"}
+                  paddingSize={"none"}
+                  onClick={() => removeItemFromCart(item.key, false)}
+                >
+                  <img
+                    className={"plus-and-minus-i"}
+                    src={"/icons/minus-icon.png"}
+                    alt={""}
+                  />
+                </Button>
+                <p>{localStorageCartInfo[item.key]}</p>
+                <Button
+                  color={"none"}
+                  withoutHover
+                  borderType={"none"}
+                  paddingSize={"none"}
+                  onClick={() => {
+                    addItemToCart(item.key);
+                  }}
+                >
+                  <img
+                    className={"plus-and-minus-i"}
+                    src={"/icons/plus-icon.png"}
+                    alt={""}
+                  />
+                </Button>
+              </div>
               <Button
+                className={"cartItem--delete"}
                 color={"none"}
                 withoutHover
-                borderType={"none"}
                 paddingSize={"none"}
-                onClick={() => removeItemFromCart(item.key, false)}
-              >
-                <img
-                  className={"plus-and-minus-i"}
-                  src={"/icons/minus-icon.png"}
-                  alt={""}
-                />
-              </Button>
-              <span>{localStorageCartInfo[item.key]}</span>
-              <Button
-                color={"none"}
-                withoutHover
                 borderType={"none"}
-                paddingSize={"none"}
-                onClick={() => {
-                  addItemToCart(item.key);
-                }}
+                onClick={() => removeItemFromCart(item.key, true)}
               >
-                <img
-                  className={"plus-and-minus-i"}
-                  src={"/icons/plus-icon.png"}
-                  alt={""}
-                />
+                <i className="fa-solid fa-trash"></i>
               </Button>
             </div>
           </div>
-
-          <Button
-            className={"cartItem--delete"}
-            color={"none"}
-            withoutHover
-            paddingSize={"none"}
-            borderType={"none"}
-            onClick={() => removeItemFromCart(item.key, true)}
-          >
-            {t("cart:delete")}
-          </Button>
-          <span>
+          <p>
             {item.price}€/{t("cart:unit")}
-          </span>
+          </p>
         </div>
       </div>
     </div>

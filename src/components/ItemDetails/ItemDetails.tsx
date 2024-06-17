@@ -5,11 +5,13 @@ import { useEffect, useState } from "react";
 import { Button } from "../Button/Button.tsx";
 import { useSearchParams } from "react-router-dom";
 import { MainImage } from "../MainImage/MainImage.tsx";
+import { useTranslation } from "react-i18next";
 
 export const ItemDetails = ({ item }: { item: ItemDetailsModel }) => {
   const [selectedImage, setSelectedImage] = useState<string>(item.img);
   const [param] = useSearchParams();
   const productIdParam = Number(param.get("ref"));
+  const { i18n } = useTranslation();
 
   // Trigger re-render of main image when clicking on similar product on product details site
   useEffect(() => {
@@ -64,16 +66,19 @@ export const ItemDetails = ({ item }: { item: ItemDetailsModel }) => {
       </div>
       <div className={"itemDetails--text-section flex-column"}>
         <h3 className={"h2--no-margin font-alt itemDetails--sword-title"}>
-          {item.name}
+          {i18n.language === "es" ? item.name : item.nameEn}
         </h3>
         <p
           className={
             "h2--no-margin itemDetails--sword-price border-bottom-gray-300"
           }
         >
-          <span>{item.price}€</span>
+          {item.price}€
         </p>
-        <p className={"itemDetails--sword-description"}>{item.description}</p>
+
+        <p className={"itemDetails--sword-description"}>
+          {i18n.language === "es" ? item.description : item.descriptionEn}
+        </p>
         <IsLandingOrProductDetails itemKey={item.key} />
       </div>
     </div>
