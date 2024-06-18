@@ -191,6 +191,7 @@ export const Payment = () => {
                     type="number"
                     {...register("expiryDate", {
                       required: true,
+                      minLength: 5,
                       maxLength: 5,
                       valueAsNumber: true,
                     })}
@@ -212,6 +213,7 @@ export const Payment = () => {
                     placeholder={"0000 0000 0000 0000"}
                     {...register("cardNumber", {
                       required: true,
+                      minLength: 32,
                       maxLength: 32,
                       valueAsNumber: true,
                     })}
@@ -232,6 +234,7 @@ export const Payment = () => {
                     placeholder={t("000")}
                     {...register("CVV", {
                       required: true,
+                      minLength: 3,
                       maxLength: 3,
                       valueAsNumber: true,
                     })}

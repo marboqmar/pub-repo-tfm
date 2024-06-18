@@ -15,6 +15,7 @@ export const LandingContact = () => {
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm<Inputs>();
 
@@ -33,6 +34,7 @@ export const LandingContact = () => {
 
   const onSubmit: SubmitHandler<Inputs> = () => {
     notify();
+    reset();
   };
 
   return (
@@ -54,6 +56,7 @@ export const LandingContact = () => {
               </label>
               <input
                 className={"font"}
+                type={"text"}
                 aria-label={"name"}
                 {...register("name", { required: true, maxLength: 100 })}
                 placeholder={t("common:landingForm.namePlaceholder")}
@@ -67,6 +70,7 @@ export const LandingContact = () => {
               </label>
               <input
                 className={"font"}
+                type={"email"}
                 aria-label={"email"}
                 {...register("email", { required: true, maxLength: 100 })}
                 placeholder={t("common:landingForm.emailPlaceholder")}
