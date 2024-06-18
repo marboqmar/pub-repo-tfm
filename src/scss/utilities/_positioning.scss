@@ -210,6 +210,10 @@
   justify-content: center;
 }
 
+.justify-content-flex-end {
+  justify-content: flex-end;
+}
+
 .align-text-center {
   text-align: center;
 }
@@ -250,4 +254,5 @@ position: absolute;
   margin-left: auto;
   margin-right: auto;
   padding: 0 60px;
+  box-sizing: border-box;
 }
