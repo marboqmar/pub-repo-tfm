@@ -247,7 +247,7 @@ export const Payment = () => {
         <TotalToPay />
         <ToastContainer
           bodyClassName="toast-message toast-thanks-for-purchase"
-          toastClassName="toast-border"
+          toastClassName="toast-border toast-color"
           position="top-center"
           autoClose={4000}
           limit={1}

@@ -13,7 +13,7 @@ export const CartItemList = () => {
 
   return useCartItemsList().map((item: ItemDetailsModel) => (
     <div
-      className={"padding-bottom-24 flex-column border-gray-300 cartItem"}
+      className={"padding-bottom-12 flex-column border-gray-300 cartItem"}
       key={`${item.img}${item.name}`}
     >
       <Button
@@ -32,12 +32,16 @@ export const CartItemList = () => {
           alt={"cart item image"}
         />
       </Button>
-      <div className={"margin-left-12 margin-right-24 flex-column flex-1"}>
-        <h2 className={"font font-alt margin-bottom-24 flex-1"}>
+      <div className={"margin-lat-12 flex-column flex-1"}>
+        <h2
+          className={
+            "font font-alt margin-bottom-24 padding-bottom-24 flex-1 border-bottom-gray-light"
+          }
+        >
           <strong>{i18n.language === "es" ? item.name : item.nameEn}</strong>
         </h2>
         <div className={"flex-column gap-24 margin-bottom-24"}>
-          <div className={"flex-row gap-24"}>
+          <div className={"flex-row gap-24 margin-right-12"}>
             <p className={"flex"}>{t("cart:quantity")}</p>
             <div className={"flex width-100"}>
               <div className={"flex gap-12"}>

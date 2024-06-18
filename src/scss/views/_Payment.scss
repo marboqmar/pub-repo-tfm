@@ -30,7 +30,6 @@
 }
 
 .toast-message-thanks-for-purchase {
-  background-color: $color-white-lighter;
   padding: 0 0 44px 0;
 
   &--img {
@@ -42,10 +41,6 @@
 
 .toast-thanks-for-purchase[role="alert"] {
   padding: 0;
-}
-
-.toast-color {
-  //background-color: transparent !important;
 }
 
 

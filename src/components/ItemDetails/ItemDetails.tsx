@@ -69,16 +69,18 @@ export const ItemDetails = ({ item }: { item: ItemDetailsModel }) => {
           {i18n.language === "es" ? item.name : item.nameEn}
         </h3>
         <p
-          className={
-            "h2--no-margin itemDetails--sword-price border-bottom-gray-300"
-          }
+          className={"h2--no-margin margin-0 padding-24 border-bottom-gray-300"}
         >
           {item.price}€
         </p>
-
-        <p className={"itemDetails--sword-description"}>
-          {i18n.language === "es" ? item.description : item.descriptionEn}
-        </p>
+        <div className={"padding-24"}>
+          <p className={"margin-bottom-12"}>
+            {i18n.language === "es" ? item.description1 : item.descriptionEn1}
+          </p>
+          <p>
+            {i18n.language === "es" ? item.description2 : item.descriptionEn2}
+          </p>
+        </div>
         <IsLandingOrProductDetails itemKey={item.key} />
       </div>
     </div>

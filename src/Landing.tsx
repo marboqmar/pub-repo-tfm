@@ -50,20 +50,10 @@ export const Landing = () => {
               {t("common:aboutUs")}
             </h2>
             <div className={"about-us--text"}>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras
-                libero ipsum, ultricies sollicitudin quam ac, dapibus bibendum
-                tellus. Nullam faucibus in nibh accumsan mattis. Quisque vel
-                vulputate quam. Ut efficitur dignissim neque, in hendrerit magna
-                tincidunt nec.
+              <p className={"margin-bottom-12"}>
+                {t("common:aboutUsContent-1/2")}
               </p>
-              <p>
-                Nullam auctor laoreet posuere. Donec venenatis rhoncus mauris,
-                eget feugiat velit lobortis vitae. Mauris porttitor nunc
-                ultrices ligula varius, id pretium velit ullamcorper. Donec
-                lacinia vehicula mi porttitor dignissim. Aliquam vel dui nec
-                nibh venenatis fermentum quis quis diam.
-              </p>
+              <p>{t("common:aboutUsContent-2/2")}</p>
             </div>
           </div>
           <img
