@@ -2,12 +2,8 @@
 @import "../../scss/utilities/positioning";
 
 .header {
-  display: flex;
-  flex-direction: row;
-  width: 92vw;
   max-width: 1920px;
   height: 72px;
-  align-items: center;
 
   &--btn {
     display: flex;

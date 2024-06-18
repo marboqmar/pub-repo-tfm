@@ -50,7 +50,7 @@ export const IsLandingOrProductDetails = ({ itemKey }: { itemKey: number }) => {
         >
           <ToastContainer
             bodyClassName="toast-message toast-message--padding addToCart-toast"
-            toastClassName="toast-border"
+            toastClassName="toast-border toast-color"
             position="top-right"
             autoClose={4000}
             limit={1}

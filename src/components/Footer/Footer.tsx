@@ -31,15 +31,7 @@ export const Footer = () => {
                 alt={"Website logo"}
               />
             </Button>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ut
-              maximus risus, sit amet mattis nunc. Aliquam ut laoreet massa.
-              Vivamus dapibus neque eu sem vestibulum, suscipit lacinia erat
-              facilisis. Interdum et malesuada fames ac ante ipsum primis in
-              faucibus. Pellentesque fermentum felis metus, a hendrerit nibh
-              rutrum ut. Suspendisse nec metus in ipsum hendrerit commodo. Donec
-              bibendum risus lectus, ac auctor eros malesuada a.
-            </p>
+            <p className={"margin-top-24"}>{t("common:aboutUsContent-2/2")}</p>
           </div>
           <div className={"flex-row"}>
             <div
@@ -47,7 +39,7 @@ export const Footer = () => {
                 "footer--section-company border-left-gray-light margin-left-auto"
               }
             >
-              <p>
+              <p className={"margin-bottom-12"}>
                 <strong>COMPANY</strong>
               </p>
               <p>ABOUT US</p>
@@ -67,7 +59,7 @@ export const Footer = () => {
               </Button>
             </div>
             <div className={"footer--section-social border-left-gray-light"}>
-              <p>
+              <p className={"margin-bottom-12"}>
                 <strong>SOCIAL</strong>
               </p>
               <p>INSTAGRAM</p>
@@ -77,7 +69,7 @@ export const Footer = () => {
               <p>NEWSLETTER</p>
             </div>
             <div className={"footer--section-policies border-left-gray-light"}>
-              <p>
+              <p className={"margin-bottom-12"}>
                 <strong>POLICIES</strong>
               </p>
               <p>PRIVACY POLICY</p>
