@@ -19,10 +19,7 @@ export const SearchBar = () => {
   };
 
   return (
-    <form
-      className={"searchBar margin-ver-auto margin-lat-auto"}
-      onSubmit={handleOnSubmit}
-    >
+    <form className={"searchBar margin-ver-auto"} onSubmit={handleOnSubmit}>
       <Button
         type={"submit"}
         // className={"searchBar--img"}

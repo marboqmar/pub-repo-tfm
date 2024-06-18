@@ -6,8 +6,8 @@ import { SearchBar } from "./SearchBar.tsx";
 
 export const Header = () => {
   return (
-    <div className={"max-width-1800-centered"}>
-      <div className={"header"}>
+    <div className={"max-width-1800-centered flex width-100"}>
+      <div className={"flex flex-1 align-items-center header"}>
         <Button
           color={"none"}
           withoutHover
@@ -22,7 +22,7 @@ export const Header = () => {
         </Button>
         <div
           className={
-            "flex-row align-items-center margin-ver-auto margin-left-auto gap-24"
+            "flex-row flex-1 align-items-center justify-content-flex-end  gap-24"
           }
         >
           <SearchBar />

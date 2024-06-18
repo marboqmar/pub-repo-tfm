@@ -28,16 +28,16 @@ export const TotalToPay = () => {
       <div className={"totalToPay flex-column border-gray-300"}>
         <div className={"flex-row totalToPay--text"}>
           <div className={"flex-column gap-12"}>
-            <span>
+            <p>
               {t("cart:items")} ({totalNumberItems})
-            </span>
-            <span>{t("cart:shipping")}</span>
-            <span className={"bold"}>Total</span>
+            </p>
+            <p>{t("cart:shipping")}</p>
+            <p className={"h3-bold"}>Total</p>
           </div>
           <div className={"flex-column gap-12 margin-left-auto"}>
-            <span>{totalPrice}€</span>
-            <span>{t("cart:free")}</span>
-            <span className={"h3-bold"}>{totalPrice}€</span>
+            <p>{totalPrice}€</p>
+            <p>{t("cart:free")}</p>
+            <p className={"h3-bold"}>{totalPrice}€</p>
           </div>
         </div>
         <IsCartOrPayment />

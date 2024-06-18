@@ -5,7 +5,7 @@ export const Review = ({ review }: { review: reviewModel }) => {
     <div className="flex-column gap-18 productDetails--review border-bottom-gray-300">
       <div className="flex gap-24 align-items-center">
         <img src={review.img} alt={""} />
-        <span>{review.name}</span>
+        <p>{review.name}</p>
       </div>
       <img
         className={"productDetails--review-stars"}

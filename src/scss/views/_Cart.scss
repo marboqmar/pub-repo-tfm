@@ -1,12 +1,20 @@
 @import "../base";
 
 .cartItem {
+  max-width: 266px;
+
   &--img {
     height: 400px;
   }
 
+  &--text {
+    height: 100%;
+  }
+
   &--delete {
-    margin-right: auto;
+    color: $color-neutral;
+    margin-top: -6px;
+    margin-left: auto;
   }
 }
 
