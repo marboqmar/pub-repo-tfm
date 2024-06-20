@@ -23,6 +23,16 @@
     "messageSent": "Tu mensaje ha sido enviado, pronto nos pondremos en contacto contigo"
   },
   "footer": {
-    "patterns": "NUESTROS PATRONES"
+    "company": "COMPAÑIA",
+    "aboutUs": "SOBRE NOSOTROS",
+    "ourProcess": "NUESTRO PROCESO",
+    "offices": "OFICINAS",
+    "patterns": "NUESTROS PATRONES",
+    "social": "REDES",
+    "policies": "POLITICAS",
+    "privacy": "POLITICA DE PRIVACIDAD",
+    "termsAndConditions": "TERMINOS Y CONDICIONES",
+    "cookies": "AJUSTES DE COOKIES",
+    "purchaseConditions": "CONDICIONES DE COMPRA"
   }
 }

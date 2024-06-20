@@ -40,11 +40,11 @@ export const Footer = () => {
               }
             >
               <p className={"margin-bottom-12"}>
-                <strong>COMPANY</strong>
+                <strong>{t("common:footer.company")}</strong>
               </p>
-              <p>ABOUT US</p>
-              <p>OUR PROCESS</p>
-              <p>OFFICES</p>
+              <p>{t("common:footer.aboutUs")}</p>
+              <p>{t("common:footer.ourProcess")}</p>
+              <p>{t("common:footer.offices")}</p>
               <Button
                 color={"none"}
                 withoutHover
@@ -60,7 +60,7 @@ export const Footer = () => {
             </div>
             <div className={"footer--section-social border-left-gray-light"}>
               <p className={"margin-bottom-12"}>
-                <strong>SOCIAL</strong>
+                <strong>{t("common:footer.social")}</strong>
               </p>
               <p>INSTAGRAM</p>
               <p>X</p>
@@ -70,12 +70,12 @@ export const Footer = () => {
             </div>
             <div className={"footer--section-policies border-left-gray-light"}>
               <p className={"margin-bottom-12"}>
-                <strong>POLICIES</strong>
+                <strong>{t("common:footer.policies")}</strong>
               </p>
-              <p>PRIVACY POLICY</p>
-              <p>TERMS AND CONDITIONS</p>
-              <p>COOKIES SETTINGS</p>
-              <p>PURCHASE CONDITIONS</p>
+              <p>{t("common:footer.privacy")}</p>
+              <p>{t("common:footer.termsAndConditions")}</p>
+              <p>{t("common:footer.cookies")}</p>
+              <p>{t("common:footer.purchaseConditions")}</p>
             </div>
           </div>
         </div>
