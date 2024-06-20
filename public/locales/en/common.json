@@ -23,6 +23,16 @@
     "messageSent": "Your message has been sent, we will get in contact with you soon"
   },
   "footer": {
-    "patterns": "OUR PATTERNS"
+    "company": "COMPANY",
+    "aboutUs": "ABOUT US",
+    "ourProcess": "OUR PROCESS",
+    "offices": "OFFICES",
+    "patterns": "OUR PATTERNS",
+    "social": "SOCIAL",
+    "policies": "POLICIES",
+    "privacy": "PRIVACY POLICY",
+    "termsAndConditions": "TERMS AND CONDITIONS",
+    "cookies": "COOKIES SETTINGS",
+    "purchaseConditions": "PURCHASE CONDITIONS"
   }
 }
