@@ -23,6 +23,10 @@ const FILTER_OPTIONS_LIST = (): FilterModel[] => {
       name: t("home:filterOptions.LOTR"),
       key: "The Lord of the Rings",
     },
+    {
+      name: "World of Warcraft",
+      key: "World of Warcraft",
+    },
   ];
 };
 
