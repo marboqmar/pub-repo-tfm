@@ -20,7 +20,8 @@
     "messagePlaceholder": "Cuéntanos como podemos ayudarte",
     "sendMessage": "Enviar mensaje",
     "termsAndConditions": "He leído y acepto los términos y condiciones",
-    "messageSent": "Tu mensaje ha sido enviado, pronto nos pondremos en contacto contigo"
+    "messageSent": "Tu mensaje ha sido enviado, pronto nos pondremos en contacto contigo",
+    "fieldRequired": "Este campo es obligatorio"
   },
   "footer": {
     "company": "COMPAÑIA",

@@ -20,7 +20,8 @@
     "messagePlaceholder": "Tell us how we can help you",
     "sendMessage": "Send message",
     "termsAndConditions": "I have read and accept the terms and conditions",
-    "messageSent": "Your message has been sent, we will get in contact with you soon"
+    "messageSent": "Your message has been sent, we will get in contact with you soon",
+    "fieldRequired": "This field is required"
   },
   "footer": {
     "company": "COMPANY",
