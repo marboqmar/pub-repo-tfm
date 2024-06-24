@@ -15,7 +15,6 @@ export const ItemDetails = ({ item }: { item: ItemDetailsModel }) => {
     if (!mainImage) {
       setNewMainImage(item.img);
     }
-    setNewMainImage(mainImage);
   }, [item.img, mainImage]);
 
   console.log(mainImage);

@@ -3,6 +3,8 @@ import { Button } from "../Button/Button.tsx";
 import { ItemDetailsModel } from "../../models";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import { MainImageContext } from "../../contexts/MainImageContextProvider.tsx";
+import { useContext } from "react";
 
 interface ItemsToDisplayProps {
   itemList: ItemDetailsModel[];
@@ -10,8 +12,10 @@ interface ItemsToDisplayProps {
 
 export const ItemsToDisplay = ({ itemList }: ItemsToDisplayProps) => {
   const { i18n } = useTranslation();
-  const handleOnClick = () => {
+  const { setNewMainImage } = useContext(MainImageContext);
+  const handleOnClick = (img: string) => {
     window.scrollTo(0, 0);
+    setNewMainImage(img);
   };
 
   return (
@@ -45,7 +49,9 @@ export const ItemsToDisplay = ({ itemList }: ItemsToDisplayProps) => {
                   borderType={"none"}
                   to={`/detalles-producto/?ref=${item.key}`}
                   key={`${item.img}${item.name}`}
-                  onClick={handleOnClick}
+                  onClick={() => {
+                    handleOnClick(item.img);
+                  }}
                 >
                   <h3 className={"font margin-0 margin-top-12"}>
                     <strong>
