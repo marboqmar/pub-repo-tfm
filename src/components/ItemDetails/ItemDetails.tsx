@@ -28,7 +28,7 @@ export const ItemDetails = ({ item }: { item: ItemDetailsModel }) => {
       <div
         className={"itemDetails--images-section flex-row border-right-gray-300"}
       >
-        <LargeImage />
+        <LargeImage img={item.img} img2={item.img2} />
         <div
           className={
             "itemDetails--img-container margin-lat-24 margin-bottom-24 margin-top-24"

@@ -1,12 +1,17 @@
 import { Button } from "../Button/Button.tsx";
-import { Dialog } from "../Dialog/Dialog.tsx";
+import { Dialog, CloseDialogButton } from "../Dialog";
 import { useContext, useState } from "react";
 import { MainImageContext } from "../../contexts/MainImageContextProvider.tsx";
 
-export const LargeImage = () => {
+interface LargeImageProps {
+  img: string;
+  img2: string;
+}
+
+export const LargeImage = ({ img, img2 }: LargeImageProps) => {
   const currentUrl = window.location.href;
   const [isDialogOpen, setIsDialogOpen] = useState<boolean>(false);
-  const { mainImage } = useContext(MainImageContext);
+  const { mainImage, setNewMainImage } = useContext(MainImageContext);
 
   const handleOnClick = () => {
     setIsDialogOpen(true);
@@ -14,6 +19,14 @@ export const LargeImage = () => {
 
   const handleOverlayClick = () => {
     setIsDialogOpen(false);
+  };
+
+  const handleChangeImage = () => {
+    if (mainImage.includes("2")) {
+      setNewMainImage(img);
+    } else {
+      setNewMainImage(img2);
+    }
   };
 
   if (currentUrl.includes("detalles-producto")) {
@@ -31,13 +44,35 @@ export const LargeImage = () => {
           <img className={"itemDetails--img"} src={mainImage} alt={""} />
         </Button>
         <Dialog show={isDialogOpen} onOverlayClick={handleOverlayClick}>
-          <i className="fa-solid fa-chevron-left itemDetails--mainImage-arrows"></i>
+          <CloseDialogButton onClick={handleOverlayClick}></CloseDialogButton>
+          <Button
+            color={"none"}
+            withoutHover
+            paddingSize={"none"}
+            borderType={"none"}
+            withoutBorderRadius
+            onClick={handleChangeImage}
+          >
+            <i className="fa-solid fa-chevron-left itemDetails--mainImage-arrows"></i>
+          </Button>
           <img
             className={"itemDetails--mainImage margin-lat-auto"}
             src={mainImage}
             alt={""}
           />
-          <i className="fa-solid fa-chevron-right itemDetails--mainImage-arrows"></i>
+          <Button
+            color={"none"}
+            withoutHover
+            paddingSize={"none"}
+            borderType={"none"}
+            withoutBorderRadius
+            onClick={handleChangeImage}
+          >
+            <i
+              onClick={handleChangeImage}
+              className="fa-solid fa-chevron-right itemDetails--mainImage-arrows"
+            ></i>
+          </Button>
         </Dialog>
       </>
     );
