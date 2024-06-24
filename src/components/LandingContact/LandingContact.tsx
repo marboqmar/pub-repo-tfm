@@ -62,7 +62,9 @@ export const LandingContact = () => {
                 placeholder={t("common:landingForm.namePlaceholder")}
               />
               {errors.name && (
-                <p className={"form--error"}>This field is required</p>
+                <p className={"form--error"}>
+                  {t("common:landingForm.fieldRequired")}
+                </p>
               )}
               {/*Email*/}
               <label className={"border-bottom-gray-300 border-top-gray-300"}>
@@ -76,7 +78,9 @@ export const LandingContact = () => {
                 placeholder={t("common:landingForm.emailPlaceholder")}
               />
               {errors.email && (
-                <p className={"form--error"}>This field is required</p>
+                <p className={"form--error"}>
+                  {t("common:landingForm.fieldRequired")}
+                </p>
               )}
             </div>
             <div className={"flex-column flex-grow-1 border-left-gray-300"}>
@@ -91,7 +95,9 @@ export const LandingContact = () => {
                 {...register("message", { required: true, maxLength: 500 })}
               />
               {errors.message && (
-                <p className={"form--error"}>This field is required</p>
+                <p className={"form--error"}>
+                  {t("common:landingForm.fieldRequired")}
+                </p>
               )}
             </div>
           </div>
@@ -109,7 +115,9 @@ export const LandingContact = () => {
               </p>
             </div>
             {errors.checkbox && (
-              <p className={"form--error"}>This field is required</p>
+              <p className={"form--error"}>
+                {t("common:landingForm.fieldRequired")}
+              </p>
             )}
           </div>
           <Button

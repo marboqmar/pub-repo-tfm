@@ -89,7 +89,9 @@ export const Payment = () => {
                     placeholder={t("payment:addressPlaceholder")}
                   />
                   {errors.address && (
-                    <p className={"form--error"}>This field is required</p>
+                    <p className={"form--error"}>
+                      {t("common:landingForm.fieldRequired")}
+                    </p>
                   )}
                   {/*Country*/}
                   <label
@@ -107,7 +109,9 @@ export const Payment = () => {
                     placeholder={t("payment:countryPlaceholder")}
                   />
                   {errors.country && (
-                    <p className={"form--error"}>This field is required</p>
+                    <p className={"form--error"}>
+                      {t("common:landingForm.fieldRequired")}
+                    </p>
                   )}
                 </div>
                 <div className={"flex-column flex-grow-1 border-left-gray-300"}>
@@ -125,7 +129,9 @@ export const Payment = () => {
                     })}
                   />
                   {errors.postCode && (
-                    <p className={"form--error"}>This field is required</p>
+                    <p className={"form--error"}>
+                      {t("common:landingForm.fieldRequired")}
+                    </p>
                   )}
                   {/*Post code*/}
                   <label
@@ -143,7 +149,9 @@ export const Payment = () => {
                     })}
                   />
                   {errors.city && (
-                    <p className={"form--error"}>This field is required</p>
+                    <p className={"form--error"}>
+                      {t("common:landingForm.fieldRequired")}
+                    </p>
                   )}
                 </div>
               </div>
@@ -177,7 +185,9 @@ export const Payment = () => {
                     placeholder={t("payment:cardNamePlaceholder")}
                   />
                   {errors.cardName && (
-                    <p className={"form--error"}>This field is required</p>
+                    <p className={"form--error"}>
+                      {t("common:landingForm.fieldRequired")}
+                    </p>
                   )}
                   {/*Expiry date*/}
                   <label
@@ -198,7 +208,9 @@ export const Payment = () => {
                     placeholder={"00/00"}
                   />
                   {errors.expiryDate && (
-                    <p className={"form--error"}>This field is required</p>
+                    <p className={"form--error"}>
+                      {t("common:landingForm.fieldRequired")}
+                    </p>
                   )}
                 </div>
                 <div className={"flex-column flex-grow-1 border-left-gray-300"}>
@@ -219,7 +231,9 @@ export const Payment = () => {
                     })}
                   />
                   {errors.cardNumber && (
-                    <p className={"form--error"}>This field is required</p>
+                    <p className={"form--error"}>
+                      {t("common:landingForm.fieldRequired")}
+                    </p>
                   )}
                   {/*CVV*/}
                   <label
@@ -240,7 +254,9 @@ export const Payment = () => {
                     })}
                   />
                   {errors.CVV && (
-                    <p className={"form--error"}>This field is required</p>
+                    <p className={"form--error"}>
+                      {t("common:landingForm.fieldRequired")}
+                    </p>
                   )}
                 </div>
               </div>
