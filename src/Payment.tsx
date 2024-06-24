@@ -230,13 +230,14 @@ export const Payment = () => {
                   <input
                     className={"font"}
                     aria-label={"CVV"}
-                    type="number"
+                    type={"number"}
                     placeholder={t("000")}
                     {...register("CVV", {
                       required: true,
-                      minLength: 3,
-                      maxLength: 3,
-                      valueAsNumber: true,
+                      minLength: {
+                        value: 32,
+                        message: "error",
+                      },
                     })}
                   />
                   {errors.CVV && (

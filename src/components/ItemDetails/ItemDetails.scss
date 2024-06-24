@@ -57,5 +57,12 @@
 
   &--mainImage {
     height: 100%;
+
+    &-arrows {
+      font-size: 32px;
+      color: white;
+      padding: 24px;
+      margin: 0 24px;
+    }
   }
 }

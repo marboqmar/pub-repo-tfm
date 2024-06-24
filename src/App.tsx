@@ -6,6 +6,7 @@ import { useEffect } from "react";
 import { SearchContextProvider } from "./contexts/SearchContextProvider.tsx";
 import { ActiveFilterContextProvider } from "./contexts/ActiveFilterContextProvider.tsx";
 import { ItemsFromApiContextProvider } from "./contexts/ItemsFromApiContextProvider.tsx";
+import { MainImageContextProvider } from "./contexts/MainImageContextProvider.tsx";
 
 export const App = () => {
   const location = useLocation();
@@ -16,17 +17,19 @@ export const App = () => {
 
   return (
     <>
-      <ItemsFromApiContextProvider>
-        <ActiveFilterContextProvider>
-          <SearchContextProvider>
-            <Header />
-            <div className={"main"}>
-              <Outlet />
-            </div>
-            <Footer />
-          </SearchContextProvider>
-        </ActiveFilterContextProvider>
-      </ItemsFromApiContextProvider>
+      <MainImageContextProvider>
+        <ItemsFromApiContextProvider>
+          <ActiveFilterContextProvider>
+            <SearchContextProvider>
+              <Header />
+              <div className={"main"}>
+                <Outlet />
+              </div>
+              <Footer />
+            </SearchContextProvider>
+          </ActiveFilterContextProvider>
+        </ItemsFromApiContextProvider>
+      </MainImageContextProvider>
     </>
   );
 };

@@ -5,7 +5,11 @@ import { useCartOnLocalStorage } from "../../services/useCartOnLocalStorage.ts";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 
-export const IsLandingOrProductDetails = ({ itemKey }: { itemKey: number }) => {
+export const IsAddToCartOrProductDetailsBtn = ({
+  itemKey,
+}: {
+  itemKey: number;
+}) => {
   const currentUrl = window.location.href;
   const { addItemToCart } = useCartOnLocalStorage();
   const { t } = useTranslation("common");

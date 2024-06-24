@@ -1,25 +1,27 @@
 import "./ItemDetails.scss";
 import { ItemDetailsModel } from "../../models";
-import { IsLandingOrProductDetails } from "../IsLandingOrProductDetails/IsLandingOrProductDetails.tsx";
-import { useEffect, useState } from "react";
+import { IsAddToCartOrProductDetailsBtn } from "../IsLandingOrProductDetailsBtn/IsAddToCartOrProductDetailsBtn.tsx";
+import { useContext, useEffect } from "react";
 import { Button } from "../Button/Button.tsx";
-import { useSearchParams } from "react-router-dom";
-import { MainImage } from "../MainImage/MainImage.tsx";
+import { LargeImage } from "../LargeImage/LargeImage.tsx";
 import { useTranslation } from "react-i18next";
+import { MainImageContext } from "../../contexts/MainImageContextProvider.tsx";
 
 export const ItemDetails = ({ item }: { item: ItemDetailsModel }) => {
-  const [selectedImage, setSelectedImage] = useState<string>(item.img);
-  const [param] = useSearchParams();
-  const productIdParam = Number(param.get("ref"));
+  const { setNewMainImage, mainImage } = useContext(MainImageContext);
   const { i18n } = useTranslation();
 
-  // Trigger re-render of main image when clicking on similar product on product details site
   useEffect(() => {
-    setSelectedImage(item.img);
-  }, [productIdParam, item.img]);
+    if (!mainImage) {
+      setNewMainImage(item.img);
+    }
+    setNewMainImage(mainImage);
+  }, [item.img, mainImage]);
+
+  console.log(mainImage);
 
   const handleOnClick = (img: string) => {
-    setSelectedImage(img);
+    setNewMainImage(img);
   };
 
   return (
@@ -27,8 +29,7 @@ export const ItemDetails = ({ item }: { item: ItemDetailsModel }) => {
       <div
         className={"itemDetails--images-section flex-row border-right-gray-300"}
       >
-        <MainImage image={selectedImage} />
-        {/*<img className={"itemDetails--img"} src={selectedImage} alt={""} />*/}
+        <LargeImage />
         <div
           className={
             "itemDetails--img-container margin-lat-24 margin-bottom-24 margin-top-24"
@@ -81,7 +82,7 @@ export const ItemDetails = ({ item }: { item: ItemDetailsModel }) => {
             {i18n.language === "es" ? item.description2 : item.descriptionEn2}
           </p>
         </div>
-        <IsLandingOrProductDetails itemKey={item.key} />
+        <IsAddToCartOrProductDetailsBtn itemKey={item.key} />
       </div>
     </div>
   );

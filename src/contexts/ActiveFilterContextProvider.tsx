@@ -15,13 +15,13 @@ const contextDefault: ActiveFilterContextModel = {
 export const ActiveFilterContext =
   createContext<ActiveFilterContextModel>(contextDefault);
 
-interface ActiveFilterProviderProps {
+interface ActiveFilterContextProviderProps {
   children: ReactNode;
 }
 
 export const ActiveFilterContextProvider = ({
   children,
-}: ActiveFilterProviderProps): JSX.Element | null => {
+}: ActiveFilterContextProviderProps): JSX.Element | null => {
   const [activeFilter, setActiveFilter] = useState<string>("");
 
   const contextValue: ActiveFilterContextModel = {
