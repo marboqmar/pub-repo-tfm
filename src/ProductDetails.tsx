@@ -16,7 +16,7 @@ export const ProductDetails = () => {
   const { itemsFromApi } = useContext(ItemsFromApiContext);
   const [param] = useSearchParams();
   const productIdParam = Number(param.get("ref"));
-  const randomProductsList = useRandomSimilarProducts(5);
+  const randomProductsList = useRandomSimilarProducts(6);
 
   const selectedItem = itemsFromApi.find((item: ItemDetailsModel) => {
     return item.key === productIdParam;
