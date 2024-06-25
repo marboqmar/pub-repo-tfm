@@ -198,19 +198,28 @@ export const Payment = () => {
                   <input
                     className={"font"}
                     aria-label={"expiryDate"}
-                    type="number"
                     {...register("expiryDate", {
-                      required: true,
-                      minLength: 5,
-                      maxLength: 5,
-                      valueAsNumber: true,
+                      required: {
+                        value: true,
+                        message: t("common:landingForm.fieldRequired"),
+                      },
+                      // minLength: {
+                      //   value: 5,
+                      //   message: t("common:landingForm.expDateError"),
+                      // },
+                      // maxLength: {
+                      //   value: 5,
+                      //   message: t("common:landingForm.expDateError"),
+                      // },
+                      // pattern: {
+                      //   message: "format",
+                      //   value: /^(0[1-9]|1[0-2])\/?([0-9]{2})$/,
+                      // },
                     })}
                     placeholder={"00/00"}
                   />
                   {errors.expiryDate && (
-                    <p className={"form--error"}>
-                      {t("common:landingForm.fieldRequired")}
-                    </p>
+                    <p className={"form--error"}>{errors.expiryDate.message}</p>
                   )}
                 </div>
                 <div className={"flex-column flex-grow-1 border-left-gray-300"}>
@@ -224,16 +233,22 @@ export const Payment = () => {
                     type="number"
                     placeholder={"0000 0000 0000 0000"}
                     {...register("cardNumber", {
-                      required: true,
-                      minLength: 32,
-                      maxLength: 32,
-                      valueAsNumber: true,
+                      required: {
+                        value: true,
+                        message: t("common:landingForm.fieldRequired"),
+                      },
+                      // minLength: {
+                      //   value: 32,
+                      //   message: t("common:landingForm.32char"),
+                      // },
+                      // maxLength: {
+                      //   value: 32,
+                      //   message: t("common:landingForm.32char"),
+                      // },
                     })}
                   />
                   {errors.cardNumber && (
-                    <p className={"form--error"}>
-                      {t("common:landingForm.fieldRequired")}
-                    </p>
+                    <p className={"form--error"}>{errors.cardNumber.message}</p>
                   )}
                   {/*CVV*/}
                   <label
@@ -247,16 +262,22 @@ export const Payment = () => {
                     type="number"
                     placeholder={t("000")}
                     {...register("CVV", {
-                      required: true,
-                      minLength: 3,
-                      maxLength: 3,
-                      valueAsNumber: true,
+                      required: {
+                        value: true,
+                        message: t("common:landingForm.fieldRequired"),
+                      },
+                      // minLength: {
+                      //   value: 3,
+                      //   message: t("common:landingForm.3char"),
+                      // },
+                      // maxLength: {
+                      //   value: 3,
+                      //   message: t("common:landingForm.3char"),
+                      // },
                     })}
                   />
                   {errors.CVV && (
-                    <p className={"form--error"}>
-                      {t("common:landingForm.fieldRequired")}
-                    </p>
+                    <p className={"form--error"}>{errors.CVV.message}</p>
                   )}
                 </div>
               </div>
