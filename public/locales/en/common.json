@@ -21,7 +21,10 @@
     "sendMessage": "Send message",
     "termsAndConditions": "I have read and accept the terms and conditions",
     "messageSent": "Your message has been sent, we will get in contact with you soon",
-    "fieldRequired": "This field is required"
+    "fieldRequired": "This field is required",
+    "32char": "This field requires 32 characters",
+    "3char": "This field requires 3 characters",
+    "expDateError": "The expiration date is not valid"
   },
   "footer": {
     "company": "COMPANY",

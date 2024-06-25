@@ -21,7 +21,10 @@
     "sendMessage": "Enviar mensaje",
     "termsAndConditions": "He leído y acepto los términos y condiciones",
     "messageSent": "Tu mensaje ha sido enviado, pronto nos pondremos en contacto contigo",
-    "fieldRequired": "Este campo es obligatorio"
+    "fieldRequired": "Este campo es obligatorio",
+    "32char": "Este campo requiere 32 caracteres",
+    "3char": "Este campo requiere 3 caracteres",
+    "expDateError": "La fecha de caducidad no es válida"
   },
   "footer": {
     "company": "COMPAÑIA",
