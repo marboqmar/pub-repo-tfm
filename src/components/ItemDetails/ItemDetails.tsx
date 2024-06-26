@@ -22,12 +22,14 @@ export const ItemDetails = ({ item }: { item: ItemDetailsModel }) => {
     setSelectedImage(img);
   };
 
+  const allImages = [item.img, item.img2];
+
   return (
     <div className={"flex-row"}>
       <div
         className={"itemDetails--images-section flex-row border-right-gray-300"}
       >
-        <MainImage image={selectedImage} />
+        <MainImage currentImage={selectedImage} allImages={allImages} />
         {/*<img className={"itemDetails--img"} src={selectedImage} alt={""} />*/}
         <div
           className={

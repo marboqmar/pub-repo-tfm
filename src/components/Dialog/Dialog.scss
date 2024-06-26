@@ -1,22 +1,45 @@
+@import "../../scss/global/color-variables";
+
 .dialog {
   display: flex;
+  flex-direction: column;
   align-items: center;
 
-  &--overlay {
+  &, &--overlay {
     position: fixed;
     top: 0;
     right: 0;
     left: 0;
     bottom: 0;
-    background-color: rgba(0, 0, 0, 0.5);
+  }
+
+  &--overlay {
+    background-color: rgba(0, 0, 0, 0.7);
     z-index: 1000;
   }
 
   &--content {
-    height: 100%;
     width: 100%;
+    max-width: 1500px;
+    height: 100%;
     display: flex;
     align-items: center;
     z-index: 10000;
+    position: relative;
+  }
+
+  &--close {
+    color: $color-black;
+    background-color: white;
+    height: 54px;
+    width: 54px;
+    border-radius: 50%;
+    position: absolute;
+    top: 60px;
+    right: 48px;
+
+    &:hover {
+      background-color: white;
+    }
   }
 }
