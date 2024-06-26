@@ -15,9 +15,8 @@ export const Dialog = ({ show, onOverlayClick, children }: DialogProps) => {
 
   return createPortal(
     <div className={"dialog"}>
-      <div className={"dialog--overlay"} onClick={onOverlayClick}>
-        <div className={"dialog--content"}>{children}</div>
-      </div>
+      <div className={"dialog--overlay"} onClick={onOverlayClick}></div>
+      <div className={"dialog--content"}>{children}</div>
     </div>,
     document.body,
   );
